@@ -1,0 +1,26 @@
+﻿<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0e6f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8d4f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg6)"/>
+  <circle cx="200" cy="180" r="73" fill="#d8c8e0"/>
+  <polygon points="157,113 132,62 167,118" fill="#d8c8e0"/>
+  <polygon points="243,113 268,62 233,118" fill="#d8c8e0"/>
+  <polygon points="157,113 147,88 165,115" fill="#f0c0d0"/>
+  <polygon points="243,113 253,88 235,115" fill="#f0c0d0"/>
+  <circle cx="179" cy="172" r="14" fill="#5ba3f5"/>
+  <circle cx="221" cy="172" r="14" fill="#5ba3f5"/>
+  <circle cx="181" cy="170" r="6" fill="white"/>
+  <circle cx="223" cy="170" r="6" fill="white"/>
+  <polygon points="200,196 194,209 206,209" fill="#f0c0d0"/>
+  <path d="M 200 222 Q 185 238 171 228" stroke="#999" stroke-width="2" fill="none"/>
+  <path d="M 200 222 Q 215 238 229 228" stroke="#999" stroke-width="2" fill="none"/>
+  <ellipse cx="200" cy="310" rx="59" ry="83" fill="#d8c8e0"/>
+  <path d="M 259 320 Q 330 310 340 232" stroke="#d8c8e0" stroke-width="24" fill="none" stroke-linecap="round"/>
+  <ellipse cx="171" cy="382" rx="20" ry="37" fill="#d8c8e0"/>
+  <ellipse cx="229" cy="382" rx="20" ry="37" fill="#d8c8e0"/>
+  <text x="200" y="460" font-size="20" fill="#8b7ba8" text-anchor="middle" font-weight="bold">Beautiful Ragdoll</text>
+</svg>
