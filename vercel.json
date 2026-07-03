@@ -2,18 +2,5 @@
   "buildCommand": "",
   "devCommand": "python -m http.server 3000",
   "installCommand": "",
-  "framework": null,
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=3600"
-        }
-      ]
-    }
-  ]
+  "framework": null
 }
