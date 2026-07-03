@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O nás - StElli</title>
+    <title>O nás | StElli Ragdoll</title>
+    <meta name="description" content="Poznejte příběh chovatelské stanice StElli — chováme plemeno Ragdoll s láskou, respektem a důrazem na zdraví a povahu koťátek.">
+    <link rel="canonical" href="https://www.stelliragdoll.cz/o-nas.html">
+    <meta property="og:title" content="O nás | StElli Ragdoll">
+    <meta property="og:description" content="Příběh chovatelské stanice StElli a filozofie našeho chovu Ragdoll koček.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/favicon-180.png">
 </head>
 <body>
+    <a href="#main" class="skip-link">Přeskočit na obsah</a>
+    <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo">🐱 StElli</a>
-                <div class="nav-toggle" id="navToggle">☰</div>
+                <a href="index.html" class="logo"><img src="images/logo-icon.png" alt="StElli Ragdoll" class="logo-img"> StElli</a>
+                <div class="nav-toggle" id="navToggle" aria-label="Otevřít menu"><span></span><span></span><span></span></div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Úvod</a></li>
                     <li><a href="o-nas.html">O nás</a></li>
@@ -19,41 +32,138 @@
                     <li><a href="kotatka.html">Koťátka</a></li>
                     <li><a href="informace-ke-koupi.html">Koupi</a></li>
                     <li><a href="tym.html">Tým</a></li>
-                    <li><a href="kontakty.html">Kontakty</a></li>
+                    <li><a href="fotogalerie.html">Fotogalerie</a></li>
+                    <li><a href="kontakty.html" class="nav-cta">Kontakty</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="section container">
-            <h2>O nás</h2>
-            <p>Jmenuji se Petra Vávrová a věnuji se chovu koček plemene Ragdoll. Naše stanice StElli vznikla z čisté lásky k tomuto nádherному plemeni.</p>
-            <p>Pojmenovali jsme ji podle našich dvou malých spoluchovatelek - Stelly a Elleny. Pro nás jsou všechny naše chovné kočky i našimi mazlíčky, kteří s námi žijí v celém domě.</p>
-            <p>Věřím, že jsme schopní vychovávat plně socializovaná koťátka s důrazem na zdraví, vzhled a povahu.</p>
+    <main id="main">
+        <section class="page-hero">
+            <div class="hero-blob b1"></div>
+            <div class="hero-blob b2"></div>
+            <h1>O nás</h1>
+            <p>Příběh dvou jmen, jedné lásky ke kočkám a chovatelské stanice StElli.</p>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items:center; gap:3rem;">
+                    <div class="photo-thumb reveal-left" style="aspect-ratio:4/5;" data-lightbox data-gallery="onas" data-src="images/gallery/02.jpg">
+                        <img src="images/gallery/02.jpg" alt="Petra Vávrová s kočkami StElli" loading="lazy">
+                    </div>
+                    <div class="prose reveal-right">
+                        <p>Jmenuji se Petra Vávrová a věnuji se chovu koček plemene Ragdoll. Naše stanice StElli vznikla z čisté lásky k tomuto nádhernému plemeni.</p>
+                        <p>Pojmenovali jsme ji podle našich dvou malých spoluchovatelek — Stelly a Elleny. Pro nás jsou všechny naše chovné kočky i našimi mazlíčky, kteří s námi žijí v celém domě.</p>
+                        <p>Věřím, že jsme schopní vychovávat plně socializovaná koťátka s důrazem na zdraví, vzhled a povahu.</p>
+                        <a href="nase-prace.html" class="link-button">Jak konkrétně pracujeme →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-soft">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Naše hodnoty</span>
+                    <h2>Co pro nás znamená StElli</h2>
+                </div>
+                <div class="grid grid-3 stagger">
+                    <div class="card reveal-scale" style="--i:0">
+                        <div class="card-icon">❤️</div>
+                        <h3>Láska především</h3>
+                        <p>Každá kočka u nás žije v domácnosti, ne v kotci. Je součástí rodiny od prvního dne.</p>
+                    </div>
+                    <div class="card reveal-scale" style="--i:1">
+                        <div class="card-icon">🩺</div>
+                        <h3>Zdraví na prvním místě</h3>
+                        <p>Nekompromisně dbáme na genetická vyšetření a veterinární péči všech chovných jedinců.</p>
+                    </div>
+                    <div class="card reveal-scale" style="--i:2">
+                        <div class="card-icon">🎓</div>
+                        <h3>Odpovědnost a vzdělání</h3>
+                        <p>Neustále se vzděláváme v genetice a chovu, abychom dělali informovaná rozhodnutí.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Náš každodenní život</span>
+                    <h2>Kousek domova StElli</h2>
+                </div>
+                <div class="photo-grid stagger" id="onasGrid"></div>
+            </div>
+        </section>
+
+        <script>
+            (function () {
+                const grid = document.getElementById('onasGrid');
+                let html = '';
+                for (let i = 1; i <= 8; i++) {
+                    const n = String(i).padStart(2, '0');
+                    const src = 'images/onas/' + n + '.jpg';
+                    html += '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="onas-life" data-src="' + src + '">' +
+                        '<img src="' + src + '" alt="Život v CHS StElli ' + i + '" loading="lazy"></div>';
+                }
+                grid.innerHTML = html;
+            })();
+        </script>
+
+        <section class="section bg-soft">
+            <div class="container">
+                <div class="cta-banner reveal-scale">
+                    <h2>Chcete vědět víc o naší práci?</h2>
+                    <p>Podívejte se, jak konkrétně pečujeme o naše kočky a koťátka.</p>
+                    <a href="nase-prace.html" class="btn btn-solid">Naše práce</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <h4>StElli Ragdoll</h4>
+                <img src="images/logo.png" alt="StElli Ragdoll logo" class="footer-logo-img">
                 <p>Malobratřice, Středočeský kraj</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/misc/icon-instagram.png" alt="" class="social-icon-img"></a>
+                    <a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/misc/icon-facebook.png" alt="" class="social-icon-img"></a>
+                    <a href="mailto:stellicattery@gmail.com" aria-label="E-mail">✉️</a>
+                </div>
+            </div>
+            <div>
+                <h4>Navigace</h4>
+                <p><a href="o-nas.html">O nás</a></p>
+                <p><a href="kotatka.html">Koťátka</a></p>
+                <p><a href="informace-ke-koupi.html">Informace ke koupi</a></p>
+                <p><a href="tym.html">Tým</a></p>
+                <p><a href="fotogalerie.html">Fotogalerie</a></p>
             </div>
             <div>
                 <h4>Kontakt</h4>
                 <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
-            </div>
-            <div>
-                <h4>Sociální sítě</h4>
-                <p><a href="https://instagram.com/stelliragdoll" target="_blank">Instagram</a></p>
+                <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
+                <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 StElli Ragdoll</p>
+            <p>&copy; 2026 StElli Ragdoll. Všechna práva vyhrazena.</p>
         </div>
     </footer>
 
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Zavřít">✕</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Předchozí">‹</button>
+        <button class="lightbox-nav lightbox-next" aria-label="Další">›</button>
+        <div class="lightbox-content"><img src="" alt=""></div>
+        <span class="lightbox-counter"></span>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">↑</button>
     <script src="script.js"></script>
 </body>
 </html>

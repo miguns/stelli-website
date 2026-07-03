@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informace ke koupi - StElli</title>
+    <title>Informace ke koupi | StElli Ragdoll</title>
+    <meta name="description" content="Co dostane vaše koťátko, jak probíhá rezervace a kdy koťátko odchází do nového domova. Vše, co potřebujete vědět před koupí koťátka Ragdoll.">
+    <link rel="canonical" href="https://www.stelliragdoll.cz/informace-ke-koupi.html">
+    <meta property="og:title" content="Informace ke koupi | StElli Ragdoll">
+    <meta property="og:description" content="Proces rezervace, výbavička a časté dotazy ke koupi koťátka Ragdoll.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/favicon-180.png">
 </head>
 <body>
+    <a href="#main" class="skip-link">Přeskočit na obsah</a>
+    <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo">🐱 StElli</a>
-                <div class="nav-toggle" id="navToggle">☰</div>
+                <a href="index.html" class="logo"><img src="images/logo-icon.png" alt="StElli Ragdoll" class="logo-img"> StElli</a>
+                <div class="nav-toggle" id="navToggle" aria-label="Otevřít menu"><span></span><span></span><span></span></div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Úvod</a></li>
                     <li><a href="o-nas.html">O nás</a></li>
@@ -19,70 +32,183 @@
                     <li><a href="kotatka.html">Koťátka</a></li>
                     <li><a href="informace-ke-koupi.html">Koupi</a></li>
                     <li><a href="tym.html">Tým</a></li>
-                    <li><a href="kontakty.html">Kontakty</a></li>
+                    <li><a href="fotogalerie.html">Fotogalerie</a></li>
+                    <li><a href="kontakty.html" class="nav-cta">Kontakty</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="section container">
-            <h2>Informace ke koupi</h2>
-            
-            <h3 style="color: var(--primary); margin-top: 2rem;">Co dostane vaše koťátko?</h3>
-            <ul style="margin: 1rem 0; margin-left: 2rem;">
-                <li>✅ Koťátka na mazlíčka jsou 2x naočkovaná</li>
-                <li>✅ Odčervená</li>
-                <li>✅ Identifikační čip a pas</li>
-                <li>✅ Kastrovaná</li>
-                <li>✅ Registrovaná s rodokmenem</li>
-            </ul>
+    <main id="main">
+        <section class="page-hero">
+            <div class="hero-blob b1"></div>
+            <div class="hero-blob b2"></div>
+            <h1>Informace ke koupi</h1>
+            <p>Vše, co potřebujete vědět, než si domů přivedete koťátko Ragdoll.</p>
+        </section>
 
-            <h3 style="color: var(--primary); margin-top: 2rem;">Výbavička</h3>
-            <p>Každé koťátko dostane stravu, kterou je zvyklé, a několik hraček.</p>
+        <section class="section">
+            <div class="container">
+                <div class="photo-thumb reveal-scale" style="aspect-ratio:16/10; max-width:640px; margin:0 auto 3rem;" data-lightbox data-gallery="koupi" data-src="images/misc/koupi-header.jpg">
+                    <img src="images/misc/koupi-header.jpg" alt="Koťátko Ragdoll v novém domově s rodinou" loading="lazy">
+                </div>
+                <div class="section-header reveal">
+                    <span class="section-label">Co dostanete</span>
+                    <h2>Co dostane vaše koťátko?</h2>
+                </div>
+                <ul class="checklist stagger" style="max-width:640px; margin-left:auto; margin-right:auto;">
+                    <li class="reveal" style="--i:0"><span class="check-icon">✓</span> Koťátka na mazlíčka jsou 2× naočkovaná</li>
+                    <li class="reveal" style="--i:1"><span class="check-icon">✓</span> Odčervená</li>
+                    <li class="reveal" style="--i:2"><span class="check-icon">✓</span> Identifikační čip a pas</li>
+                    <li class="reveal" style="--i:3"><span class="check-icon">✓</span> Kastrovaná</li>
+                    <li class="reveal" style="--i:4"><span class="check-icon">✓</span> Registrovaná s rodokmenem</li>
+                </ul>
+            </div>
+        </section>
 
-            <h3 style="color: var(--primary); margin-top: 2rem;">Kdy může koťátko odejít?</h3>
-            <p>Koťátka odcházejí ve 14 týdnech věku.</p>
+        <section class="section bg-soft">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Jak to probíhá</span>
+                    <h2>Cesta k vašemu koťátku</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-step reveal-left">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h3>Kontakt a seznámení</h3>
+                            <p>Napíšete nám přes formulář nebo e-mail, probereme vaše přání a dostupnost koťátek.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:1">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h3>Rezervace</h3>
+                            <p>Vybrané koťátko si rezervujete zálohou. Domluvíme si i termín návštěvy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:2">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h3>Výbavička na cestu</h3>
+                            <p>Každé koťátko dostane stravu, na kterou je zvyklé, a několik oblíbených hraček.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:3">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h3>Odchod do nového domova</h3>
+                            <p>Koťátka odcházejí ve 14 týdnech věku — plně socializovaná a připravená na nový domov.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <h3 style="color: var(--primary); margin-top: 2rem;">Máte zájem?</h3>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Jméno</label>
-                    <input type="text" id="name" name="name" required>
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Časté dotazy</span>
+                    <h2>Máte otázku?</h2>
                 </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="accordion" style="max-width:760px; margin:0 auto;">
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Kdy si mohu koťátko rezervovat?<span class="plus">+</span></button>
+                        <div class="accordion-panel"><div class="accordion-panel-inner">Koťátka je možné rezervovat již od útlého věku, jakmile je zřejmé pohlaví a zbarvení. Doporučujeme kontaktovat nás co nejdříve po zveřejnění vrhu.</div></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Jak vysoká je záloha a co zahrnuje?<span class="plus">+</span></button>
+                        <div class="accordion-panel"><div class="accordion-panel-inner">Výši zálohy a celkovou cenu koťátka probereme individuálně podle vrhu a zbarvení — napište nám přes kontaktní formulář.</div></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Můžu koťátko vidět osobně před odběrem?<span class="plus">+</span></button>
+                        <div class="accordion-panel"><div class="accordion-panel-inner">Ano, ráda si s vámi domluvím termín návštěvy u nás doma, kde koťátka vyrůstají.</div></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Je koťátko při odchodu očkované a odčervené?<span class="plus">+</span></button>
+                        <div class="accordion-panel"><div class="accordion-panel-inner">Ano, každé koťátko je 2× naočkované, odčervené, má identifikační čip, pas a je kastrované.</div></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger">Poskytujete podporu i po odchodu koťátka?<span class="plus">+</span></button>
+                        <div class="accordion-panel"><div class="accordion-panel-inner">Samozřejmě. Jsme vám k dispozici s radou ohledně výživy, péče i chování i po celou dobu, kdy máte naše koťátko doma.</div></div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Zpráva</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+        </section>
+
+        <section class="section bg-soft">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Máte zájem?</span>
+                    <h2>Napište nám</h2>
                 </div>
-                <button type="submit" class="btn-primary">Odeslat</button>
-            </form>
+                <form class="contact-form reveal-scale">
+                    <div class="form-group">
+                        <label for="name">Jméno</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="form-error">Vyplňte prosím své jméno.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="form-error">Zadejte platný e-mail.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Zpráva</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <span class="form-error">Napište nám prosím pár slov.</span>
+                    </div>
+                    <button type="submit" class="btn-primary-form">Odeslat</button>
+                </form>
+                <div class="form-success">
+                    <div class="icon">🎉</div>
+                    <h3>Děkujeme za zprávu!</h3>
+                    <p>Brzy se vám ozveme zpět.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <h4>StElli Ragdoll</h4>
+                <img src="images/logo.png" alt="StElli Ragdoll logo" class="footer-logo-img">
                 <p>Malobratřice, Středočeský kraj</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/misc/icon-instagram.png" alt="" class="social-icon-img"></a>
+                    <a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/misc/icon-facebook.png" alt="" class="social-icon-img"></a>
+                    <a href="mailto:stellicattery@gmail.com" aria-label="E-mail">✉️</a>
+                </div>
+            </div>
+            <div>
+                <h4>Navigace</h4>
+                <p><a href="o-nas.html">O nás</a></p>
+                <p><a href="kotatka.html">Koťátka</a></p>
+                <p><a href="informace-ke-koupi.html">Informace ke koupi</a></p>
+                <p><a href="tym.html">Tým</a></p>
+                <p><a href="fotogalerie.html">Fotogalerie</a></p>
             </div>
             <div>
                 <h4>Kontakt</h4>
                 <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
-            </div>
-            <div>
-                <h4>Sociální sítě</h4>
-                <p><a href="https://instagram.com/stelliragdoll" target="_blank">Instagram</a></p>
+                <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
+                <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 StElli Ragdoll</p>
+            <p>&copy; 2026 StElli Ragdoll. Všechna práva vyhrazena.</p>
         </div>
     </footer>
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Zavřít">✕</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Předchozí">‹</button>
+        <button class="lightbox-nav lightbox-next" aria-label="Další">›</button>
+        <div class="lightbox-content"><img src="" alt=""></div>
+        <span class="lightbox-counter"></span>
+    </div>
 
+
+    <button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">↑</button>
     <script src="script.js"></script>
 </body>
 </html>

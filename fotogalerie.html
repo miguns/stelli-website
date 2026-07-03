@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naše práce | StElli Ragdoll</title>
-    <meta name="description" content="Genetické testy, vzdělání v chovu a domácí socializace — takto pečujeme o naše chovné kočky a koťátka Ragdoll v CHS StElli.">
-    <link rel="canonical" href="https://www.stelliragdoll.cz/nase-prace.html">
-    <meta property="og:title" content="Naše práce | StElli Ragdoll">
-    <meta property="og:description" content="Jak konkrétně pečujeme o zdraví, vzdělání a socializaci v chovu StElli.">
+    <title>Fotogalerie | StElli Ragdoll</title>
+    <meta name="description" content="Nahlédněte do života chovatelské stanice StElli — fotky našich koček a koťátek Ragdoll z domácího prostředí.">
+    <link rel="canonical" href="https://www.stelliragdoll.cz/fotogalerie.html">
+    <meta property="og:title" content="Fotogalerie | StElli Ragdoll">
+    <meta property="og:description" content="Fotky ze života chovatelské stanice StElli Ragdoll.">
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,77 +43,36 @@
         <section class="page-hero">
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
-            <h1>Naše práce</h1>
-            <p>Vzdělání, zdravotní testy a socializace — tři pilíře, na kterých stavíme celý chov.</p>
+            <h1>Fotogalerie</h1>
+            <p>Nahlédněte k nám domů — do každodenního života koček a koťátek StElli.</p>
         </section>
 
         <section class="section">
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:21/9; max-width:900px; margin:0 auto 3rem;" data-lightbox data-gallery="prace" data-src="images/misc/prace-header.jpg">
-                    <img src="images/misc/prace-header.jpg" alt="Socializace koťátek StElli" loading="lazy">
-                </div>
-                <div class="timeline">
-                    <div class="timeline-step reveal-left">
-                        <div class="step-num">01</div>
-                        <div class="step-content" style="display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap;">
-                            <div>
-                                <h3>🎓 Vzdělání</h3>
-                                <p>V roce 2025 jsem absolvovala kurz genetiky koček v Campus Felinarium — sedmitýdenní program zaměřený na genetiku, zdraví a odpovědný chov.</p>
-                            </div>
-                            <img src="images/misc/genetics-badge.png" alt="Certifikát Campus Felinarium" style="width:100px; height:auto; flex-shrink:0;" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="timeline-step reveal-left" style="--i:1">
-                        <div class="step-num">02</div>
-                        <div class="step-content">
-                            <h3>🩺 Zdravotní testy</h3>
-                            <p>Všichni naši chovní jedinci jsou testováni na HCM, PKD, FeLV a FIV. Všechny výsledky jsou negativní.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-step reveal-left" style="--i:2">
-                        <div class="step-num">03</div>
-                        <div class="step-content">
-                            <h3>🧸 Socializace</h3>
-                            <p>Koťátka vyrůstají v našem domácím prostředí s dětmi, jsou zvyklá na ruce a veškerý domácí provoz.</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="photo-grid stagger" id="galleryGrid"></div>
             </div>
         </section>
+
+        <script>
+            (function () {
+                const grid = document.getElementById('galleryGrid');
+                let html = '';
+                for (let i = 1; i <= 28; i++) {
+                    const n = String(i).padStart(2, '0');
+                    const src = 'images/gallery/' + n + '.jpg';
+                    html += '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="gallery" data-src="' + src + '">' +
+                        '<img src="' + src + '" alt="StElli Ragdoll – fotka ze života chovatelské stanice ' + i + '" loading="lazy"></div>';
+                }
+                grid.innerHTML = html;
+            })();
+        </script>
 
         <section class="section bg-soft">
             <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Proč na tom záleží</span>
-                    <h2>Zdravé rodiče, vyrovnaná koťátka</h2>
-                    <p>Investice do genetiky a socializace se promítá do každého koťátka, které od nás odchází do nového domova.</p>
-                </div>
-                <div class="grid grid-3 stagger">
-                    <div class="card reveal-scale" style="--i:0">
-                        <div class="card-icon">🧬</div>
-                        <h3>HCM & PKD testy</h3>
-                        <p>Prevence srdečních a ledvinných onemocnění u obou rodičů před každým vrhem.</p>
-                    </div>
-                    <div class="card reveal-scale" style="--i:1">
-                        <div class="card-icon">🦠</div>
-                        <h3>FeLV & FIV testy</h3>
-                        <p>Vyloučení virových onemocnění pro bezpečí celého chovu i nových majitelů.</p>
-                    </div>
-                    <div class="card reveal-scale" style="--i:2">
-                        <div class="card-icon">👨‍👩‍👧</div>
-                        <h3>Socializace s dětmi</h3>
-                        <p>Koťátka běžně potkávají děti, zvuky domácnosti i návštěvy — nic je nepřekvapí.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
                 <div class="cta-banner reveal-scale">
-                    <h2>Chcete poznat naše chovné kočky?</h2>
-                    <p>Podívejte se na profily našich dam a pánů.</p>
-                    <a href="tym.html" class="btn btn-solid">Náš tým koček</a>
+                    <h2>Chcete vidět víc?</h2>
+                    <p>Sledujte nás na sociálních sítích, kde přidáváme nové fotky pravidelně.</p>
+                    <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" class="btn btn-solid">Instagram @stelliragdoll</a>
                 </div>
             </div>
         </section>
@@ -149,6 +108,7 @@
             <p>&copy; 2026 StElli Ragdoll. Všechna práva vyhrazena.</p>
         </div>
     </footer>
+
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" aria-label="Zavřít">✕</button>
         <button class="lightbox-nav lightbox-prev" aria-label="Předchozí">‹</button>
@@ -156,7 +116,6 @@
         <div class="lightbox-content"><img src="" alt=""></div>
         <span class="lightbox-counter"></span>
     </div>
-
 
     <button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">↑</button>
     <script src="script.js"></script>
