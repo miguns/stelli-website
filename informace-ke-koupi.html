@@ -16,6 +16,84 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
     <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://www.stelliragdoll.cz/#business",
+                "name": "StElli Ragdoll",
+                "url": "https://www.stelliragdoll.cz/",
+                "logo": "https://www.stelliragdoll.cz/images/logo.png",
+                "email": "stellicattery@gmail.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Malobratřice",
+                    "addressRegion": "Středočeský kraj",
+                    "addressCountry": "CZ"
+                },
+                "sameAs": [
+                    "https://instagram.com/stelliragdoll",
+                    "https://facebook.com/share/1EPS2RcJm5"
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://www.stelliragdoll.cz/index.html" },
+                    { "@type": "ListItem", "position": 2, "name": "Informace ke koupi", "item": "https://www.stelliragdoll.cz/informace-ke-koupi.html" }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Kdy si mohu koťátko rezervovat?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Koťátka je možné rezervovat již od útlého věku, jakmile je zřejmé pohlaví a zbarvení. Doporučujeme kontaktovat nás co nejdříve po zveřejnění vrhu."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Jak vysoká je záloha a co zahrnuje?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Výši zálohy a celkovou cenu koťátka probereme individuálně podle vrhu a zbarvení — napište nám přes kontaktní formulář."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Můžu koťátko vidět osobně před odběrem?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ano, ráda si s vámi domluvím termín návštěvy u nás doma, kde koťátka vyrůstají."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Je koťátko při odchodu očkované a odčervené?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ano, každé koťátko je 2× naočkované, odčervené, má identifikační čip, pas a je kastrované."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Poskytujete podporu i po odchodu koťátka?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Samozřejmě. Jsme vám k dispozici s radou ohledně výživy, péče i chování i po celou dobu, kdy máte naše koťátko doma."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <a href="#main" class="skip-link">Přeskočit na obsah</a>
@@ -143,6 +221,7 @@
                     <h2>Napište nám</h2>
                 </div>
                 <form class="contact-form reveal-scale">
+                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="form-group">
                         <label for="name">Jméno</label>
                         <input type="text" id="name" name="name" required>

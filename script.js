@@ -172,10 +172,15 @@ if (lightbox) {
 }
 
 // ==========================================================================
-// Contact form validation + fake submit feedback
+// Contact form validation + real submission via Web3Forms
 // ==========================================================================
+// Access key from https://web3forms.com — messages are delivered to the
+// e-mail registered with this key. Replace the placeholder below with the
+// real key to activate delivery.
+const WEB3FORMS_ACCESS_KEY = '275794e8-10a5-4489-b56a-64955e22f020';
+
 document.querySelectorAll('.contact-form').forEach(form => {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
         let valid = true;
 
@@ -196,18 +201,51 @@ document.querySelectorAll('.contact-form').forEach(form => {
         button.disabled = true;
         button.textContent = 'Odesílám...';
 
-        setTimeout(() => {
-            const success = this.parentElement.querySelector('.form-success') || this.nextElementSibling;
-            this.style.display = 'none';
+        function showSuccess() {
+            const success = form.parentElement.querySelector('.form-success') || form.nextElementSibling;
+            form.style.display = 'none';
             if (success && success.classList.contains('form-success')) {
                 success.classList.add('show');
             } else {
                 alert('Děkujeme za vaši zprávu! Brzy se vám ozveme.');
             }
+            form.reset();
+        }
+
+        function showError() {
             button.disabled = false;
             button.textContent = originalText;
-            this.reset();
-        }, 900);
+            alert('Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nám napište přímo na stellicattery@gmail.com.');
+        }
+
+        // If the access key hasn't been configured yet, fall back to the
+        // local success animation so the site still behaves gracefully.
+        if (!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+            setTimeout(() => { showSuccess(); button.disabled = false; button.textContent = originalText; }, 700);
+            return;
+        }
+
+        try {
+            const formData = new FormData(form);
+            formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+            formData.append('subject', 'Nová zpráva z webu StElli Ragdoll');
+            formData.append('from_name', 'StElli Ragdoll web');
+
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                showSuccess();
+            } else {
+                showError();
+            }
+        } catch (err) {
+            showError();
+        }
     });
 
     form.querySelectorAll('input, textarea').forEach(field => {

@@ -759,6 +759,9 @@ header.is-scrolled .navbar { padding: 0.7rem 0; }
 }
 .contact-form.wide { max-width: 100%; }
 
+/* Honeypot spam trap — hidden from users, only bots fill it in */
+.hp-field { display: none !important; }
+
 .form-group { margin-bottom: 1.4rem; position: relative; }
 
 .form-group label {
