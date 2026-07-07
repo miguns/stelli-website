@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | StElli Ragdoll</title>
+    <meta name="description" content="Zajrzyj do życia hodowli StElli — zdjęcia naszych kotów i kociąt Ragdoll z domowego otoczenia.">
+    <link rel="canonical" href="https://www.stelliragdoll.cz/pl/fotogalerie.html">
+    <meta property="og:title" content="Galeria | StElli Ragdoll">
+    <meta property="og:description" content="Zdjęcia z życia hodowli StElli Ragdoll.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="apple-touch-icon" href="../images/favicon-180.png">
+    <link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/pl/fotogalerie.html">
+    <link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/fotogalerie.html">
+    <link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/fotogalerie.html">
+    <link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/fotogalerie.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/fotogalerie.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://www.stelliragdoll.cz/#business",
+                "name": "StElli Ragdoll",
+                "url": "https://www.stelliragdoll.cz/",
+                "logo": "https://www.stelliragdoll.cz/images/logo.png",
+                "email": "stellicattery@gmail.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Malobratřice",
+                    "addressRegion": "Středočeský kraj",
+                    "addressCountry": "CZ"
+                },
+                "sameAs": [
+                    "https://instagram.com/stelliragdoll",
+                    "https://facebook.com/share/1EPS2RcJm5"
+                ]
+            },
+            {
+                "@type": "ImageGallery",
+                "name": "Fotogalerie StElli Ragdoll",
+                "description": "Zdjęcia z życia hodowli StElli Ragdoll.",
+                "url": "https://www.stelliragdoll.cz/pl/fotogalerie.html"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://www.stelliragdoll.cz/pl/index.html" },
+                    { "@type": "ListItem", "position": 2, "name": "Fotogalerie", "item": "https://www.stelliragdoll.cz/pl/fotogalerie.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Przejdź do treści</a>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><img src="../images/logo-icon.png" alt="StElli Ragdoll" class="logo-img"> StElli</a>
+                <div class="nav-toggle" id="navToggle" aria-label="Otwórz menu"><span></span><span></span><span></span></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="o-nas.html">O nas</a></li>
+                    <li><a href="nase-prace.html">Nasza praca</a></li>
+                    <li><a href="kotatka.html">Kocięta</a></li>
+                    <li><a href="informace-ke-koupi.html">Zakup</a></li>
+                    <li><a href="tym.html">Zespół</a></li>
+                    <li><a href="fotogalerie.html">Galeria</a></li>
+                    <li><a href="kontakty.html" class="nav-cta">Kontakt</a></li>
+                    <li class="lang-item"><span class="lang-links"><a class="lang-link" href="../fotogalerie.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="../en/fotogalerie.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="../de/fotogalerie.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link active" href="../pl/fotogalerie.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="hero-blob b1"></div>
+            <div class="hero-blob b2"></div>
+            <h1>Galeria</h1>
+            <p>Zajrzyj do naszego domu — codziennego życia kotów i kociąt StElli.</p>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="photo-grid stagger" id="galleryGrid"></div>
+            </div>
+        </section>
+
+        <script>
+            (function () {
+                const grid = document.getElementById('galleryGrid');
+                let html = '';
+                for (let i = 1; i <= 28; i++) {
+                    const n = String(i).padStart(2, '0');
+                    const src = '../images/gallery/' + n + '.jpg';
+                    html += '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="gallery" data-src="' + src + '">' +
+                        '<img src="' + src + '" alt="StElli Ragdoll – zdjęcie z życia hodowli ' + i + '" loading="lazy"></div>';
+                }
+                grid.innerHTML = html;
+            })();
+        </script>
+
+        <section class="section bg-soft">
+            <div class="container">
+                <div class="cta-banner reveal-scale">
+                    <h2>Chcesz zobaczyć więcej?</h2>
+                    <p>Obserwuj nas w mediach społecznościowych, gdzie regularnie dodajemy nowe zdjęcia.</p>
+                    <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" class="btn btn-solid">Instagram @stelliragdoll</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <img src="../images/logo.png" alt="Logo StElli Ragdoll" class="footer-logo-img">
+                <p>Malobratřice, kraj środkowoczeski, Czechy</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><img src="../images/misc/icon-instagram.png" alt="" class="social-icon-img"></a>
+                    <a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener" aria-label="Facebook"><img src="../images/misc/icon-facebook.png" alt="" class="social-icon-img"></a>
+                    <a href="mailto:stellicattery@gmail.com" aria-label="E-mail">✉️</a>
+                </div>
+            </div>
+            <div>
+                <h4>Nawigacja</h4>
+                <p><a href="o-nas.html">O nas</a></p>
+                <p><a href="kotatka.html">Kocięta</a></p>
+                <p><a href="informace-ke-koupi.html">Informacje o zakupie</a></p>
+                <p><a href="tym.html">Zespół</a></p>
+                <p><a href="fotogalerie.html">Galeria</a></p>
+            </div>
+            <div>
+                <h4>Kontakt</h4>
+                <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
+                <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
+                <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 StElli Ragdoll. Wszelkie prawa zastrzeżone.</p>
+            <p class="footer-note">Używamy anonimowego wykrywania kraju na podstawie adresu IP, aby automatycznie zaproponować odpowiedni język.</p>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Zamknij">✕</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Poprzednie">‹</button>
+        <button class="lightbox-nav lightbox-next" aria-label="Następne">›</button>
+        <div class="lightbox-content"><img src="" alt=""></div>
+        <span class="lightbox-counter"></span>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Do góry">↑</button>
+    <script src="../script.js"></script>
+</body>
+</html>

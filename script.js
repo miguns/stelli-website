@@ -1,4 +1,82 @@
 // ==========================================================================
+// Language: remember manual choice + auto-route by country on first visit
+// ==========================================================================
+(function i18n() {
+    const LANGS = [
+        { code: 'cs', dir: '' },
+        { code: 'en', dir: 'en/' },
+        { code: 'de', dir: 'de/' },
+        { code: 'pl', dir: 'pl/' }
+    ];
+
+    function currentInfo() {
+        const path = location.pathname;
+        const m = path.match(/\/(en|de|pl)\//);
+        const code = m ? m[1] : 'cs';
+        let file = path.substring(path.lastIndexOf('/') + 1);
+        if (!file) file = 'index.html';
+        return { code, file };
+    }
+
+    function urlForLang(code) {
+        const cur = currentInfo();
+        const target = LANGS.find(l => l.code === code);
+        if (!target) return null;
+        const up = cur.code === 'cs' ? '' : '../';
+        return up + target.dir + cur.file;
+    }
+
+    const ls = {
+        get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+        set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+    };
+    const ss = {
+        get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+        set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+    };
+
+    // Remember the language when a flag is clicked
+    document.querySelectorAll('.lang-link[hreflang]').forEach(a => {
+        a.addEventListener('click', () => ls.set('stelli_lang', a.getAttribute('hreflang')));
+    });
+
+    // Only auto-route from the Czech root; language folders are sticky
+    const info = currentInfo();
+    if (info.code !== 'cs') return;
+    if (ss.get('stelli_autorouted')) return;
+    ss.set('stelli_autorouted', '1');
+
+    function goTo(code) {
+        if (code === 'cs') return;
+        const url = urlForLang(code);
+        if (url) location.replace(url);
+    }
+
+    const saved = ls.get('stelli_lang');
+    if (saved) { goTo(saved); return; }
+
+    function fromCountry(cc) {
+        cc = (cc || '').trim().toUpperCase();
+        if (cc === 'CZ') return 'cs';
+        if (cc === 'DE' || cc === 'AT' || cc === 'LI') return 'de';
+        if (cc === 'PL') return 'pl';
+        return 'en';
+    }
+    function fromBrowser() {
+        const l = (navigator.language || 'en').toLowerCase();
+        if (l.startsWith('cs')) return 'cs';
+        if (l.startsWith('de')) return 'de';
+        if (l.startsWith('pl')) return 'pl';
+        return 'en';
+    }
+
+    fetch('https://ipapi.co/country/', { cache: 'no-store' })
+        .then(r => r.ok ? r.text() : Promise.reject())
+        .then(cc => goTo(fromCountry(cc)))
+        .catch(() => goTo(fromBrowser()));
+})();
+
+// ==========================================================================
 // Mobile navigation
 // ==========================================================================
 const navToggle = document.getElementById('navToggle');

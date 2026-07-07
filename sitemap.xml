@@ -1,35 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://www.stelliragdoll.cz/index.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/index.html"/>
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://www.stelliragdoll.cz/en/index.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/index.html"/>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/index.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/index.html"/>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/index.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/index.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/index.html"/>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/kotatka.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/en/kotatka.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/kotatka.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/kotatka.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kotatka.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kotatka.html"/>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://www.stelliragdoll.cz/o-nas.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/en/o-nas.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/o-nas.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/o-nas.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/o-nas.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/o-nas.html"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/informace-ke-koupi.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/en/informace-ke-koupi.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/informace-ke-koupi.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/informace-ke-koupi.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/informace-ke-koupi.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/informace-ke-koupi.html"/>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.stelliragdoll.cz/nase-prace.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.stelliragdoll.cz/kotatka.html</loc>
-        <priority>0.9</priority>
+        <loc>https://www.stelliragdoll.cz/en/nase-prace.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.stelliragdoll.cz/informace-ke-koupi.html</loc>
-        <priority>0.8</priority>
+        <loc>https://www.stelliragdoll.cz/de/nase-prace.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/nase-prace.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/nase-prace.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/nase-prace.html"/>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/kontakty.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/en/kontakty.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/kontakty.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/kontakty.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/kontakty.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.stelliragdoll.cz/tym.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/tym.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/en/tym.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/tym.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/tym.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/tym.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/tym.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/tym.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/tym.html"/>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://www.stelliragdoll.cz/fotogalerie.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.stelliragdoll.cz/kontakty.html</loc>
-        <priority>0.7</priority>
+        <loc>https://www.stelliragdoll.cz/en/fotogalerie.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/fotogalerie.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/fotogalerie.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/fotogalerie.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/fotogalerie.html"/>
+        <priority>0.6</priority>
     </url>
 </urlset>
