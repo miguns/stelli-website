@@ -66,6 +66,7 @@ body.is-leaving {
 }
 
 img { max-width: 100%; display: block; }
+picture { display: contents; }
 
 a { color: inherit; }
 
