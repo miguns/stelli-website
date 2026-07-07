@@ -1,0 +1,42 @@
+name: Auto-translate CMS content
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/news.json"
+      - "data/litters.json"
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    # Prevent the bot's own commit from re-triggering this workflow.
+    if: "!contains(github.event.head_commit.message, '[skip translate]')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fill in missing translations
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: node scripts/auto-translate.js
+
+      - name: Commit translated content
+        run: |
+          git config user.name "stelli-translate-bot"
+          git config user.email "actions@github.com"
+          git add data/news.json data/litters.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-translate missing CMS content [skip translate]"
+            git push
+          else
+            echo "Nothing to translate — no commit needed."
+          fi
