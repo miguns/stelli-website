@@ -119,26 +119,32 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 // ==========================================================================
-// Scroll reveal (IntersectionObserver)
+// Scroll reveal (IntersectionObserver). Re-runnable so CMS-driven content
+// rendered later (content.js) also gets the reveal treatment.
 // ==========================================================================
-const revealTargets = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
-if ('IntersectionObserver' in window && revealTargets.length) {
-    const revealObserver = new IntersectionObserver((entries) => {
+const revealObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
+    : null;
 
-    revealTargets.forEach((el, i) => {
+function initRevealObservers() {
+    const targets = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+    targets.forEach((el, i) => {
+        if (el.dataset.revealBound) return;
+        el.dataset.revealBound = '1';
         el.style.setProperty('--i', el.dataset.i || (i % 6));
-        revealObserver.observe(el);
+        if (revealObserver) revealObserver.observe(el);
+        else el.classList.add('is-visible');
     });
-} else {
-    revealTargets.forEach(el => el.classList.add('is-visible'));
 }
+window.initRevealObservers = initRevealObservers;
+initRevealObservers();
 
 // ==========================================================================
 // Animated counters (stat numbers with data-count)
@@ -197,44 +203,54 @@ document.querySelectorAll('.accordion-item').forEach(item => {
 });
 
 // ==========================================================================
-// Lightbox — real photo grids with prev/next navigation per gallery group
+// Lightbox — real photo grids with prev/next navigation per gallery group.
+// Bindings are re-initializable so CMS-driven content rendered later
+// (content.js) can join the lightbox too.
 // ==========================================================================
 const lightbox = document.getElementById('lightbox');
-if (lightbox) {
-    const lightboxImg = lightbox.querySelector('.lightbox-content img');
-    const counter = lightbox.querySelector('.lightbox-counter');
-    const galleries = {};
+const lightboxImg = lightbox?.querySelector('.lightbox-content img');
+const lightboxCounter = lightbox?.querySelector('.lightbox-counter');
+let lbGalleries = {};
+let lbGroup = null;
+let lbIndex = 0;
 
+function lbOpenAt(group, index) {
+    const items = lbGalleries[group];
+    if (!items || !items.length) return;
+    lbGroup = group;
+    lbIndex = (index + items.length) % items.length;
+    const trigger = items[lbIndex];
+    const src = trigger.dataset.src || trigger.querySelector('img')?.src;
+    const alt = trigger.querySelector('img')?.alt || '';
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    if (lightboxCounter) lightboxCounter.textContent = items.length > 1 ? (lbIndex + 1) + ' / ' + items.length : '';
+    lightbox.classList.add('active');
+}
+
+function initLightboxBindings() {
+    if (!lightbox) return;
+    lbGalleries = {};
     document.querySelectorAll('[data-lightbox]').forEach(trigger => {
         const group = trigger.dataset.gallery || 'default';
-        if (!galleries[group]) galleries[group] = [];
-        galleries[group].push(trigger);
+        if (!lbGalleries[group]) lbGalleries[group] = [];
+        lbGalleries[group].push(trigger);
+        if (!trigger.dataset.lbBound) {
+            trigger.dataset.lbBound = '1';
+            trigger.addEventListener('click', () => {
+                const g = trigger.dataset.gallery || 'default';
+                lbOpenAt(g, lbGalleries[g].indexOf(trigger));
+            });
+        }
     });
+}
+window.initLightboxBindings = initLightboxBindings;
 
-    let activeGroup = null;
-    let activeIndex = 0;
+if (lightbox) {
+    initLightboxBindings();
 
-    function openAt(group, index) {
-        activeGroup = group;
-        activeIndex = (index + galleries[group].length) % galleries[group].length;
-        const trigger = galleries[group][activeIndex];
-        const src = trigger.dataset.src || trigger.querySelector('img')?.src;
-        const alt = trigger.querySelector('img')?.alt || '';
-        lightboxImg.src = src;
-        lightboxImg.alt = alt;
-        if (counter) counter.textContent = galleries[group].length > 1 ? (activeIndex + 1) + ' / ' + galleries[group].length : '';
-        lightbox.classList.add('active');
-    }
-
-    document.querySelectorAll('[data-lightbox]').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const group = trigger.dataset.gallery || 'default';
-            openAt(group, galleries[group].indexOf(trigger));
-        });
-    });
-
-    lightbox.querySelector('.lightbox-prev')?.addEventListener('click', () => openAt(activeGroup, activeIndex - 1));
-    lightbox.querySelector('.lightbox-next')?.addEventListener('click', () => openAt(activeGroup, activeIndex + 1));
+    lightbox.querySelector('.lightbox-prev')?.addEventListener('click', () => lbOpenAt(lbGroup, lbIndex - 1));
+    lightbox.querySelector('.lightbox-next')?.addEventListener('click', () => lbOpenAt(lbGroup, lbIndex + 1));
 
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox || e.target.closest('.lightbox-close')) {
@@ -244,8 +260,8 @@ if (lightbox) {
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
         if (e.key === 'Escape') lightbox.classList.remove('active');
-        if (e.key === 'ArrowRight') openAt(activeGroup, activeIndex + 1);
-        if (e.key === 'ArrowLeft') openAt(activeGroup, activeIndex - 1);
+        if (e.key === 'ArrowRight') lbOpenAt(lbGroup, lbIndex + 1);
+        if (e.key === 'ArrowLeft') lbOpenAt(lbGroup, lbIndex - 1);
     });
 }
 

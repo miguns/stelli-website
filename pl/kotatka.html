@@ -86,55 +86,7 @@
             <p>Aktualne i minione mioty — wybierz według dostępności.</p>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="status-badge home" style="position:static; display:inline-flex;">W nowych domach</span>
-                    <h2 style="margin-top:1rem;">Miot A</h2>
-                    <p>Blue bicolor i blue mitted. Kocięta odeszły już do nowych domów.</p>
-                </div>
-                <div class="photo-grid stagger" id="vrhAGrid"></div>
-            </div>
-        </section>
-
-        <section class="section bg-soft">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="status-badge reserved" style="position:static; display:inline-flex;">Wszystkie zarezerwowane</span>
-                    <h2 style="margin-top:1rem;">Miot B</h2>
-                    <p>Blue bicolor i seal bicolor. Wszystkie kocięta są obecnie zarezerwowane.</p>
-                </div>
-                <div class="photo-grid stagger" id="vrhBGrid"></div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="cta-banner reveal-scale">
-                    <h2>Miot C — w przygotowaniu</h2>
-                    <p>Nowy miot planujemy na początek lata. Zainteresowani mogą zgłaszać się już teraz przez formularz poniżej.</p>
-                </div>
-            </div>
-        </section>
-
-        <script>
-            (function () {
-                function buildGrid(elId, folder, count, altPrefix) {
-                    const grid = document.getElementById(elId);
-                    if (!grid) return;
-                    let html = '';
-                    for (let i = 1; i <= count; i++) {
-                        const n = String(i).padStart(2, '0');
-                        const src = '../images/kittens/' + folder + '/' + n + '.jpg';
-                        html += '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="' + folder + '" data-src="' + src + '">' +
-                            '<picture><source srcset="' + src.replace('.jpg', '.webp') + '" type="image/webp"><img src="' + src + '" alt="' + altPrefix + ' – foto ' + i + '" loading="lazy"></picture></div>';
-                    }
-                    grid.innerHTML = html;
-                }
-                buildGrid('vrhAGrid', 'vrh-a', 19, 'Kocię z miotu A');
-                buildGrid('vrhBGrid', 'vrh-b', 20, 'Kocię z miotu B');
-            })();
-        </script>
+        <div id="littersContainer"></div>
 
         <section class="section bg-soft">
             <div class="container">
@@ -222,5 +174,6 @@
 
     <button class="back-to-top" id="backToTop" aria-label="Do góry">↑</button>
     <script src="../script.js"></script>
+    <script src="../content.js"></script>
 </body>
 </html>

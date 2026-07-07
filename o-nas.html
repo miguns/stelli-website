@@ -138,20 +138,6 @@
             </div>
         </section>
 
-        <script>
-            (function () {
-                const grid = document.getElementById('onasGrid');
-                let html = '';
-                for (let i = 1; i <= 8; i++) {
-                    const n = String(i).padStart(2, '0');
-                    const src = 'images/onas/' + n + '.jpg';
-                    html += '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="onas-life" data-src="' + src + '">' +
-                        '<picture><source srcset="' + src.replace('.jpg', '.webp') + '" type="image/webp"><img src="' + src + '" alt="Život v CHS StElli ' + i + '" loading="lazy"></picture></div>';
-                }
-                grid.innerHTML = html;
-            })();
-        </script>
-
         <section class="section bg-soft">
             <div class="container">
                 <div class="cta-banner reveal-scale">
@@ -205,5 +191,6 @@
 
     <button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">↑</button>
     <script src="script.js"></script>
+    <script src="content.js"></script>
 </body>
 </html>

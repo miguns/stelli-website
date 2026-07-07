@@ -86,55 +86,7 @@
             <p>Aktuální i proběhlé vrhy — vyberte si podle dostupnosti.</p>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="status-badge home" style="position:static; display:inline-flex;">V nových domovech</span>
-                    <h2 style="margin-top:1rem;">Vrh A</h2>
-                    <p>Blue bicolor a blue mitted. Koťátka již odešla do nových domovů.</p>
-                </div>
-                <div class="photo-grid stagger" id="vrhAGrid"></div>
-            </div>
-        </section>
-
-        <section class="section bg-soft">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="status-badge reserved" style="position:static; display:inline-flex;">Vše v rezervaci</span>
-                    <h2 style="margin-top:1rem;">Vrh B</h2>
-                    <p>Blue bicolor a seal bicolor. Všechna koťátka jsou aktuálně rezervovaná.</p>
-                </div>
-                <div class="photo-grid stagger" id="vrhBGrid"></div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="cta-banner reveal-scale">
-                    <h2>Vrh C — připravujeme</h2>
-                    <p>Nový vrh plánujeme na začátek léta. Zájemci se mohou hlásit už teď přes formulář níže.</p>
-                </div>
-            </div>
-        </section>
-
-        <script>
-            (function () {
-                function buildGrid(elId, folder, count, altPrefix) {
-                    const grid = document.getElementById(elId);
-                    if (!grid) return;
-                    let html = '';
-                    for (let i = 1; i <= count; i++) {
-                        const n = String(i).padStart(2, '0');
-                        const src = 'images/kittens/' + folder + '/' + n + '.jpg';
-                        html += '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="' + folder + '" data-src="' + src + '">' +
-                            '<picture><source srcset="' + src.replace('.jpg', '.webp') + '" type="image/webp"><img src="' + src + '" alt="' + altPrefix + ' – foto ' + i + '" loading="lazy"></picture></div>';
-                    }
-                    grid.innerHTML = html;
-                }
-                buildGrid('vrhAGrid', 'vrh-a', 19, 'Koťátko Vrh A');
-                buildGrid('vrhBGrid', 'vrh-b', 20, 'Koťátko Vrh B');
-            })();
-        </script>
+        <div id="littersContainer"></div>
 
         <section class="section bg-soft">
             <div class="container">
@@ -222,5 +174,6 @@
 
     <button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">↑</button>
     <script src="script.js"></script>
+    <script src="content.js"></script>
 </body>
 </html>
