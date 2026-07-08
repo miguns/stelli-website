@@ -85,7 +85,13 @@
       "name_cs": "Testovací vrh",
       "status": "upcoming",
       "desc_cs": "Toto je testovací záznam ověřující automatický překlad.",
-      "photos": []
+      "photos": [],
+      "name_en": "Test litter",
+      "name_de": "Testwurf",
+      "name_pl": "Miot testowy",
+      "desc_en": "This is a test entry to check the automatic translation.",
+      "desc_de": "Dies ist ein Testbeitrag zur Überprüfung der automatischen Übersetzung.",
+      "desc_pl": "To jest wpis testowy służący do sprawdzenia tłumaczenia automatycznego."
     }
   ]
 }
