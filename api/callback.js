@@ -1,10 +1,24 @@
 // OAuth callback: exchanges the GitHub `code` for an access token and
 // hands it to the CMS popup window via postMessage, following the
 // handshake the Decap/Sveltia CMS "github" backend expects.
+function readCookie(req, name) {
+    const header = req.headers.cookie;
+    if (!header) return null;
+    for (const part of header.split(';')) {
+        const [key, ...rest] = part.trim().split('=');
+        if (key === name) return rest.join('=');
+    }
+    return null;
+}
+
 module.exports = async (req, res) => {
     const clientId = process.env.OAUTH_CLIENT_ID;
     const clientSecret = process.env.OAUTH_CLIENT_SECRET;
     const code = req.query.code;
+    const state = req.query.state;
+
+    // Clear the state cookie on every response path so it can't be replayed.
+    res.setHeader('Set-Cookie', 'oauth_state=; Max-Age=0; Path=/api; HttpOnly; Secure; SameSite=Lax');
 
     if (!clientId || !clientSecret) {
         res.status(500).send('Missing OAUTH_CLIENT_ID / OAUTH_CLIENT_SECRET environment variables.');
@@ -12,6 +26,11 @@ module.exports = async (req, res) => {
     }
     if (!code) {
         res.status(400).send('Missing authorization code.');
+        return;
+    }
+    const expectedState = readCookie(req, 'oauth_state');
+    if (!state || !expectedState || state !== expectedState) {
+        res.status(400).send('Invalid or missing OAuth state.');
         return;
     }
 
