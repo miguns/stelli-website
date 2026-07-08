@@ -119,8 +119,8 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 // ==========================================================================
-// Scroll reveal (IntersectionObserver). Re-runnable so CMS-driven content
-// rendered later (content.js) also gets the reveal treatment.
+// Scroll reveal (IntersectionObserver). Exposed on window so it can be
+// re-run if content is ever injected dynamically after page load.
 // ==========================================================================
 const revealObserver = 'IntersectionObserver' in window
     ? new IntersectionObserver((entries) => {
@@ -204,8 +204,8 @@ document.querySelectorAll('.accordion-item').forEach(item => {
 
 // ==========================================================================
 // Lightbox — real photo grids with prev/next navigation per gallery group.
-// Bindings are re-initializable so CMS-driven content rendered later
-// (content.js) can join the lightbox too.
+// Bindings are re-initializable if content is ever injected dynamically
+// after page load.
 // ==========================================================================
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox?.querySelector('.lightbox-content img');
