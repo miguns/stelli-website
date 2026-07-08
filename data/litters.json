@@ -79,6 +79,13 @@
       "desc_de": "Einen neuen Wurf planen wir für den Frühsommer. Interessenten können sich schon jetzt über das Formular unten melden.",
       "desc_pl": "Nowy miot planujemy na początek lata. Zainteresowani mogą zgłaszać się już teraz przez formularz poniżej.",
       "photos": []
+    },
+    {
+      "id": "test-translate",
+      "name_cs": "Testovací vrh",
+      "status": "upcoming",
+      "desc_cs": "Toto je testovací záznam ověřující automatický překlad.",
+      "photos": []
     }
   ]
 }
