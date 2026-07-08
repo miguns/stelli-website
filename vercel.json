@@ -2,5 +2,12 @@
   "buildCommand": "",
   "devCommand": "python -m http.server 3000",
   "installCommand": "",
-  "framework": null
+  "framework": null,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/en/(.*)", "status": 404, "dest": "/en/404.html" },
+    { "src": "/de/(.*)", "status": 404, "dest": "/de/404.html" },
+    { "src": "/pl/(.*)", "status": 404, "dest": "/pl/404.html" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ]
 }
