@@ -1147,10 +1147,12 @@ footer a:hover { color: var(--gold); padding-left: 4px; }
 .partner-banner {
     border-radius: var(--radius-sm);
     overflow: hidden;
-    margin-bottom: 1.2rem;
+    margin: 0 -1rem 1.2rem;
     background: var(--cream-deep);
 }
 .partner-banner img { width: 100%; height: auto; display: block; }
+
+a.partner-card { display: block; text-decoration: none; }
 
 /* Photo grid (kittens, team, gallery) */
 .photo-grid {
