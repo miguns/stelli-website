@@ -4,6 +4,30 @@
   "installCommand": "",
   "framework": null,
   "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+      },
+      "continue": true
+    },
+    {
+      "src": "/admin/(.*)",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self' https: data: blob:; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline'; connect-src 'self' https:; img-src 'self' https: data: blob:; font-src 'self' https: data:; frame-src 'self' https:; object-src 'none'"
+      },
+      "continue": true
+    },
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      },
+      "continue": true
+    },
     { "handle": "filesystem" },
     { "src": "/en/(.*)", "status": 404, "dest": "/en/404.html" },
     { "src": "/de/(.*)", "status": 404, "dest": "/de/404.html" },
