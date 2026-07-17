@@ -19,8 +19,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
     <link rel="apple-touch-icon" href="images/favicon-180.png">
     <link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/index.html">
@@ -54,7 +55,7 @@
     }
     </script>
 </head>
-<body>
+<body class="concept concept2">
     <a href="#main" class="skip-link">Přeskočit na obsah</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
@@ -78,157 +79,93 @@
     </header>
 
     <main id="main">
-        <section class="hero">
-            <div class="hero-blob b1"></div>
-            <div class="hero-blob b2"></div>
-            <div class="hero-blob b3"></div>
-            <div class="hero-paws" aria-hidden="true">
-                <svg class="hero-paw" style="left:8%; width:34px; animation-duration:14s; animation-delay:0s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-                <svg class="hero-paw" style="left:22%; width:22px; animation-duration:10s; animation-delay:2s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-                <svg class="hero-paw" style="left:70%; width:28px; animation-duration:12s; animation-delay:1s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-                <svg class="hero-paw" style="left:85%; width:20px; animation-duration:9s; animation-delay:3s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-            </div>
-            <div class="hero-content">
-                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="856" height="525" alt="StElli Ragdoll Cattery" class="hero-logo"></picture>
-                <h1>Koťátka Ragdoll <em>s duší</em> a rodokmenem</h1>
-                <p class="hero-subtitle">V CHS StElli chováme zdravá, vyrovnaná a od malička socializovaná koťátka — s láskou, péčí a respektem k plemeni.</p>
-                <div class="hero-actions">
-                    <a href="kotatka.html" class="btn btn-primary">Podívejte se na koťátka</a>
-                    <a href="o-nas.html" class="btn btn-outline">Poznejte náš příběh</a>
-                </div>
-                <div class="hero-cat-slot" id="heroCatSlot"></div>
-            </div>        </section>
 
-        <section class="section container">
-            <div class="news-box reveal" id="newsBox"><!--PRERENDER:newsBox:START--><div><h3>🩷 Máme volná koťátka!</h3><p>K odběru v červnu. Zajímá vás jedno? <a href="kotatka.html">Volná koťátka →</a></p></div><a href="kotatka.html" class="btn btn-solid">Volná koťátka</a><!--PRERENDER:newsBox:END--></div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">O nás</span>
-                    <h2>Krátce o StElli</h2>
-                    <p>Věnujeme se výhradně plemeni Ragdoll. Naším cílem je chovat nejen krásné, ale především zdravé a vyrovnané kočky.</p>
-                </div>
-                <div class="grid grid-3 stagger">
-                    <div class="card reveal-scale" style="--i:0">
-                        <h3>Genetické testy</h3>
-                        <p>Všichni chovní jedinci jsou testováni na HCM, PKD, FeLV a FIV s negativními výsledky.</p>
-                    </div>
-                    <div class="card reveal-scale" style="--i:1">
-                        <h3>Domácí prostředí</h3>
-                        <p>Koťátka vyrůstají přímo v našem domě, ne v kotcích — mezi lidmi, dětmi a běžným provozem.</p>
-                    </div>
-                    <div class="card reveal-scale" style="--i:2">
-                        <h3>Podpora po adopci</h3>
-                        <p>Jsme tu pro vás i po předání koťátka — s radou ohledně výživy, péče i chování.</p>
-                    </div>
-                </div>
-                <div class="text-center mt-lg reveal">
-                    <a href="nase-prace.html" class="link-button">Více o naší práci →</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section bg-soft">
-            <div class="container">
-                <p class="centered-text reveal">Hledáte kotě Ragdoll s jemnou povahou, krásným vzhledem a důkladnou socializací? Pak jste na správném místě. 🤍</p>
-                <div class="stats-strip stagger">
-                    <div class="stat-item reveal" style="--i:0">
-                        <span class="stat-icon">🩺</span>
-                        <strong>100 %</strong>
-                        <span>zdravotně testovaní rodiče</span>
-                    </div>
-                    <div class="stat-item reveal" style="--i:1">
-                        <span class="stat-icon">📜</span>
-                        <strong>100 %</strong>
-                        <span>koťátka s rodokmenem</span>
-                    </div>
-                    <div class="stat-item reveal" style="--i:2">
-                        <span class="stat-icon">🧸</span>
-                        <strong>14 týdnů</strong>
-                        <span>socializace před odchodem</span>
-                    </div>
-                    <div class="stat-item reveal" style="--i:3">
-                        <span class="stat-icon">💉</span>
-                        <strong>2×</strong>
-                        <span>očkování a odčervení</span>
+        <!-- HERO: two-up print, not a marketing banner -->
+        <section class="c2-hero">
+            <div class="c2-hero-left">
+                <picture class="c2-hero-mark">
+                    <source srcset="images/logo.webp" type="image/webp">
+                    <img src="images/logo.png" width="856" height="525" alt="StElli Ragdoll Cattery">
+                </picture>
+                <div class="c2-hero-text">
+                    <h1>Ragdoll koťátka<br>chovaná <em>s láskou</em>.</h1>
+                    <p class="c2-lede">Jemná povaha, modré oči, důkladná socializace. Vyrůstají u nás doma — mezi lidmi a dětmi.</p>
+                    <div class="c-hero-actions">
+                        <a href="kontakty.html" class="c-btn c-btn-primary">Chci koťátko</a>
+                        <a href="#kotatka" class="c-btn c-btn-line">Aktuální koťátka</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Partneři</span>
-                    <h2>Naše spolupráce</h2>
-                    <p>Značky, kterým věříme a se kterými pečujeme o naše koťátka každý den.</p>
-                </div>
-                <div class="grid grid-3 stagger">
-                    <a class="card partner-card reveal-scale" style="--i:0" href="http://www.krmiva-pucalka.cz/" target="_blank" rel="noopener">
-                        <div class="partner-banner"><picture><source srcset="images/misc/partner-pucalka.webp" type="image/webp"><img src="images/misc/partner-pucalka.jpg" width="1018" height="198" alt="Pučálka krmiva" loading="lazy"></picture></div>
-                        <h3>Pučálka krmiva</h3>
-                        <p>Česká značka kvalitního krmiva pro naše koťátka.</p>
-                    </a>
-                    <a class="card partner-card reveal-scale" style="--i:1" href="https://www.ekomazlicek.cz/action/Affiliate/setAccess/?partnerId=131&amp;bannerId=7" target="_blank" rel="noopener">
-                        <div class="partner-banner"><picture><source srcset="images/misc/partner-ekomazlicek.webp" type="image/webp"><img src="images/misc/partner-ekomazlicek.png" width="901" height="112" alt="Ekomazlíček" loading="lazy"></picture></div>
-                        <h3>Ekomazlíček</h3>
-                        <p>Kvalitní škrabadla, pelíšky a hračky.</p>
-                    </a>
-                    <a class="card partner-card reveal-scale" style="--i:2" href="http://skrabadla-rufi.cz/?s=197656007" target="_blank" rel="noopener">
-                        <div class="partner-banner"><picture><source srcset="images/misc/partner-drapaki.webp" type="image/webp"><img src="images/misc/partner-drapaki.png" width="800" height="120" alt="Drapaki Rufi" loading="lazy"></picture></div>
-                        <h3>Drapaki Rufi</h3>
-                        <p>Výjimečná škrabadla pro kočky.</p>
-                    </a>
-                </div>
+            <div class="c2-hero-photo">
+                <figure class="c-print c-print--tilt-l">
+                    <picture>
+                        <source srcset="images/featured/hero-kitten.webp" type="image/webp">
+                        <img src="images/featured/hero-kitten.jpg" alt="Koťátko Ragdoll se zářivě modrýma očima" loading="eager" fetchpriority="high">
+                    </picture>
+                </figure>
             </div>
         </section>
 
-        <section class="section bg-plum">
-            <div class="container">
-                <div class="cta-banner reveal-scale">
-                    <h2>Máte zájem o koťátko Ragdoll?</h2>
-                    <p>Napište nám a domluvíme si termín seznámení nebo rezervace.</p>
-                    <a href="kotatka.html" class="btn btn-solid">Zobrazit dostupná koťátka</a>
-                </div>
+        <!-- AKTUÁLNÍ KOŤÁTKA -->
+        <section id="kotatka" class="c2-section">
+            <p class="c2-eyebrow c2-eyebrow--center">Naše vrhy</p>
+            <h2 class="c2-h2">Nahlédněte k nám domů</h2>
+            <div class="c2-litter-row">
+                <figure class="c-print c-print--tilt-r c-print--sm">
+                    <picture>
+                        <source srcset="images/kittens/vrh-a/08.webp" type="image/webp">
+                        <img src="images/kittens/vrh-a/08.jpg" alt="Koťátko z vrhu A" loading="lazy">
+                    </picture>
+                    <figcaption>Vrh A</figcaption>
+                </figure>
+                <figure class="c-print c-print--tilt-l c-print--sm">
+                    <picture>
+                        <source srcset="images/kittens/vrh-b/15.webp" type="image/webp">
+                        <img src="images/kittens/vrh-b/15.jpg" alt="Koťátko z vrhu B" loading="lazy">
+                    </picture>
+                    <figcaption>Vrh B</figcaption>
+                </figure>
             </div>
+            <a href="kotatka.html" class="c-btn c-btn-line c2-center-btn">Aktuální dostupnost koťátek</a>
         </section>
 
-        <section class="section bg-soft">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Kontakt</span>
-                    <h2>Máte dotaz?</h2>
-                    <p>Ozvěte se nám — odpovídáme obvykle do 24 hodin.</p>
-                </div>
-                <form class="contact-form reveal-scale">
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <div class="form-group">
-                        <label for="name">Jméno</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="form-error">Vyplňte prosím své jméno.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="form-error">Zadejte platný e-mail.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Zpráva</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <span class="form-error">Napište nám prosím pár slov.</span>
-                    </div>
-                    <button type="submit" class="btn-primary-form">Odeslat</button>
-                                    <p class="form-consent">Odesláním souhlasíte se zpracováním osobních údajů za účelem vyřízení vaší zprávy.</p>
-                </form>
-                <div class="form-success">
-                    <div class="icon">🎉</div>
-                    <h3>Děkujeme za zprávu!</h3>
-                    <p>Brzy se vám ozveme zpět.</p>
-                </div>
+        <!-- ZÁVĚREČNÉ CTA: overlapping fan of prints — hover (or tap) pulls one to the front -->
+        <section class="c2-final">
+            <div class="c2-fan" id="ctaFan">
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="images/featured/face-baileys.webp" type="image/webp">
+                        <img src="images/featured/face-baileys.jpg" alt="Kočka Ragdoll se zářivě modrýma očima — Baileys" loading="lazy">
+                    </picture>
+                    <figcaption>Baileys</figcaption>
+                </figure>
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="images/featured/face-sweetie.webp" type="image/webp">
+                        <img src="images/featured/face-sweetie.jpg" alt="Kočka Ragdoll — Sweetie" loading="lazy">
+                    </picture>
+                    <figcaption>Sweetie</figcaption>
+                </figure>
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="images/featured/hero-kitten.webp" type="image/webp">
+                        <img src="images/featured/hero-kitten.jpg" alt="Koťátko Ragdoll" loading="lazy">
+                    </picture>
+                    <figcaption>Koťátko z vrhu A</figcaption>
+                </figure>
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="images/featured/kitten-basket.webp" type="image/webp">
+                        <img src="images/featured/kitten-basket.jpg" alt="Koťátko Ragdoll v košíku" loading="lazy">
+                    </picture>
+                    <figcaption>Koťátko z vrhu B</figcaption>
+                </figure>
             </div>
+            <p class="c2-stack-hint">Přejeďte prstem, nebo najeďte myší</p>
+            <h2 class="c2-h2">Najděte si svého Ragdolla.</h2>
+            <a href="kontakty.html" class="c-btn c-btn-primary">Chci koťátko</a>
         </section>
+
     </main>
 
     <footer>
@@ -239,7 +176,6 @@
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="images/misc/icon-instagram.webp" type="image/webp"><img src="images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
                     <a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener" aria-label="Facebook"><picture><source srcset="images/misc/icon-facebook.webp" type="image/webp"><img src="images/misc/icon-facebook.png" width="240" height="211" alt="" class="social-icon-img"></picture></a>
-                    <a href="mailto:stellicattery@gmail.com" aria-label="E-mail">✉️</a>
                 </div>
             </div>
             <div>
@@ -262,8 +198,52 @@
             <p class="footer-note">Pro automatický výběr jazyka používáme anonymní zjištění země podle IP adresy.</p>
         </div>
     </footer>
+    <a href="kontakty.html" class="c-float-cta" id="floatCta" aria-label="Chci koťátko">
+        <svg class="c-float-cta-paw" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
+        <span aria-hidden="true">Chci kotě</span>
+    </a>
 
-    <button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">↑</button>
+    
+    <script>
+        // Desktop (hover-capable): the overlapping fan reveals on hover/focus via CSS alone.
+        // Mobile (no hover): a swipe carousel — whichever photo is centered becomes "active".
+        (function initFan() {
+            var fan = document.getElementById('ctaFan');
+            if (!fan) return;
+            var items = Array.prototype.slice.call(fan.querySelectorAll('.fan-item'));
+            var mq = window.matchMedia('(max-width: 640px)');
+            var observer = null;
+
+            function bindCarousel() {
+                if (observer) return;
+                observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        entry.target.classList.toggle('is-active', entry.intersectionRatio > 0.6);
+                    });
+                }, { root: fan, threshold: [0, 0.6, 1] });
+                items.forEach(function (item) { observer.observe(item); });
+            }
+
+            function unbindCarousel() {
+                if (!observer) return;
+                observer.disconnect();
+                observer = null;
+                items.forEach(function (item) { item.classList.remove('is-active'); });
+            }
+
+            if (mq.matches) bindCarousel();
+            mq.addEventListener('change', function (e) {
+                if (e.matches) bindCarousel(); else unbindCarousel();
+            });
+        })();
+
+        // Floating "Chci kotě" — always visible, including over the hero
+        (function initFloatCta() {
+            var btn = document.getElementById('floatCta');
+            if (!btn) return;
+            btn.classList.add('is-visible');
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

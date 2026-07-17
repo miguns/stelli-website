@@ -19,8 +19,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
     <link rel="apple-touch-icon" href="../images/favicon-180.png">
     <link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/index.html">
@@ -54,7 +55,7 @@
     }
     </script>
 </head>
-<body>
+<body class="concept concept2">
     <a href="#main" class="skip-link">Skip to content</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
@@ -78,157 +79,93 @@
     </header>
 
     <main id="main">
-        <section class="hero">
-            <div class="hero-blob b1"></div>
-            <div class="hero-blob b2"></div>
-            <div class="hero-blob b3"></div>
-            <div class="hero-paws" aria-hidden="true">
-                <svg class="hero-paw" style="left:8%; width:34px; animation-duration:14s; animation-delay:0s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-                <svg class="hero-paw" style="left:22%; width:22px; animation-duration:10s; animation-delay:2s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-                <svg class="hero-paw" style="left:70%; width:28px; animation-duration:12s; animation-delay:1s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-                <svg class="hero-paw" style="left:85%; width:20px; animation-duration:9s; animation-delay:3s;" viewBox="0 0 64 64" fill="currentColor"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-            </div>
-            <div class="hero-content">
-                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="856" height="525" alt="StElli Ragdoll Cattery" class="hero-logo"></picture>
-                <h1>Ragdoll kittens <em>with soul</em> and pedigree</h1>
-                <p class="hero-subtitle">At StElli cattery we raise healthy, balanced kittens socialized from an early age — with love, care and respect for the breed.</p>
-                <div class="hero-actions">
-                    <a href="kotatka.html" class="btn btn-primary">See our kittens</a>
-                    <a href="o-nas.html" class="btn btn-outline">Read our story</a>
-                </div>
-                <div class="hero-cat-slot" id="heroCatSlot"></div>
-            </div>        </section>
 
-        <section class="section container">
-            <div class="news-box reveal" id="newsBox"><!--PRERENDER:newsBox:START--><div><h3>🩷 Kittens available!</h3><p>Ready to leave in June. Interested? <a href="kotatka.html">Available kittens →</a></p></div><a href="kotatka.html" class="btn btn-solid">Available kittens</a><!--PRERENDER:newsBox:END--></div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">About us</span>
-                    <h2>About StElli in brief</h2>
-                    <p>We focus exclusively on the Ragdoll breed. Our goal is to breed cats that are not only beautiful, but above all healthy and balanced.</p>
-                </div>
-                <div class="grid grid-3 stagger">
-                    <div class="card reveal-scale" style="--i:0">
-                        <h3>Genetic tests</h3>
-                        <p>All breeding cats are tested for HCM, PKD, FeLV and FIV with negative results.</p>
-                    </div>
-                    <div class="card reveal-scale" style="--i:1">
-                        <h3>Home environment</h3>
-                        <p>Kittens grow up right in our home, not in cages — among people, children and everyday life.</p>
-                    </div>
-                    <div class="card reveal-scale" style="--i:2">
-                        <h3>Support after adoption</h3>
-                        <p>We are here for you even after the kitten is handed over — with advice on nutrition, care and behaviour.</p>
-                    </div>
-                </div>
-                <div class="text-center mt-lg reveal">
-                    <a href="nase-prace.html" class="link-button">More about our work →</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section bg-soft">
-            <div class="container">
-                <p class="centered-text reveal">Looking for a Ragdoll kitten with a gentle nature, beautiful looks and thorough socialization? Then you are in the right place. 🤍</p>
-                <div class="stats-strip stagger">
-                    <div class="stat-item reveal" style="--i:0">
-                        <span class="stat-icon">🩺</span>
-                        <strong>100 %</strong>
-                        <span>health-tested parents</span>
-                    </div>
-                    <div class="stat-item reveal" style="--i:1">
-                        <span class="stat-icon">📜</span>
-                        <strong>100 %</strong>
-                        <span>kittens with pedigree</span>
-                    </div>
-                    <div class="stat-item reveal" style="--i:2">
-                        <span class="stat-icon">🧸</span>
-                        <strong>14 weeks</strong>
-                        <span>socialization before leaving</span>
-                    </div>
-                    <div class="stat-item reveal" style="--i:3">
-                        <span class="stat-icon">💉</span>
-                        <strong>2×</strong>
-                        <span>vaccination &amp; deworming</span>
+        <!-- HERO: two-up print, not a marketing banner -->
+        <section class="c2-hero">
+            <div class="c2-hero-left">
+                <picture class="c2-hero-mark">
+                    <source srcset="../images/logo.webp" type="image/webp">
+                    <img src="../images/logo.png" width="856" height="525" alt="StElli Ragdoll Cattery">
+                </picture>
+                <div class="c2-hero-text">
+                    <h1>Ragdoll kittens raised <em>with love</em>.</h1>
+                    <p class="c2-lede">Gentle nature, blue eyes, thorough socialization. They grow up in our home — among people and children.</p>
+                    <div class="c-hero-actions">
+                        <a href="kontakty.html" class="c-btn c-btn-primary">I want a kitten</a>
+                        <a href="#kotatka" class="c-btn c-btn-line">Current kittens</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Partners</span>
-                    <h2>Our partners</h2>
-                    <p>Brands we trust and use to care for our kittens every day.</p>
-                </div>
-                <div class="grid grid-3 stagger">
-                    <a class="card partner-card reveal-scale" style="--i:0" href="http://www.krmiva-pucalka.cz/" target="_blank" rel="noopener">
-                        <div class="partner-banner"><picture><source srcset="../images/misc/partner-pucalka.webp" type="image/webp"><img src="../images/misc/partner-pucalka.jpg" width="1018" height="198" alt="Pučálka feed" loading="lazy"></picture></div>
-                        <h3>Pučálka feed</h3>
-                        <p>A Czech brand of quality food for our kittens.</p>
-                    </a>
-                    <a class="card partner-card reveal-scale" style="--i:1" href="https://www.ekomazlicek.cz/action/Affiliate/setAccess/?partnerId=131&amp;bannerId=7" target="_blank" rel="noopener">
-                        <div class="partner-banner"><picture><source srcset="../images/misc/partner-ekomazlicek.webp" type="image/webp"><img src="../images/misc/partner-ekomazlicek.png" width="901" height="112" alt="Ekomazlíček" loading="lazy"></picture></div>
-                        <h3>Ekomazlíček</h3>
-                        <p>Quality scratching posts, beds and toys.</p>
-                    </a>
-                    <a class="card partner-card reveal-scale" style="--i:2" href="http://skrabadla-rufi.cz/?s=197656007" target="_blank" rel="noopener">
-                        <div class="partner-banner"><picture><source srcset="../images/misc/partner-drapaki.webp" type="image/webp"><img src="../images/misc/partner-drapaki.png" width="800" height="120" alt="Drapaki Rufi" loading="lazy"></picture></div>
-                        <h3>Drapaki Rufi</h3>
-                        <p>Exceptional scratching posts for cats.</p>
-                    </a>
-                </div>
+            <div class="c2-hero-photo">
+                <figure class="c-print c-print--tilt-l">
+                    <picture>
+                        <source srcset="../images/featured/hero-kitten.webp" type="image/webp">
+                        <img src="../images/featured/hero-kitten.jpg" alt="Ragdoll kitten with bright blue eyes" loading="eager" fetchpriority="high">
+                    </picture>
+                </figure>
             </div>
         </section>
 
-        <section class="section bg-plum">
-            <div class="container">
-                <div class="cta-banner reveal-scale">
-                    <h2>Interested in a Ragdoll kitten?</h2>
-                    <p>Write to us and we will arrange a meeting or reservation.</p>
-                    <a href="kotatka.html" class="btn btn-solid">Show available kittens</a>
-                </div>
+        <!-- AKTUÁLNÍ KOŤÁTKA -->
+        <section id="kotatka" class="c2-section">
+            <p class="c2-eyebrow c2-eyebrow--center">Our litters</p>
+            <h2 class="c2-h2">A peek into our home</h2>
+            <div class="c2-litter-row">
+                <figure class="c-print c-print--tilt-r c-print--sm">
+                    <picture>
+                        <source srcset="../images/kittens/vrh-a/08.webp" type="image/webp">
+                        <img src="../images/kittens/vrh-a/08.jpg" alt="Kitten from litter A" loading="lazy">
+                    </picture>
+                    <figcaption>Litter A</figcaption>
+                </figure>
+                <figure class="c-print c-print--tilt-l c-print--sm">
+                    <picture>
+                        <source srcset="../images/kittens/vrh-b/15.webp" type="image/webp">
+                        <img src="../images/kittens/vrh-b/15.jpg" alt="Kitten from litter B" loading="lazy">
+                    </picture>
+                    <figcaption>Litter B</figcaption>
+                </figure>
             </div>
+            <a href="kotatka.html" class="c-btn c-btn-line c2-center-btn">Current kitten availability</a>
         </section>
 
-        <section class="section bg-soft">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Contact</span>
-                    <h2>Have a question?</h2>
-                    <p>Get in touch — we usually reply within 24 hours.</p>
-                </div>
-                <form class="contact-form reveal-scale">
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="form-error">Please enter your name.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="form-error">Please enter a valid e-mail.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <span class="form-error">Please write us a few words.</span>
-                    </div>
-                    <button type="submit" class="btn-primary-form">Send</button>
-                                    <p class="form-consent">By submitting, you consent to the processing of your personal data for the purpose of responding to your message.</p>
-                </form>
-                <div class="form-success">
-                    <div class="icon">🎉</div>
-                    <h3>Thank you for your message!</h3>
-                    <p>We will get back to you soon.</p>
-                </div>
+        <!-- ZÁVĚREČNÉ CTA: overlapping fan of prints — hover (or tap) pulls one to the front -->
+        <section class="c2-final">
+            <div class="c2-fan" id="ctaFan">
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="../images/featured/face-baileys.webp" type="image/webp">
+                        <img src="../images/featured/face-baileys.jpg" alt="Ragdoll cat with bright blue eyes — Baileys" loading="lazy">
+                    </picture>
+                    <figcaption>Baileys</figcaption>
+                </figure>
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="../images/featured/face-sweetie.webp" type="image/webp">
+                        <img src="../images/featured/face-sweetie.jpg" alt="Ragdoll cat — Sweetie" loading="lazy">
+                    </picture>
+                    <figcaption>Sweetie</figcaption>
+                </figure>
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="../images/featured/hero-kitten.webp" type="image/webp">
+                        <img src="../images/featured/hero-kitten.jpg" alt="Ragdoll kitten" loading="lazy">
+                    </picture>
+                    <figcaption>Kitten from litter A</figcaption>
+                </figure>
+                <figure class="c-print fan-item" tabindex="0">
+                    <picture>
+                        <source srcset="../images/featured/kitten-basket.webp" type="image/webp">
+                        <img src="../images/featured/kitten-basket.jpg" alt="Ragdoll kitten in a basket" loading="lazy">
+                    </picture>
+                    <figcaption>Kitten from litter B</figcaption>
+                </figure>
             </div>
+            <p class="c2-stack-hint">Swipe, or hover with your mouse</p>
+            <h2 class="c2-h2">Find your Ragdoll.</h2>
+            <a href="kontakty.html" class="c-btn c-btn-primary">I want a kitten</a>
         </section>
+
     </main>
 
     <footer>
@@ -262,8 +199,52 @@
             <p class="footer-note">We use anonymous IP-based country detection to automatically suggest the right language.</p>
         </div>
     </footer>
-
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
     <script src="../script.js"></script>
+    <a href="kontakty.html" class="c-float-cta" id="floatCta" aria-label="I want a kitten">
+        <svg class="c-float-cta-paw" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
+        <span aria-hidden="true">A kitten</span>
+    </a>
+
+    
+    <script>
+        // Desktop (hover-capable): the overlapping fan reveals on hover/focus via CSS alone.
+        // Mobile (no hover): a swipe carousel — whichever photo is centered becomes "active".
+        (function initFan() {
+            var fan = document.getElementById('ctaFan');
+            if (!fan) return;
+            var items = Array.prototype.slice.call(fan.querySelectorAll('.fan-item'));
+            var mq = window.matchMedia('(max-width: 640px)');
+            var observer = null;
+
+            function bindCarousel() {
+                if (observer) return;
+                observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        entry.target.classList.toggle('is-active', entry.intersectionRatio > 0.6);
+                    });
+                }, { root: fan, threshold: [0, 0.6, 1] });
+                items.forEach(function (item) { observer.observe(item); });
+            }
+
+            function unbindCarousel() {
+                if (!observer) return;
+                observer.disconnect();
+                observer = null;
+                items.forEach(function (item) { item.classList.remove('is-active'); });
+            }
+
+            if (mq.matches) bindCarousel();
+            mq.addEventListener('change', function (e) {
+                if (e.matches) bindCarousel(); else unbindCarousel();
+            });
+        })();
+
+        // Floating "Chci kotě" — always visible, including over the hero
+        (function initFloatCta() {
+            var btn = document.getElementById('floatCta');
+            if (!btn) return;
+            btn.classList.add('is-visible');
+        })();
+    </script>
 </body>
 </html>

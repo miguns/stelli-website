@@ -1,0 +1,623 @@
+/* ==========================================================================
+   StElli — homepage concept v2
+   Fresh token set, independent of the legacy --plum/--lavender system.
+   ========================================================================== */
+
+body.concept {
+    --c-cream: #faf6f1;
+    --c-ink: #2e2a26;
+    --c-taupe: #6b6258;
+    --c-blue-deep: #5b6b8c;
+    --c-blue-soft: #a8b6cf;
+    --c-line: #e4dcd2;
+    --c-font-display: 'Fraunces', Georgia, serif;
+    --c-font-body: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
+
+    /* Remap the legacy styles.css tokens so existing components (cards, hero,
+       forms, timeline, buttons…) inherit the new palette + fonts automatically. */
+    --cream: #faf6f1;
+    --cream-deep: #f2ece3;
+    --blush: #eae3f0;
+    --blush-deep: #cdd4e4;
+    --lavender: #a8b6cf;
+    --lavender-deep: #7d8bab;
+    --plum: #5b6b8c;
+    --plum-dark: #3d4568;
+    --gold: #5b6b8c;
+    --ink: #2e2a26;
+    --ink-light: #6b6258;
+    --white: #ffffff;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    --gradient-primary: linear-gradient(135deg, #6b7ba0 0%, #4d5670 100%);
+    --gradient-warm: linear-gradient(135deg, #eae3f0 0%, #cdd4e4 100%);
+    --gradient-soft: linear-gradient(180deg, #faf6f1 0%, #f2ece3 100%);
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --shadow-soft: 0 12px 30px rgba(52, 48, 42, 0.08);
+    --shadow-hover: 0 18px 40px rgba(52, 48, 42, 0.12);
+
+    background: var(--c-cream);
+    font-family: var(--c-font-body);
+    color: var(--c-taupe);
+}
+
+/* Headings pick up Fraunces at a lighter weight across every legacy component */
+body.concept h1, body.concept h2, body.concept h3, body.concept h4 { font-weight: 500; }
+
+body.concept header {
+    background: rgba(250, 246, 241, 0.75);
+}
+body.concept header.is-scrolled { background: rgba(250, 246, 241, 0.94); }
+body.concept .logo,
+body.concept .nav-menu a.active,
+body.concept .nav-menu a:hover { color: var(--c-blue-deep); }
+body.concept .nav-menu a::after { background: var(--c-blue-deep); }
+body.concept .nav-cta { background: var(--c-blue-deep); box-shadow: none; }
+body.concept .nav-cta:hover { box-shadow: none; filter: brightness(1.08); transform: none; }
+
+/* ---------- Hero: full-bleed photo IS the pitch ---------- */
+
+.c-hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.c-hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.c-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 30%;
+    display: block;
+}
+.c-hero-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(30, 26, 22, 0.72) 0%, rgba(30, 26, 22, 0.28) 42%, rgba(30, 26, 22, 0.05) 65%);
+}
+
+.c-hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 0 6vw 9vh;
+    max-width: 720px;
+}
+
+.c-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    font-family: var(--c-font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 1.05rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.c-hero-content h1 {
+    font-family: var(--c-font-display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    line-height: 1.05;
+    color: #fff;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.1rem;
+    text-wrap: balance;
+}
+
+.c-hero-sub {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 46ch;
+    margin-bottom: 2.2rem;
+    line-height: 1.6;
+}
+
+.c-hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.c-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border-radius: 0;
+    font-family: var(--c-font-body);
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    border: none;
+    background: none;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+.c-btn::after { content: '→'; transition: transform 0.2s ease; }
+.c-btn:hover::after { transform: translateX(3px); }
+
+.c-btn-primary {
+    color: var(--c-ink);
+    padding-bottom: 0.35rem;
+    border-bottom: 2px solid var(--c-ink);
+}
+.c-btn-primary:hover { color: var(--c-blue-deep); border-color: var(--c-blue-deep); }
+
+.c-btn-line {
+    color: var(--c-taupe);
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--c-line);
+}
+.c-btn-line:hover { color: var(--c-ink); border-color: var(--c-taupe); }
+
+.c-btn-ghost { color: #fff; padding-bottom: 0.35rem; border-bottom: 2px solid rgba(255, 255, 255, 0.7); }
+.c-btn-ghost:hover { border-color: #fff; }
+
+.c-scroll-cue {
+    position: absolute;
+    right: 6vw;
+    bottom: 4vh;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.75);
+    animation: cScrollBob 2.2s ease-in-out infinite;
+}
+@keyframes cScrollBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+@media (max-width: 640px) {
+    .c-hero { align-items: flex-end; }
+    .c-hero-content { padding: 0 5vw 7vh; }
+    .c-hero-sub { margin-bottom: 1.8rem; }
+    .c-hero-actions { flex-direction: column; align-items: stretch; }
+    .c-btn { justify-content: center; }
+    .c-scroll-cue { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .c-scroll-cue { animation: none; }
+}
+
+/* ---------- temp placeholder for not-yet-built sections ---------- */
+.c-placeholder {
+    padding: 4rem 6vw;
+    text-align: center;
+    color: var(--c-taupe);
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Concept 2 — "printed photo" album: asymmetric rows, no cards, no banners
+   ========================================================================== */
+
+body.concept2 { background: var(--c-cream); }
+body.concept2 main { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
+
+/* the recurring signature: a real printed photo, not a card */
+.c-print {
+    display: inline-block;
+    background: #fff;
+    padding: 14px 14px 46px;
+    box-shadow: 0 18px 34px rgba(52, 48, 42, 0.16), 0 2px 6px rgba(52, 48, 42, 0.08);
+    margin: 0;
+    max-width: 100%;
+}
+.c-print picture, .c-print img { display: block; width: 100%; height: auto; }
+.c-print--tilt-l { transform: rotate(-2.2deg); }
+.c-print--tilt-r { transform: rotate(2deg); }
+.c-print--sm { padding: 10px 10px 34px; max-width: 260px; }
+.c-print figcaption {
+    font-family: var(--c-font-display);
+    font-style: italic;
+    font-size: 0.98rem;
+    color: var(--c-taupe);
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+/* Hero: two columns — logo + headline stacked left, one big tall photo right */
+.c2-hero {
+    padding: 6.5rem 0 5rem;
+    display: grid;
+    grid-template-columns: 1fr 0.92fr;
+    gap: 4vw;
+    align-items: center;
+}
+.c2-hero-left { display: flex; flex-direction: column; align-items: flex-start; }
+.c2-hero-mark { display: block; width: 300px; max-width: 100%; margin: 0 0 2rem; opacity: 0.95; }
+.c2-hero-mark img { width: 100%; height: auto; }
+.c-badge--static {
+    background: rgba(91, 107, 140, 0.09);
+    border: 1px solid rgba(91, 107, 140, 0.25);
+    color: var(--c-blue-deep);
+    margin-bottom: 2.2rem;
+}
+.c2-hero-text h1 {
+    font-family: var(--c-font-display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 4.6vw, 4rem);
+    line-height: 1.06;
+    color: var(--c-ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.2rem;
+    text-wrap: balance;
+}
+.c2-hero-text h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--c-blue-deep);
+}
+.c2-lede { font-size: 1.12rem; line-height: 1.65; max-width: 42ch; margin-bottom: 2rem; }
+.c2-hero-photo { display: flex; justify-content: flex-end; }
+.c2-hero-photo .c-print { max-width: 100%; width: 100%; }
+
+/* Asymmetric editorial rows used across O nás / Proč StElli */
+.c2-row {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 5vw;
+    align-items: center;
+    padding: 5rem 0;
+    border-top: 1px solid var(--c-line);
+}
+.c2-row--reverse { grid-template-columns: 1.15fr 0.85fr; }
+.c2-row--reverse .c2-row-photo { order: 2; }
+.c2-row-photo { display: flex; justify-content: center; }
+.c2-row-photo .c-print { max-width: 340px; }
+.c2-eyebrow {
+    font-family: var(--c-font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--c-blue-deep);
+    margin-bottom: 0.9rem;
+}
+.c2-note {
+    font-family: var(--c-font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--c-ink);
+    margin-bottom: 1.2rem;
+}
+.c2-row-text p { line-height: 1.75; margin-bottom: 1rem; }
+.c2-inline-link { color: var(--c-blue-deep); font-weight: 700; text-decoration: none; }
+.c2-inline-link:hover { text-decoration: underline; }
+
+/* Aktuální koťátka */
+.c2-section { padding: 5rem 0; border-top: 1px solid var(--c-line); text-align: center; }
+.c2-eyebrow--center { text-align: center; }
+.c2-h2 {
+    font-family: var(--c-font-display);
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--c-ink);
+    margin-bottom: 2.6rem;
+    text-wrap: balance;
+}
+.c2-litter-row { display: flex; justify-content: center; gap: 3vw; flex-wrap: wrap; margin-bottom: 2.4rem; }
+.c2-center-btn { display: inline-flex; }
+
+/* Final CTA — two different mechanics for two different inputs:
+   mobile (no hover) = swipe carousel, one photo centered, neighbors peek at the edges;
+   desktop (hover) = overlapping fan, hovering pulls a print to the front. */
+.c2-final { padding: 5rem 0 6rem; border-top: 1px solid var(--c-line); text-align: center; }
+
+/* ---- mobile default: swipe carousel ---- */
+.c2-fan {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 1rem calc(50% - 88px) 1.2rem;
+    margin-bottom: 0.4rem;
+}
+.c2-fan::-webkit-scrollbar { display: none; }
+.c2-fan .fan-item {
+    flex: 0 0 176px;
+    scroll-snap-align: center;
+    width: auto;
+    margin: 0;
+    transform: none;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: default;
+    -webkit-tap-highlight-color: transparent;
+}
+.c2-fan .fan-item picture, .c2-fan .fan-item img { width: 100%; height: 200px; object-fit: cover; }
+.c2-fan .fan-item figcaption { opacity: 0; transition: opacity 0.25s ease; }
+.c2-fan .fan-item.is-active { opacity: 1; transform: scale(1.05); }
+.c2-fan .fan-item.is-active figcaption { opacity: 1; }
+
+.c2-stack-hint {
+    font-size: 0.85rem;
+    color: var(--c-taupe);
+    margin: 0.6rem 0 2.4rem;
+}
+
+/* ---- desktop: overlapping fan, hover reveals ---- */
+@media (min-width: 641px) {
+    .c2-fan {
+        overflow: visible;
+        scroll-snap-type: none;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 1rem 0 0.6rem;
+        gap: 0;
+    }
+    .c2-fan .fan-item {
+        flex: 0 0 auto;
+        width: 150px;
+        margin: 0 0 0 -58px;
+        opacity: 1;
+        cursor: pointer;
+    }
+    .c2-fan .fan-item:first-child { margin-left: 0; }
+    .c2-fan .fan-item img { height: 170px; }
+
+    .c2-fan .fan-item.is-active { transform: none; }
+    .c2-fan .fan-item:nth-child(1) { transform: rotate(-7deg); z-index: 1; }
+    .c2-fan .fan-item:nth-child(2) { transform: rotate(4deg) translateY(10px); z-index: 2; }
+    .c2-fan .fan-item:nth-child(3) { transform: rotate(-3deg) translateY(2px); z-index: 3; }
+    .c2-fan .fan-item:nth-child(4) { transform: rotate(5deg) translateY(16px); z-index: 4; }
+
+    .c2-fan .fan-item:hover,
+    .c2-fan .fan-item:focus-visible {
+        transform: translateY(-16px) rotate(0deg) scale(1.08) !important;
+        z-index: 10 !important;
+    }
+    .c2-fan .fan-item:hover figcaption,
+    .c2-fan .fan-item:focus-visible figcaption { opacity: 1; }
+    .c2-fan .fan-item:focus-visible { outline: 2px solid var(--c-blue-deep); outline-offset: 4px; }
+}
+
+.c2-footer-note { color: rgba(255,255,255,0.85); padding-top: 2.5rem; }
+
+/* Floating "Chci kotě" — the paw print itself is the button, no pill chrome */
+.c-float-cta {
+    position: fixed;
+    z-index: 950;
+    bottom: calc(1.4rem + env(safe-area-inset-bottom, 0px));
+    right: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    text-decoration: none;
+    background: none;
+    border: none;
+    opacity: 0;
+    transform: translateY(18px) scale(0.9);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.c-float-cta.is-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.c-float-cta:hover .c-float-cta-paw { transform: scale(1.08) rotate(-4deg); }
+
+.c-float-cta-paw {
+    width: 58px;
+    height: 58px;
+    color: var(--c-blue-deep);
+    filter: drop-shadow(0 8px 16px rgba(46, 42, 38, 0.3));
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.c-float-cta span {
+    font-family: var(--c-font-body);
+    font-weight: 700;
+    font-size: 0.72rem;
+    color: var(--c-blue-deep);
+    text-shadow: 0 1px 2px rgba(250, 246, 241, 0.9), 0 0 10px rgba(250, 246, 241, 0.9), 0 0 10px rgba(250, 246, 241, 0.9);
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .c-float-cta-paw { width: 50px; height: 50px; }
+    .c-float-cta span { font-size: 0.68rem; }
+}
+
+@media (max-width: 860px) {
+    /* stack: logo → photo → headline, using display:contents so order works */
+    .c2-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 1.6rem; }
+    .c2-hero-left { display: contents; }
+    .c2-hero-mark { order: 1; width: 210px; margin-bottom: 0; }
+    .c2-hero-photo { order: 2; align-self: center; justify-content: center; width: 100%; }
+    .c2-hero-photo .c-print { max-width: 340px; }
+    .c2-hero-text { order: 3; text-align: left; }
+    .c2-row, .c2-row--reverse { grid-template-columns: 1fr; gap: 2.2rem; padding: 3.4rem 0; }
+    .c2-row--reverse .c2-row-photo { order: 0; }
+    .c2-row-photo .c-print { max-width: 280px; }
+}
+
+@media (max-width: 480px) {
+    body.concept2 main { padding: 0 6vw; }
+    .c2-hero { padding: 4.5rem 0 2.5rem; gap: 1.3rem; }
+    .c2-hero-mark { width: 180px; }
+    .c2-hero-photo .c-print { max-width: 300px; }
+    .c2-lede { font-size: 1.02rem; }
+    .c-hero-actions { flex-direction: column; align-items: stretch; }
+    .c-hero-actions .c-btn { justify-content: center; }
+    .c2-litter-row { gap: 6vw; }
+}
+
+/* ==========================================================================
+   Subpages — restyle the legacy components under body.concept so every
+   existing page adopts the concept look without markup rewrites.
+   ========================================================================== */
+
+/* Page hero: quiet cream band, Fraunces headline, one soft wash instead of blobs */
+body.concept .page-hero {
+    background: var(--c-cream);
+    padding: 7rem 20px 3.5rem;
+}
+body.concept .page-hero .hero-blob { filter: blur(60px); opacity: 0.5; }
+body.concept .page-hero .hero-blob.b1 {
+    background: radial-gradient(ellipse at 30% 30%, rgba(91, 107, 140, 0.28), transparent 65%);
+}
+body.concept .page-hero .hero-blob.b2 {
+    background: radial-gradient(ellipse at 35% 35%, rgba(168, 182, 207, 0.32), transparent 65%);
+}
+body.concept .page-hero h1 {
+    font-family: var(--c-font-display);
+    font-weight: 500;
+    color: var(--c-ink);
+    letter-spacing: -0.01em;
+}
+body.concept .page-hero p { color: var(--c-taupe); }
+
+/* Section rhythm + headers: left-aligned eyebrow, Fraunces headings */
+body.concept .section.bg-soft { background: linear-gradient(180deg, #faf6f1 0%, #f4efe7 100%); }
+body.concept .section.bg-plum { background: linear-gradient(135deg, #6b7ba0 0%, #4d5670 100%); }
+body.concept .section h2 { font-family: var(--c-font-display); font-weight: 500; color: var(--c-ink); }
+body.concept .section-label {
+    color: var(--c-blue-deep);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+body.concept .section.bg-plum .section-label { color: #cdd4e4; }
+
+/* Cards: drop the floating white box + shadow for a hairline-topped block */
+body.concept .card {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 1px solid var(--c-line);
+    padding: 1.5rem 0 0;
+}
+body.concept .card:hover { transform: none; box-shadow: none; border-top-color: var(--c-blue-deep); }
+body.concept .card h3 { font-family: var(--c-font-display); font-weight: 500; color: var(--c-blue-deep); }
+
+/* Buttons: flat blue fill, no gradient glow or lift */
+body.concept .btn-primary,
+body.concept .btn-solid,
+body.concept .btn-primary-form {
+    background: var(--c-blue-deep);
+    box-shadow: none;
+    border-radius: 4px;
+}
+body.concept .btn-primary:hover,
+body.concept .btn-solid:hover,
+body.concept .btn-primary-form:hover { transform: none; box-shadow: none; filter: brightness(1.08); }
+body.concept .btn-outline {
+    color: var(--c-blue-deep);
+    border-color: var(--c-blue-deep);
+    border-radius: 4px;
+}
+body.concept .btn-outline:hover { background: var(--c-blue-deep); color: #fff; transform: none; }
+body.concept .link-button { color: var(--c-blue-deep); }
+body.concept .link-button:hover { color: var(--c-ink); }
+
+/* CTA banner: quiet bordered band, not a glowing gradient block */
+body.concept .cta-banner {
+    background: #f4efe7;
+    border: 1px solid var(--c-line);
+    border-radius: 6px;
+    box-shadow: none;
+}
+body.concept .cta-banner h2 { color: var(--c-ink); }
+body.concept .cta-banner p { color: var(--c-taupe); }
+body.concept .cta-banner .btn-solid { background: var(--c-blue-deep); }
+
+/* Timeline: ink-blue step numerals, hairline connector */
+body.concept .timeline-step .step-num {
+    background: var(--c-blue-deep);
+    box-shadow: none;
+    font-family: var(--c-font-display);
+    font-weight: 500;
+}
+body.concept .timeline-step .step-content h3 { font-family: var(--c-font-display); font-weight: 500; color: var(--c-ink); }
+
+/* Accordion (FAQ): flat bordered rows */
+body.concept .accordion-item {
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid var(--c-line);
+    border-radius: 4px;
+}
+body.concept .accordion-trigger { font-family: var(--c-font-body); color: var(--c-ink); }
+body.concept .accordion-item.open .accordion-trigger .plus { background: var(--c-blue-deep); }
+
+/* Checklist */
+body.concept .checklist li {
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid var(--c-line);
+    border-radius: 4px;
+}
+body.concept .checklist li .check-icon { background: var(--c-blue-deep); }
+
+/* Forms */
+body.concept .contact-form {
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid var(--c-line);
+    border-radius: 6px;
+}
+body.concept .form-group input,
+body.concept .form-group textarea,
+body.concept .form-group select { border-radius: 4px; background: #faf8f5; }
+body.concept .form-group input:focus,
+body.concept .form-group textarea:focus,
+body.concept .form-group select:focus {
+    border-color: var(--c-blue-soft);
+    box-shadow: 0 0 0 4px rgba(168, 182, 207, 0.25);
+}
+body.concept .form-success { box-shadow: none; border: 1px solid var(--c-line); }
+
+/* Info blocks (contact page) */
+body.concept .info-block {
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid var(--c-line);
+    border-radius: 6px;
+}
+body.concept .info-block:hover { transform: none; box-shadow: none; border-color: var(--c-blue-soft); }
+body.concept .info-block h3 { font-family: var(--c-font-display); font-weight: 500; color: var(--c-blue-deep); }
+body.concept .info-block a { color: var(--c-blue-deep); }
+body.concept .map-container { box-shadow: none; border: 1px solid var(--c-line); border-radius: 6px; }
+
+/* Photo grid + thumbs: crisper corners, softer hover */
+body.concept .photo-thumb { border-radius: 4px; box-shadow: none; border: 1px solid var(--c-line); }
+
+/* Cat cards (team): flat framed portrait */
+body.concept .cat-card {
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid var(--c-line);
+    border-radius: 6px;
+}
+body.concept .cat-card:hover { transform: none; box-shadow: none; border-color: var(--c-blue-soft); }
+body.concept .cat-card h4 { font-family: var(--c-font-display); font-weight: 500; color: var(--c-ink); }
+body.concept .news-box {
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid var(--c-line);
+    border-left: 4px solid var(--c-blue-deep);
+    border-radius: 4px;
+}
+body.concept .news-box:hover { transform: none; box-shadow: none; }
+
+body.concept footer { background: linear-gradient(160deg, #3d4568 0%, #5b6b8c 100%); }
+body.concept footer a:hover { color: #cdd4e4; }
+body.concept footer .footer-logo { font-family: var(--c-font-display); }

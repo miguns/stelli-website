@@ -11,19 +11,9 @@
       "photo": "images/team/baileys.jpg"
     },
     {
-      "name": "Elza by StElli",
-      "desc": "Blue Bicolor Rag a 03",
-      "photo": "images/team/elza.jpg"
-    },
-    {
       "name": "Sweetie Enti by StElli",
       "desc": "Blue mitted RAG a 04",
       "photo": "images/team/sweetie.jpg"
-    },
-    {
-      "name": "Elektra by StElli",
-      "desc": "Blue bicolor RAG a 03",
-      "photo": "images/team/elektra.jpg"
     }
   ],
   "studs": [
@@ -31,11 +21,6 @@
       "name": "Unique Liderland PL",
       "desc": "Seal point RAG n",
       "photo": "images/team/unique.jpg"
-    },
-    {
-      "name": "Timi Royal Secret PL",
-      "desc": "Blue lynx mitted Rag a 04 21",
-      "photo": "images/team/timi-1.jpg"
     }
   ]
 }

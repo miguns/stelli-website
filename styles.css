@@ -897,29 +897,6 @@ footer a:hover { color: var(--gold); padding-left: 4px; }
     margin: 0.8rem 0 0;
 }
 
-/* Back to top */
-.back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: var(--gradient-primary);
-    color: var(--white);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 12px 30px rgba(196,78,131,0.35);
-    cursor: pointer;
-    border: none;
-    font-size: 1.2rem;
-    opacity: 0;
-    transform: translateY(20px) scale(0.8);
-    pointer-events: none;
-    transition: all 0.4s var(--ease-bounce);
-    z-index: 900;
-}
-.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-.back-to-top:hover { transform: translateY(-5px) scale(1.08); }
-
 /* Utility */
 .link-button {
     display: inline-flex;
@@ -984,6 +961,20 @@ footer a:hover { color: var(--gold); padding-left: 4px; }
     .timeline-step { grid-template-columns: 46px 1fr; }
     .timeline-step .step-num { width: 46px; height: 46px; font-size: 1rem; }
     .timeline-step:not(:last-child)::before { left: 22px; }
+    .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 1.8rem 1rem; }
+}
+
+/* Phones — get the headline and the primary action in view without scrolling */
+@media (max-width: 480px) {
+    .hero { padding: 5.5rem 20px 2.8rem; }
+    .hero-logo { max-width: 210px; margin-bottom: 0.8rem; }
+    .hero h1 { font-size: 1.9rem; margin-bottom: 0.9rem; }
+    .hero-subtitle { font-size: 1rem; margin-bottom: 1.6rem; }
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 0.7rem; }
+    .hero-actions .btn { justify-content: center; }
+    .hero-cat-slot { width: 96px; margin-top: 1rem; }
+    .section { padding: 3rem 0; }
+    .section-header { margin-bottom: 2.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1227,3 +1218,230 @@ a.partner-card { display: block; text-decoration: none; }
     .lightbox-next { right: 0.5rem; }
     .photo-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.6rem; }
 }
+
+/* ==========================================================================
+   Homepage — Direction A: Akvarelová stopa (ink-wash)
+   Scoped to body.home-inkwash so the rest of the site keeps today's palette.
+   ========================================================================== */
+
+body.home-inkwash {
+    --cream: #faf6f4;
+    --cream-deep: #f2e9ef;
+    --blush: #eccfd9;
+    --blush-deep: #ddb3c4;
+    --lavender: #c9b8d6;
+    --lavender-deep: #9aa8d1;
+    --plum: #5b6a94;
+    --plum-dark: #3d4568;
+    --gold: #b98fa0;
+    --ink: #2b2a3a;
+    --ink-light: #6f6a80;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --shadow-soft: 0 10px 40px rgba(91, 106, 148, 0.12);
+    --shadow-hover: 0 25px 60px rgba(91, 106, 148, 0.22);
+
+    --gradient-primary: linear-gradient(135deg, #c9b8d6 0%, #5b6a94 100%);
+    --gradient-warm: linear-gradient(135deg, #eccfd9 0%, #b98fa0 100%);
+    --gradient-soft: linear-gradient(180deg, #faf6f4 0%, #f2e9ef 100%);
+}
+
+body.home-inkwash h1,
+body.home-inkwash h2,
+body.home-inkwash h3,
+body.home-inkwash h4 { font-weight: 500; }
+
+body.home-inkwash .section-label { letter-spacing: 0.16em; font-weight: 600; }
+
+body.home-inkwash header.is-scrolled {
+    box-shadow: 0 8px 30px rgba(91, 106, 148, 0.12);
+    border-bottom-color: rgba(91, 106, 148, 0.1);
+}
+body.home-inkwash .nav-cta { box-shadow: 0 8px 20px rgba(91, 106, 148, 0.25); }
+body.home-inkwash .nav-cta:hover { box-shadow: 0 12px 28px rgba(91, 106, 148, 0.35); }
+body.home-inkwash .btn-primary,
+body.home-inkwash .btn-solid,
+body.home-inkwash .btn-primary-form { box-shadow: 0 12px 30px rgba(91, 106, 148, 0.28); }
+body.home-inkwash .btn-primary:hover,
+body.home-inkwash .btn-solid:hover,
+body.home-inkwash .btn-primary-form:hover { box-shadow: 0 18px 40px rgba(91, 106, 148, 0.38); }
+
+/* Hero: layered ink washes replace the pastel blobs; drifting paws retire in favor of one still line-art mark */
+body.home-inkwash .hero { background: #ffffff; }
+body.home-inkwash .hero-paws { display: none; }
+body.home-inkwash .hero-blob { filter: blur(50px); opacity: 0.6; }
+body.home-inkwash .hero-blob.b1 {
+    width: 620px; height: 560px;
+    background: radial-gradient(ellipse at 30% 30%, rgba(91, 106, 148, 0.4), transparent 65%);
+    top: -220px; right: -180px;
+}
+body.home-inkwash .hero-blob.b2 {
+    width: 520px; height: 460px;
+    background: radial-gradient(ellipse at 35% 35%, rgba(201, 184, 214, 0.45), transparent 65%);
+    bottom: -220px; left: -160px;
+}
+body.home-inkwash .hero-blob.b3 {
+    width: 380px; height: 340px;
+    background: radial-gradient(ellipse at 40% 40%, rgba(236, 207, 217, 0.5), transparent 65%);
+    top: 12%; left: 6%;
+}
+
+.hero-ink-mark {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 190px;
+    height: auto;
+    opacity: 0.14;
+    pointer-events: none;
+    z-index: 1;
+}
+body.home-inkwash .hero-ink-mark { display: block; }
+@media (max-width: 860px) { body.home-inkwash .hero-ink-mark { width: 120px; top: 4%; right: 2%; } }
+
+body.home-inkwash .hero-content { position: relative; z-index: 2; }
+
+body.home-inkwash .hero h1 em {
+    background: linear-gradient(120deg, var(--plum) 0%, var(--lavender-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.home-inkwash .hero-eyebrow {
+    background: var(--cream-deep);
+    border-color: var(--blush-deep);
+    color: var(--plum);
+}
+
+/* CTA band: the vivid plum/gold wash becomes a quieter indigo-to-orchid gradient */
+body.home-inkwash .section.bg-plum { background: linear-gradient(135deg, var(--lavender-deep) 0%, var(--plum) 100%); }
+
+/* News box: gold rail becomes the muted ink-blue accent */
+body.home-inkwash .news-box { border-left-color: var(--plum); }
+body.home-inkwash .news-box h3,
+body.home-inkwash .news-box a { color: var(--plum); }
+
+/* Photo-led hero: a real kitten face leads instead of an abstract blob/logo mark */
+body.home-inkwash .hero--photo { text-align: left; padding: 7.5rem 20px 5rem; }
+body.home-inkwash .hero-content.hero-grid {
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 3.2rem;
+    align-items: center;
+}
+
+body.home-inkwash .hero-photo {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    box-shadow: 0 30px 60px rgba(43, 42, 58, 0.18);
+}
+body.home-inkwash .hero-photo-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+body.home-inkwash .hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(130% 120% at 50% 38%, transparent 60%, rgba(250, 246, 244, 0.85) 100%);
+    pointer-events: none;
+}
+
+body.home-inkwash .hero-text { max-width: 480px; }
+body.home-inkwash .hero-text .hero-eyebrow {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: 1rem;
+}
+body.home-inkwash .hero-text h1 { margin-bottom: 1.1rem; }
+body.home-inkwash .hero-text .hero-subtitle { margin-left: 0; }
+body.home-inkwash .hero-text .hero-actions { justify-content: flex-start; }
+
+@media (max-width: 900px) {
+    body.home-inkwash .hero-content.hero-grid { grid-template-columns: 1fr; gap: 2rem; max-width: 480px; }
+    body.home-inkwash .hero-photo { aspect-ratio: 4 / 5; max-width: 360px; margin: 0 auto; }
+    body.home-inkwash .hero-text { max-width: none; text-align: left; }
+}
+
+@media (max-width: 480px) {
+    body.home-inkwash .hero--photo { padding: 6rem 20px 3rem; }
+    body.home-inkwash .hero-photo { aspect-ratio: 1 / 1; max-width: 280px; }
+    body.home-inkwash .hero-text h1 { font-size: 1.7rem; margin-bottom: 0.7rem; }
+    body.home-inkwash .hero-text .hero-subtitle { font-size: 0.98rem; margin-bottom: 1.4rem; }
+}
+
+/* ==========================================================================
+   Homepage — breaking the generic "card grid + shadow" template pattern
+   ========================================================================== */
+
+/* Section headers: left-aligned, not the centered-eyebrow-headline-paragraph default */
+body.home-inkwash .section-header {
+    text-align: left;
+    margin: 0 0 2.6rem;
+    max-width: 560px;
+}
+body.home-inkwash .centered-text { text-align: left; margin: 0; max-width: 560px; }
+
+/* Cards lose the floating white box + shadow; a hairline rule carries the division instead */
+body.home-inkwash .grid-3 .card,
+body.home-inkwash .grid-2 .card {
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 1px solid var(--blush-deep);
+    padding: 1.5rem 0 0;
+    transition: border-color 0.3s var(--ease-out);
+}
+body.home-inkwash .grid-3 .card:hover,
+body.home-inkwash .grid-2 .card:hover { transform: none; box-shadow: none; border-top-color: var(--plum); }
+body.home-inkwash .card h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; color: var(--plum-dark); }
+
+/* Partner cards keep their box (they're links to third parties, chrome helps signal that) but flatten to match */
+body.home-inkwash .partner-card {
+    box-shadow: none;
+    border: 1px solid var(--blush-deep);
+    border-radius: 2px;
+}
+body.home-inkwash .partner-card:hover { transform: none; box-shadow: none; border-color: var(--plum); }
+
+/* News box: a plain rule-bound band instead of a floating shadow card */
+body.home-inkwash .news-box {
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid var(--blush-deep);
+    border-bottom: 1px solid var(--blush-deep);
+    border-left: none;
+    border-radius: 0;
+    padding: 1.4rem 0;
+}
+body.home-inkwash .news-box:hover { transform: none; box-shadow: none; }
+
+/* Buttons: keep the pill, drop the SaaS glow + lift-on-hover */
+body.home-inkwash .btn-primary,
+body.home-inkwash .btn-solid,
+body.home-inkwash .btn-primary-form { box-shadow: none; }
+body.home-inkwash .btn-primary:hover,
+body.home-inkwash .btn-solid:hover,
+body.home-inkwash .btn-primary-form:hover { transform: none; box-shadow: none; filter: brightness(1.07); }
+body.home-inkwash .btn-outline:hover { transform: none; }
+
+/* CTA band: quiet solid ink instead of a glowing gradient block */
+body.home-inkwash .cta-banner { box-shadow: none; }
+body.home-inkwash .cta-banner .btn-solid { box-shadow: none; }
+
+/* Stat strip: replace emoji icons with a plain rule + numeral-free layout */
+body.home-inkwash .stats-strip { border-top: 1px solid var(--blush-deep); padding-top: 2.4rem; }
+body.home-inkwash .stat-item .stat-icon { display: none; }
+body.home-inkwash .stat-item strong { font-size: 1.7rem; font-weight: 500; }
+
+/* Info/contact cards: same hairline treatment as the O nás cards */
+body.home-inkwash .contact-form { box-shadow: none; border: 1px solid var(--blush-deep); border-radius: 2px; }

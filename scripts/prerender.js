@@ -57,6 +57,10 @@ function run() {
         const base = [ROOT, dir];
 
         renderFile(base.concat('index.html'), html => {
+            // The redesigned homepage no longer carries the news box; only
+            // inject when the marker is still present so the pipeline (litters,
+            // gallery, team…) keeps working regardless.
+            if (!html.includes('<!--PRERENDER:newsBox:START-->')) return html;
             const result = newsHTML(news, code);
             html = injectMarker(html, 'newsBox', result.html);
             return setHidden(html, 'newsBox', result.hidden);

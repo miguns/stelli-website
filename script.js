@@ -173,17 +173,6 @@ if ('IntersectionObserver' in window && counters.length) {
 }
 
 // ==========================================================================
-// Back to top button
-// ==========================================================================
-const backToTop = document.getElementById('backToTop');
-if (backToTop) {
-    window.addEventListener('scroll', () => {
-        backToTop.classList.toggle('visible', window.scrollY > 500);
-    }, { passive: true });
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-}
-
-// ==========================================================================
 // Accordion (FAQ)
 // ==========================================================================
 document.querySelectorAll('.accordion-item').forEach(item => {
@@ -596,6 +585,29 @@ function scheduleCatPeek() {
 // initHeroCat();    // petting hero mascot — disabled for now
 initPawTrail();
 // scheduleCatPeek(); // peek-and-pounce easter egg — disabled for now
+
+// ==========================================================================
+// Floating "Chci kotě" paw button — site-wide on concept pages.
+// Injected here so every page gets it without markup edits. Skipped on the
+// homepage (which ships its own inline button) and on the contact page.
+// ==========================================================================
+(function initFloatPaw() {
+    if (!document.body.classList.contains('concept')) return;
+    if (document.getElementById('floatCta')) return;
+    const path = (location.pathname.split('/').pop() || 'index.html');
+    if (path === 'kontakty.html' || path === '' || path === 'index.html') return;
+
+    const isSub = /\/(en|de|pl)\//.test(location.pathname);
+    const href = (isSub ? '' : '') + 'kontakty.html';
+
+    const a = document.createElement('a');
+    a.href = href;
+    a.className = 'c-float-cta is-visible';
+    a.id = 'floatCta';
+    a.setAttribute('aria-label', 'Chci kotě');
+    a.innerHTML = '<svg class="c-float-cta-paw" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg><span aria-hidden="true">Chci kotě</span>';
+    document.body.appendChild(a);
+})();
 
 // ==========================================================================
 // Smooth page transitions between internal links
