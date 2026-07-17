@@ -1120,7 +1120,8 @@ footer a:hover { color: var(--gold); padding-left: 4px; }
    Real photos — logo, photo grids, lightbox navigation
    ========================================================================== */
 
-.logo-img { height: 46px; width: auto; display: block; transition: transform 0.35s var(--ease-bounce); }
+.logo-img { height: 88px; width: auto; display: block; transition: transform 0.35s var(--ease-bounce), height 0.3s var(--ease-out); }
+header.is-scrolled .logo-img { height: 68px; }
 .logo:hover .logo-img { transform: scale(1.08) rotate(-4deg); }
 .logo { gap: 0.5rem; }
 
