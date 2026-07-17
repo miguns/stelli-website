@@ -135,6 +135,8 @@ h1, h2, h3, h4 {
    ========================================================================== */
 
 header {
+    position: relative;
+    z-index: 1000;
     background: rgba(253, 248, 247, 0.92);
     backdrop-filter: blur(16px) saturate(160%);
     -webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -263,7 +265,7 @@ header {
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
 @media (max-width: 860px) {
-    .nav-toggle { display: flex; }
+    .nav-toggle { display: flex; position: relative; z-index: 1001; }
     .nav-menu {
         position: fixed;
         top: 0;
@@ -278,6 +280,7 @@ header {
         gap: 1.8rem;
         box-shadow: -20px 0 50px rgba(196, 78, 131, 0.15);
         transition: right 0.5s var(--ease-out);
+        z-index: 1000;
     }
     .nav-menu.active { right: 0; }
     .nav-menu a { font-size: 1.15rem; }
