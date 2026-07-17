@@ -87,12 +87,14 @@ function closeMenu() {
     navToggle?.classList.remove('active');
     navMenu?.classList.remove('active');
     navBackdrop?.classList.remove('active');
+    document.body.classList.remove('nav-open');
 }
 
 navToggle?.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    navBackdrop?.classList.toggle('active');
+    const isOpen = navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active', isOpen);
+    navBackdrop?.classList.toggle('active', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
 });
 
 navBackdrop?.addEventListener('click', closeMenu);

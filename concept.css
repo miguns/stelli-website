@@ -381,6 +381,8 @@ body.concept2 main { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
     .c2-fan .fan-item:nth-child(2) { transform: rotate(4deg) translateY(10px); z-index: 2; }
     .c2-fan .fan-item:nth-child(3) { transform: rotate(-3deg) translateY(2px); z-index: 3; }
     .c2-fan .fan-item:nth-child(4) { transform: rotate(5deg) translateY(16px); z-index: 4; }
+    .c2-fan .fan-item:nth-child(5) { transform: rotate(-5deg) translateY(8px); z-index: 5; }
+    .c2-fan .fan-item:nth-child(6) { transform: rotate(6deg) translateY(20px); z-index: 6; }
 
     .c2-fan .fan-item:hover,
     .c2-fan .fan-item:focus-visible {
