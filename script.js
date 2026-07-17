@@ -101,17 +101,6 @@ navBackdrop?.addEventListener('click', closeMenu);
 document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('click', closeMenu));
 
 // ==========================================================================
-// Sticky header shadow/blur on scroll
-// ==========================================================================
-const header = document.querySelector('header');
-function handleHeaderScroll() {
-    if (!header) return;
-    header.classList.toggle('is-scrolled', window.scrollY > 20);
-}
-handleHeaderScroll();
-window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-
-// ==========================================================================
 // Highlight active nav link
 // ==========================================================================
 const currentPage = location.pathname.split('/').pop() || 'index.html';
@@ -589,26 +578,63 @@ initPawTrail();
 // scheduleCatPeek(); // peek-and-pounce easter egg — disabled for now
 
 // ==========================================================================
-// Floating "Chci kotě" paw button — site-wide on concept pages.
-// Injected here so every page gets it without markup edits. Skipped on the
-// homepage (which ships its own inline button) and on the contact page.
+// Floating "Chci kotě" button — site-wide on concept pages. Injected here so
+// every page gets it without markup edits (the homepage ships its own inline
+// copy instead, since it needs to sit inside the page's own script block).
+// Its color fades from blue to cream as it scrolls over the footer, driven
+// by scroll position rather than snapping at contact.
 // ==========================================================================
-(function initFloatPaw() {
+(function initFloatCat() {
     if (!document.body.classList.contains('concept')) return;
     if (document.getElementById('floatCta')) return;
     const path = (location.pathname.split('/').pop() || 'index.html');
-    if (path === 'kontakty.html' || path === '' || path === 'index.html') return;
+    if (path === '' || path === 'index.html') return;
 
     const isSub = /\/(en|de|pl)\//.test(location.pathname);
-    const href = (isSub ? '' : '') + 'kontakty.html';
+    const langMatch = location.pathname.match(/\/(en|de|pl)\//);
+    const lang = langMatch ? langMatch[1] : 'cs';
+    const imgPrefix = isSub ? '../images/' : 'images/';
+
+    const ARIA_LABEL = { cs: 'Chci koťátko', en: 'I want a kitten', de: 'Ich möchte ein Kätzchen', pl: 'Chcę kocię' };
+    const LABEL = { cs: 'Chci kotě', en: 'A kitten', de: 'Kätzchen', pl: 'Chcę kocię' };
 
     const a = document.createElement('a');
-    a.href = href;
+    a.href = 'kontakty.html#formular';
     a.className = 'c-float-cta is-visible';
     a.id = 'floatCta';
-    a.setAttribute('aria-label', 'Chci kotě');
-    a.innerHTML = '<svg class="c-float-cta-paw" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg><span aria-hidden="true">Chci kotě</span>';
+    a.setAttribute('aria-label', ARIA_LABEL[lang]);
+    a.innerHTML =
+        '<span class="c-float-cta-icon">' +
+            '<picture><source srcset="' + imgPrefix + 'logo-icon-cat-bold.webp" type="image/webp"><img class="c-float-cta-cat" src="' + imgPrefix + 'logo-icon-cat-bold.png" alt="" aria-hidden="true"></picture>' +
+            '<picture><source srcset="' + imgPrefix + 'logo-icon-cat-bold-light.webp" type="image/webp"><img class="c-float-cta-cat c-float-cta-cat-light" src="' + imgPrefix + 'logo-icon-cat-bold-light.png" alt="" aria-hidden="true"></picture>' +
+        '</span>' +
+        '<span class="c-float-cta-label" aria-hidden="true">' + LABEL[lang] + '</span>';
     document.body.appendChild(a);
+
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    const fadeDistance = 160;
+    let ticking = false;
+
+    function updateFooterProgress() {
+        ticking = false;
+        const btnRect = a.getBoundingClientRect();
+        const footerRect = footer.getBoundingClientRect();
+        const distance = footerRect.top - btnRect.top;
+        const progress = 1 - Math.min(Math.max(distance / fadeDistance, 0), 1);
+        a.style.setProperty('--footer-progress', progress.toFixed(3));
+    }
+
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateFooterProgress);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateFooterProgress();
 })();
 
 // ==========================================================================

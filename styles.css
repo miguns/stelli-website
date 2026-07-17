@@ -135,24 +135,13 @@ h1, h2, h3, h4 {
    ========================================================================== */
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(253, 248, 247, 0.7);
+    background: rgba(253, 248, 247, 0.92);
     backdrop-filter: blur(16px) saturate(160%);
     -webkit-backdrop-filter: blur(16px) saturate(160%);
-    transition: box-shadow 0.4s var(--ease-out), background 0.4s var(--ease-out), padding 0.3s var(--ease-out);
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid rgba(196, 78, 131, 0.08);
 }
 
-header.is-scrolled {
-    background: rgba(253, 248, 247, 0.92);
-    box-shadow: 0 8px 30px rgba(196, 78, 131, 0.1);
-    border-bottom-color: rgba(196, 78, 131, 0.08);
-}
-
-.navbar { padding: 1.1rem 0; transition: padding 0.3s var(--ease-out); }
-header.is-scrolled .navbar { padding: 0.7rem 0; }
+.navbar { padding: 1.1rem 0; }
 
 .nav-container {
     max-width: 1140px;
@@ -1120,8 +1109,7 @@ footer a:hover { color: var(--gold); padding-left: 4px; }
    Real photos — logo, photo grids, lightbox navigation
    ========================================================================== */
 
-.logo-img { height: 88px; width: auto; display: block; transition: transform 0.35s var(--ease-bounce), height 0.3s var(--ease-out); }
-header.is-scrolled .logo-img { height: 68px; }
+.logo-img { height: 88px; width: auto; display: block; transition: transform 0.35s var(--ease-bounce); }
 .logo:hover .logo-img { transform: scale(1.08) rotate(-4deg); }
 .logo { gap: 0.5rem; }
 
@@ -1258,7 +1246,7 @@ body.home-inkwash h4 { font-weight: 500; }
 
 body.home-inkwash .section-label { letter-spacing: 0.16em; font-weight: 600; }
 
-body.home-inkwash header.is-scrolled {
+body.home-inkwash header {
     box-shadow: 0 8px 30px rgba(91, 106, 148, 0.12);
     border-bottom-color: rgba(91, 106, 148, 0.1);
 }

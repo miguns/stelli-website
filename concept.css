@@ -47,9 +47,8 @@ body.concept {
 body.concept h1, body.concept h2, body.concept h3, body.concept h4 { font-weight: 500; }
 
 body.concept header {
-    background: rgba(250, 246, 241, 0.75);
+    background: rgba(250, 246, 241, 0.94);
 }
-body.concept header.is-scrolled { background: rgba(250, 246, 241, 0.94); }
 body.concept .logo,
 body.concept .nav-menu a.active,
 body.concept .nav-menu a:hover { color: var(--c-blue-deep); }
