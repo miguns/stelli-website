@@ -197,8 +197,8 @@
     </footer>
     <script src="../script.js"></script>
     <a href="kontakty.html#formular" class="c-float-cta" id="floatCta" aria-label="Chcę kocię">
-        <svg class="c-float-cta-paw" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M20 26c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zm24 0c4 0 7-4 7-9s-3-9-7-9-7 4-7 9 3 9 7 9zM10 40c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zm44 0c3 0 6-3 6-7s-3-7-6-7-6 3-6 7 3 7 6 7zM32 60c-9 0-16-6-16-13 0-8 7-14 16-14s16 6 16 14c0 7-7 13-16 13z"/></svg>
-        <span aria-hidden="true">Chcę kocię</span>
+        <span class="c-float-cta-icon"><picture><source srcset="../images/logo-icon-cat-bold.webp" type="image/webp"><img class="c-float-cta-cat" src="../images/logo-icon-cat-bold.png" alt="" aria-hidden="true"></picture><picture><source srcset="../images/logo-icon-cat-bold-light.webp" type="image/webp"><img class="c-float-cta-cat c-float-cta-cat-light" src="../images/logo-icon-cat-bold-light.png" alt="" aria-hidden="true"></picture></span>
+        <span class="c-float-cta-label" aria-hidden="true">Chcę kocię</span>
     </a>
 
     
@@ -238,8 +238,34 @@
         // Floating "Chci kotě" — always visible, including over the hero
         (function initFloatCta() {
             var btn = document.getElementById('floatCta');
+            var footer = document.querySelector('footer');
             if (!btn) return;
             btn.classList.add('is-visible');
+            if (!footer) return;
+
+            // As the fixed button scrolls over the footer, fade its color from
+            // blue to cream gradually over a distance, instead of snapping at contact.
+            var fadeDistance = 160;
+            var ticking = false;
+
+            function updateFooterProgress() {
+                ticking = false;
+                var btnRect = btn.getBoundingClientRect();
+                var footerRect = footer.getBoundingClientRect();
+                var distance = footerRect.top - btnRect.top;
+                var progress = 1 - Math.min(Math.max(distance / fadeDistance, 0), 1);
+                btn.style.setProperty('--footer-progress', progress.toFixed(3));
+            }
+
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(updateFooterProgress);
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            updateFooterProgress();
         })();
     </script>
 </body>
