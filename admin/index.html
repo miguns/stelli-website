@@ -7,6 +7,11 @@
     <title>StElli — Správa obsahu</title>
 </head>
 <body>
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <!-- Sveltia CMS is vendored locally (pinned to v0.172.2) instead of loaded
+         from unpkg, so a compromised CDN or upstream package can't inject
+         code into a page holding a GitHub OAuth token. To upgrade: download
+         the new dist/sveltia-cms.js from the desired @sveltia/cms release
+         and overwrite admin/sveltia-cms.js. -->
+    <script src="/admin/sveltia-cms.js"></script>
 </body>
 </html>

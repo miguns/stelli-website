@@ -17,7 +17,7 @@
     {
       "src": "/admin/(.*)",
       "headers": {
-        "Content-Security-Policy": "default-src 'self' https: data: blob:; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline'; connect-src 'self' https:; img-src 'self' https: data: blob:; font-src 'self' https: data:; frame-src 'self' https:; object-src 'none'"
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.github.com https://github.com https://raw.githubusercontent.com https://*.githubusercontent.com; img-src 'self' data: blob: https://*.githubusercontent.com; font-src 'self' data:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
       },
       "continue": true
     },
