@@ -2,7 +2,8 @@ backend:
   name: github
   repo: miguns/stelli-website
   branch: main
-  base_url: https://stelliragdoll.cz
+  # TEMP for Vercel testing — revert to https://stelliragdoll.cz before going live on the real domain.
+  base_url: https://stelli-website.vercel.app
   auth_endpoint: api/auth
 
 media_folder: "images/uploads"
