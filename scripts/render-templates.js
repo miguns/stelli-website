@@ -39,7 +39,7 @@ function photoGridHTML(photos, galleryId, altPrefix, prefix) {
         const full = escapeHtml(prefix + src);
         const grid = escapeHtml(prefix + gridSrcOf(src));
         const webp = grid.replace(/\.(jpg|png)$/, '.webp');
-        return '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
+        return '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox tabindex="0" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
             '<picture><source srcset="' + webp + '" type="image/webp">' +
             '<img src="' + grid + '" alt="' + escapeHtml(altPrefix) + ' ' + (i + 1) + '" loading="lazy"></picture></div>';
     }).join('');
@@ -98,10 +98,10 @@ function teamCardHTML(cat, i, prefix) {
     const webp = grid.replace(/\.(jpg|png)$/, '.webp');
     const name = escapeHtml(cat.name);
     return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
-        '<div class="photo-thumb" data-lightbox data-gallery="tym" data-src="' + full + '">' +
+        '<div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="tym" data-src="' + full + '">' +
         '<picture><source srcset="' + webp + '" type="image/webp">' +
         '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture></div>' +
-        '<div class="card-body"><h4>' + name + '</h4><p>' + escapeHtml(cat.desc) + '</p></div></div>';
+        '<div class="card-body"><h3>' + name + '</h3><p>' + escapeHtml(cat.desc) + '</p></div></div>';
 }
 
 function teamHTML(data, prefix) {

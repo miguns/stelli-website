@@ -165,7 +165,7 @@
                 </div>
             </div>
             <div>
-                <h4>Navigation</h4>
+                <h3>Navigation</h3>
                 <p><a href="o-nas.html">About us</a></p>
                 <p><a href="kotatka.html">Kittens</a></p>
                 <p><a href="informace-ke-koupi.html">Buying info</a></p>
@@ -173,7 +173,7 @@
                 <p><a href="fotogalerie.html">Gallery</a></p>
             </div>
             <div>
-                <h4>Contact</h4>
+                <h3>Contact</h3>
                 <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
                 <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
                 <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
@@ -184,12 +184,12 @@
             <p class="footer-note">We use anonymous IP-based country detection to automatically suggest the right language.</p>
         </div>
     </footer>
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
         <button class="lightbox-close" aria-label="Close">✕</button>
         <button class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button>
         <button class="lightbox-nav lightbox-next" aria-label="Next">›</button>
         <div class="lightbox-content"><img src="" alt=""></div>
-        <span class="lightbox-counter"></span>
+        <span class="lightbox-counter" aria-live="polite" aria-atomic="true"></span>
     </div>
     <script src="../script.js"></script>
 </body>

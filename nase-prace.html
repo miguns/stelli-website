@@ -92,7 +92,7 @@
 
         <section class="section">
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:21/9; max-width:900px; margin:0 auto 3rem;" data-lightbox data-gallery="prace" data-src="images/misc/prace-header.jpg">
+                <div class="photo-thumb reveal-scale" style="aspect-ratio:21/9; max-width:900px; margin:0 auto 3rem;" data-lightbox tabindex="0" role="button" data-gallery="prace" data-src="images/misc/prace-header.jpg">
                     <picture><source srcset="images/misc/prace-header.webp" type="image/webp"><img src="images/misc/prace-header.jpg" alt="Socializace koťátek StElli" loading="lazy"></picture>
                 </div>
                 <div class="timeline">
@@ -151,7 +151,7 @@
         <section class="section bg-soft">
             <div class="container">
                 <div class="grid grid-2" style="align-items:center; gap:3rem;">
-                    <div class="photo-thumb reveal-left" style="aspect-ratio:4/5;" data-lightbox data-gallery="prace" data-src="images/gallery/02.jpg">
+                    <div class="photo-thumb reveal-left" style="aspect-ratio:4/5;" data-lightbox tabindex="0" role="button" data-gallery="prace" data-src="images/gallery/02.jpg">
                         <picture><source srcset="images/gallery/02.webp" type="image/webp"><img src="images/gallery/02.jpg" alt="Kocour z vrhu StElli u nové majitelky" loading="lazy"></picture>
                     </div>
                     <div class="prose reveal-right">
@@ -185,7 +185,7 @@
                 </div>
             </div>
             <div>
-                <h4>Navigace</h4>
+                <h3>Navigace</h3>
                 <p><a href="o-nas.html">O nás</a></p>
                 <p><a href="kotatka.html">Koťátka</a></p>
                 <p><a href="informace-ke-koupi.html">Informace ke koupi</a></p>
@@ -193,7 +193,7 @@
                 <p><a href="fotogalerie.html">Fotogalerie</a></p>
             </div>
             <div>
-                <h4>Kontakt</h4>
+                <h3>Kontakt</h3>
                 <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
                 <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
                 <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
@@ -204,12 +204,12 @@
             <p class="footer-note">Pro automatický výběr jazyka používáme anonymní zjištění země podle IP adresy.</p>
         </div>
     </footer>
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografie">
         <button class="lightbox-close" aria-label="Zavřít">✕</button>
         <button class="lightbox-nav lightbox-prev" aria-label="Předchozí">‹</button>
         <button class="lightbox-nav lightbox-next" aria-label="Další">›</button>
         <div class="lightbox-content"><img src="" alt=""></div>
-        <span class="lightbox-counter"></span>
+        <span class="lightbox-counter" aria-live="polite" aria-atomic="true"></span>
     </div>
     <script src="script.js"></script>
 </body>

@@ -93,7 +93,7 @@
         <section class="section">
             <div class="container">
                 <div class="grid grid-2" style="align-items:center; gap:3rem;">
-                    <div class="photo-thumb reveal-left" style="aspect-ratio:4/5;" data-lightbox data-gallery="onas" data-src="../images/gallery/02.jpg">
+                    <div class="photo-thumb reveal-left" style="aspect-ratio:4/5;" data-lightbox tabindex="0" role="button" data-gallery="onas" data-src="../images/gallery/02.jpg">
                         <picture><source srcset="../images/gallery/02.webp" type="image/webp"><img src="../images/gallery/02.jpg" alt="Petra Vávrová z kotami StElli" loading="lazy"></picture>
                     </div>
                     <div class="prose reveal-right">
@@ -135,7 +135,7 @@
                     <span class="section-label">Nasze codzienne życie</span>
                     <h2>Kawałek domu StElli</h2>
                 </div>
-                <div class="photo-grid stagger" id="onasGrid"><!--PRERENDER:onasGrid:START--><div class="photo-thumb reveal-scale" style="--i:0" data-lightbox data-gallery="onas-life" data-src="../images/onas/01.jpg"><picture><source srcset="../images/onas/01-thumb.webp" type="image/webp"><img src="../images/onas/01-thumb.jpg" alt="StElli 1" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:1" data-lightbox data-gallery="onas-life" data-src="../images/onas/02.jpg"><picture><source srcset="../images/onas/02-thumb.webp" type="image/webp"><img src="../images/onas/02-thumb.jpg" alt="StElli 2" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:2" data-lightbox data-gallery="onas-life" data-src="../images/onas/03.jpg"><picture><source srcset="../images/onas/03-thumb.webp" type="image/webp"><img src="../images/onas/03-thumb.jpg" alt="StElli 3" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:3" data-lightbox data-gallery="onas-life" data-src="../images/onas/04.jpg"><picture><source srcset="../images/onas/04-thumb.webp" type="image/webp"><img src="../images/onas/04-thumb.jpg" alt="StElli 4" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:4" data-lightbox data-gallery="onas-life" data-src="../images/onas/05.jpg"><picture><source srcset="../images/onas/05-thumb.webp" type="image/webp"><img src="../images/onas/05-thumb.jpg" alt="StElli 5" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:5" data-lightbox data-gallery="onas-life" data-src="../images/onas/06.jpg"><picture><source srcset="../images/onas/06-thumb.webp" type="image/webp"><img src="../images/onas/06-thumb.jpg" alt="StElli 6" loading="lazy"></picture></div><!--PRERENDER:onasGrid:END--></div>
+                <div class="photo-grid stagger" id="onasGrid"><!--PRERENDER:onasGrid:START--><div class="photo-thumb reveal-scale" style="--i:0" data-lightbox tabindex="0" role="button" data-gallery="onas-life" data-src="../images/onas/01.jpg"><picture><source srcset="../images/onas/01-thumb.webp" type="image/webp"><img src="../images/onas/01-thumb.jpg" alt="StElli 1" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:1" data-lightbox tabindex="0" role="button" data-gallery="onas-life" data-src="../images/onas/02.jpg"><picture><source srcset="../images/onas/02-thumb.webp" type="image/webp"><img src="../images/onas/02-thumb.jpg" alt="StElli 2" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:2" data-lightbox tabindex="0" role="button" data-gallery="onas-life" data-src="../images/onas/03.jpg"><picture><source srcset="../images/onas/03-thumb.webp" type="image/webp"><img src="../images/onas/03-thumb.jpg" alt="StElli 3" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:3" data-lightbox tabindex="0" role="button" data-gallery="onas-life" data-src="../images/onas/04.jpg"><picture><source srcset="../images/onas/04-thumb.webp" type="image/webp"><img src="../images/onas/04-thumb.jpg" alt="StElli 4" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:4" data-lightbox tabindex="0" role="button" data-gallery="onas-life" data-src="../images/onas/05.jpg"><picture><source srcset="../images/onas/05-thumb.webp" type="image/webp"><img src="../images/onas/05-thumb.jpg" alt="StElli 5" loading="lazy"></picture></div><div class="photo-thumb reveal-scale" style="--i:5" data-lightbox tabindex="0" role="button" data-gallery="onas-life" data-src="../images/onas/06.jpg"><picture><source srcset="../images/onas/06-thumb.webp" type="image/webp"><img src="../images/onas/06-thumb.jpg" alt="StElli 6" loading="lazy"></picture></div><!--PRERENDER:onasGrid:END--></div>
             </div>
         </section>
 
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <div>
-                <h4>Nawigacja</h4>
+                <h3>Nawigacja</h3>
                 <p><a href="o-nas.html">O nas</a></p>
                 <p><a href="kotatka.html">Kocięta</a></p>
                 <p><a href="informace-ke-koupi.html">Informacje o zakupie</a></p>
@@ -169,7 +169,7 @@
                 <p><a href="fotogalerie.html">Galeria</a></p>
             </div>
             <div>
-                <h4>Kontakt</h4>
+                <h3>Kontakt</h3>
                 <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
                 <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
                 <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
@@ -181,12 +181,12 @@
         </div>
     </footer>
 
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Zdjęcie">
         <button class="lightbox-close" aria-label="Zamknij">✕</button>
         <button class="lightbox-nav lightbox-prev" aria-label="Poprzednie">‹</button>
         <button class="lightbox-nav lightbox-next" aria-label="Następne">›</button>
         <div class="lightbox-content"><img src="" alt=""></div>
-        <span class="lightbox-counter"></span>
+        <span class="lightbox-counter" aria-live="polite" aria-atomic="true"></span>
     </div>
     <script src="../script.js"></script>
 </body>

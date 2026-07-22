@@ -137,7 +137,7 @@
 
         <section class="section">
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:1/1; max-width:640px; margin:0 auto 3rem;" data-lightbox data-gallery="koupi" data-src="../images/misc/koupi-header.jpg">
+                <div class="photo-thumb reveal-scale" style="aspect-ratio:1/1; max-width:640px; margin:0 auto 3rem;" data-lightbox tabindex="0" role="button" data-gallery="koupi" data-src="../images/misc/koupi-header.jpg">
                     <picture><source srcset="../images/misc/koupi-header.webp" type="image/webp"><img src="../images/misc/koupi-header.jpg" alt="Ragdoll-Kätzchen im neuen Zuhause mit Familie" loading="lazy"></picture>
                 </div>
                 <div class="section-header reveal">
@@ -269,7 +269,7 @@
                 </div>
             </div>
             <div>
-                <h4>Navigation</h4>
+                <h3>Navigation</h3>
                 <p><a href="o-nas.html">Über uns</a></p>
                 <p><a href="kotatka.html">Kätzchen</a></p>
                 <p><a href="informace-ke-koupi.html">Kaufinformationen</a></p>
@@ -277,7 +277,7 @@
                 <p><a href="fotogalerie.html">Galerie</a></p>
             </div>
             <div>
-                <h4>Kontakt</h4>
+                <h3>Kontakt</h3>
                 <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
                 <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
                 <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
@@ -288,12 +288,12 @@
             <p class="footer-note">Wir verwenden eine anonyme IP-basierte Ländererkennung, um automatisch die passende Sprache vorzuschlagen.</p>
         </div>
     </footer>
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto">
         <button class="lightbox-close" aria-label="Schließen">✕</button>
         <button class="lightbox-nav lightbox-prev" aria-label="Zurück">‹</button>
         <button class="lightbox-nav lightbox-next" aria-label="Weiter">›</button>
         <div class="lightbox-content"><img src="" alt=""></div>
-        <span class="lightbox-counter"></span>
+        <span class="lightbox-counter" aria-live="polite" aria-atomic="true"></span>
     </div>
     <script src="../script.js"></script>
 </body>

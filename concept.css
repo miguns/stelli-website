@@ -622,7 +622,7 @@ body.concept .cat-card {
     border-radius: 6px;
 }
 body.concept .cat-card:hover { transform: none; box-shadow: none; border-color: var(--c-blue-soft); }
-body.concept .cat-card h4 { font-family: var(--c-font-display); font-weight: 500; color: var(--c-ink); }
+body.concept .cat-card h3 { font-family: var(--c-font-display); font-weight: 500; color: var(--c-ink); }
 body.concept .news-box {
     background: #fff;
     box-shadow: none;
