@@ -187,14 +187,14 @@
     {
       "id": "vrh-c",
       "name_cs": "Vrh C",
-      "name_en": "Litter C — coming soon",
-      "name_de": "Wurf C — in Vorbereitung",
-      "name_pl": "Miot C — w przygotowaniu",
+      "name_en": "Litter C",
+      "name_de": "Wurf C",
+      "name_pl": "Miot C",
       "status": "home",
       "desc_cs": "Již v nových domovech.",
-      "desc_en": "We are planning a new litter for early summer. Interested people can already get in touch via the form below.",
-      "desc_de": "Einen neuen Wurf planen wir für den Frühsommer. Interessenten können sich schon jetzt über das Formular unten melden.",
-      "desc_pl": "Nowy miot planujemy na początek lata. Zainteresowani mogą zgłaszać się już teraz przez formularz poniżej.",
+      "desc_en": "Already in their new homes.",
+      "desc_de": "Bereits in ihren neuen Zuhause.",
+      "desc_pl": "Już w nowych domach.",
       "photos": []
     }
   ]
