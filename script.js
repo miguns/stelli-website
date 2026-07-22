@@ -83,12 +83,36 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navBackdrop = document.getElementById('navBackdrop');
 
+// `overflow: hidden` on <body> (the .nav-open class below) doesn't stop
+// touch-scrolling the page behind a fixed menu on iOS Safari — the page
+// scrolls under the menu anyway. Pinning the body itself via
+// position:fixed while remembering the scroll offset is the reliable
+// cross-browser fix; restore the scroll position when the menu closes.
+let navScrollY = 0;
+
+function lockBodyScroll() {
+    navScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = -navScrollY + 'px';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+}
+
+function unlockBodyScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    window.scrollTo(0, navScrollY);
+}
+
 function closeMenu() {
     navToggle?.classList.remove('active');
     navToggle?.setAttribute('aria-expanded', 'false');
     navMenu?.classList.remove('active');
     navBackdrop?.classList.remove('active');
     document.body.classList.remove('nav-open');
+    unlockBodyScroll();
 }
 
 navToggle?.addEventListener('click', () => {
@@ -97,6 +121,8 @@ navToggle?.addEventListener('click', () => {
     navMenu.classList.toggle('active', isOpen);
     navBackdrop?.classList.toggle('active', isOpen);
     document.body.classList.toggle('nav-open', isOpen);
+    if (isOpen) lockBodyScroll();
+    else unlockBodyScroll();
 });
 
 navBackdrop?.addEventListener('click', closeMenu);
