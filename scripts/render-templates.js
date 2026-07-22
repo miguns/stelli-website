@@ -2,6 +2,10 @@
 // (scripts/prerender.js). No DOM/browser APIs — safe to run in Node.
 // Mirrors what content.js used to render client-side at runtime.
 
+const fs = require('fs');
+const path = require('path');
+const ROOT = path.join(__dirname, '..');
+
 // CMS fields are free text entered through /admin. Escape before splicing
 // into the static HTML this script writes — otherwise a "<" or "&" in a
 // title/description breaks the page markup, and an attacker with CMS
@@ -17,13 +21,27 @@ function pick(obj, key, lang) {
     return escapeHtml(obj[key + '_' + lang] ?? obj[key + '_cs'] ?? obj[key] ?? '');
 }
 
+// Grid thumbnails reuse the full-res photo unless a pre-generated
+// "-thumb" variant exists (see scripts/generate-thumbs.py) — served in
+// the grid, while data-src keeps pointing at the full-res file for the
+// lightbox. Falls back to the original so a freshly uploaded CMS photo
+// still renders correctly before anyone re-runs the thumbnail script.
+function thumbPathOf(src) {
+    return src.replace(/\.(jpg|png)$/, '-thumb.jpg');
+}
+function gridSrcOf(src) {
+    const thumb = thumbPathOf(src);
+    return fs.existsSync(path.join(ROOT, thumb)) ? thumb : src;
+}
+
 function photoGridHTML(photos, galleryId, altPrefix, prefix) {
     return photos.map((src, i) => {
         const full = escapeHtml(prefix + src);
-        const webp = full.replace(/\.(jpg|png)$/, '.webp');
+        const grid = escapeHtml(prefix + gridSrcOf(src));
+        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
         return '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
             '<picture><source srcset="' + webp + '" type="image/webp">' +
-            '<img src="' + full + '" alt="' + escapeHtml(altPrefix) + ' ' + (i + 1) + '" loading="lazy"></picture></div>';
+            '<img src="' + grid + '" alt="' + escapeHtml(altPrefix) + ' ' + (i + 1) + '" loading="lazy"></picture></div>';
     }).join('');
 }
 
@@ -76,12 +94,13 @@ function onasLifeHTML(data, prefix) {
 
 function teamCardHTML(cat, i, prefix) {
     const full = escapeHtml(prefix + cat.photo);
-    const webp = full.replace(/\.(jpg|png)$/, '.webp');
+    const grid = escapeHtml(prefix + gridSrcOf(cat.photo));
+    const webp = grid.replace(/\.(jpg|png)$/, '.webp');
     const name = escapeHtml(cat.name);
     return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
         '<div class="photo-thumb" data-lightbox data-gallery="tym" data-src="' + full + '">' +
         '<picture><source srcset="' + webp + '" type="image/webp">' +
-        '<img src="' + full + '" alt="' + name + '" loading="lazy"></picture></div>' +
+        '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture></div>' +
         '<div class="card-body"><h4>' + name + '</h4><p>' + escapeHtml(cat.desc) + '</p></div></div>';
 }
 
