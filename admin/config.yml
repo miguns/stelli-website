@@ -19,17 +19,17 @@ collections:
         fields:
           - { label: "Zobrazit banner na webu", name: "enabled", widget: "boolean", default: true }
           - { label: "Nadpis (čeština)", name: "title_cs", widget: "string" }
-          - { label: "Nadpis (English)", name: "title_en", widget: "string" }
-          - { label: "Nadpis (Deutsch)", name: "title_de", widget: "string" }
-          - { label: "Nadpis (Polski)", name: "title_pl", widget: "string" }
+          - { label: "Nadpis (English)", name: "title_en", widget: "string", required: false }
+          - { label: "Nadpis (Deutsch)", name: "title_de", widget: "string", required: false }
+          - { label: "Nadpis (Polski)", name: "title_pl", widget: "string", required: false }
           - { label: "Text (čeština)", name: "text_cs", widget: "string" }
-          - { label: "Text (English)", name: "text_en", widget: "string" }
-          - { label: "Text (Deutsch)", name: "text_de", widget: "string" }
-          - { label: "Text (Polski)", name: "text_pl", widget: "string" }
+          - { label: "Text (English)", name: "text_en", widget: "string", required: false }
+          - { label: "Text (Deutsch)", name: "text_de", widget: "string", required: false }
+          - { label: "Text (Polski)", name: "text_pl", widget: "string", required: false }
           - { label: "Text tlačítka (čeština)", name: "cta_cs", widget: "string" }
-          - { label: "Text tlačítka (English)", name: "cta_en", widget: "string" }
-          - { label: "Text tlačítka (Deutsch)", name: "cta_de", widget: "string" }
-          - { label: "Text tlačítka (Polski)", name: "cta_pl", widget: "string" }
+          - { label: "Text tlačítka (English)", name: "cta_en", widget: "string", required: false }
+          - { label: "Text tlačítka (Deutsch)", name: "cta_de", widget: "string", required: false }
+          - { label: "Text tlačítka (Polski)", name: "cta_pl", widget: "string", required: false }
 
   - name: "litters"
     label: "Vrhy koťátek"
@@ -45,9 +45,9 @@ collections:
             fields:
               - { label: "ID (jen malá písmena, bez diakritiky, pomlčky)", name: "id", widget: "string", hint: "např. vrh-d — musí být pro každý vrh jedinečné" }
               - { label: "Název (čeština)", name: "name_cs", widget: "string" }
-              - { label: "Název (English)", name: "name_en", widget: "string" }
-              - { label: "Název (Deutsch)", name: "name_de", widget: "string" }
-              - { label: "Název (Polski)", name: "name_pl", widget: "string" }
+              - { label: "Název (English)", name: "name_en", widget: "string", required: false }
+              - { label: "Název (Deutsch)", name: "name_de", widget: "string", required: false }
+              - { label: "Název (Polski)", name: "name_pl", widget: "string", required: false }
               - label: "Stav vrhu"
                 name: "status"
                 widget: "select"
@@ -57,12 +57,13 @@ collections:
                   - { label: "V nových domovech", value: "home" }
                   - { label: "Připravujeme (bez fotek)", value: "upcoming" }
               - { label: "Popis (čeština)", name: "desc_cs", widget: "text" }
-              - { label: "Popis (English)", name: "desc_en", widget: "text" }
-              - { label: "Popis (Deutsch)", name: "desc_de", widget: "text" }
-              - { label: "Popis (Polski)", name: "desc_pl", widget: "text" }
+              - { label: "Popis (English)", name: "desc_en", widget: "text", required: false }
+              - { label: "Popis (Deutsch)", name: "desc_de", widget: "text", required: false }
+              - { label: "Popis (Polski)", name: "desc_pl", widget: "text", required: false }
               - label: "Fotky vrhu"
                 name: "photos"
                 widget: "list"
+                required: false
                 field: { label: "Fotka", name: "photo", widget: "image" }
 
   - name: "team"
