@@ -28,7 +28,7 @@ jobs:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: node scripts/auto-translate.js
 
-      - name: Prerender litters/gallery/team/news into static HTML
+      - name: Prerender litters/gallery/team/news/testimonials into static HTML
         run: node scripts/prerender.js
 
       - name: Commit translated content and prerendered pages
@@ -36,10 +36,10 @@ jobs:
           git config user.name "stelli-translate-bot"
           git config user.email "actions@github.com"
           git add data/*.json \
-            index.html kotatka.html fotogalerie.html o-nas.html tym.html \
-            en/index.html en/kotatka.html en/fotogalerie.html en/o-nas.html en/tym.html \
-            de/index.html de/kotatka.html de/fotogalerie.html de/o-nas.html de/tym.html \
-            pl/index.html pl/kotatka.html pl/fotogalerie.html pl/o-nas.html pl/tym.html
+            index.html kotatka.html fotogalerie.html o-nas.html tym.html nase-prace.html \
+            en/index.html en/kotatka.html en/fotogalerie.html en/o-nas.html en/tym.html en/nase-prace.html \
+            de/index.html de/kotatka.html de/fotogalerie.html de/o-nas.html de/tym.html de/nase-prace.html \
+            pl/index.html pl/kotatka.html pl/fotogalerie.html pl/o-nas.html pl/tym.html pl/nase-prace.html
           if ! git diff --cached --quiet; then
             git commit -m "Auto-translate and prerender CMS content [skip translate]"
             git push

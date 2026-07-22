@@ -111,4 +111,20 @@ function teamHTML(data, prefix) {
     };
 }
 
-module.exports = { pick, photoGridHTML, newsHTML, littersHTML, galleryHTML, onasLifeHTML, teamHTML };
+function testimonialCardHTML(item, i, lang, prefix) {
+    const full = escapeHtml(prefix + item.photo);
+    const grid = escapeHtml(prefix + gridSrcOf(item.photo));
+    const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+    const caption = pick(item, 'caption', lang);
+    return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
+        '<div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="testimonials" data-src="' + full + '">' +
+        '<picture><source srcset="' + webp + '" type="image/webp">' +
+        '<img src="' + grid + '" alt="' + caption + '" loading="lazy"></picture></div>' +
+        '<div class="card-body"><p>' + caption + '</p></div></div>';
+}
+
+function testimonialsHTML(data, lang, prefix) {
+    return (data.items || []).map((item, i) => testimonialCardHTML(item, i, lang, prefix)).join('');
+}
+
+module.exports = { pick, photoGridHTML, newsHTML, littersHTML, galleryHTML, onasLifeHTML, teamHTML, testimonialsHTML };

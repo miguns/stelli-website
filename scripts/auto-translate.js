@@ -22,7 +22,7 @@ const TARGETS = [
 ];
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
-const FILES = ['news.json', 'litters.json'];
+const FILES = ['news.json', 'litters.json', 'testimonials.json'];
 
 let apiCalls = 0;
 

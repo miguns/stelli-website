@@ -6,7 +6,7 @@
 // content between its own markers.
 const fs = require('fs');
 const path = require('path');
-const { newsHTML, littersHTML, galleryHTML, onasLifeHTML, teamHTML } = require('./render-templates');
+const { newsHTML, littersHTML, galleryHTML, onasLifeHTML, teamHTML, testimonialsHTML } = require('./render-templates');
 
 const ROOT = path.join(__dirname, '..');
 const LANGS = [
@@ -51,6 +51,7 @@ function run() {
     const gallery = readJSON('gallery');
     const onasLife = readJSON('onas-life');
     const team = readJSON('team');
+    const testimonials = readJSON('testimonials');
 
     LANGS.forEach(({ code, dir }) => {
         const prefix = code === 'cs' ? '' : '../';
@@ -80,6 +81,9 @@ function run() {
             html = injectMarker(html, 'teamQueens', result.queens);
             return injectMarker(html, 'teamStuds', result.studs);
         });
+
+        renderFile(base.concat('nase-prace.html'), html =>
+            injectMarker(html, 'testimonialsGrid', testimonialsHTML(testimonials, code, prefix)));
 
         console.log('Prerendered ' + code);
     });

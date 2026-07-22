@@ -111,3 +111,21 @@ collections:
             name: "photos"
             widget: "list"
             field: { label: "Fotka", name: "photo", widget: "image" }
+
+  - name: "testimonials"
+    label: "Ohlasy nových domovů (Naše práce)"
+    files:
+      - file: "data/testimonials.json"
+        label: "Ohlasy"
+        name: "testimonials"
+        fields:
+          - label: "Ohlasy"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.caption_cs}}"
+            fields:
+              - { label: "Fotka", name: "photo", widget: "image" }
+              - { label: "Text (čeština)", name: "caption_cs", widget: "text" }
+              - { label: "Text (English)", name: "caption_en", widget: "text", required: false }
+              - { label: "Text (Deutsch)", name: "caption_de", widget: "text", required: false }
+              - { label: "Text (Polski)", name: "caption_pl", widget: "text", required: false }
