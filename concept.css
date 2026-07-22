@@ -53,8 +53,27 @@ body.concept .logo,
 body.concept .nav-menu a.active,
 body.concept .nav-menu a:hover { color: var(--c-blue-deep); }
 body.concept .nav-menu a::after { background: var(--c-blue-deep); }
-body.concept .nav-cta { background: var(--c-blue-deep); box-shadow: none; }
-body.concept .nav-cta:hover { box-shadow: none; filter: brightness(1.08); transform: none; }
+body.concept .nav-cta {
+    background: transparent;
+    border: 1.5px solid var(--c-blue-deep);
+    color: var(--c-blue-deep) !important;
+    box-shadow: none;
+}
+body.concept .nav-cta:hover {
+    background: var(--c-blue-deep);
+    color: #fff !important;
+    box-shadow: none;
+    filter: none;
+    transform: none;
+}
+
+/* Active language: distinct from the Kontakty CTA (no filled pill) so the
+   two don't visually blend into "which one is the button?" */
+body.concept .lang-link.active {
+    background: var(--cream-deep);
+    color: var(--c-blue-deep);
+    font-weight: 700;
+}
 
 /* ---------- Hero: full-bleed photo IS the pitch ---------- */
 
