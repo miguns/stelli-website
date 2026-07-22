@@ -25,7 +25,7 @@
       "src": "/admin/(.*)",
       "headers": {
         "Cache-Control": "no-store, must-revalidate",
-        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' data: https://api.github.com https://github.com https://raw.githubusercontent.com https://*.githubusercontent.com https://www.githubstatus.com https://unpkg.com; img-src 'self' data: blob: https://*.githubusercontent.com; font-src 'self' data: https://fonts.gstatic.com; manifest-src blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' data: https://api.github.com https://github.com https://raw.githubusercontent.com https://*.githubusercontent.com https://www.githubstatus.com https://unpkg.com https://picsum.photos; img-src 'self' data: blob: https://*.githubusercontent.com https://picsum.photos https://*.fastly.picsum.photos; font-src 'self' data: https://fonts.gstatic.com; manifest-src blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
       },
       "continue": true
     },
