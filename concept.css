@@ -54,8 +54,8 @@ body.concept .nav-menu a.active,
 body.concept .nav-menu a:hover { color: var(--c-blue-deep); }
 body.concept .nav-menu a::after { background: var(--c-blue-deep); }
 body.concept .nav-cta {
-    background: transparent;
-    border: 1.5px solid var(--c-blue-deep);
+    background: var(--cream-deep);
+    border: none;
     color: var(--c-blue-deep) !important;
     box-shadow: none;
 }

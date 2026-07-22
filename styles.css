@@ -212,7 +212,7 @@ header {
 .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
 .nav-menu a.active { color: var(--plum); font-weight: 600; }
 
-.nav-cta {
+.nav-menu a.nav-cta {
     background: var(--gradient-primary);
     color: var(--white) !important;
     padding: 0.65rem 1.4rem;
