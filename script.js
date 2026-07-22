@@ -85,6 +85,7 @@ const navBackdrop = document.getElementById('navBackdrop');
 
 function closeMenu() {
     navToggle?.classList.remove('active');
+    navToggle?.setAttribute('aria-expanded', 'false');
     navMenu?.classList.remove('active');
     navBackdrop?.classList.remove('active');
     document.body.classList.remove('nav-open');
@@ -92,6 +93,7 @@ function closeMenu() {
 
 navToggle?.addEventListener('click', () => {
     const isOpen = navToggle.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
     navMenu.classList.toggle('active', isOpen);
     navBackdrop?.classList.toggle('active', isOpen);
     document.body.classList.toggle('nav-open', isOpen);

@@ -2,17 +2,28 @@
 // (scripts/prerender.js). No DOM/browser APIs — safe to run in Node.
 // Mirrors what content.js used to render client-side at runtime.
 
+// CMS fields are free text entered through /admin. Escape before splicing
+// into the static HTML this script writes — otherwise a "<" or "&" in a
+// title/description breaks the page markup, and an attacker with CMS
+// access (or a phished OAuth token) could plant a persistent XSS payload
+// that runs for every visitor of the public site.
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+}
+
 function pick(obj, key, lang) {
-    return obj[key + '_' + lang] ?? obj[key + '_cs'] ?? obj[key] ?? '';
+    return escapeHtml(obj[key + '_' + lang] ?? obj[key + '_cs'] ?? obj[key] ?? '');
 }
 
 function photoGridHTML(photos, galleryId, altPrefix, prefix) {
     return photos.map((src, i) => {
-        const full = prefix + src;
+        const full = escapeHtml(prefix + src);
         const webp = full.replace(/\.(jpg|png)$/, '.webp');
-        return '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="' + galleryId + '" data-src="' + full + '">' +
+        return '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
             '<picture><source srcset="' + webp + '" type="image/webp">' +
-            '<img src="' + full + '" alt="' + altPrefix + ' ' + (i + 1) + '" loading="lazy"></picture></div>';
+            '<img src="' + full + '" alt="' + escapeHtml(altPrefix) + ' ' + (i + 1) + '" loading="lazy"></picture></div>';
     }).join('');
 }
 
@@ -64,13 +75,14 @@ function onasLifeHTML(data, prefix) {
 }
 
 function teamCardHTML(cat, i, prefix) {
-    const full = prefix + cat.photo;
+    const full = escapeHtml(prefix + cat.photo);
     const webp = full.replace(/\.(jpg|png)$/, '.webp');
+    const name = escapeHtml(cat.name);
     return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
         '<div class="photo-thumb" data-lightbox data-gallery="tym" data-src="' + full + '">' +
         '<picture><source srcset="' + webp + '" type="image/webp">' +
-        '<img src="' + full + '" alt="' + cat.name + '" loading="lazy"></picture></div>' +
-        '<div class="card-body"><h4>' + cat.name + '</h4><p>' + cat.desc + '</p></div></div>';
+        '<img src="' + full + '" alt="' + name + '" loading="lazy"></picture></div>' +
+        '<div class="card-body"><h4>' + name + '</h4><p>' + escapeHtml(cat.desc) + '</p></div></div>';
 }
 
 function teamHTML(data, prefix) {
