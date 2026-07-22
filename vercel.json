@@ -5,6 +5,13 @@
   "framework": null,
   "routes": [
     {
+      "src": "/images/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=2592000"
+      },
+      "continue": true
+    },
+    {
       "src": "/(.*)",
       "headers": {
         "Strict-Transport-Security": "max-age=63072000; includeSubDomains",
