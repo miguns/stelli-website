@@ -12,25 +12,82 @@
       "desc_de": "Blue bicolor und blue mitted. Die Kätzchen sind bereits in ihre neuen Zuhause gezogen.",
       "desc_pl": "Blue bicolor i blue mitted. Kocięta odeszły już do nowych domów.",
       "photos": [
-        "images/kittens/vrh-a/01.jpg",
-        "images/kittens/vrh-a/02.jpg",
-        "images/kittens/vrh-a/03.jpg",
-        "images/kittens/vrh-a/04.jpg",
-        "images/kittens/vrh-a/05.jpg",
-        "images/kittens/vrh-a/06.jpg",
-        "images/kittens/vrh-a/07.jpg",
-        "images/kittens/vrh-a/08.jpg",
-        "images/kittens/vrh-a/09.jpg",
-        "images/kittens/vrh-a/10.jpg",
-        "images/kittens/vrh-a/11.jpg",
-        "images/kittens/vrh-a/12.jpg",
-        "images/kittens/vrh-a/13.jpg",
-        "images/kittens/vrh-a/14.jpg",
-        "images/kittens/vrh-a/15.jpg",
-        "images/kittens/vrh-a/16.jpg",
-        "images/kittens/vrh-a/17.jpg",
-        "images/kittens/vrh-a/18.jpg",
-        "images/kittens/vrh-a/19.jpg"
+        {
+          "photo": "images/kittens/vrh-a/01.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/02.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/03.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/04.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/05.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/06.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/07.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/08.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/09.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/10.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/11.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/12.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/13.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/14.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/15.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/16.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/17.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/18.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-a/19.jpg",
+          "alt": ""
+        }
       ]
     },
     {
@@ -45,26 +102,86 @@
       "desc_de": "Blue bicolor und seal bicolor. Alle Kätzchen sind derzeit reserviert.",
       "desc_pl": "Blue bicolor i seal bicolor. Wszystkie kocięta są obecnie zarezerwowane.",
       "photos": [
-        "images/kittens/vrh-b/01.jpg",
-        "images/kittens/vrh-b/02.jpg",
-        "images/kittens/vrh-b/03.jpg",
-        "images/kittens/vrh-b/04.jpg",
-        "images/kittens/vrh-b/05.jpg",
-        "images/kittens/vrh-b/06.jpg",
-        "images/kittens/vrh-b/07.jpg",
-        "images/kittens/vrh-b/08.jpg",
-        "images/kittens/vrh-b/09.jpg",
-        "images/kittens/vrh-b/10.jpg",
-        "images/kittens/vrh-b/11.jpg",
-        "images/kittens/vrh-b/12.jpg",
-        "images/kittens/vrh-b/13.jpg",
-        "images/kittens/vrh-b/14.jpg",
-        "images/kittens/vrh-b/15.jpg",
-        "images/kittens/vrh-b/16.jpg",
-        "images/kittens/vrh-b/17.jpg",
-        "images/kittens/vrh-b/18.jpg",
-        "images/kittens/vrh-b/19.jpg",
-        "images/kittens/vrh-b/20.jpg"
+        {
+          "photo": "images/kittens/vrh-b/01.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/02.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/03.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/04.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/05.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/06.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/07.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/08.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/09.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/10.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/11.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/12.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/13.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/14.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/15.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/16.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/17.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/18.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/19.jpg",
+          "alt": ""
+        },
+        {
+          "photo": "images/kittens/vrh-b/20.jpg",
+          "alt": ""
+        }
       ]
     },
     {

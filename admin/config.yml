@@ -64,7 +64,10 @@ collections:
                 name: "photos"
                 widget: "list"
                 required: false
-                field: { label: "Fotka", name: "photo", widget: "image" }
+                summary: "{{fields.alt}}"
+                fields:
+                  - { label: "Fotka", name: "photo", widget: "image" }
+                  - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false }
 
   - name: "team"
     label: "Náš tým koček"
@@ -100,7 +103,10 @@ collections:
           - label: "Fotky"
             name: "photos"
             widget: "list"
-            field: { label: "Fotka", name: "photo", widget: "image" }
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Fotka", name: "photo", widget: "image" }
+              - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false }
 
   - name: "onas-life"
     label: "O nás — fotky ze života"
@@ -112,7 +118,10 @@ collections:
           - label: "Fotky"
             name: "photos"
             widget: "list"
-            field: { label: "Fotka", name: "photo", widget: "image" }
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Fotka", name: "photo", widget: "image" }
+              - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false }
 
   - name: "testimonials"
     label: "Ohlasy nových domovů (Naše práce)"

@@ -35,13 +35,16 @@ function gridSrcOf(src) {
 }
 
 function photoGridHTML(photos, galleryId, altPrefix, prefix) {
-    return photos.map((src, i) => {
+    return photos.map((item, i) => {
+        const src = typeof item === 'string' ? item : item.photo;
+        const customAlt = typeof item === 'string' ? '' : (item.alt || '');
         const full = escapeHtml(prefix + src);
         const grid = escapeHtml(prefix + gridSrcOf(src));
         const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        const alt = customAlt ? escapeHtml(customAlt) : escapeHtml(altPrefix) + ' ' + (i + 1);
         return '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox tabindex="0" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
             '<picture><source srcset="' + webp + '" type="image/webp">' +
-            '<img src="' + grid + '" alt="' + escapeHtml(altPrefix) + ' ' + (i + 1) + '" loading="lazy"></picture></div>';
+            '<img src="' + grid + '" alt="' + alt + '" loading="lazy"></picture></div>';
     }).join('');
 }
 

@@ -1,10 +1,28 @@
 {
   "photos": [
-    "images/onas/01.jpg",
-    "images/onas/02.jpg",
-    "images/onas/03.jpg",
-    "images/onas/04.jpg",
-    "images/onas/05.jpg",
-    "images/onas/06.jpg"
+    {
+      "photo": "images/onas/01.jpg",
+      "alt": ""
+    },
+    {
+      "photo": "images/onas/02.jpg",
+      "alt": ""
+    },
+    {
+      "photo": "images/onas/03.jpg",
+      "alt": ""
+    },
+    {
+      "photo": "images/onas/04.jpg",
+      "alt": ""
+    },
+    {
+      "photo": "images/onas/05.jpg",
+      "alt": ""
+    },
+    {
+      "photo": "images/onas/06.jpg",
+      "alt": ""
+    }
   ]
 }
