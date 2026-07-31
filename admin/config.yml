@@ -6,8 +6,8 @@ backend:
   base_url: https://stelli-website.vercel.app
   auth_endpoint: api/auth
 
-media_folder: "images/uploads"
-public_folder: "images/uploads"
+media_folder: "images"
+public_folder: "images"
 
 collections:
   - name: "news"
