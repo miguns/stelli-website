@@ -50,11 +50,14 @@ pull request neprojde.
 
 ### Automatické překlady
 
-Workflow `auto-translate.yml` (překlady + prerender do statického HTML) běží
-jen nad `main`. Na `dev` se změny v `data/*.json` samy nepřeloží ani
-nepředrenderují — na preview je proto uvidíš až po ručním spuštění
-`node scripts/auto-translate.js` a `node scripts/prerender.js`, nebo až po
-mergi do `main`.
+Obsah z `data/*.json` se do stránek zapéká předem (`scripts/prerender.js`) —
+web si za běhu nic nedotahuje. Workflow `auto-translate.yml` (překlady +
+prerender) proto běží nad `main` i nad `dev`, aby se úprava z adminu projevila
+na preview stejně jako na produkci.
+
+Po uložení v adminu tedy chvíli počkej: doběhne GitHub Action, přidá commit
+`[skip translate]` a teprve ten spustí nový deploy. Změna je vidět zhruba do
+minuty či dvou, ne okamžitě.
 
 ## Soubory
 

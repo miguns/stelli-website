@@ -2,7 +2,9 @@ name: Auto-translate and prerender CMS content
 
 on:
   push:
-    branches: [main]
+    # `dev` too, so the development preview shows CMS edits the same way
+    # production does — the pages are prerendered, nothing is fetched at runtime.
+    branches: [main, dev]
     paths:
       - "data/*.json"
 
