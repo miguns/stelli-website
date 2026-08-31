@@ -196,6 +196,32 @@
       "desc_de": "Bereits in ihren neuen Zuhause.",
       "desc_pl": "Już w nowych domach.",
       "photos": []
+    },
+    {
+      "id": "vrh-d",
+      "name_cs": "Vrh D",
+      "name_en": "",
+      "name_de": "",
+      "name_pl": "",
+      "status": "home",
+      "desc_cs": "Již v nových domovech",
+      "desc_en": "",
+      "desc_de": "",
+      "desc_pl": "",
+      "photos": []
+    },
+    {
+      "id": "vrh-e",
+      "name_cs": "Vrh E",
+      "name_en": "",
+      "name_de": "",
+      "name_pl": "",
+      "status": "available",
+      "desc_cs": "Fotky připravujeme",
+      "desc_en": "",
+      "desc_de": "",
+      "desc_pl": "",
+      "photos": []
     }
   ]
 }
