@@ -1,7 +1,9 @@
 backend:
   name: github
   repo: miguns/stelli-website
-  branch: main
+  # Vývojová větev: admin na preview deployi zapisuje do `dev`, nikdy do produkce.
+  # Na větvi `main` musí tato hodnota zůstat `main` — hlídá to workflow cms-branch-guard.
+  branch: dev
   # TEMP for Vercel testing — revert to https://stelliragdoll.cz before going live on the real domain.
   base_url: https://stelli-website.vercel.app
   auth_endpoint: api/auth

@@ -12,7 +12,28 @@
       "continue": true
     },
     {
-      "src": "/(.*)",
+      "src": "/admin(/.*)?",
+      "headers": {
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Cache-Control": "no-store, must-revalidate",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' data: blob: https://api.github.com https://github.com https://raw.githubusercontent.com https://*.githubusercontent.com https://www.githubstatus.com https://unpkg.com https://picsum.photos; img-src 'self' data: blob: https://*.githubusercontent.com https://picsum.photos https://*.fastly.picsum.photos; font-src 'self' data: https://fonts.gstatic.com; manifest-src blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+      },
+      "continue": true
+    },
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+      },
+      "continue": true
+    },
+    {
+      "src": "/((?!admin(/|$)|api(/|$)).*)",
       "headers": {
         "Strict-Transport-Security": "max-age=63072000; includeSubDomains",
         "X-Content-Type-Options": "nosniff",
@@ -22,24 +43,27 @@
       "continue": true
     },
     {
-      "src": "/admin/(.*)",
-      "headers": {
-        "Cache-Control": "no-store, must-revalidate",
-        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' data: blob: https://api.github.com https://github.com https://raw.githubusercontent.com https://*.githubusercontent.com https://www.githubstatus.com https://unpkg.com https://picsum.photos; img-src 'self' data: blob: https://*.githubusercontent.com https://picsum.photos https://*.fastly.picsum.photos; font-src 'self' data: https://fonts.gstatic.com; manifest-src blob:; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
-      },
-      "continue": true
+      "handle": "filesystem"
     },
     {
-      "src": "/api/(.*)",
-      "headers": {
-        "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
-      },
-      "continue": true
+      "src": "/en/(.*)",
+      "status": 404,
+      "dest": "/en/404.html"
     },
-    { "handle": "filesystem" },
-    { "src": "/en/(.*)", "status": 404, "dest": "/en/404.html" },
-    { "src": "/de/(.*)", "status": 404, "dest": "/de/404.html" },
-    { "src": "/pl/(.*)", "status": 404, "dest": "/pl/404.html" },
-    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+    {
+      "src": "/de/(.*)",
+      "status": 404,
+      "dest": "/de/404.html"
+    },
+    {
+      "src": "/pl/(.*)",
+      "status": 404,
+      "dest": "/pl/404.html"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    }
   ]
 }
