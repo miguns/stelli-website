@@ -21,7 +21,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -63,7 +63,7 @@
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="../images/logo-light.webp" type="image/webp"><img src="../images/logo-light.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Start</a></li>
@@ -81,87 +81,174 @@
     </header>
 
     <main id="main">
+        <!-- HERO: full-bleed photo, headline over a soft scrim -->
+        <section class="stl-hero">
+            <div class="stl-hero-media">
+                <picture>
+                    <source srcset="../images/featured/kitten-basket.webp" type="image/webp">
+                    <img src="../images/featured/kitten-basket.jpg" alt="Kocięta Ragdoll odpoczywające na łóżku" loading="eager" fetchpriority="high">
+                </picture>
+            </div>
+            <div class="stl-hero-scrim"></div>
+            <div class="stl-hero-inner">
+                <h1>Kocięta Ragdoll<br>wychowane z miłością</h1>
+                <p class="stl-hero-sub">Łagodny charakter, niebieskie oczy, staranna socjalizacja. Dorastają u nas w domu — wśród ludzi i dzieci.</p>
+                <div class="stl-hero-actions">
+                    <a href="kotatka.html" class="stl-btn stl-btn--light">Aktualne kocięta</a>
+                    <a href="kontakty.html#formular" class="stl-btn stl-btn--solid">Chcę kocię</a>
+                </div>
+            </div>
+            <div class="stl-curve stl-curve--bottom stl-curve--white"></div>
+        </section>
 
-        <!-- HERO: two-up print, not a marketing banner -->
-        <section class="c2-hero">
-            <div class="c2-hero-left">
-                <div class="c2-hero-text">
-                    <h1>Kocięta Ragdoll wychowane <em>z miłością</em>.</h1>
-                    <p class="c2-lede">Łagodny charakter, niebieskie oczy, staranna socjalizacja. Dorastają u nas w domu — wśród ludzi i dzieci.</p>
-                    <div class="c-hero-actions">
-                        <a href="kontakty.html" class="c-btn c-btn-primary">Chcę kocię</a>
-                        <a href="#kotatka" class="c-btn c-btn-line">Aktualne kocięta</a>
+        <!-- KDO JSME -->
+        <section class="stl-section">
+            <div class="stl-wrap">
+                <div class="stl-split">
+                    <div class="stl-split-media reveal-left">
+                        <figure class="stl-photo stl-photo--tall">
+                            <picture>
+                                <source srcset="../images/onas/03.webp" type="image/webp">
+                                <img src="../images/onas/03.jpg" alt="Dzieci bawiące się z kotem Ragdoll w ogrodzie" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="reveal-right">
+                        <p class="stl-eyebrow">Hodowla StElli</p>
+                        <h2 class="stl-h2">Kim jesteśmy?</h2>
+                        <p>Jesteśmy małą rodzinną hodowlą kotów rasy Ragdoll. Nazwaliśmy ją od naszych dwóch małych współhodowczyń — Stelli i Elleny. Wszystkie nasze koty mieszkają z nami w całym domu, nie w klatkach, i od pierwszego dnia są częścią rodziny.</p>
+                        <p class="stl-lede"><strong>Naszym celem jest wychowanie w pełni socjalizowanych kociąt z naciskiem na zdrowie, wygląd i charakter.</strong></p>
+                        <a href="o-nas.html" class="stl-btn stl-btn--solid">Więcej o nas</a>
                     </div>
                 </div>
             </div>
-            <div class="c2-hero-photo">
-                <figure class="c-print c-print--tilt-l">
-                    <picture>
-                        <source srcset="../images/featured/hero-kitten.webp" type="image/webp">
-                        <img src="../images/featured/hero-kitten.jpg" alt="Kocię Ragdoll z jasnoniebieskimi oczami" loading="eager" fetchpriority="high">
-                    </picture>
-                </figure>
+        </section>
+
+        <!-- AKTUÁLNÍ VRHY -->
+        <section class="stl-section stl-section--cream">
+            <div class="stl-wrap">
+                <div class="stl-split">
+                    <div class="reveal-left">
+                        <p class="stl-eyebrow">Nasze mioty</p>
+                        <h2 class="stl-h2">Aktualne mioty</h2>
+                        <p class="stl-lede">Nie każ swojemu nowemu kocięciu czekać — zobacz nasze aktualne i minione mioty wraz z dostępnością.</p>
+                        <a href="kotatka.html" class="stl-btn stl-btn--solid">Zobacz mioty</a>
+                    </div>
+                    <div class="stl-stack reveal-right">
+                        <figure class="stl-photo stl-photo--wide">
+                            <picture>
+                                <source srcset="../images/kittens/vrh-a/08.webp" type="image/webp">
+                                <img src="../images/kittens/vrh-a/08.jpg" alt="Kocię Ragdoll z miotu A" loading="lazy">
+                            </picture>
+                        </figure>
+                        <figure class="stl-photo stl-photo--wide">
+                            <picture>
+                                <source srcset="../images/kittens/vrh-b/15.webp" type="image/webp">
+                                <img src="../images/kittens/vrh-b/15.jpg" alt="Kocię Ragdoll z miotu B" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- AKTUÁLNÍ KOŤÁTKA -->
-        <section id="kotatka" class="c2-section">
-            <p class="c2-eyebrow c2-eyebrow--center">Nasze mioty</p>
-            <h2 class="c2-h2">Zajrzyj do naszego domu</h2>
-            <div class="c2-litter-row">
-                <figure class="c-print c-print--tilt-r c-print--sm">
-                    <picture>
-                        <source srcset="../images/kittens/vrh-a/08.webp" type="image/webp">
-                        <img src="../images/kittens/vrh-a/08.jpg" alt="Kocię z miotu A" loading="lazy">
-                    </picture>
-                    <figcaption>Miot A</figcaption>
-                </figure>
-                <figure class="c-print c-print--tilt-l c-print--sm">
-                    <picture>
-                        <source srcset="../images/kittens/vrh-b/15.webp" type="image/webp">
-                        <img src="../images/kittens/vrh-b/15.jpg" alt="Kocię z miotu B" loading="lazy">
-                    </picture>
-                    <figcaption>Miot B</figcaption>
-                </figure>
+        <!-- CITÁT -->
+        <section class="stl-quote">
+            <div class="stl-quote-media">
+                <picture>
+                    <source srcset="../images/featured/face-baileys.webp" type="image/webp">
+                    <img src="../images/featured/face-baileys.jpg" alt="Kot Ragdoll o jasnoniebieskich oczach" loading="lazy">
+                </picture>
             </div>
-            <a href="kotatka.html" class="c-btn c-btn-line c2-center-btn">Aktualna dostępność kociąt</a>
+            <div class="stl-quote-scrim"></div>
+            <div class="stl-quote-inner reveal">
+                <blockquote>„Wierzę, że potrafimy wychować w pełni socjalizowane kocięta z naciskiem na zdrowie, wygląd i charakter.”</blockquote>
+                <p class="stl-quote-name">Petra Vávrová — założycielka hodowli StElli</p>
+            </div>
         </section>
 
-        <!-- ZÁVĚREČNÉ CTA: overlapping fan of prints — hover (or tap) pulls one to the front -->
-        <section class="c2-final">
-            <div class="c2-fan" id="ctaFan">
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="../images/featured/face-baileys.webp" type="image/webp">
-                        <img src="../images/featured/face-baileys.jpg" alt="Kotka Ragdoll z jasnoniebieskimi oczami — Baileys" loading="lazy">
-                    </picture>
-                    <figcaption>Baileys</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="../images/featured/face-sweetie.webp" type="image/webp">
-                        <img src="../images/featured/face-sweetie.jpg" alt="Kotka Ragdoll — Sweetie" loading="lazy">
-                    </picture>
-                    <figcaption>Sweetie</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="../images/featured/hero-kitten.webp" type="image/webp">
-                        <img src="../images/featured/hero-kitten.jpg" alt="Kocię Ragdoll" loading="lazy">
-                    </picture>
-                    <figcaption>Kocię z miotu A</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="../images/featured/kitten-basket.webp" type="image/webp">
-                        <img src="../images/featured/kitten-basket.jpg" alt="Kocię Ragdoll w koszyku" loading="lazy">
-                    </picture>
-                    <figcaption>Kocię z miotu B</figcaption>
-                </figure>
+        <!-- PROČ MY -->
+        <section class="stl-section">
+            <div class="stl-wrap">
+                <div class="stl-split stl-split--reverse">
+                    <div class="stl-split-media reveal-right">
+                        <figure class="stl-photo stl-photo--wide">
+                            <picture>
+                                <source srcset="../images/gallery/14.webp" type="image/webp">
+                                <img src="../images/gallery/14.jpg" alt="Kot Ragdoll o niebieskich oczach" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="reveal-left">
+                        <p class="stl-eyebrow">Nasze zasady</p>
+                        <h2 class="stl-h2">Dlaczego my?</h2>
+                        <p class="stl-lede">Jesteśmy rodzinną hodowlą, której naprawdę zależy na tym, aby każde kocię od pierwszych chwil życia otrzymało maksymalną opiekę i miłość.</p>
+                    </div>
+                </div>
+                <div class="stl-pillars stagger">
+                    <div class="stl-pillar reveal" data-i="0"><span class="stl-pillar-icon"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3.5l9 7"/><path d="M5.5 9.7V20h13V9.7"/><path d="M9.8 20v-5.4h4.4V20"/></svg></span><h3>Rodzinna hodowla</h3></div>
+                    <div class="stl-pillar reveal" data-i="1"><span class="stl-pillar-icon"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 3.2h5.2v6.2h6.2v5.2h-6.2v6.2H9.4v-6.2H3.2V9.4h6.2z"/></svg></span><h3>Testowana hodowla — HCM, PKD, FeLV, FIV</h3></div>
+                    <div class="stl-pillar reveal" data-i="2"><span class="stl-pillar-icon"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.1"/><circle cx="16.6" cy="9.4" r="2.4"/><path d="M2.6 19.6c0-3 2.4-5.2 5.4-5.2s5.4 2.2 5.4 5.2"/><path d="M15.2 14.6c3 0 5.2 2 5.2 5"/></svg></span><h3>Socjalizacja w domu z dziećmi</h3></div>
+                    <div class="stl-pillar reveal" data-i="3"><span class="stl-pillar-icon"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="7" cy="8.4" rx="2" ry="2.7"/><ellipse cx="12" cy="6.6" rx="2" ry="2.9"/><ellipse cx="17" cy="8.4" rx="2" ry="2.7"/><path d="M12 12c2.9 0 5.4 2.2 5.4 4.6 0 2-1.7 3.1-3.4 2.6-1.3-.4-2.7-.4-4 0-1.7.5-3.4-.6-3.4-2.6C6.6 14.2 9.1 12 12 12z"/></svg></span><h3>Edukacja w genetyce kotów</h3></div>
+                </div>
             </div>
-            <p class="c2-stack-hint">Przesuń palcem lub najedź myszą</p>
-            <h2 class="c2-h2">Znajdź swojego Ragdolla.</h2>
-            <a href="kontakty.html" class="c-btn c-btn-primary">Chcę kocię</a>
+        </section>
+
+        <!-- ROZCESTNÍK -->
+        <section class="stl-section stl-section--cream">
+            <div class="stl-wrap">
+                <div class="stl-center">
+                    <p class="stl-eyebrow stl-eyebrow--rose">Zajrzyj do nas</p>
+                    <h2 class="stl-h2">Co u nas znajdziesz</h2>
+                </div>
+                <div class="stl-cards stagger" style="margin-top:3rem">
+                    <article class="stl-card reveal" data-i="0">
+                        <div class="stl-card-photo">
+                            <picture>
+                                <source srcset="../images/featured/hero-kitten.webp" type="image/webp">
+                                <img src="../images/featured/hero-kitten.jpg" alt="Kocię Ragdoll" loading="lazy">
+                            </picture>
+                        </div>
+                        <p class="stl-card-meta">Kocięta</p>
+                        <h3>Aktualna dostępność kociąt</h3>
+                        <p>Mioty, kolory i terminy odbioru — przejrzyście w jednym miejscu.</p>
+                        <a href="kotatka.html" class="stl-btn stl-btn--line">Zobacz kocięta</a>
+                    </article>
+                    <article class="stl-card reveal" data-i="1">
+                        <div class="stl-card-photo">
+                            <picture>
+                                <source srcset="../images/team/unique.webp" type="image/webp">
+                                <img src="../images/team/unique.jpg" alt="Kotka hodowlana Ragdoll" loading="lazy">
+                            </picture>
+                        </div>
+                        <p class="stl-card-meta">Nasza praca</p>
+                        <h3>Zdrowi rodzice, zrównoważone kocięta</h3>
+                        <p>Badania genetyczne, opieka weterynaryjna i socjalizacja — trzy filary naszej hodowli.</p>
+                        <a href="nase-prace.html" class="stl-btn stl-btn--line">Jak hodujemy</a>
+                    </article>
+                    <article class="stl-card reveal" data-i="2">
+                        <div class="stl-card-photo">
+                            <picture>
+                                <source srcset="../images/gallery/03.webp" type="image/webp">
+                                <img src="../images/gallery/03.jpg" alt="Ragdoll w domu" loading="lazy">
+                            </picture>
+                        </div>
+                        <p class="stl-card-meta">Galeria</p>
+                        <h3>Kawałek domu StElli</h3>
+                        <p>Zdjęcia z naszego codziennego życia z kotami i kociętami.</p>
+                        <a href="fotogalerie.html" class="stl-btn stl-btn--line">Do galerii</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ZÁVĚREČNÉ CTA -->
+        <section class="stl-cta">
+            <div class="stl-wrap reveal">
+                <h2 class="stl-h2">Potrzebujesz porady?</h2>
+                <p>Skontaktuj się z nami, chętnie pomożemy.</p>
+                <a href="kontakty.html" class="stl-btn stl-btn--solid">Kontakt</a>
+            </div>
         </section>
 
     </main>
@@ -169,7 +256,7 @@
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="Logo StElli Ragdoll" class="footer-logo-img"></picture>
+                <picture><source srcset="../images/logo-light.webp" type="image/webp"><img src="../images/logo-light.png" width="287" height="176" alt="Logo StElli Ragdoll" class="footer-logo-img"></picture>
                 <p>Malobratřice, kraj środkowoczeski, Czechy</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="../images/misc/icon-instagram.webp" type="image/webp"><img src="../images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -205,69 +292,10 @@
 
     
     <script>
-        // Desktop (hover-capable): the overlapping fan reveals on hover/focus via CSS alone.
-        // Mobile (no hover): a swipe carousel — whichever photo is centered becomes "active".
-        (function initFan() {
-            var fan = document.getElementById('ctaFan');
-            if (!fan) return;
-            var items = Array.prototype.slice.call(fan.querySelectorAll('.fan-item'));
-            var mq = window.matchMedia('(max-width: 640px)');
-            var observer = null;
-
-            function bindCarousel() {
-                if (observer) return;
-                observer = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        entry.target.classList.toggle('is-active', entry.intersectionRatio > 0.6);
-                    });
-                }, { root: fan, threshold: [0, 0.6, 1] });
-                items.forEach(function (item) { observer.observe(item); });
-            }
-
-            function unbindCarousel() {
-                if (!observer) return;
-                observer.disconnect();
-                observer = null;
-                items.forEach(function (item) { item.classList.remove('is-active'); });
-            }
-
-            if (mq.matches) bindCarousel();
-            mq.addEventListener('change', function (e) {
-                if (e.matches) bindCarousel(); else unbindCarousel();
-            });
-        })();
-
-        // Floating "Chci kotě" — always visible, including over the hero
+        // Floating "Chci kotě" — a solid plum pill, visible from the first paint
         (function initFloatCta() {
             var btn = document.getElementById('floatCta');
-            var footer = document.querySelector('footer');
-            if (!btn) return;
-            btn.classList.add('is-visible');
-            if (!footer) return;
-
-            // As the fixed button scrolls over the footer, fade its color from
-            // blue to cream gradually over a distance, instead of snapping at contact.
-            var fadeDistance = 160;
-            var ticking = false;
-
-            function updateFooterProgress() {
-                ticking = false;
-                var btnRect = btn.getBoundingClientRect();
-                var footerRect = footer.getBoundingClientRect();
-                var distance = footerRect.top - btnRect.top;
-                var progress = 1 - Math.min(Math.max(distance / fadeDistance, 0), 1);
-                btn.style.setProperty('--footer-progress', progress.toFixed(3));
-            }
-
-            function onScroll() {
-                if (ticking) return;
-                ticking = true;
-                requestAnimationFrame(updateFooterProgress);
-            }
-
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', onScroll);
-            updateFooterProgress();
+            if (btn) btn.classList.add('is-visible');
         })();
     </script>
 </body>
