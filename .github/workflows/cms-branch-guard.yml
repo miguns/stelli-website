@@ -1,0 +1,28 @@
+name: CMS branch guard
+
+# The `dev` branch points the CMS backend at `dev` so its Vercel preview
+# deployment can't edit the live site. Merging `dev` into `main` would carry
+# that line over silently, leaving the production admin writing to `dev`.
+# This check fails the pull request when that happens.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "admin/config.yml"
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: admin/config.yml must target the main branch
+        run: |
+          if ! grep -qE '^\s*branch:\s*main\s*$' admin/config.yml; then
+            echo "::error file=admin/config.yml::CMS backend must be 'branch: main' on the main branch."
+            grep -nE '^\s*branch:' admin/config.yml || true
+            exit 1
+          fi
+          echo "OK: CMS backend targets main."
