@@ -818,40 +818,39 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
    page resumes immediately below the curve.
    ========================================================================== */
 
-.stl-hero--cover { background: #000; }
-
-/* The photograph is landscape and the kitten sits low-right in it, so the
-   crop is anchored there. Wide enough and it is not cropped at all — see the
-   contain rule below. */
-.stl-hero--cover .stl-hero-media img {
-    object-position: 76% 82%;
+.stl-hero--cover {
+    background: #000;
+    overflow: visible;   /* the paw hangs past the bottom edge */
+    z-index: 2;          /* ...and over the white section that follows */
 }
 
-/* Past this width the hero is wider than the photo is tall-for-wide, and a
-   cover crop would start eating the kitten's ears and paws. The photograph's
-   own ground is pure black, so fitting it whole and letting the hero's black
-   run out to the left edge is seamless — no letterbox is visible.
-
-   It is held off the right edge rather than flush against it, which needs the
-   photo's own right edge to be pure black: the tunnel rim reaches ~30/255
-   there, and against the hero's black that read as a vertical seam, so the
-   asset now fades that last strip out. */
-@media (min-width: 1100px) {
-    .stl-hero--cover .stl-hero-media img {
-        object-fit: contain;
-        object-position: 82% center;
-    }
-}
-
-/* left-to-right black, continuing the photograph's own background */
+/* The kitten is a cut-out on flat black, so the black needs some depth of its
+   own: a soft spill of light behind where the kitten sits. */
 .stl-hero--cover .stl-hero-scrim {
-    background: linear-gradient(90deg,
-        #000 0%,
-        #000 26%,
-        rgba(0, 0, 0, 0.94) 40%,
-        rgba(0, 0, 0, 0.62) 54%,
-        rgba(0, 0, 0, 0.18) 68%,
-        rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(58% 74% at 73% 44%,
+        rgba(132, 118, 97, 0.30) 0%,
+        rgba(62, 55, 45, 0.16) 40%,
+        rgba(0, 0, 0, 0) 72%);
+}
+
+/* Sits after the curve in the markup and carries a z-index, so it paints over
+   it: the paw crosses the white edge instead of being clipped by it. */
+.stl-hero-cat {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    /* tied to the viewport height too, so a wide-but-short window cannot push
+       the kitten's head up under the nav */
+    width: min(clamp(215px, 24vw, 380px), 40vh);
+    z-index: 3;
+    pointer-events: none;
+}
+.stl-hero-cat img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* follows the cut-out's alpha, so the paw casts onto the white below */
+    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.45));
 }
 
 body.concept .stl-hero--cover h1 { color: var(--s-cream); text-shadow: none; }
@@ -972,21 +971,21 @@ body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 10.5rem; }
     body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 15rem; }
 }
 
-/* A portrait viewport cannot crop this landscape photograph without either
-   losing the kitten or blowing it up behind the headline, so on a phone the
-   hero unstacks: the photo runs full width at the top, whole and uncropped,
-   and the type sits below it on the same black. Above this width the photo is
-   wide enough to carry the type over it, and the cover crop takes over again. */
+/* Too narrow to put the type beside the kitten, so the hero stacks: type
+   first, the kitten below it. The cut-out keeps its overhang here — it is
+   relative rather than static purely so the z-index still lifts it over the
+   curve. */
 @media (max-width: 700px) {
     .stl-hero--cover { display: block; min-height: 0; }
-    .stl-hero--cover .stl-hero-media {
-        position: static;
-        margin-top: 5rem; /* clears the fixed header floating over it */
+    body.concept2 .stl-hero--cover .stl-hero-inner {
+        padding-top: 6rem;
+        padding-bottom: 0.5rem;
     }
-    .stl-hero--cover .stl-hero-media img {
-        height: auto;
-        object-fit: fill; /* it is at its natural ratio, so nothing is scaled */
+    .stl-hero-cat {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: min(53vw, 230px);
+        margin: 0 auto -2.5rem;
     }
-    .stl-hero--cover .stl-hero-scrim { display: none; }
-    body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 2rem; }
 }
