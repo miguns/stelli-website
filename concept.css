@@ -819,38 +819,31 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
    ========================================================================== */
 
 .stl-hero--cover {
-    background: #000;
-    overflow: visible;   /* the paw hangs past the bottom edge */
-    z-index: 2;          /* ...and over the white section that follows */
+    /* matched to the photograph's own ground, which the photo fades out into
+       so its frame never shows as an edge */
+    background: #0d0d0e;
+    min-height: min(86vh, 840px);
 }
 
-/* The kitten is a cut-out on flat black, so the black needs some depth of its
-   own: a soft spill of light behind where the kitten sits. */
+/* The photograph runs at its own proportions, pinned right and held clear of
+   the bottom curve so the paw stays inside the hero. Its edges are feathered
+   to transparent in the asset, so it dissolves into the background above
+   rather than ending on a visible line. */
+.stl-hero--cover .stl-hero-media {
+    inset: 0 0 5rem 0;
+}
+.stl-hero--cover .stl-hero-media img {
+    object-fit: contain;
+    object-position: right bottom;
+}
+
+/* keeps the headline legible if the photo's faded left edge reaches under it */
 .stl-hero--cover .stl-hero-scrim {
-    background: radial-gradient(58% 74% at 73% 44%,
-        rgba(132, 118, 97, 0.30) 0%,
-        rgba(62, 55, 45, 0.16) 40%,
-        rgba(0, 0, 0, 0) 72%);
-}
-
-/* Sits after the curve in the markup and carries a z-index, so it paints over
-   it: the paw crosses the white edge instead of being clipped by it. */
-.stl-hero-cat {
-    position: absolute;
-    right: 5%;
-    bottom: 0;
-    /* tied to the viewport height too, so a wide-but-short window cannot push
-       the kitten's head up under the nav */
-    width: min(clamp(215px, 24vw, 380px), 40vh);
-    z-index: 3;
-    pointer-events: none;
-}
-.stl-hero-cat img {
-    display: block;
-    width: 100%;
-    height: auto;
-    /* follows the cut-out's alpha, so the paw casts onto the white below */
-    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.45));
+    background: linear-gradient(90deg,
+        #0d0d0e 0%,
+        rgba(13, 13, 14, 0.92) 30%,
+        rgba(13, 13, 14, 0.55) 48%,
+        rgba(13, 13, 14, 0) 66%);
 }
 
 body.concept .stl-hero--cover h1 { color: var(--s-cream); text-shadow: none; }
@@ -971,21 +964,20 @@ body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 10.5rem; }
     body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 15rem; }
 }
 
-/* Too narrow to put the type beside the kitten, so the hero stacks: type
-   first, the kitten below it. The cut-out keeps its overhang here — it is
-   relative rather than static purely so the z-index still lifts it over the
-   curve. */
+/* Too narrow to stand the type beside the photograph, so the hero stacks:
+   the photo on top at its own proportions, the type below it on the same
+   black. */
 @media (max-width: 700px) {
     .stl-hero--cover { display: block; min-height: 0; }
-    body.concept2 .stl-hero--cover .stl-hero-inner {
-        padding-top: 6rem;
-        padding-bottom: 0.5rem;
+    .stl-hero--cover .stl-hero-media {
+        position: static;
+        inset: auto;
+        margin-top: 3.5rem;   /* clears the fixed header floating over it */
     }
-    .stl-hero-cat {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        width: min(53vw, 230px);
-        margin: 0 auto -2.5rem;
+    .stl-hero--cover .stl-hero-media img {
+        height: auto;
+        object-fit: fill;     /* at its natural ratio, so nothing is scaled */
     }
+    .stl-hero--cover .stl-hero-scrim { display: none; }
+    body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 1rem; }
 }
