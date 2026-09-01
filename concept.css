@@ -818,21 +818,35 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
    page resumes immediately below the curve.
    ========================================================================== */
 
-.stl-hero--cover { background: #0b0b0c; }
+.stl-hero--cover { background: #000; }
 
+/* The photograph is landscape and the kitten sits low-right in it, so the
+   crop is anchored there. Wide enough and it is not cropped at all — see the
+   contain rule below. */
 .stl-hero--cover .stl-hero-media img {
-    object-position: 78% 42%;
+    object-position: 76% 82%;
+}
+
+/* Past this width the hero is wider than the photo is tall-for-wide, and a
+   cover crop would start eating the kitten's ears and paws. The photograph's
+   own ground is pure black, so fitting it whole and letting the hero's black
+   run out to the left edge is seamless — no letterbox is visible. */
+@media (min-width: 1100px) {
+    .stl-hero--cover .stl-hero-media img {
+        object-fit: contain;
+        object-position: right center;
+    }
 }
 
 /* left-to-right black, continuing the photograph's own background */
 .stl-hero--cover .stl-hero-scrim {
     background: linear-gradient(90deg,
-        #0b0b0c 0%,
-        #0b0b0c 26%,
-        rgba(11, 11, 12, 0.94) 40%,
-        rgba(11, 11, 12, 0.62) 54%,
-        rgba(11, 11, 12, 0.18) 68%,
-        rgba(11, 11, 12, 0) 80%);
+        #000 0%,
+        #000 26%,
+        rgba(0, 0, 0, 0.94) 40%,
+        rgba(0, 0, 0, 0.62) 54%,
+        rgba(0, 0, 0, 0.18) 68%,
+        rgba(0, 0, 0, 0) 80%);
 }
 
 body.concept .stl-hero--cover h1 { color: var(--s-cream); text-shadow: none; }
@@ -918,16 +932,6 @@ body.concept2 header.is-scrolled .logo-img { content: normal; }
     body.concept2 header .nav-menu a.active { color: var(--s-brand); }
     body.concept2 header .nav-cta { border-color: var(--s-brand); color: var(--s-brand) !important; }
     body.concept2 header .nav-menu .lang-link.active { color: var(--s-white); background: var(--s-brand); }
-    /* the cover crops tighter on a phone, so keep the kitten in frame */
-    .stl-hero--cover .stl-hero-media img { object-position: 72% 38%; }
-    .stl-hero--cover .stl-hero-scrim {
-        background: linear-gradient(180deg,
-            rgba(11, 11, 12, 0.55) 0%,
-            rgba(11, 11, 12, 0.35) 30%,
-            rgba(11, 11, 12, 0.82) 68%,
-            #0b0b0c 100%);
-    }
-    .stl-hero--cover .stl-hero-inner { padding-top: 14rem; }
 }
 
 /* The cover has to run to the very top edge, so on the homepage the header
@@ -961,4 +965,23 @@ body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 10.5rem; }
 
 @media (max-width: 860px) {
     body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 15rem; }
+}
+
+/* A portrait viewport cannot crop this landscape photograph without either
+   losing the kitten or blowing it up behind the headline, so on a phone the
+   hero unstacks: the photo runs full width at the top, whole and uncropped,
+   and the type sits below it on the same black. Above this width the photo is
+   wide enough to carry the type over it, and the cover crop takes over again. */
+@media (max-width: 700px) {
+    .stl-hero--cover { display: block; min-height: 0; }
+    .stl-hero--cover .stl-hero-media {
+        position: static;
+        margin-top: 5rem; /* clears the fixed header floating over it */
+    }
+    .stl-hero--cover .stl-hero-media img {
+        height: auto;
+        object-fit: fill; /* it is at its natural ratio, so nothing is scaled */
+    }
+    .stl-hero--cover .stl-hero-scrim { display: none; }
+    body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 2rem; }
 }
