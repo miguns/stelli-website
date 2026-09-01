@@ -830,11 +830,16 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
 /* Past this width the hero is wider than the photo is tall-for-wide, and a
    cover crop would start eating the kitten's ears and paws. The photograph's
    own ground is pure black, so fitting it whole and letting the hero's black
-   run out to the left edge is seamless — no letterbox is visible. */
+   run out to the left edge is seamless — no letterbox is visible.
+
+   It is held off the right edge rather than flush against it, which needs the
+   photo's own right edge to be pure black: the tunnel rim reaches ~30/255
+   there, and against the hero's black that read as a vertical seam, so the
+   asset now fades that last strip out. */
 @media (min-width: 1100px) {
     .stl-hero--cover .stl-hero-media img {
         object-fit: contain;
-        object-position: right center;
+        object-position: 82% center;
     }
 }
 
