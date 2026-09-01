@@ -10,56 +10,58 @@
    ========================================================================== */
 
 body.concept {
-    /* ---- cool cream palette: creamy canvas, cool taupe structure ----
-       The warmth lives in the backgrounds (chroma 12-17) while the bar,
-       footer and dark bands go cool and muted (chroma 8). That temperature
-       split is what keeps it soft rather than flat — an earlier all-neutral
-       version desaturated the backgrounds too (chroma 4-7) and read grey.
-       Buttons and icon badges keep a little latte warmth so calls to action
-       stay inviting.
-       WCAG AA: ink 13.6:1, body 6.2:1 and brand 5.7:1 on white; brand still
-       clears 4.5:1 on the oat panels. The oat accent is decorative or sits
-       on dark — never small dark text. */
-    --s-dark: #5c5d55;        /* cool taupe: nav bar, footer, dark bands */
-    --s-brand: #6f6657;       /* muted latte: buttons, icon badges, labels */
-    --s-brand-hover: #5b5346;
-    --s-accent: #c3b6a1;      /* oat: decorative, on dark only */
-    --s-accent-light: #e4dccd;
-    --s-tint: #f1ebe0;        /* creamy oat: tinted panels */
-    --s-cream: #faf6ee;       /* alternating section background */
-    --s-ink: #2f2e28;         /* headings */
-    --s-body: #656058;        /* body copy */
-    --s-line: #e6ded1;
+    /* ---- cream palette, light chrome ----
+       Cream everywhere, including the bar and footer. That forces one
+       structural decision: cream cannot carry white text (1.3:1), so the
+       chrome runs dark-on-cream (9.4:1) instead of the reference's
+       white-on-dark. Caramel carries the buttons so calls to action still
+       have presence without leaving the cream family.
+       WCAG AA: ink 12.3:1, body 6.1:1 on white; ink 9.4:1 on the cream bar;
+       white 5.6:1 on the caramel buttons. */
+    --s-cream-bar: #ece0cd;   /* cream: nav bar */
+    --s-cream-deep: #efe3d0;  /* cream: footer band */
+    --s-brand: #7f6340;       /* caramel: buttons, icon badges, labels */
+    --s-brand-hover: #6a5234;
+    --s-accent: #c8ac7e;      /* wheat: decorative */
+    --s-accent-light: #e2d3b9;
+    --s-tint: #f4ead6;        /* cream panel */
+    --s-cream: #fbf6ec;       /* alternating section background */
+    --s-ink: #3b342a;         /* headings and chrome text */
+    --s-body: #6b6152;        /* body copy */
+    --s-line: #e8dcc4;
     --s-white: #ffffff;
+    /* kept so the many `var(--s-dark)` references below still resolve; it is
+       now a cream, not a dark, and everything on it is inked accordingly. */
+    --s-dark: #ece0cd;
 
     --s-font: 'Catamaran', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --s-shadow: 0 14px 34px rgba(47, 46, 40, 0.12);
-    --s-shadow-lg: 0 22px 50px rgba(47, 46, 40, 0.18);
+    --s-shadow: 0 14px 34px rgba(59, 52, 42, 0.12);
+    --s-shadow-lg: 0 22px 50px rgba(59, 52, 42, 0.18);
     --s-pill: 50px;
 
     /* ---- remap the legacy styles.css tokens onto the palette ---- */
     --cream: #ffffff;
-    --cream-deep: #f1ebe0;
-    --blush: #f1ebe0;
-    --blush-deep: #e4dccd;
-    --lavender: #c3b6a1;
-    --lavender-deep: #9d9280;
-    --plum: #6f6657;
-    --plum-dark: #5c5d55;
-    --gold: #c3b6a1;
-    --ink: #2f2e28;
-    --ink-light: #656058;
+    --cream-deep: #f4ead6;
+    --blush: #f4ead6;
+    --blush-deep: #e2d3b9;
+    --lavender: #c8ac7e;
+    --lavender-deep: #a98a5c;
+    --plum: #7f6340;
+    --plum-dark: #5c4a30;
+    --gold: #c8ac7e;
+    --ink: #3b342a;
+    --ink-light: #6b6152;
     --white: #ffffff;
     --font-display: 'Catamaran', -apple-system, 'Segoe UI', sans-serif;
     --font-body: 'Catamaran', -apple-system, 'Segoe UI', sans-serif;
-    --gradient-primary: linear-gradient(135deg, #6f6657 0%, #5c5d55 100%);
-    --gradient-warm: linear-gradient(135deg, #e4dccd 0%, #c3b6a1 100%);
-    --gradient-soft: linear-gradient(180deg, #ffffff 0%, #faf6ee 100%);
+    --gradient-primary: linear-gradient(135deg, #7f6340 0%, #5c4a30 100%);
+    --gradient-warm: linear-gradient(135deg, #e2d3b9 0%, #c8ac7e 100%);
+    --gradient-soft: linear-gradient(180deg, #ffffff 0%, #fbf6ec 100%);
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 22px;
-    --shadow-soft: 0 14px 34px rgba(47, 46, 40, 0.12);
-    --shadow-hover: 0 22px 50px rgba(47, 46, 40, 0.18);
+    --shadow-soft: 0 14px 34px rgba(59, 52, 42, 0.12);
+    --shadow-hover: 0 22px 50px rgba(59, 52, 42, 0.18);
 
     background: var(--s-white);
     font-family: var(--s-font);
@@ -144,7 +146,7 @@ body.concept .nav-toggle span { background: var(--s-white); }
 @media (max-width: 860px) {
     body.concept .nav-menu {
         background: var(--s-dark);
-        box-shadow: -20px 0 50px rgba(42, 42, 37, 0.35);
+        box-shadow: -20px 0 50px rgba(59, 52, 42, 0.35);
     }
     body.concept .logo-img { width: 148px; }
 }
@@ -173,11 +175,11 @@ body.concept .stl-btn {
 body.concept .stl-btn--solid {
     background: var(--s-brand);
     color: var(--s-white);
-    box-shadow: 0 10px 24px rgba(111, 102, 87, 0.24);
+    box-shadow: 0 10px 24px rgba(127, 99, 64, 0.24);
 }
 body.concept .stl-btn--solid:hover {
     background: var(--s-brand-hover);
-    box-shadow: 0 14px 30px rgba(111, 102, 87, 0.32);
+    box-shadow: 0 14px 30px rgba(127, 99, 64, 0.32);
 }
 
 body.concept .stl-btn--line {
@@ -190,7 +192,7 @@ body.concept .stl-btn--line:hover { background: var(--s-brand); color: var(--s-w
 body.concept .stl-btn--light {
     background: var(--s-white);
     color: var(--s-dark);
-    box-shadow: 0 10px 26px rgba(42, 42, 37, 0.25);
+    box-shadow: 0 10px 26px rgba(59, 52, 42, 0.25);
 }
 body.concept .stl-btn--light:hover { background: var(--s-tint); }
 
@@ -210,7 +212,7 @@ body.concept .btn-primary,
 body.concept .btn-solid,
 body.concept .btn-primary-form {
     background: var(--s-brand);
-    box-shadow: 0 10px 24px rgba(111, 102, 87, 0.24);
+    box-shadow: 0 10px 24px rgba(127, 99, 64, 0.24);
     color: var(--s-white);
 }
 body.concept .btn-primary:hover,
@@ -218,7 +220,7 @@ body.concept .btn-solid:hover,
 body.concept .btn-primary-form:hover {
     background: var(--s-brand-hover);
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(111, 102, 87, 0.32);
+    box-shadow: 0 14px 30px rgba(127, 99, 64, 0.32);
     filter: none;
 }
 body.concept .btn-outline {
@@ -305,7 +307,7 @@ body.concept .stl-curve--dark { background: var(--s-dark); }
 .stl-hero-scrim {
     position: absolute;
     inset: 0;
-    background: linear-gradient(100deg, rgba(42, 42, 37, 0.88) 0%, rgba(42, 42, 37, 0.72) 34%, rgba(42, 42, 37, 0.34) 62%, rgba(42, 42, 37, 0.12) 100%);
+    background: linear-gradient(100deg, rgba(59, 52, 42, 0.88) 0%, rgba(59, 52, 42, 0.72) 34%, rgba(59, 52, 42, 0.34) 62%, rgba(59, 52, 42, 0.12) 100%);
 }
 .stl-hero-inner {
     position: relative;
@@ -322,7 +324,7 @@ body.concept .stl-hero h1 {
     font-weight: 800;
     max-width: 15ch;
     margin: 0 0 1.2rem;
-    text-shadow: 0 2px 22px rgba(42, 42, 37, 0.35);
+    text-shadow: 0 2px 22px rgba(59, 52, 42, 0.35);
 }
 .stl-hero-sub {
     font-size: 1.06rem;
@@ -445,7 +447,7 @@ body.concept .stl-quote blockquote {
     display: grid;
     place-items: center;
     color: var(--s-white);
-    box-shadow: 0 14px 30px rgba(111, 102, 87, 0.22);
+    box-shadow: 0 14px 30px rgba(127, 99, 64, 0.22);
 }
 .stl-pillar-icon svg { width: 54px; height: 54px; stroke: currentColor; fill: none; stroke-width: 1.6; }
 .stl-pillar h3 { font-size: 1.05rem; font-weight: 600; margin: 0; max-width: 16ch; }
@@ -562,7 +564,7 @@ body.concept .cta-banner p { color: var(--s-body); }
 
 body.concept .timeline-step .step-num {
     background: var(--s-brand);
-    box-shadow: 0 10px 22px rgba(111, 102, 87, 0.22);
+    box-shadow: 0 10px 22px rgba(127, 99, 64, 0.22);
     font-weight: 800;
 }
 body.concept .timeline-step .step-content h3 { color: var(--s-ink); font-weight: 700; }
@@ -598,12 +600,12 @@ body.concept .contact-form {
 }
 body.concept .form-group input,
 body.concept .form-group textarea,
-body.concept .form-group select { border-radius: 14px; background: #fdfaf5; }
+body.concept .form-group select { border-radius: 14px; background: #fdfaf3; }
 body.concept .form-group input:focus,
 body.concept .form-group textarea:focus,
 body.concept .form-group select:focus {
     border-color: var(--s-accent);
-    box-shadow: 0 0 0 4px rgba(195, 182, 161, 0.38);
+    box-shadow: 0 0 0 4px rgba(200, 172, 126, 0.38);
 }
 body.concept .form-success { box-shadow: none; border: 1px solid var(--s-line); border-radius: 18px; }
 
@@ -691,7 +693,7 @@ body.concept .social-icon-img { filter: brightness(0) invert(1); }
     background: var(--s-brand);
     border-radius: var(--s-pill);
     text-decoration: none;
-    box-shadow: 0 14px 30px rgba(47, 46, 40, 0.35);
+    box-shadow: 0 14px 30px rgba(59, 52, 42, 0.35);
     opacity: 0;
     transform: translateY(18px) scale(0.9);
     pointer-events: none;
@@ -719,3 +721,91 @@ body.concept .social-icon-img { filter: brightness(0) invert(1); }
     .c-float-cta-icon, .c-float-cta-cat { width: 26px; }
     .c-float-cta-label { font-size: 0.82rem; }
 }
+
+/* ==========================================================================
+   Light chrome — the bar, footer, hero and quote band are cream, so
+   everything that the reference layout drew as white-on-dark is inked
+   instead. Cream cannot carry white text (1.3:1), so this is not a
+   preference but the only legible way to keep those bands cream.
+   ========================================================================== */
+
+/* ---- header ---- */
+body.concept header { background: var(--s-cream-bar); border-bottom: 1px solid var(--s-line); }
+body.concept .nav-menu a { color: var(--s-ink); }
+body.concept .nav-menu a::after { background: var(--s-brand); }
+body.concept .nav-menu a:hover,
+body.concept .nav-menu a.active { color: var(--s-brand); }
+
+body.concept .nav-cta {
+    border-color: var(--s-brand);
+    color: var(--s-brand) !important;
+}
+body.concept .nav-cta:hover {
+    background: var(--s-brand);
+    color: var(--s-white) !important;
+    border-color: var(--s-brand);
+}
+
+body.concept .nav-menu .lang-link { color: var(--s-body); }
+body.concept .nav-menu .lang-link:hover { color: var(--s-ink); background: rgba(59, 52, 42, 0.07); }
+body.concept .nav-menu .lang-link.active { color: var(--s-white); background: var(--s-brand); }
+body.concept .nav-toggle span { background: var(--s-ink); }
+
+@media (max-width: 860px) {
+    body.concept .nav-menu {
+        background: var(--s-cream-bar);
+        box-shadow: -20px 0 50px rgba(59, 52, 42, 0.18);
+    }
+}
+
+/* ---- hero: a cream veil over the photo, inked headline ---- */
+.stl-hero { background: var(--s-cream); }
+.stl-hero-scrim {
+    background: linear-gradient(100deg,
+        rgba(251, 246, 236, 0.97) 0%,
+        rgba(251, 246, 236, 0.93) 34%,
+        rgba(251, 246, 236, 0.55) 62%,
+        rgba(251, 246, 236, 0.10) 100%);
+}
+body.concept .stl-hero h1 { color: var(--s-ink); text-shadow: none; }
+.stl-hero-sub { color: var(--s-ink); text-decoration-color: var(--s-accent); }
+
+/* first hero button becomes the quiet one, the second stays the filled CTA */
+body.concept .stl-btn--light {
+    background: transparent;
+    color: var(--s-brand);
+    border-color: var(--s-brand);
+    box-shadow: none;
+}
+body.concept .stl-btn--light:hover { background: var(--s-brand); color: var(--s-white); }
+
+/* ---- quote band ---- */
+.stl-quote { background: var(--s-tint); }
+.stl-quote-scrim { background: rgba(251, 246, 236, 0.91); }
+body.concept .stl-quote blockquote { color: var(--s-ink); }
+.stl-quote-name { color: var(--s-ink); }
+
+/* ---- footer ---- */
+body.concept footer { background: var(--s-cream-deep); }
+body.concept footer h3 { color: var(--s-ink); }
+body.concept footer p { color: var(--s-body); }
+body.concept footer a { color: var(--s-body); }
+body.concept footer a:hover { color: var(--s-brand); }
+body.concept .footer-bottom { border-top-color: var(--s-line); }
+body.concept .footer-bottom p,
+body.concept .footer-note { color: var(--s-body); }
+body.concept .footer-social a { background: rgba(59, 52, 42, 0.08); }
+body.concept .footer-social a:hover { background: var(--s-brand); }
+body.concept .social-icon-img { filter: brightness(0) opacity(0.72); }
+body.concept .footer-social a:hover .social-icon-img { filter: brightness(0) invert(1); }
+
+/* ---- legacy dark section used by subpages ---- */
+body.concept .section.bg-plum { background: var(--s-tint); }
+body.concept .section.bg-plum h2,
+body.concept .section.bg-plum h3 { color: var(--s-ink); }
+body.concept .section.bg-plum .section-label { color: var(--s-brand); }
+body.concept .section.bg-plum .stat-item strong { color: var(--s-ink); }
+body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
+
+/* ---- floating CTA keeps the caramel pill, so its mark stays white ---- */
+.c-float-cta .c-float-cta-cat-light { visibility: visible; }
