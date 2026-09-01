@@ -2,7 +2,7 @@
    StElli Ragdoll — "warm cattery" theme
    Layout language inspired by aryabengals.cz (solid colour bar, full-bleed
    photo hero, curved section edges, pill buttons, round icon badges),
-   painted in the StElli plum/rose palette instead of brown.
+   painted in a warm luxury palette — espresso, bronze, sand, champagne.
 
    Loaded after styles.css on every page: the token block below re-points the
    legacy --plum/--lavender variables, so components that already exist
@@ -10,47 +10,50 @@
    ========================================================================== */
 
 body.concept {
-    /* ---- StElli palette ---- */
-    --s-plum-deep: #68374a;   /* nav bar, footer, dark bands */
-    --s-plum: #92425f;        /* primary: buttons, icon badges, headings accent */
-    --s-plum-hover: #7c3750;
-    --s-rose: #c6739e;        /* accent */
-    --s-rose-light: #eeb3c9;
-    --s-blush: #fbeef3;       /* tinted panels */
-    --s-cream: #faf6f7;       /* alternating section background */
-    --s-ink: #33232c;         /* headings */
-    --s-body: #5c4b54;        /* body copy */
-    --s-line: #ecdfe4;
+    /* ---- "warm luxury" palette: espresso, bronze, sand, champagne ----
+       Text colours are checked against WCAG AA: ink 15.3:1, body 6.2:1 and
+       brand 5.6:1 on white; brand still clears 4.5:1 on the sand panels.
+       The champagne accent is decorative only — it is never small dark text. */
+    --s-dark: #352c22;        /* espresso: nav bar, footer, dark bands */
+    --s-brand: #8a5f33;       /* cognac bronze: buttons, icon badges, labels */
+    --s-brand-hover: #734e2a;
+    --s-accent: #c2a06a;      /* brass: decorative, on dark only */
+    --s-accent-light: #e2cba4;
+    --s-tint: #f5efe6;        /* sand: tinted panels */
+    --s-cream: #faf6f0;       /* alternating section background */
+    --s-ink: #2b241d;         /* headings */
+    --s-body: #6b5f52;        /* body copy */
+    --s-line: #e7ddd0;
     --s-white: #ffffff;
 
     --s-font: 'Catamaran', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --s-shadow: 0 14px 34px rgba(104, 55, 74, 0.12);
-    --s-shadow-lg: 0 22px 50px rgba(104, 55, 74, 0.18);
+    --s-shadow: 0 14px 34px rgba(53, 44, 34, 0.12);
+    --s-shadow-lg: 0 22px 50px rgba(53, 44, 34, 0.18);
     --s-pill: 50px;
 
     /* ---- remap the legacy styles.css tokens onto the palette ---- */
     --cream: #ffffff;
-    --cream-deep: #fbeef3;
-    --blush: #fbeef3;
-    --blush-deep: #eeb3c9;
-    --lavender: #c6739e;
-    --lavender-deep: #a8556f;
-    --plum: #92425f;
-    --plum-dark: #68374a;
-    --gold: #c6739e;
-    --ink: #33232c;
-    --ink-light: #5c4b54;
+    --cream-deep: #f5efe6;
+    --blush: #f5efe6;
+    --blush-deep: #e2cba4;
+    --lavender: #c2a06a;
+    --lavender-deep: #a8854f;
+    --plum: #8a5f33;
+    --plum-dark: #352c22;
+    --gold: #c2a06a;
+    --ink: #2b241d;
+    --ink-light: #6b5f52;
     --white: #ffffff;
     --font-display: 'Catamaran', -apple-system, 'Segoe UI', sans-serif;
     --font-body: 'Catamaran', -apple-system, 'Segoe UI', sans-serif;
-    --gradient-primary: linear-gradient(135deg, #92425f 0%, #68374a 100%);
-    --gradient-warm: linear-gradient(135deg, #eeb3c9 0%, #c6739e 100%);
-    --gradient-soft: linear-gradient(180deg, #ffffff 0%, #faf6f7 100%);
+    --gradient-primary: linear-gradient(135deg, #8a5f33 0%, #352c22 100%);
+    --gradient-warm: linear-gradient(135deg, #e2cba4 0%, #c2a06a 100%);
+    --gradient-soft: linear-gradient(180deg, #ffffff 0%, #faf6f0 100%);
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 22px;
-    --shadow-soft: 0 14px 34px rgba(104, 55, 74, 0.12);
-    --shadow-hover: 0 22px 50px rgba(104, 55, 74, 0.18);
+    --shadow-soft: 0 14px 34px rgba(53, 44, 34, 0.12);
+    --shadow-hover: 0 22px 50px rgba(53, 44, 34, 0.18);
 
     background: var(--s-white);
     font-family: var(--s-font);
@@ -70,18 +73,18 @@ body.concept h4 {
     line-height: 1.18;
 }
 
-body.concept ::selection { background: var(--s-rose-light); color: var(--s-plum-deep); }
-body.concept ::-webkit-scrollbar-track { background: var(--s-blush); }
-body.concept ::-webkit-scrollbar-thumb { background: var(--s-rose); }
+body.concept ::selection { background: var(--s-accent-light); color: var(--s-dark); }
+body.concept ::-webkit-scrollbar-track { background: var(--s-tint); }
+body.concept ::-webkit-scrollbar-thumb { background: var(--s-accent); }
 
 /* ==========================================================================
-   Header — solid plum bar, sticky, light logo
+   Header — solid espresso bar, sticky, light logo
    ========================================================================== */
 
 body.concept header {
     position: sticky;
     top: 0;
-    background: var(--s-plum-deep);
+    background: var(--s-dark);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: none;
@@ -100,7 +103,7 @@ body.concept .nav-menu a {
     font-weight: 600;
     font-size: 0.95rem;
 }
-body.concept .nav-menu a::after { background: var(--s-rose-light); height: 2px; bottom: -4px; }
+body.concept .nav-menu a::after { background: var(--s-accent-light); height: 2px; bottom: -4px; }
 body.concept .nav-menu a:hover,
 body.concept .nav-menu a.active { color: var(--s-white); }
 
@@ -114,7 +117,7 @@ body.concept .nav-cta {
 }
 body.concept .nav-cta:hover {
     background: var(--s-white);
-    color: var(--s-plum-deep) !important;
+    color: var(--s-dark) !important;
     border-color: var(--s-white);
     box-shadow: none;
     transform: none;
@@ -125,7 +128,7 @@ body.concept .lang-links { gap: 0.3rem; margin-left: 0.4rem; }
 body.concept .nav-menu .lang-link { color: rgba(255, 255, 255, 0.7); padding: 0.28rem 0.5rem; }
 body.concept .nav-menu .lang-link:hover { color: var(--s-white); background: rgba(255, 255, 255, 0.14); }
 body.concept .nav-menu .lang-link.active {
-    color: var(--s-plum-deep);
+    color: var(--s-dark);
     background: var(--s-white);
     font-weight: 800;
 }
@@ -134,8 +137,8 @@ body.concept .nav-toggle span { background: var(--s-white); }
 
 @media (max-width: 860px) {
     body.concept .nav-menu {
-        background: var(--s-plum-deep);
-        box-shadow: -20px 0 50px rgba(51, 35, 44, 0.35);
+        background: var(--s-dark);
+        box-shadow: -20px 0 50px rgba(43, 36, 29, 0.35);
     }
     body.concept .logo-img { width: 148px; }
 }
@@ -162,28 +165,28 @@ body.concept .stl-btn {
 }
 
 body.concept .stl-btn--solid {
-    background: var(--s-plum);
+    background: var(--s-brand);
     color: var(--s-white);
-    box-shadow: 0 10px 24px rgba(146, 66, 95, 0.24);
+    box-shadow: 0 10px 24px rgba(138, 95, 51, 0.24);
 }
 body.concept .stl-btn--solid:hover {
-    background: var(--s-plum-hover);
-    box-shadow: 0 14px 30px rgba(146, 66, 95, 0.32);
+    background: var(--s-brand-hover);
+    box-shadow: 0 14px 30px rgba(138, 95, 51, 0.32);
 }
 
 body.concept .stl-btn--line {
     background: transparent;
-    color: var(--s-plum);
-    border-color: var(--s-plum);
+    color: var(--s-brand);
+    border-color: var(--s-brand);
 }
-body.concept .stl-btn--line:hover { background: var(--s-plum); color: var(--s-white); }
+body.concept .stl-btn--line:hover { background: var(--s-brand); color: var(--s-white); }
 
 body.concept .stl-btn--light {
     background: var(--s-white);
-    color: var(--s-plum-deep);
-    box-shadow: 0 10px 26px rgba(51, 35, 44, 0.25);
+    color: var(--s-dark);
+    box-shadow: 0 10px 26px rgba(43, 36, 29, 0.25);
 }
-body.concept .stl-btn--light:hover { background: var(--s-blush); }
+body.concept .stl-btn--light:hover { background: var(--s-tint); }
 
 /* Legacy buttons adopt the same pill */
 body.concept .btn,
@@ -200,31 +203,31 @@ body.concept .c-btn {
 body.concept .btn-primary,
 body.concept .btn-solid,
 body.concept .btn-primary-form {
-    background: var(--s-plum);
-    box-shadow: 0 10px 24px rgba(146, 66, 95, 0.24);
+    background: var(--s-brand);
+    box-shadow: 0 10px 24px rgba(138, 95, 51, 0.24);
     color: var(--s-white);
 }
 body.concept .btn-primary:hover,
 body.concept .btn-solid:hover,
 body.concept .btn-primary-form:hover {
-    background: var(--s-plum-hover);
+    background: var(--s-brand-hover);
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(146, 66, 95, 0.32);
+    box-shadow: 0 14px 30px rgba(138, 95, 51, 0.32);
     filter: none;
 }
 body.concept .btn-outline {
-    color: var(--s-plum);
-    border: 1.5px solid var(--s-plum);
+    color: var(--s-brand);
+    border: 1.5px solid var(--s-brand);
     background: transparent;
 }
 body.concept .btn-outline:hover {
-    background: var(--s-plum);
+    background: var(--s-brand);
     color: var(--s-white);
-    border-color: var(--s-plum);
+    border-color: var(--s-brand);
     transform: translateY(-2px);
 }
-body.concept .link-button { color: var(--s-plum); font-weight: 600; }
-body.concept .link-button:hover { color: var(--s-plum-deep); }
+body.concept .link-button { color: var(--s-brand); font-weight: 600; }
+body.concept .link-button:hover { color: var(--s-dark); }
 
 /* ==========================================================================
    Shared bits — eyebrow, headings, curved section edges
@@ -238,8 +241,8 @@ body.concept .stl-eyebrow {
     color: var(--s-ink);
     margin: 0 0 0.35rem;
 }
-body.concept .stl-eyebrow--rose { color: var(--s-rose); }
-body.concept .stl-eyebrow--light { color: var(--s-rose-light); }
+body.concept .stl-eyebrow--brand { color: var(--s-brand); }
+body.concept .stl-eyebrow--light { color: var(--s-accent-light); }
 
 body.concept .stl-h2 {
     font-size: clamp(1.9rem, 3.4vw, 2.8rem);
@@ -268,7 +271,7 @@ body.concept .stl-curve--top {
 }
 body.concept .stl-curve--white { background: var(--s-white); }
 body.concept .stl-curve--cream { background: var(--s-cream); }
-body.concept .stl-curve--plum { background: var(--s-plum-deep); }
+body.concept .stl-curve--dark { background: var(--s-dark); }
 
 @media (max-width: 860px) {
     body.concept .stl-curve { height: 56px; width: 190%; }
@@ -284,7 +287,7 @@ body.concept .stl-curve--plum { background: var(--s-plum-deep); }
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: var(--s-plum-deep);
+    background: var(--s-dark);
 }
 .stl-hero-media { position: absolute; inset: 0; z-index: 0; }
 .stl-hero-media img {
@@ -296,7 +299,7 @@ body.concept .stl-curve--plum { background: var(--s-plum-deep); }
 .stl-hero-scrim {
     position: absolute;
     inset: 0;
-    background: linear-gradient(100deg, rgba(51, 35, 44, 0.88) 0%, rgba(51, 35, 44, 0.72) 34%, rgba(51, 35, 44, 0.34) 62%, rgba(51, 35, 44, 0.12) 100%);
+    background: linear-gradient(100deg, rgba(43, 36, 29, 0.88) 0%, rgba(43, 36, 29, 0.72) 34%, rgba(43, 36, 29, 0.34) 62%, rgba(43, 36, 29, 0.12) 100%);
 }
 .stl-hero-inner {
     position: relative;
@@ -313,7 +316,7 @@ body.concept .stl-hero h1 {
     font-weight: 800;
     max-width: 15ch;
     margin: 0 0 1.2rem;
-    text-shadow: 0 2px 22px rgba(51, 35, 44, 0.35);
+    text-shadow: 0 2px 22px rgba(43, 36, 29, 0.35);
 }
 .stl-hero-sub {
     font-size: 1.06rem;
@@ -383,13 +386,13 @@ body.concept .stl-hero h1 {
 .stl-quote {
     position: relative;
     overflow: hidden;
-    background: var(--s-plum-deep);
+    background: var(--s-dark);
     text-align: center;
     color: var(--s-white);
 }
 .stl-quote-media { position: absolute; inset: 0; }
 .stl-quote-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-.stl-quote-scrim { position: absolute; inset: 0; background: rgba(76, 40, 54, 0.72); }
+.stl-quote-scrim { position: absolute; inset: 0; background: rgba(48, 39, 30, 0.72); }
 .stl-quote-inner {
     position: relative;
     z-index: 1;
@@ -432,11 +435,11 @@ body.concept .stl-quote blockquote {
     width: 122px;
     height: 122px;
     border-radius: 50%;
-    background: var(--s-plum);
+    background: var(--s-brand);
     display: grid;
     place-items: center;
     color: var(--s-white);
-    box-shadow: 0 14px 30px rgba(146, 66, 95, 0.22);
+    box-shadow: 0 14px 30px rgba(138, 95, 51, 0.22);
 }
 .stl-pillar-icon svg { width: 54px; height: 54px; stroke: currentColor; fill: none; stroke-width: 1.6; }
 .stl-pillar h3 { font-size: 1.05rem; font-weight: 600; margin: 0; max-width: 16ch; }
@@ -466,7 +469,7 @@ body.concept .stl-quote blockquote {
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--s-rose);
+    color: var(--s-brand);
     margin: 0 0 0.45rem;
 }
 .stl-card h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 0.6rem; }
@@ -495,7 +498,7 @@ body.concept .stl-quote blockquote {
 
 body.concept .page-hero {
     position: relative;
-    background: var(--s-blush);
+    background: var(--s-tint);
     padding: 5rem 20px 5.5rem;
     overflow: hidden;
 }
@@ -517,16 +520,16 @@ body.concept .page-hero p { color: var(--s-body); }
 
 body.concept .section { padding: 5.5rem 0; }
 body.concept .section.bg-soft { background: var(--s-cream); }
-body.concept .section.bg-plum { background: var(--s-plum-deep); }
+body.concept .section.bg-plum { background: var(--s-dark); }
 body.concept .section.bg-plum h2,
 body.concept .section.bg-plum h3 { color: var(--s-white); }
 body.concept .section h2 { font-weight: 800; color: var(--s-ink); }
 body.concept .section-label {
-    color: var(--s-rose);
+    color: var(--s-brand);
     font-weight: 700;
     letter-spacing: 0.14em;
 }
-body.concept .section.bg-plum .section-label { color: var(--s-rose-light); }
+body.concept .section.bg-plum .section-label { color: var(--s-accent-light); }
 
 body.concept .card {
     background: var(--s-white);
@@ -538,12 +541,12 @@ body.concept .card {
 body.concept .card:hover {
     transform: translateY(-4px);
     box-shadow: var(--s-shadow);
-    border-color: var(--s-rose-light);
+    border-color: var(--s-accent-light);
 }
-body.concept .card h3 { color: var(--s-plum); font-weight: 700; }
+body.concept .card h3 { color: var(--s-brand); font-weight: 700; }
 
 body.concept .cta-banner {
-    background: var(--s-blush);
+    background: var(--s-tint);
     border: none;
     border-radius: 22px;
     box-shadow: none;
@@ -552,8 +555,8 @@ body.concept .cta-banner h2 { color: var(--s-ink); }
 body.concept .cta-banner p { color: var(--s-body); }
 
 body.concept .timeline-step .step-num {
-    background: var(--s-plum);
-    box-shadow: 0 10px 22px rgba(146, 66, 95, 0.22);
+    background: var(--s-brand);
+    box-shadow: 0 10px 22px rgba(138, 95, 51, 0.22);
     font-weight: 800;
 }
 body.concept .timeline-step .step-content h3 { color: var(--s-ink); font-weight: 700; }
@@ -569,9 +572,9 @@ body.concept .accordion-item.open { border-radius: 26px; }
 body.concept .accordion-trigger {
     font-family: var(--s-font);
     font-weight: 700;
-    color: var(--s-plum);
+    color: var(--s-brand);
 }
-body.concept .accordion-item.open .accordion-trigger .plus { background: var(--s-plum); }
+body.concept .accordion-item.open .accordion-trigger .plus { background: var(--s-brand); }
 
 body.concept .checklist li {
     background: var(--s-white);
@@ -579,7 +582,7 @@ body.concept .checklist li {
     border: 1px solid var(--s-line);
     border-radius: 14px;
 }
-body.concept .checklist li .check-icon { background: var(--s-plum); }
+body.concept .checklist li .check-icon { background: var(--s-brand); }
 
 body.concept .contact-form {
     background: var(--s-white);
@@ -589,12 +592,12 @@ body.concept .contact-form {
 }
 body.concept .form-group input,
 body.concept .form-group textarea,
-body.concept .form-group select { border-radius: 14px; background: #fdfafb; }
+body.concept .form-group select { border-radius: 14px; background: #fdfbf7; }
 body.concept .form-group input:focus,
 body.concept .form-group textarea:focus,
 body.concept .form-group select:focus {
-    border-color: var(--s-rose);
-    box-shadow: 0 0 0 4px rgba(198, 115, 158, 0.18);
+    border-color: var(--s-accent);
+    box-shadow: 0 0 0 4px rgba(194, 160, 106, 0.30);
 }
 body.concept .form-success { box-shadow: none; border: 1px solid var(--s-line); border-radius: 18px; }
 
@@ -604,9 +607,9 @@ body.concept .info-block {
     border: 1px solid var(--s-line);
     border-radius: 18px;
 }
-body.concept .info-block:hover { transform: translateY(-4px); box-shadow: var(--s-shadow); border-color: var(--s-rose-light); }
-body.concept .info-block h3 { color: var(--s-plum); font-weight: 700; }
-body.concept .info-block a { color: var(--s-plum); }
+body.concept .info-block:hover { transform: translateY(-4px); box-shadow: var(--s-shadow); border-color: var(--s-accent-light); }
+body.concept .info-block h3 { color: var(--s-brand); font-weight: 700; }
+body.concept .info-block a { color: var(--s-brand); }
 body.concept .map-container { box-shadow: var(--s-shadow); border: none; border-radius: 22px; }
 
 body.concept .photo-thumb { border-radius: 16px; box-shadow: none; border: none; }
@@ -619,11 +622,11 @@ body.concept .cat-card {
     border-radius: 20px;
     overflow: hidden;
 }
-body.concept .cat-card:hover { transform: translateY(-4px); box-shadow: var(--s-shadow); border-color: var(--s-rose-light); }
+body.concept .cat-card:hover { transform: translateY(-4px); box-shadow: var(--s-shadow); border-color: var(--s-accent-light); }
 body.concept .cat-card h3 { color: var(--s-ink); font-weight: 700; }
 
 body.concept .news-box {
-    background: var(--s-blush);
+    background: var(--s-tint);
     box-shadow: none;
     border: none;
     border-radius: 22px;
@@ -633,12 +636,12 @@ body.concept .news-box:hover { transform: none; box-shadow: none; }
 body.concept .status-badge { border-radius: var(--s-pill); }
 
 /* ==========================================================================
-   Footer — plum band with the reference's curved top edge
+   Footer — espresso band with the reference's curved top edge
    ========================================================================== */
 
 body.concept footer {
     position: relative;
-    background: var(--s-plum-deep);
+    background: var(--s-dark);
     padding-top: 9.5rem;
     overflow: hidden;
 }
@@ -655,8 +658,11 @@ body.concept footer::before {
 }
 body.concept footer > * { position: relative; z-index: 1; }
 body.concept footer h3 { color: var(--s-white); font-weight: 700; }
-body.concept footer a:hover { color: var(--s-rose-light); }
+body.concept footer a:hover { color: var(--s-accent-light); }
 body.concept .footer-logo-img { width: 190px; height: auto; }
+body.concept .footer-social a { background: rgba(255, 255, 255, 0.12); }
+body.concept .footer-social a:hover { background: var(--s-accent); transform: translateY(-3px); }
+body.concept .social-icon-img { filter: brightness(0) invert(1); }
 
 @media (max-width: 860px) {
     body.concept footer { padding-top: 5.5rem; }
@@ -676,21 +682,21 @@ body.concept .footer-logo-img { width: 190px; height: auto; }
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 1.25rem 0.6rem 0.7rem;
-    background: var(--s-plum);
+    background: var(--s-brand);
     border-radius: var(--s-pill);
     text-decoration: none;
-    box-shadow: 0 14px 30px rgba(104, 55, 74, 0.35);
+    box-shadow: 0 14px 30px rgba(53, 44, 34, 0.35);
     opacity: 0;
     transform: translateY(18px) scale(0.9);
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease;
 }
 .c-float-cta.is-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-.c-float-cta:hover { background: var(--s-plum-hover); }
+.c-float-cta:hover { background: var(--s-brand-hover); }
 
 .c-float-cta-icon { position: relative; display: block; width: 30px; }
 .c-float-cta-cat { display: block; width: 30px; height: auto; }
-/* the dark cat mark is invisible on the plum pill — only the light one shows */
+/* the dark cat mark is invisible on the bronze pill — only the light one shows */
 .c-float-cta .c-float-cta-cat:not(.c-float-cta-cat-light) { visibility: hidden; }
 .c-float-cta-cat-light { position: absolute; inset: 0; visibility: visible; opacity: 1; }
 
