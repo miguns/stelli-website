@@ -2,7 +2,7 @@
    StElli Ragdoll — "warm cattery" theme
    Layout language inspired by aryabengals.cz (solid colour bar, full-bleed
    photo hero, curved section edges, pill buttons, round icon badges),
-   painted in a light, cool greige palette — stone, pewter, pale sand.
+   painted in a light latte palette — milky beige, mocha, oat.
 
    Loaded after styles.css on every page: the token block below re-points the
    legacy --plum/--lavender variables, so components that already exist
@@ -10,51 +10,52 @@
    ========================================================================== */
 
 body.concept {
-    /* ---- light, cool "greige" palette: stone, pewter, pale sand ----
-       Text colours are checked against WCAG AA: ink 14.2:1, body 6.4:1 and
-       brand 6.3:1 on white; brand still clears 4.5:1 on the tinted panels.
-       The pale greige accent is decorative or sits on dark — never small
-       dark text. */
-    --s-dark: #5c584f;        /* stone: nav bar, footer, dark bands */
-    --s-brand: #655f54;       /* pewter taupe: buttons, icon badges, labels */
-    --s-brand-hover: #4f4a41;
-    --s-accent: #b3ab9c;      /* pale greige: decorative, on dark only */
-    --s-accent-light: #d8d2c7;
-    --s-tint: #f0eee9;        /* cool sand: tinted panels */
-    --s-cream: #f8f7f4;       /* alternating section background */
-    --s-ink: #2c2b27;         /* headings */
-    --s-body: #625f58;        /* body copy */
-    --s-line: #e4e1da;
+    /* ---- "latte / oat" palette: milky beige, mocha, oat ----
+       Deliberately keeps chroma (30-39 on the mocha tones, vs 13-17 on the
+       greige it replaces) so the page reads soft rather than lifeless.
+       WCAG AA: ink 13.8:1, body 6.2:1 and brand 5.5:1 on white; brand still
+       clears 4.5:1 on the oat panels. The oat accent is decorative or sits
+       on dark — never small dark text. */
+    --s-dark: #6b5c4d;        /* mocha: nav bar, footer, dark bands */
+    --s-brand: #7a6553;       /* latte: buttons, icon badges, labels */
+    --s-brand-hover: #645141;
+    --s-accent: #c9b199;      /* oat: decorative, on dark only */
+    --s-accent-light: #e6dbcb;
+    --s-tint: #f2ece2;        /* oat milk: tinted panels */
+    --s-cream: #faf7f2;       /* alternating section background */
+    --s-ink: #332c25;         /* headings */
+    --s-body: #6a5f54;        /* body copy */
+    --s-line: #e7ded1;
     --s-white: #ffffff;
 
     --s-font: 'Catamaran', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --s-shadow: 0 14px 34px rgba(44, 43, 39, 0.12);
-    --s-shadow-lg: 0 22px 50px rgba(44, 43, 39, 0.18);
+    --s-shadow: 0 14px 34px rgba(51, 44, 37, 0.12);
+    --s-shadow-lg: 0 22px 50px rgba(51, 44, 37, 0.18);
     --s-pill: 50px;
 
     /* ---- remap the legacy styles.css tokens onto the palette ---- */
     --cream: #ffffff;
-    --cream-deep: #f0eee9;
-    --blush: #f0eee9;
-    --blush-deep: #d8d2c7;
-    --lavender: #b3ab9c;
-    --lavender-deep: #938b7c;
-    --plum: #655f54;
-    --plum-dark: #5c584f;
-    --gold: #b3ab9c;
-    --ink: #2c2b27;
-    --ink-light: #625f58;
+    --cream-deep: #f2ece2;
+    --blush: #f2ece2;
+    --blush-deep: #e6dbcb;
+    --lavender: #c9b199;
+    --lavender-deep: #a8906f;
+    --plum: #7a6553;
+    --plum-dark: #6b5c4d;
+    --gold: #c9b199;
+    --ink: #332c25;
+    --ink-light: #6a5f54;
     --white: #ffffff;
     --font-display: 'Catamaran', -apple-system, 'Segoe UI', sans-serif;
     --font-body: 'Catamaran', -apple-system, 'Segoe UI', sans-serif;
-    --gradient-primary: linear-gradient(135deg, #655f54 0%, #5c584f 100%);
-    --gradient-warm: linear-gradient(135deg, #d8d2c7 0%, #b3ab9c 100%);
-    --gradient-soft: linear-gradient(180deg, #ffffff 0%, #f8f7f4 100%);
+    --gradient-primary: linear-gradient(135deg, #7a6553 0%, #6b5c4d 100%);
+    --gradient-warm: linear-gradient(135deg, #e6dbcb 0%, #c9b199 100%);
+    --gradient-soft: linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 22px;
-    --shadow-soft: 0 14px 34px rgba(44, 43, 39, 0.12);
-    --shadow-hover: 0 22px 50px rgba(44, 43, 39, 0.18);
+    --shadow-soft: 0 14px 34px rgba(51, 44, 37, 0.12);
+    --shadow-hover: 0 22px 50px rgba(51, 44, 37, 0.18);
 
     background: var(--s-white);
     font-family: var(--s-font);
@@ -79,7 +80,7 @@ body.concept ::-webkit-scrollbar-track { background: var(--s-tint); }
 body.concept ::-webkit-scrollbar-thumb { background: var(--s-accent); }
 
 /* ==========================================================================
-   Header — solid stone bar, sticky, light logo
+   Header — solid mocha bar, sticky, light logo
    ========================================================================== */
 
 body.concept header {
@@ -139,7 +140,7 @@ body.concept .nav-toggle span { background: var(--s-white); }
 @media (max-width: 860px) {
     body.concept .nav-menu {
         background: var(--s-dark);
-        box-shadow: -20px 0 50px rgba(38, 37, 33, 0.35);
+        box-shadow: -20px 0 50px rgba(46, 39, 32, 0.35);
     }
     body.concept .logo-img { width: 148px; }
 }
@@ -168,11 +169,11 @@ body.concept .stl-btn {
 body.concept .stl-btn--solid {
     background: var(--s-brand);
     color: var(--s-white);
-    box-shadow: 0 10px 24px rgba(101, 95, 84, 0.24);
+    box-shadow: 0 10px 24px rgba(122, 101, 83, 0.24);
 }
 body.concept .stl-btn--solid:hover {
     background: var(--s-brand-hover);
-    box-shadow: 0 14px 30px rgba(101, 95, 84, 0.32);
+    box-shadow: 0 14px 30px rgba(122, 101, 83, 0.32);
 }
 
 body.concept .stl-btn--line {
@@ -185,7 +186,7 @@ body.concept .stl-btn--line:hover { background: var(--s-brand); color: var(--s-w
 body.concept .stl-btn--light {
     background: var(--s-white);
     color: var(--s-dark);
-    box-shadow: 0 10px 26px rgba(38, 37, 33, 0.25);
+    box-shadow: 0 10px 26px rgba(46, 39, 32, 0.25);
 }
 body.concept .stl-btn--light:hover { background: var(--s-tint); }
 
@@ -205,7 +206,7 @@ body.concept .btn-primary,
 body.concept .btn-solid,
 body.concept .btn-primary-form {
     background: var(--s-brand);
-    box-shadow: 0 10px 24px rgba(101, 95, 84, 0.24);
+    box-shadow: 0 10px 24px rgba(122, 101, 83, 0.24);
     color: var(--s-white);
 }
 body.concept .btn-primary:hover,
@@ -213,7 +214,7 @@ body.concept .btn-solid:hover,
 body.concept .btn-primary-form:hover {
     background: var(--s-brand-hover);
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(101, 95, 84, 0.32);
+    box-shadow: 0 14px 30px rgba(122, 101, 83, 0.32);
     filter: none;
 }
 body.concept .btn-outline {
@@ -300,7 +301,7 @@ body.concept .stl-curve--dark { background: var(--s-dark); }
 .stl-hero-scrim {
     position: absolute;
     inset: 0;
-    background: linear-gradient(100deg, rgba(38, 37, 33, 0.88) 0%, rgba(38, 37, 33, 0.72) 34%, rgba(38, 37, 33, 0.34) 62%, rgba(38, 37, 33, 0.12) 100%);
+    background: linear-gradient(100deg, rgba(46, 39, 32, 0.88) 0%, rgba(46, 39, 32, 0.72) 34%, rgba(46, 39, 32, 0.34) 62%, rgba(46, 39, 32, 0.12) 100%);
 }
 .stl-hero-inner {
     position: relative;
@@ -317,7 +318,7 @@ body.concept .stl-hero h1 {
     font-weight: 800;
     max-width: 15ch;
     margin: 0 0 1.2rem;
-    text-shadow: 0 2px 22px rgba(38, 37, 33, 0.35);
+    text-shadow: 0 2px 22px rgba(46, 39, 32, 0.35);
 }
 .stl-hero-sub {
     font-size: 1.06rem;
@@ -393,7 +394,7 @@ body.concept .stl-hero h1 {
 }
 .stl-quote-media { position: absolute; inset: 0; }
 .stl-quote-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-.stl-quote-scrim { position: absolute; inset: 0; background: rgba(46, 45, 41, 0.70); }
+.stl-quote-scrim { position: absolute; inset: 0; background: rgba(56, 47, 38, 0.70); }
 .stl-quote-inner {
     position: relative;
     z-index: 1;
@@ -440,7 +441,7 @@ body.concept .stl-quote blockquote {
     display: grid;
     place-items: center;
     color: var(--s-white);
-    box-shadow: 0 14px 30px rgba(101, 95, 84, 0.22);
+    box-shadow: 0 14px 30px rgba(122, 101, 83, 0.22);
 }
 .stl-pillar-icon svg { width: 54px; height: 54px; stroke: currentColor; fill: none; stroke-width: 1.6; }
 .stl-pillar h3 { font-size: 1.05rem; font-weight: 600; margin: 0; max-width: 16ch; }
@@ -557,7 +558,7 @@ body.concept .cta-banner p { color: var(--s-body); }
 
 body.concept .timeline-step .step-num {
     background: var(--s-brand);
-    box-shadow: 0 10px 22px rgba(101, 95, 84, 0.22);
+    box-shadow: 0 10px 22px rgba(122, 101, 83, 0.22);
     font-weight: 800;
 }
 body.concept .timeline-step .step-content h3 { color: var(--s-ink); font-weight: 700; }
@@ -593,12 +594,12 @@ body.concept .contact-form {
 }
 body.concept .form-group input,
 body.concept .form-group textarea,
-body.concept .form-group select { border-radius: 14px; background: #fbfaf8; }
+body.concept .form-group select { border-radius: 14px; background: #fdfbf8; }
 body.concept .form-group input:focus,
 body.concept .form-group textarea:focus,
 body.concept .form-group select:focus {
     border-color: var(--s-accent);
-    box-shadow: 0 0 0 4px rgba(147, 139, 124, 0.32);
+    box-shadow: 0 0 0 4px rgba(201, 177, 153, 0.38);
 }
 body.concept .form-success { box-shadow: none; border: 1px solid var(--s-line); border-radius: 18px; }
 
@@ -637,7 +638,7 @@ body.concept .news-box:hover { transform: none; box-shadow: none; }
 body.concept .status-badge { border-radius: var(--s-pill); }
 
 /* ==========================================================================
-   Footer — stone band with the reference's curved top edge
+   Footer — mocha band with the reference's curved top edge
    ========================================================================== */
 
 body.concept footer {
@@ -686,7 +687,7 @@ body.concept .social-icon-img { filter: brightness(0) invert(1); }
     background: var(--s-brand);
     border-radius: var(--s-pill);
     text-decoration: none;
-    box-shadow: 0 14px 30px rgba(44, 43, 39, 0.35);
+    box-shadow: 0 14px 30px rgba(51, 44, 37, 0.35);
     opacity: 0;
     transform: translateY(18px) scale(0.9);
     pointer-events: none;
@@ -697,7 +698,7 @@ body.concept .social-icon-img { filter: brightness(0) invert(1); }
 
 .c-float-cta-icon { position: relative; display: block; width: 30px; }
 .c-float-cta-cat { display: block; width: 30px; height: auto; }
-/* the dark cat mark is invisible on the pewter pill — only the light one shows */
+/* the dark cat mark is invisible on the latte pill — only the light one shows */
 .c-float-cta .c-float-cta-cat:not(.c-float-cta-cat-light) { visibility: hidden; }
 .c-float-cta-cat-light { position: absolute; inset: 0; visibility: visible; opacity: 1; }
 
