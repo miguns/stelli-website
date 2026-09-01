@@ -82,11 +82,11 @@
 
     <main id="main">
         <!-- HERO: full-bleed photo, headline over a soft scrim -->
-        <section class="stl-hero">
+        <section class="stl-hero stl-hero--cover">
             <div class="stl-hero-media">
                 <picture>
-                    <source srcset="../images/featured/kitten-basket.webp" type="image/webp">
-                    <img src="../images/featured/kitten-basket.jpg" alt="Kocięta Ragdoll odpoczywające na łóżku" loading="eager" fetchpriority="high">
+                    <source srcset="../images/featured/hero-cover.webp" type="image/webp">
+                    <img src="../images/featured/hero-cover.jpg" alt="Kocięta Ragdoll odpoczywające na łóżku" loading="eager" fetchpriority="high">
                 </picture>
             </div>
             <div class="stl-hero-scrim"></div>
@@ -292,10 +292,33 @@
 
     
     <script>
-        // Floating "Chci kotě" — a solid plum pill, visible from the first paint
+        // Floating "Chci kotě" — a solid pill, visible from the first paint
         (function initFloatCta() {
             var btn = document.getElementById('floatCta');
             if (btn) btn.classList.add('is-visible');
+        })();
+
+        // The header sits transparent over the dark cover photo and turns
+        // cream once the page scrolls past it, so the nav never floats on a
+        // background it cannot be read against.
+        (function initCoverHeader() {
+            var header = document.querySelector('header');
+            var hero = document.querySelector('.stl-hero--cover');
+            if (!header || !hero) return;
+            var ticking = false;
+            function update() {
+                ticking = false;
+                var past = window.scrollY > hero.offsetHeight - header.offsetHeight - 8;
+                header.classList.toggle('is-scrolled', past);
+            }
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(update);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            update();
         })();
     </script>
 </body>

@@ -809,3 +809,156 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
 
 /* ---- floating CTA keeps the caramel pill, so its mark stays white ---- */
 .c-float-cta .c-float-cta-cat-light { visibility: visible; }
+
+/* ==========================================================================
+   Homepage cover — the hero photograph is shot on black, so the hero runs
+   as a dark cover instead of a cream one: the photo sits right, its own
+   black is extended left with a gradient (the seam is invisible because
+   the source is black there), and the type sits on that black. The cream
+   page resumes immediately below the curve.
+   ========================================================================== */
+
+.stl-hero--cover { background: #0b0b0c; }
+
+.stl-hero--cover .stl-hero-media img {
+    object-position: 78% 42%;
+}
+
+/* left-to-right black, continuing the photograph's own background */
+.stl-hero--cover .stl-hero-scrim {
+    background: linear-gradient(90deg,
+        #0b0b0c 0%,
+        #0b0b0c 26%,
+        rgba(11, 11, 12, 0.94) 40%,
+        rgba(11, 11, 12, 0.62) 54%,
+        rgba(11, 11, 12, 0.18) 68%,
+        rgba(11, 11, 12, 0) 80%);
+}
+
+body.concept .stl-hero--cover h1 { color: var(--s-cream); text-shadow: none; }
+.stl-hero--cover .stl-hero-sub {
+    color: rgba(251, 246, 236, 0.86);
+    text-decoration-color: rgba(200, 172, 126, 0.75);
+}
+
+/* on black the filled button is the cream one; the outline turns cream too */
+body.concept .stl-hero--cover .stl-btn--light {
+    background: var(--s-cream);
+    color: #1a1712;
+    border-color: var(--s-cream);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+body.concept .stl-hero--cover .stl-btn--light:hover { background: var(--s-white); }
+body.concept .stl-hero--cover .stl-btn--solid {
+    background: transparent;
+    color: var(--s-cream);
+    border-color: rgba(251, 246, 236, 0.55);
+    box-shadow: none;
+}
+body.concept .stl-hero--cover .stl-btn--solid:hover {
+    background: rgba(251, 246, 236, 0.14);
+    border-color: var(--s-cream);
+}
+
+/* ---- header: transparent over the cover, cream once scrolled past it ---- */
+body.concept2 header {
+    background: transparent;
+    border-bottom-color: transparent;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+body.concept2 header .nav-menu a,
+body.concept2 header .nav-menu .lang-link { color: rgba(251, 246, 236, 0.88); }
+body.concept2 header .nav-menu a:hover,
+body.concept2 header .nav-menu a.active,
+body.concept2 header .nav-menu .lang-link:hover { color: var(--s-cream); }
+body.concept2 header .nav-menu a::after { background: var(--s-accent); }
+body.concept2 header .nav-cta {
+    border-color: rgba(251, 246, 236, 0.5);
+    color: var(--s-cream) !important;
+}
+body.concept2 header .nav-cta:hover {
+    background: var(--s-cream);
+    color: #1a1712 !important;
+    border-color: var(--s-cream);
+}
+body.concept2 header .nav-menu .lang-link.active { color: #1a1712; background: var(--s-cream); }
+body.concept2 header .nav-toggle span { background: var(--s-cream); }
+/* The dark wordmark disappears on black. Inverting it with a filter turns
+   the watercolour into a grey smudge, so swap in the light artwork instead
+   (url() resolves against this stylesheet, so it works from /en, /de, /pl
+   too) and swap back once the bar turns cream. */
+body.concept2 header .logo-img { content: url('images/logo-light.png'); }
+
+body.concept2 header.is-scrolled {
+    background: var(--s-cream-bar);
+    border-bottom-color: var(--s-line);
+}
+body.concept2 header.is-scrolled .nav-menu a,
+body.concept2 header.is-scrolled .nav-menu .lang-link { color: var(--s-ink); }
+body.concept2 header.is-scrolled .nav-menu a:hover,
+body.concept2 header.is-scrolled .nav-menu a.active { color: var(--s-brand); }
+body.concept2 header.is-scrolled .nav-menu a::after { background: var(--s-brand); }
+body.concept2 header.is-scrolled .nav-cta {
+    border-color: var(--s-brand);
+    color: var(--s-brand) !important;
+}
+body.concept2 header.is-scrolled .nav-cta:hover {
+    background: var(--s-brand);
+    color: var(--s-white) !important;
+}
+body.concept2 header.is-scrolled .nav-menu .lang-link.active { color: var(--s-white); background: var(--s-brand); }
+body.concept2 header.is-scrolled .nav-toggle span { background: var(--s-ink); }
+body.concept2 header.is-scrolled .logo-img { content: normal; }
+
+/* the mobile drawer is cream whatever the header is doing */
+@media (max-width: 860px) {
+    body.concept2 header .nav-menu a,
+    body.concept2 header .nav-menu .lang-link { color: var(--s-ink); }
+    body.concept2 header .nav-menu a:hover,
+    body.concept2 header .nav-menu a.active { color: var(--s-brand); }
+    body.concept2 header .nav-cta { border-color: var(--s-brand); color: var(--s-brand) !important; }
+    body.concept2 header .nav-menu .lang-link.active { color: var(--s-white); background: var(--s-brand); }
+    /* the cover crops tighter on a phone, so keep the kitten in frame */
+    .stl-hero--cover .stl-hero-media img { object-position: 72% 38%; }
+    .stl-hero--cover .stl-hero-scrim {
+        background: linear-gradient(180deg,
+            rgba(11, 11, 12, 0.55) 0%,
+            rgba(11, 11, 12, 0.35) 30%,
+            rgba(11, 11, 12, 0.82) 68%,
+            #0b0b0c 100%);
+    }
+    .stl-hero--cover .stl-hero-inner { padding-top: 14rem; }
+}
+
+/* The cover has to run to the very top edge, so on the homepage the header
+   floats over it rather than sitting above it in flow. Without this the
+   transparent nav lands on the white page background and disappears. */
+body.concept2 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* A transparent bar over a photograph is only safe where the photo is dark.
+   The right-hand end of the cover is light, so the nav gets its own soft
+   top-down scrim; it fades out once the bar turns cream. */
+body.concept2 header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg,
+        rgba(8, 8, 9, 0.86) 0%,
+        rgba(8, 8, 9, 0.78) 58%,
+        rgba(8, 8, 9, 0.34) 84%,
+        rgba(8, 8, 9, 0) 100%);
+    transition: opacity 0.3s ease;
+}
+body.concept2 header.is-scrolled::before { opacity: 0; }
+body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 10.5rem; }
+
+@media (max-width: 860px) {
+    body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 15rem; }
+}
