@@ -336,12 +336,15 @@ body.concept .stl-hero h1 {
    lockup, but light enough not to compete with it */
 .stl-hero-tagline {
     font-family: var(--s-display);
-    font-size: clamp(1.3rem, 2.3vw, 1.75rem);
+    font-size: clamp(1.5rem, 2.9vw, 2.3rem);
     font-weight: 400;
-    line-height: 1.3;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 26ch;
-    margin: 0 0 1.6rem;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.92);
+    /* ch is font-relative, so this runs out into the black to the left of the
+       kitten on a wide screen and folds back on its own as the type shrinks */
+    max-width: 38ch;
+    text-wrap: pretty;
+    margin: 0 0 1.8rem;
     text-shadow: 0 2px 18px rgba(59, 52, 42, 0.35);
 }
 .stl-hero-sub {
