@@ -864,12 +864,12 @@ body.concept .stl-hero--cover h1 {
     font-weight: 200;
     letter-spacing: 0.005em;
 }
-/* Allura is a script: tiny x-height, long ascenders and descenders, so it
-   needs both a bigger size and a looser line to read at the same strength */
+/* Italianno is finer and smaller on the body than Allura was, so it takes
+   another step up in size to sit at the same strength beside the name */
 .stl-hero--cover .stl-hero-tagline {
-    font-family: 'Allura', 'Cormorant Garamond', Georgia, cursive;
-    font-size: clamp(1.9rem, 3.9vw, 3.1rem);
-    line-height: 1.35;
+    font-family: 'Italianno', 'Cormorant Garamond', Georgia, cursive;
+    font-size: clamp(2.3rem, 4.7vw, 3.8rem);
+    line-height: 1.3;
     max-width: none;
 }
 
