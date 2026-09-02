@@ -614,15 +614,30 @@ body.concept .timeline-step .step-num {
 }
 body.concept .timeline-step .step-content h3 { color: var(--s-ink); font-weight: 600; }
 
-/* Portrait photo opening the 01-04 timeline, set right under the intro text. */
-body.concept .work-photo {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 2.5rem;
-}
-body.concept .work-photo img {
-    width: min(700px, 100%);
+/* Cat portrait as a soft background accent behind the 01-04 timeline. */
+body.concept .work-photo-section { overflow: hidden; }
+body.concept .work-photo-bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(460px, 48vw, 960px);
     height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+}
+body.concept .work-photo-bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 720px) {
+    body.concept .work-photo-bg {
+        width: 72vw;
+        top: 2.5rem;
+        opacity: 0.28;
+    }
 }
 
 body.concept .accordion-item {

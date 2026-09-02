@@ -619,7 +619,7 @@ header {
 .section.bg-plum .stat-item span { color: rgba(255,255,255,0.8); }
 
 /* Timeline (process steps) */
-.timeline { position: relative; margin: 3rem 0; }
+.timeline { position: relative; z-index: 1; margin: 3rem 0; }
 .timeline-step {
     display: grid;
     grid-template-columns: 60px 1fr;
