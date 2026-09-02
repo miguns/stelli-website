@@ -855,7 +855,23 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
         rgba(13, 13, 14, 0) 66%);
 }
 
-body.concept .stl-hero--cover h1 { color: var(--s-cream); text-shadow: none; }
+/* the wordmark in the logo above it is Montserrat, so the name is set in the
+   same face at a light weight rather than in the page's heading serif */
+body.concept .stl-hero--cover h1 {
+    color: var(--s-cream);
+    text-shadow: none;
+    font-family: 'Montserrat', -apple-system, 'Segoe UI', sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.005em;
+}
+/* Allura is a script: tiny x-height, long ascenders and descenders, so it
+   needs both a bigger size and a looser line to read at the same strength */
+.stl-hero--cover .stl-hero-tagline {
+    font-family: 'Allura', 'Cormorant Garamond', Georgia, cursive;
+    font-size: clamp(1.9rem, 3.9vw, 3.1rem);
+    line-height: 1.35;
+    max-width: none;
+}
 
 /* on black the filled button is the cream one; the outline turns cream too */
 body.concept .stl-hero--cover .stl-btn--light {
