@@ -970,29 +970,19 @@ body.concept2 header .nav-toggle span { background: var(--s-cream); }
 /* The dark wordmark disappears on black. Inverting it with a filter turns
    the watercolour into a grey smudge, so swap in the light artwork instead
    (url() resolves against this stylesheet, so it works from /en, /de, /pl
-   too) and swap back once the bar turns cream. */
+   too). The bar stays black the whole way down the homepage (see
+   .is-scrolled below), so the light wordmark never needs to swap back. */
 body.concept2 header .logo-img { content: url('images/logo-light.png'); }
 
+/* Past the cover photo the transparent bar needs a solid background to
+   stay legible, but it stays the same black rather than switching to
+   cream -- a color change reading as a glitch once the footer below it
+   is black too. Only .nav-menu/.nav-cta/.logo-img's un-scrolled colors
+   apply here since none of them are overridden for this state. */
 body.concept2 header.is-scrolled {
-    background: var(--s-cream-bar);
-    border-bottom-color: var(--s-line);
+    background: var(--s-cover);
+    border-bottom-color: transparent;
 }
-body.concept2 header.is-scrolled .nav-menu a,
-body.concept2 header.is-scrolled .nav-menu .lang-link { color: var(--s-ink); }
-body.concept2 header.is-scrolled .nav-menu a:hover,
-body.concept2 header.is-scrolled .nav-menu a.active { color: var(--s-brand); }
-body.concept2 header.is-scrolled .nav-menu a::after { background: var(--s-brand); }
-body.concept2 header.is-scrolled .nav-cta {
-    border-color: var(--s-brand);
-    color: var(--s-brand) !important;
-}
-body.concept2 header.is-scrolled .nav-cta:hover {
-    background: var(--s-brand);
-    color: var(--s-white) !important;
-}
-body.concept2 header.is-scrolled .nav-menu .lang-link.active { color: var(--s-white); background: var(--s-brand); }
-body.concept2 header.is-scrolled .nav-toggle span { background: var(--s-ink); }
-body.concept2 header.is-scrolled .logo-img { content: normal; }
 
 /* Off the homepage the band under the bar is short -- one screen, not
    several -- so the is-scrolled fade never gets a chance to read as a
