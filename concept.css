@@ -479,7 +479,7 @@ body.concept .stl-quote blockquote {
    Homepage — news / litter cards
    ========================================================================== */
 
-.stl-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem; }
+.stl-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.2rem; }
 .stl-card { display: flex; flex-direction: column; text-align: left; }
 .stl-card-photo {
     border-radius: 18px;
