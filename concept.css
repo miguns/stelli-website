@@ -543,6 +543,9 @@ body.concept .page-hero::after {
     background: var(--band-into, var(--s-cream));
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
+@media (max-width: 860px) {
+    body.concept .page-hero::after { height: 56px; width: 190%; }
+}
 body.concept .page-hero:has(+ .section.bg-soft),
 body.concept .page-hero:has(+ * > .section.bg-soft:first-child) { --band-into: var(--s-tint); }
 body.concept .page-hero > * { position: relative; z-index: 1; }
