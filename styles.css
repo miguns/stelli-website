@@ -550,6 +550,7 @@ header {
 
 .card h3 { color: var(--plum); margin-bottom: 0.6rem; font-size: 1.25rem; }
 .card p { color: var(--ink-light); margin: 0; }
+.card p:not(:last-child) { margin-bottom: 0.6rem; }
 
 /* Photo placeholder (used until real photos are added) */
 .photo-placeholder {
