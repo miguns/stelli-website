@@ -11,15 +11,16 @@
 
 body.concept {
     /* ---- cream palette, light chrome ----
-       Cream everywhere, including the bar and footer. That forces one
-       structural decision: cream cannot carry white text (1.3:1), so the
-       chrome runs dark-on-cream (9.4:1) instead of the reference's
-       white-on-dark. Caramel carries the buttons so calls to action still
-       have presence without leaving the cream family.
+       Cream everywhere but the footer, which stays the reference's black
+       band. That forces one structural decision: cream cannot carry white
+       text (1.3:1), so the bar/hero/quote chrome runs dark-on-cream
+       (9.4:1) instead of the reference's white-on-dark. Caramel carries
+       the buttons so calls to action still have presence without leaving
+       the cream family.
        WCAG AA: ink 12.3:1, body 6.1:1 on white; ink 9.4:1 on the cream bar;
        white 5.6:1 on the caramel buttons. */
     --s-cream-bar: #ece0cd;   /* cream: nav bar */
-    --s-cream-deep: #efe3d0;  /* cream: footer band */
+    --s-cream-deep: #efe3d0;  /* cream, currently unused (was the footer band) */
     --s-brand: #7f6340;       /* caramel: buttons, icon badges, labels */
     --s-brand-hover: #6a5234;
     --s-accent: #c8ac7e;      /* wheat: decorative */
@@ -683,7 +684,7 @@ body.concept .status-badge { border-radius: var(--s-pill); }
 
 body.concept footer {
     position: relative;
-    background: var(--s-dark);
+    background: var(--s-cover);
     padding-top: 9.5rem;
     overflow: hidden;
 }
@@ -700,8 +701,16 @@ body.concept footer::before {
 }
 body.concept footer > * { position: relative; z-index: 1; }
 body.concept footer h3 { color: var(--s-white); font-weight: 600; }
-body.concept footer a:hover { color: var(--s-accent-light); }
-body.concept .footer-logo-img { width: 190px; height: auto; }
+body.concept footer p { color: var(--s-accent-light); }
+body.concept footer a { color: var(--s-accent-light); }
+body.concept footer a:hover { color: var(--s-accent); }
+/* black background, so the dark wordmark disappears -- swap in the light
+   artwork the same way the header does over the hero cover (see the
+   .logo-img note below) */
+body.concept .footer-logo-img { content: url('images/logo-light.png'); width: 190px; height: auto; }
+body.concept .footer-bottom { border-top-color: rgba(255, 255, 255, 0.14); }
+body.concept .footer-bottom p,
+body.concept .footer-note { color: rgba(226, 211, 185, 0.62); }
 body.concept .footer-social a { background: rgba(255, 255, 255, 0.12); }
 body.concept .footer-social a:hover { background: var(--s-accent); transform: translateY(-3px); }
 body.concept .social-icon-img { filter: brightness(0) invert(1); }
@@ -757,10 +766,12 @@ body.concept .social-icon-img { filter: brightness(0) invert(1); }
 }
 
 /* ==========================================================================
-   Light chrome — the bar, footer, hero and quote band are cream, so
-   everything that the reference layout drew as white-on-dark is inked
-   instead. Cream cannot carry white text (1.3:1), so this is not a
-   preference but the only legible way to keep those bands cream.
+   Light chrome — the bar, hero and quote band are cream, so everything
+   that the reference layout drew as white-on-dark is inked instead. Cream
+   cannot carry white text (1.3:1), so this is not a preference but the
+   only legible way to keep those bands cream. The footer stays the
+   reference's black band (see the "footer" rules above) with white and
+   warm-wheat text on it.
    ========================================================================== */
 
 /* ---- header ---- */
@@ -817,20 +828,6 @@ body.concept .stl-btn--light:hover { background: var(--s-brand); color: var(--s-
 .stl-quote-scrim { background: rgba(251, 246, 236, 0.91); }
 body.concept .stl-quote blockquote { color: var(--s-ink); }
 .stl-quote-name { color: var(--s-ink); }
-
-/* ---- footer ---- */
-body.concept footer { background: var(--s-cream-deep); }
-body.concept footer h3 { color: var(--s-ink); }
-body.concept footer p { color: var(--s-body); }
-body.concept footer a { color: var(--s-body); }
-body.concept footer a:hover { color: var(--s-brand); }
-body.concept .footer-bottom { border-top-color: var(--s-line); }
-body.concept .footer-bottom p,
-body.concept .footer-note { color: var(--s-body); }
-body.concept .footer-social a { background: rgba(59, 52, 42, 0.08); }
-body.concept .footer-social a:hover { background: var(--s-brand); }
-body.concept .social-icon-img { filter: brightness(0) opacity(0.72); }
-body.concept .footer-social a:hover .social-icon-img { filter: brightness(0) invert(1); }
 
 /* ---- legacy dark section used by subpages ---- */
 body.concept .section.bg-plum { background: var(--s-tint); }
