@@ -347,17 +347,6 @@ body.concept .stl-hero h1 {
     margin: 0 0 1.8rem;
     text-shadow: 0 2px 18px rgba(59, 52, 42, 0.35);
 }
-.stl-hero-sub {
-    font-size: 1.06rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.94);
-    max-width: 42ch;
-    margin: 0 0 2rem;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-    text-decoration-thickness: 1px;
-    text-decoration-color: rgba(255, 255, 255, 0.45);
-}
 .stl-hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
 @media (max-width: 640px) {
@@ -789,7 +778,6 @@ body.concept .nav-toggle span { background: var(--s-ink); }
         rgba(251, 246, 236, 0.10) 100%);
 }
 body.concept .stl-hero h1 { color: var(--s-ink); text-shadow: none; }
-.stl-hero-sub { color: var(--s-ink); text-decoration-color: var(--s-accent); }
 
 /* first hero button becomes the quiet one, the second stays the filled CTA */
 body.concept .stl-btn--light {
@@ -868,10 +856,6 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
 }
 
 body.concept .stl-hero--cover h1 { color: var(--s-cream); text-shadow: none; }
-.stl-hero--cover .stl-hero-sub {
-    color: rgba(251, 246, 236, 0.86);
-    text-decoration-color: rgba(200, 172, 126, 0.75);
-}
 
 /* on black the filled button is the cream one; the outline turns cream too */
 body.concept .stl-hero--cover .stl-btn--light {
@@ -981,8 +965,12 @@ body.concept2 header::before {
 body.concept2 header.is-scrolled::before { opacity: 0; }
 body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 10.5rem; }
 
-@media (max-width: 860px) {
-    body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 15rem; }
+@media (min-width: 701px) {
+    body.concept2 .stl-hero--cover { display: flex; align-items: center; }
+    body.concept2 .stl-hero--cover .stl-hero-inner {
+        padding-top: 7rem;      /* the fixed header floats over this much */
+        padding-bottom: 7rem;   /* and the bottom curve covers this much */
+    }
 }
 
 /* Too narrow to stand the type beside the photograph, so the hero stacks:
