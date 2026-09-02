@@ -614,14 +614,14 @@ body.concept .timeline-step .step-num {
 }
 body.concept .timeline-step .step-content h3 { color: var(--s-ink); font-weight: 600; }
 
-/* Portrait photo opening the 01-04 timeline, faded into the page background. */
+/* Portrait photo opening the 01-04 timeline, set right under the intro text. */
 body.concept .work-photo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-bottom: 2.5rem;
 }
 body.concept .work-photo img {
-    width: min(560px, 100%);
+    width: min(700px, 100%);
     height: auto;
 }
 
