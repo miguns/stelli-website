@@ -610,6 +610,18 @@ body.concept .timeline-step .step-num {
 }
 body.concept .timeline-step .step-content h3 { color: var(--s-ink); font-weight: 600; }
 
+/* Campus Felinarium graduation badge, closing out the 01-04 timeline it backs up. */
+body.concept .cert-badge {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
+body.concept .cert-badge img {
+    width: 132px;
+    height: auto;
+    filter: drop-shadow(0 10px 22px rgba(127, 99, 64, 0.22));
+}
+
 body.concept .accordion-item {
     background: var(--s-white);
     border: 1px solid var(--s-line);
