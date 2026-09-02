@@ -558,9 +558,9 @@ body.dark-band .page-hero { padding-top: 10.5rem; }
 @media (max-width: 700px) {
     body.dark-band .page-hero { padding-top: 8.5rem; }
 }
-/* No photograph under the bar here -- the band is flat black -- so the
-   scrim that keeps the nav legible over the cover is not needed. */
-body.dark-band header::before { display: none; }
+/* The band under the bar is flat black too, so the same soft scrim that
+   fades the bar toward transparency over the cover photo also carries it
+   here -- the bar never has to snap to a hard solid block. */
 
 body.concept .section { padding: 5.5rem 0; }
 body.concept .section.bg-soft { background: var(--s-tint); }
@@ -975,23 +975,17 @@ body.concept2 header .nav-toggle span { background: var(--s-cream); }
    .is-scrolled below), so the light wordmark never needs to swap back. */
 body.concept2 header .logo-img { content: url('images/logo-light.png'); }
 
-/* Past the cover photo the transparent bar needs a solid background to
-   stay legible, but it stays the same black rather than switching to
-   cream -- a color change reading as a glitch once the footer below it
-   is black too. Only .nav-menu/.nav-cta/.logo-img's un-scrolled colors
-   apply here since none of them are overridden for this state. */
+/* Past the cover photo the bar stays transparent -- the scrim below
+   (header::before) is what keeps it legible, fading softly into whatever
+   has scrolled up underneath instead of snapping to a solid block. */
 body.concept2 header.is-scrolled {
-    background: var(--s-cover);
+    background: transparent;
     border-bottom-color: transparent;
 }
 
-/* Off the homepage the band under the bar is short -- one screen, not
-   several -- so the is-scrolled fade never gets a chance to read as a
-   transition; it just looks like the bar breaking a screen down. These
-   pages don't get the fade at all (JS never adds .is-scrolled here): the
-   bar stays solid black, all the way down, the same way it starts. */
+/* Same soft scrim off the homepage, over the flat black band. */
 body.dark-band.concept2 header {
-    background: var(--s-cover);
+    background: transparent;
     border-bottom-color: transparent;
 }
 
@@ -1019,9 +1013,10 @@ body.concept2 header {
     z-index: 1000;
 }
 
-/* A transparent bar over a photograph is only safe where the photo is dark.
-   The right-hand end of the cover is light, so the nav gets its own soft
-   top-down scrim; it fades out once the bar turns cream. */
+/* The bar is never a solid block: this soft top-down scrim is its only
+   background, in every state and on every page, so it always reads as
+   translucent and fades gently into whatever has scrolled up beneath it
+   rather than cutting it off with a hard edge. */
 body.concept2 header::before {
     content: '';
     position: absolute;
@@ -1032,9 +1027,7 @@ body.concept2 header::before {
         rgba(8, 8, 9, 0.78) 58%,
         rgba(8, 8, 9, 0.34) 84%,
         rgba(8, 8, 9, 0) 100%);
-    transition: opacity 0.3s ease;
 }
-body.concept2 header.is-scrolled::before { opacity: 0; }
 body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 10.5rem; }
 
 @media (min-width: 701px) {
