@@ -331,21 +331,25 @@ body.concept .stl-hero h1 {
     margin: 0 0 0.5rem;
     text-shadow: 0 2px 22px rgba(59, 52, 42, 0.35);
 }
-/* the line that names what StElli is, between the wordmark-sized h1 and the
-   underlined claims below it -- serif like the heading so the two read as one
-   lockup, but light enough not to compete with it */
-.stl-hero-tagline {
-    font-family: var(--s-display);
-    font-size: clamp(1.5rem, 2.9vw, 2.3rem);
+/* the small letterspaced line above the headline: three words of credential
+   the logo itself cannot carry */
+.stl-hero-kicker {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--s-accent);
+    margin: 0 0 1.5rem;
+}
+/* one plain sentence under the headline, in the page's own sans, so the hero
+   only ever holds two type voices: this and the display face above it */
+.stl-hero-lead {
+    font-size: 1.12rem;
     font-weight: 400;
-    line-height: 1.25;
-    color: rgba(255, 255, 255, 0.92);
-    /* ch is font-relative, so this runs out into the black to the left of the
-       kitten on a wide screen and folds back on its own as the type shrinks */
-    max-width: 38ch;
+    line-height: 1.65;
+    color: rgba(251, 246, 236, 0.74);
+    margin: 0 0 2.4rem;
     text-wrap: pretty;
-    margin: 0 0 1.8rem;
-    text-shadow: 0 2px 18px rgba(59, 52, 42, 0.35);
 }
 .stl-hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
@@ -855,30 +859,38 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
         rgba(13, 13, 14, 0) 66%);
 }
 
-/* the wordmark in the logo above it is Montserrat, so the name is set in the
-   same face at a light weight rather than in the page's heading serif */
+/* the logo's wordmark is Montserrat, so the headline is too -- light, because
+   the headline runs far bigger than the logo and only a light instance lands
+   on the same stroke-to-height ratio */
 body.concept .stl-hero--cover h1 {
     color: var(--s-cream);
     text-shadow: none;
     font-family: 'Montserrat', -apple-system, 'Segoe UI', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.005em;
+    font-weight: 300;
+    font-size: clamp(2.1rem, 3.6vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: 0.012em;
+    margin: 0 0 1.3rem;
 }
-/* Italianno is finer and smaller on the body than Allura was, so it takes
-   another step up in size to sit at the same strength beside the name */
-.stl-hero--cover .stl-hero-tagline {
-    font-family: 'Italianno', 'Cormorant Garamond', Georgia, cursive;
-    font-size: clamp(2.3rem, 4.7vw, 3.8rem);
-    line-height: 1.3;
+/* Nothing in the column may reach the kitten. The photograph is drawn at the
+   hero's own height and pinned right, so where its ink begins moves with the
+   viewport -- hence a cap that tracks the viewport rather than a fixed one.
+   The numbers come from measuring the rendered gap, not from guessing. */
+@media (min-width: 701px) {
+    body.concept .stl-hero--cover .stl-hero-inner > * {
+        max-width: min(660px, 43vw);
+    }
+    /* the headline gets a touch more room than the rest so it holds one line on
+       a wide screen, and folds to two once the viewport cannot pay for it */
+    body.concept .stl-hero--cover .stl-hero-inner h1 { max-width: min(700px, 48vw); }
+    /* the sentence gets less: a line of body text past ~70 characters is tiring
+       however much black there is to fill */
+    body.concept .stl-hero--cover .stl-hero-lead { max-width: min(620px, 44vw); }
+}
+body.concept .stl-hero--cover .stl-hero-actions {
     max-width: none;
-    /* the strokes are a hairline, so they need every bit of contrast: full
-       white, a tight shadow to hold the edge and a wider one to darken the
-       photograph behind them */
-    color: #fff;
-    text-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.9),
-        0 2px 14px rgba(0, 0, 0, 0.75),
-        0 0 30px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    gap: 1.8rem;
 }
 
 /* on black the filled button is the cream one; the outline turns cream too */
@@ -889,6 +901,21 @@ body.concept .stl-hero--cover .stl-btn--light {
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
 }
 body.concept .stl-hero--cover .stl-btn--light:hover { background: var(--s-white); }
+/* one filled button leads; the second action is a plain link, so the two do
+   not compete for the same click */
+body.concept .stl-hero--cover .stl-hero-link {
+    color: var(--s-cream);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(251, 246, 236, 0.38);
+    /* the row's line-height would otherwise leave half a line of air between
+       the words and their own underline */
+    line-height: 1.2;
+    padding-bottom: 6px;
+    transition: border-color 0.25s ease;
+}
+body.concept .stl-hero--cover .stl-hero-link:hover { border-bottom-color: var(--s-cream); }
 body.concept .stl-hero--cover .stl-btn--solid {
     background: transparent;
     color: var(--s-cream);
