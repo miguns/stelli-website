@@ -717,3 +717,32 @@ document.querySelectorAll('a[href]').forEach(link => {
         setTimeout(() => { window.location.href = href; }, 320);
     });
 });
+
+// ==========================================================================
+// Header over the dark band at the top of a page
+// ==========================================================================
+// The bar starts transparent so the black runs to the very top edge, and
+// turns cream once the page scrolls past the band — the nav never floats on
+// a background it cannot be read against. The homepage band is the cover
+// photograph, every other page's is flat black; both behave the same.
+(function initDarkHeader() {
+    if (!document.body.classList.contains('concept2')) return;
+    const header = document.querySelector('header');
+    const band = document.querySelector('.stl-hero--cover, .page-hero');
+    if (!header || !band) return;
+
+    let ticking = false;
+    function update() {
+        ticking = false;
+        const past = window.scrollY > band.offsetHeight - header.offsetHeight - 8;
+        header.classList.toggle('is-scrolled', past);
+    }
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+})();

@@ -30,6 +30,9 @@ body.concept {
     --s-body: #6b6152;        /* body copy */
     --s-line: #e8dcc4;
     --s-white: #ffffff;
+    /* the one true dark: the ground the cover photograph was shot on, and
+       now also the flat band at the top of every subpage */
+    --s-cover: #0d0d0e;
     /* kept so the many `var(--s-dark)` references below still resolve; it is
        now a cream, not a dark, and everything on it is inked accordingly. */
     --s-dark: #ece0cd;
@@ -520,7 +523,7 @@ body.concept .stl-quote blockquote {
 
 body.concept .page-hero {
     position: relative;
-    background: var(--s-tint);
+    background: var(--s-cover);
     padding: 5rem 20px 5.5rem;
     overflow: hidden;
 }
@@ -532,13 +535,30 @@ body.concept .page-hero::after {
     width: 128%;
     height: 92px;
     transform: translateX(-50%);
-    background: var(--s-white);
+    /* the curve is the page below reaching up into the band, so it has to
+       carry that page's colour -- white on most pages, cream where the first
+       section under the band is a cream one (the litters on kotatka) */
+    background: var(--band-into, var(--s-white));
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
+body.concept .page-hero:has(+ .section.bg-soft),
+body.concept .page-hero:has(+ * > .section.bg-soft:first-child) { --band-into: var(--s-cream); }
 body.concept .page-hero > * { position: relative; z-index: 1; }
 body.concept .page-hero .hero-blob { display: none; }
-body.concept .page-hero h1 { color: var(--s-ink); font-weight: 600; }
-body.concept .page-hero p { color: var(--s-body); }
+body.concept .page-hero h1 { color: var(--s-cream); font-weight: 600; }
+body.concept .page-hero p { color: rgba(251, 246, 236, 0.74); }
+
+/* The header floats over the band rather than sitting above it, exactly as
+   it does over the homepage cover, so the black starts at the very top edge
+   of the window. That means the band owes it the height it no longer takes
+   up in flow. */
+body.dark-band .page-hero { padding-top: 10.5rem; }
+@media (max-width: 700px) {
+    body.dark-band .page-hero { padding-top: 8.5rem; }
+}
+/* No photograph under the bar here -- the band is flat black -- so the
+   scrim that keeps the nav legible over the cover is not needed. */
+body.dark-band header::before { display: none; }
 
 body.concept .section { padding: 5.5rem 0; }
 body.concept .section.bg-soft { background: var(--s-cream); }
@@ -834,7 +854,7 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
 .stl-hero--cover {
     /* matched to the photograph's own ground, which the photo fades out into
        so its frame never shows as an edge */
-    background: #0d0d0e;
+    background: var(--s-cover);
     min-height: min(86vh, 840px);
 }
 
@@ -985,6 +1005,9 @@ body.concept2 header.is-scrolled .logo-img { content: normal; }
     body.concept2 header .nav-menu a.active { color: var(--s-brand); }
     body.concept2 header .nav-cta { border-color: var(--s-brand); color: var(--s-brand) !important; }
     body.concept2 header .nav-menu .lang-link.active { color: var(--s-white); background: var(--s-brand); }
+    /* ...and so is the close cross once it stands on that cream drawer
+       rather than on the dark band behind the bar */
+    body.nav-open.concept2 header .nav-toggle span { background: var(--s-ink); }
 }
 
 /* The cover has to run to the very top edge, so on the homepage the header
