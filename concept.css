@@ -72,7 +72,7 @@ body.concept {
     --shadow-soft: 0 14px 34px rgba(59, 52, 42, 0.12);
     --shadow-hover: 0 22px 50px rgba(59, 52, 42, 0.18);
 
-    background: var(--s-white);
+    background: var(--s-cream);
     font-family: var(--s-font);
     color: var(--s-body);
     letter-spacing: 0.02em;
@@ -537,13 +537,14 @@ body.concept .page-hero::after {
     height: 92px;
     transform: translateX(-50%);
     /* the curve is the page below reaching up into the band, so it has to
-       carry that page's colour -- white on most pages, cream where the first
-       section under the band is a cream one (the litters on kotatka) */
-    background: var(--band-into, var(--s-white));
+       carry that page's colour -- the base cream on most pages, the deeper
+       section cream where the first section under the band is one (the
+       litters on kotatka) */
+    background: var(--band-into, var(--s-cream));
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 body.concept .page-hero:has(+ .section.bg-soft),
-body.concept .page-hero:has(+ * > .section.bg-soft:first-child) { --band-into: var(--s-cream); }
+body.concept .page-hero:has(+ * > .section.bg-soft:first-child) { --band-into: var(--s-tint); }
 body.concept .page-hero > * { position: relative; z-index: 1; }
 body.concept .page-hero .hero-blob { display: none; }
 body.concept .page-hero h1 { color: var(--s-cream); font-weight: 600; }
@@ -562,7 +563,7 @@ body.dark-band .page-hero { padding-top: 10.5rem; }
 body.dark-band header::before { display: none; }
 
 body.concept .section { padding: 5.5rem 0; }
-body.concept .section.bg-soft { background: var(--s-cream); }
+body.concept .section.bg-soft { background: var(--s-tint); }
 body.concept .section.bg-plum { background: var(--s-dark); }
 body.concept .section.bg-plum h2,
 body.concept .section.bg-plum h3 { color: var(--s-white); }
