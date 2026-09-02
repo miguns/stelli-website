@@ -547,7 +547,12 @@ body.concept .page-hero:has(+ .section.bg-soft),
 body.concept .page-hero:has(+ * > .section.bg-soft:first-child) { --band-into: var(--s-tint); }
 body.concept .page-hero > * { position: relative; z-index: 1; }
 body.concept .page-hero .hero-blob { display: none; }
-body.concept .page-hero h1 { color: var(--s-cream); font-weight: 600; }
+body.concept .page-hero h1 {
+    color: var(--s-cream);
+    font-family: 'Montserrat', -apple-system, 'Segoe UI', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.012em;
+}
 body.concept .page-hero p { color: rgba(251, 246, 236, 0.74); }
 
 /* The header floats over the band rather than sitting above it, exactly as
