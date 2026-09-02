@@ -34,13 +34,6 @@ body.concept {
     /* the one true dark: the ground the cover photograph was shot on, and
        now also the flat band at the top of every subpage */
     --s-cover: #0d0d0e;
-    /* Shared band-curve shape: a soft hill silhouette with a flat (zero-slope)
-       tangent at both edges and at the peak, stretched with mask-size 100% 100%
-       so it always reaches all the way into the corners of whatever box it's
-       applied to. A border-radius ellipse only reads as "curved" near its own
-       centre -- at the outer ~30% it is mid-slope and gets cropped there,
-       which looks like a straight diagonal cut rather than a soft edge. */
-    --s-hill-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%2038C25%2038%2025%200%2050%200C75%200%2075%2038%20100%2038V100H0Z'%20fill='%23fff'/%3E%3C/svg%3E");
     /* kept so the many `var(--s-dark)` references below still resolve; it is
        now a cream, not a dark, and everything on it is inked accordingly. */
     --s-dark: #ece0cd;
@@ -275,28 +268,30 @@ body.concept .stl-h2 {
 }
 body.concept .stl-lede { font-size: 1.02rem; color: var(--s-body); margin: 0 0 1.6rem; }
 
-/* The signature soft hill that separates bands -- see --s-hill-mask above. */
+/* The signature soft ellipse that separates bands, drawn with a wide
+   overflowing element so the curve stays shallow at any viewport width. */
 body.concept .stl-curve {
     position: absolute;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    width: 128%;
     height: 110px;
+    transform: translateX(-50%);
     pointer-events: none;
-    -webkit-mask-image: var(--s-hill-mask);
-    mask-image: var(--s-hill-mask);
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
 }
-body.concept .stl-curve--bottom { bottom: -1px; }
-body.concept .stl-curve--top { top: -1px; transform: scaleY(-1); }
+body.concept .stl-curve--bottom {
+    bottom: -1px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+body.concept .stl-curve--top {
+    top: -1px;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
 body.concept .stl-curve--white { background: var(--s-white); }
 body.concept .stl-curve--cream { background: var(--s-cream); }
 body.concept .stl-curve--dark { background: var(--s-dark); }
 
 @media (max-width: 860px) {
-    body.concept .stl-curve { height: 56px; }
+    body.concept .stl-curve { height: 56px; width: 190%; }
 }
 
 /* ==========================================================================
@@ -536,21 +531,17 @@ body.concept .page-hero {
 body.concept .page-hero::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: -1px;
-    width: 100%;
+    width: 128%;
     height: 92px;
-    -webkit-mask-image: var(--s-hill-mask);
-    mask-image: var(--s-hill-mask);
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    transform: translateX(-50%);
     /* the curve is the page below reaching up into the band, so it has to
        carry that page's colour -- the base cream on most pages, the deeper
        section cream where the first section under the band is one (the
        litters on kotatka) */
     background: var(--band-into, var(--s-cream));
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 body.concept .page-hero:has(+ .section.bg-soft),
 body.concept .page-hero:has(+ * > .section.bg-soft:first-child) { --band-into: var(--s-tint); }
