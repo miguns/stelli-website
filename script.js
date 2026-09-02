@@ -728,7 +728,7 @@ document.querySelectorAll('a[href]').forEach(link => {
 (function initDarkHeader() {
     if (!document.body.classList.contains('concept2')) return;
     const header = document.querySelector('header');
-    const band = document.querySelector('.stl-hero--cover, .page-hero');
+    const band = document.querySelector('.stl-hero--cover');
     if (!header || !band) return;
 
     let ticking = false;

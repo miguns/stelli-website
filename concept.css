@@ -997,6 +997,16 @@ body.concept2 header.is-scrolled .nav-menu .lang-link.active { color: var(--s-wh
 body.concept2 header.is-scrolled .nav-toggle span { background: var(--s-ink); }
 body.concept2 header.is-scrolled .logo-img { content: normal; }
 
+/* Off the homepage the band under the bar is short -- one screen, not
+   several -- so the is-scrolled fade never gets a chance to read as a
+   transition; it just looks like the bar breaking a screen down. These
+   pages don't get the fade at all (JS never adds .is-scrolled here): the
+   bar stays solid black, all the way down, the same way it starts. */
+body.dark-band.concept2 header {
+    background: var(--s-cover);
+    border-bottom-color: transparent;
+}
+
 /* the mobile drawer is cream whatever the header is doing */
 @media (max-width: 860px) {
     body.concept2 header .nav-menu a,
