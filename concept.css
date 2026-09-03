@@ -722,30 +722,34 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
     body.concept .reasons-section .section-header { margin-top: 55px; }
 }
 
-/* Kitten-with-toy photo as a soft accent sitting directly behind "Ohlas
-   nového domova" -- mirrored from the source photo so the kitten leans into
-   the text, centred under the (also centred) heading/prose column so the
-   text reads on top of it rather than beside it. Its own cream backdrop
-   already matches the page background almost exactly, so no colour
-   regrade was needed, only a feathered alpha edge on all four sides. */
+/* Kitten-with-toy photo as a soft accent behind "Ohlas nového domova" --
+   mirrored from the source photo so the kitten leans into the text. The
+   kitten's face sits in the left ~2/3 of this crop, so it's positioned far
+   enough left that the face itself clears the (centred) text column --
+   only the toy/paws on the right of the photo drift in behind the text.
+   Its own cream backdrop already matches the page background almost
+   exactly, so no colour regrade was needed, only a feathered alpha edge on
+   all four sides. */
 body.concept .ohlas-section { overflow: hidden; }
 body.concept .ohlas-photo-bg {
     display: block;
     position: absolute;
     top: -20px;
-    left: 50%;
-    transform: translateX(-52%);
-    width: clamp(380px, 40vw, 620px);
+    left: -60px;
+    width: clamp(340px, 36vw, 580px);
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.4;
+    opacity: 0.42;
 }
 body.concept .ohlas-photo-bg img { display: block; width: 100%; height: auto; }
 body.concept .ohlas-section .section-header,
 body.concept .ohlas-section .prose { position: relative; z-index: 1; }
 @media (max-width: 720px) {
-    body.concept .ohlas-photo-bg { width: 92vw; top: -10px; opacity: 0.3; }
+    /* On a single narrow column there's no "beside the text" to move the
+       face into, so instead it sits well above where the heading starts,
+       kept faint enough that it reads as texture rather than a face. */
+    body.concept .ohlas-photo-bg { width: 68vw; left: 16vw; top: -170px; opacity: 0.16; }
 }
 
 body.concept .accordion-item {
