@@ -660,23 +660,23 @@ body.concept .work-photo-bg img {
 body.concept .section.bg-soft.reasons-section {
     position: relative;
     overflow: visible;
-    /* The photo is translucent, so the section's own flat tint still shows
-       through and would otherwise cut a hard line right where this section
-       meets the lighter one above. Fade the background itself over the same
-       span so there's no seam left for the photo to cross. */
-    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 160px, var(--s-tint) 100%);
+    /* The photo now carries its own warm-toned, wide feather (color-graded
+       and faded on all four sides to melt into the page), so it no longer
+       needs a hard color to land on -- a gentle cream-to-tint fade is enough
+       to keep the seam above this section soft. */
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
 body.concept .reasons-photo-bg {
     display: block;
     position: absolute;
-    top: -115px;
+    top: -95px;
     left: 50%;
     transform: translateX(-50%);
     width: clamp(520px, 54vw, 780px);
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.85;
+    opacity: 0.62;
 }
 body.concept .reasons-photo-bg img {
     display: block;
@@ -687,14 +687,14 @@ body.concept .reasons-section .section-header,
 body.concept .reasons-section .grid { position: relative; z-index: 1; }
 /* Give the kittens room to be seen before the heading starts, instead of
    the text sitting right over their faces. */
-body.concept .reasons-section .section-header { margin-top: 130px; }
+body.concept .reasons-section .section-header { margin-top: 95px; }
 @media (max-width: 720px) {
     body.concept .reasons-photo-bg {
         width: 108vw;
-        top: -40px;
-        opacity: 0.78;
+        top: -30px;
+        opacity: 0.58;
     }
-    body.concept .reasons-section .section-header { margin-top: 70px; }
+    body.concept .reasons-section .section-header { margin-top: 55px; }
 }
 
 body.concept .accordion-item {
