@@ -563,9 +563,9 @@ body.concept .page-hero p { color: var(--s-cream); opacity: 0.74; }
    it does over the homepage cover, so the black starts at the very top edge
    of the window. That means the band owes it the height it no longer takes
    up in flow. */
-body.dark-band .page-hero { padding-top: 10.5rem; }
+body.dark-band .page-hero { padding-top: 8rem; }
 @media (max-width: 700px) {
-    body.dark-band .page-hero { padding-top: 8.5rem; }
+    body.dark-band .page-hero { padding-top: 6.5rem; }
 }
 /* The band under the bar is flat black too, so the same soft scrim that
    fades the bar toward transparency over the cover photo also carries it
