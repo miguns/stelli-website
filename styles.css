@@ -789,6 +789,13 @@ header {
 }
 .form-group.has-error .form-error { display: block; }
 
+.form-hint {
+    display: block;
+    color: var(--ink-soft, #6b6560);
+    font-size: 0.82rem;
+    margin-top: 0.4rem;
+}
+
 .btn-primary-form {
     background: var(--gradient-primary);
     color: var(--white);
