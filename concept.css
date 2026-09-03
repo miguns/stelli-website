@@ -619,9 +619,9 @@ body.concept .work-photo-section { overflow: hidden; }
 body.concept .work-photo-bg {
     display: block;
     position: absolute;
-    top: 0;
+    top: -220px;
     right: 0;
-    width: clamp(460px, 48vw, 960px);
+    width: clamp(620px, 66vw, 1300px);
     height: auto;
     pointer-events: none;
     z-index: 0;
@@ -634,8 +634,8 @@ body.concept .work-photo-bg img {
 }
 @media (max-width: 720px) {
     body.concept .work-photo-bg {
-        width: 72vw;
-        top: 2.5rem;
+        width: 92vw;
+        top: -70px;
         opacity: 0.28;
     }
 }
