@@ -636,16 +636,18 @@ body.concept .work-photo-bg img {
     /* The section's own overflow clip was cutting the ear off right at the
        hero seam. There's plenty of headroom before the image's bottom edge
        reaches the next section on this breakpoint, so drop the section's
-       clip and use a clip-path on the image itself instead -- it only hides
-       the very faint top of the portrait's fade-in and lets the ear rise
-       over the hero's curved band. */
+       clip and use a clip-path on the image itself instead. The inset is
+       tuned to land exactly at the hero band's curve (55px above this
+       section's top edge at this breakpoint) so the portrait only ever
+       shows over the cream curve/page below it, never over the flat dark
+       band above the curve. */
     body.concept .work-photo-section { overflow: visible; }
     body.concept .work-photo-bg {
         width: 108vw;
         top: -170px;
         right: -60px;
         opacity: 0.28;
-        clip-path: inset(90px 0 0 0);
+        clip-path: inset(115px 0 0 0);
     }
 }
 
