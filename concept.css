@@ -722,33 +722,30 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
     body.concept .reasons-section .section-header { margin-top: 55px; }
 }
 
-/* Kitten-with-toy photo as a soft accent behind "Ohlas nového domova" --
-   mirrored from the source photo so the kitten leans into the text rather
-   than off the edge, and kept to the left since the section's text is
-   centered rather than paired with a boxed photo. Its own cream backdrop
+/* Kitten-with-toy photo as a soft accent sitting directly behind "Ohlas
+   nového domova" -- mirrored from the source photo so the kitten leans into
+   the text, centred under the (also centred) heading/prose column so the
+   text reads on top of it rather than beside it. Its own cream backdrop
    already matches the page background almost exactly, so no colour
    regrade was needed, only a feathered alpha edge on all four sides. */
 body.concept .ohlas-section { overflow: hidden; }
 body.concept .ohlas-photo-bg {
     display: block;
     position: absolute;
-    top: -60px;
-    left: -130px;
-    width: clamp(300px, 34vw, 560px);
+    top: -20px;
+    left: 50%;
+    transform: translateX(-52%);
+    width: clamp(380px, 40vw, 620px);
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.55;
+    opacity: 0.4;
 }
 body.concept .ohlas-photo-bg img { display: block; width: 100%; height: auto; }
 body.concept .ohlas-section .section-header,
 body.concept .ohlas-section .prose { position: relative; z-index: 1; }
-/* Keep the label/heading clear of the kitten's face -- same reasoning as
-   the reasons-section photo above. */
-body.concept .ohlas-section .section-header { margin-top: 80px; }
 @media (max-width: 720px) {
-    body.concept .ohlas-photo-bg { width: 58vw; left: -40px; top: 100px; opacity: 0.35; }
-    body.concept .ohlas-section .section-header { margin-top: 0; }
+    body.concept .ohlas-photo-bg { width: 92vw; top: -10px; opacity: 0.3; }
 }
 
 body.concept .accordion-item {
