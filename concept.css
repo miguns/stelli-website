@@ -571,6 +571,13 @@ body.dark-band .page-hero { padding-top: 8rem; }
    fades the bar toward transparency over the cover photo also carries it
    here -- the bar never has to snap to a hard solid block. */
 
+/* Naše práce only, for now: a soft glow sitting behind the heading and
+   fading to nothing, so the band reads as gently convex rather than a flat
+   black panel. No lines, no hard edges. */
+body.page-nase-prace .page-hero {
+    background: radial-gradient(60% 62% at 50% 42%, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.02) 42%, rgba(255,255,255,0) 75%), var(--s-cover);
+}
+
 body.concept .section { padding: 5.5rem 0; }
 body.concept .section.bg-soft { background: var(--s-tint); }
 body.concept .section.bg-plum { background: var(--s-dark); }
