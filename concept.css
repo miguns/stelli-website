@@ -651,6 +651,48 @@ body.concept .work-photo-bg img {
     }
 }
 
+/* Kitten trio as a soft accent crowning the "why it matters" heading -- its
+   own pale studio backdrop sits almost exactly between the lighter section
+   above and this section's deeper tint, so letting it rise into the seam
+   blends the two rather than leaving a hard color line. The PNG/webp already
+   carry a feathered alpha edge on all sides, so no extra clip-path is
+   needed here. */
+body.concept .section.bg-soft.reasons-section {
+    position: relative;
+    overflow: visible;
+    /* The photo is translucent, so the section's own flat tint still shows
+       through and would otherwise cut a hard line right where this section
+       meets the lighter one above. Fade the background itself over the same
+       span so there's no seam left for the photo to cross. */
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 160px, var(--s-tint) 100%);
+}
+body.concept .reasons-photo-bg {
+    display: block;
+    position: absolute;
+    top: -115px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(520px, 54vw, 780px);
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+body.concept .reasons-photo-bg img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+body.concept .reasons-section .section-header,
+body.concept .reasons-section .grid { position: relative; z-index: 1; }
+@media (max-width: 720px) {
+    body.concept .reasons-photo-bg {
+        width: 108vw;
+        top: -40px;
+        opacity: 0.55;
+    }
+}
+
 body.concept .accordion-item {
     background: var(--s-white);
     border: 1px solid var(--s-line);
