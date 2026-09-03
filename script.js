@@ -313,6 +313,36 @@ if (lightbox) {
 }
 
 // ==========================================================================
+// Litter photo carousels (kotatka.html) — one photo at a time per litter,
+// with prev/next buttons. Slides stay part of the shared lightbox group
+// (data-gallery), so clicking one still opens the full-size viewer.
+// ==========================================================================
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.litter-carousel-track');
+    const slides = Array.prototype.slice.call(carousel.querySelectorAll('.litter-carousel-slide'));
+    const counter = carousel.querySelector('.litter-carousel-counter');
+    const prevBtn = carousel.querySelector('.litter-carousel-prev');
+    const nextBtn = carousel.querySelector('.litter-carousel-next');
+    if (!track || slides.length < 2) return;
+    let index = 0;
+
+    function update() {
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        if (counter) counter.textContent = (index + 1) + ' / ' + slides.length;
+        slides.forEach((slide, i) => { slide.tabIndex = i === index ? 0 : -1; });
+    }
+
+    function goTo(i) {
+        index = (i + slides.length) % slides.length;
+        update();
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(index - 1));
+    nextBtn?.addEventListener('click', () => goTo(index + 1));
+    update();
+});
+
+// ==========================================================================
 // Contact form validation + real submission via Web3Forms
 // ==========================================================================
 // Access key from https://web3forms.com — messages are delivered to the

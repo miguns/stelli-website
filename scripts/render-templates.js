@@ -48,6 +48,35 @@ function photoGridHTML(photos, galleryId, altPrefix, prefix) {
     }).join('');
 }
 
+function photoCarouselHTML(photos, galleryId, altPrefix, prefix, lang) {
+    if (!photos.length) return '';
+    const navLabel = {
+        prev: { cs: 'Předchozí fotka', en: 'Previous photo', de: 'Vorheriges Foto', pl: 'Poprzednie zdjęcie' },
+        next: { cs: 'Další fotka', en: 'Next photo', de: 'Nächstes Foto', pl: 'Następne zdjęcie' }
+    };
+    const slides = photos.map((item, i) => {
+        const src = typeof item === 'string' ? item : item.photo;
+        const customAlt = typeof item === 'string' ? '' : (item.alt || '');
+        const full = escapeHtml(prefix + src);
+        const grid = escapeHtml(prefix + gridSrcOf(src));
+        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        const alt = customAlt ? escapeHtml(customAlt) : escapeHtml(altPrefix) + ' ' + (i + 1);
+        return '<div class="litter-carousel-slide" data-lightbox tabindex="' + (i === 0 ? '0' : '-1') + '" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
+            '<picture><source srcset="' + webp + '" type="image/webp">' +
+            '<img src="' + grid + '" alt="' + alt + '" loading="lazy"></picture></div>';
+    }).join('');
+    const nav = photos.length > 1
+        ? '<button type="button" class="litter-carousel-nav litter-carousel-prev" aria-label="' + navLabel.prev[lang] + '">&lsaquo;</button>' +
+          '<button type="button" class="litter-carousel-nav litter-carousel-next" aria-label="' + navLabel.next[lang] + '">&rsaquo;</button>' +
+          '<span class="litter-carousel-counter">1 / ' + photos.length + '</span>'
+        : '';
+    return '<div class="litter-carousel" data-carousel>' +
+        '<div class="litter-carousel-frame">' +
+        '<div class="litter-carousel-track">' + slides + '</div>' +
+        nav +
+        '</div></div>';
+}
+
 function newsHTML(news, lang) {
     if (!news.enabled) return { hidden: true, html: '' };
     return {
@@ -81,7 +110,7 @@ function littersHTML(data, lang, prefix) {
             (badgeText[litter.status] ? '<span class="status-badge ' + badgeClass[litter.status] + '" style="position:static; display:inline-flex;">' + badgeText[litter.status][lang] + '</span>' : '') +
             '<h2 style="margin-top:1rem;">' + pick(litter, 'name', lang) + '</h2>' +
             '<p>' + pick(litter, 'desc', lang) + '</p></div>' +
-            '<div class="photo-grid stagger">' + photoGridHTML(litter.photos, litter.id, pick(litter, 'name', lang), prefix) + '</div>' +
+            photoCarouselHTML(litter.photos, litter.id, pick(litter, 'name', lang), prefix, lang) +
             '</div></section>';
     });
     return html;
@@ -130,4 +159,4 @@ function testimonialsHTML(data, lang, prefix) {
     return (data.items || []).map((item, i) => testimonialCardHTML(item, i, lang, prefix)).join('');
 }
 
-module.exports = { pick, photoGridHTML, newsHTML, littersHTML, galleryHTML, onasLifeHTML, teamHTML, testimonialsHTML };
+module.exports = { pick, photoGridHTML, photoCarouselHTML, newsHTML, littersHTML, galleryHTML, onasLifeHTML, teamHTML, testimonialsHTML };
