@@ -116,7 +116,7 @@ function litterCardHTML(litter, lang, prefix) {
 function litterHistoryItemHTML(litter, i, lang, prefix) {
     const name = pick(litter, 'name', lang);
     const photos = litter.photos || [];
-    let photoHtml = '<span class="litter-history-placeholder" aria-hidden="true">🐾</span>';
+    let photoHtml = '<span class="litter-history-placeholder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="15.5" rx="6.5" ry="5.5"></ellipse><ellipse cx="4.5" cy="8.5" rx="2.5" ry="3.3"></ellipse><ellipse cx="9" cy="4.3" rx="2.3" ry="3"></ellipse><ellipse cx="15" cy="4.3" rx="2.3" ry="3"></ellipse><ellipse cx="19.5" cy="8.5" rx="2.5" ry="3.3"></ellipse></svg></span>';
     if (photos.length) {
         const item = photos[0];
         const src = typeof item === 'string' ? item : item.photo;
