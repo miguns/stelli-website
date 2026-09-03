@@ -399,7 +399,7 @@ document.querySelectorAll('.contact-form').forEach(form => {
         try {
             const formData = new FormData(form);
             formData.append('access_key', WEB3FORMS_ACCESS_KEY);
-            formData.append('subject', 'Nová zpráva z webu StElli Ragdoll');
+            formData.append('subject', form.dataset.subject || 'Nová zpráva z webu StElli Ragdoll');
             formData.append('from_name', 'StElli Ragdoll web');
 
             const response = await fetch('https://api.web3forms.com/submit', {

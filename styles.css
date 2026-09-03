@@ -731,6 +731,19 @@ header {
 }
 .contact-form.wide { max-width: 100%; }
 
+/* Section dividers for long multi-part forms (e.g. the intake questionnaire) */
+.form-section-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 2.2rem 0 1rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+.form-section-title:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
 /* Honeypot spam trap — hidden from users, only bots fill it in */
 .hp-field { display: none !important; }
 

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vstupní dotazník | StElli Ragdoll</title>
+    <meta name="description" content="Vstupní dotazník pro zájemce o koťátko Ragdoll ze StElli Ragdoll cattery — pomůže nám lépe poznat vás a prostředí, do kterého by koťátko odešlo.">
+    <link rel="canonical" href="https://www.stelliragdoll.cz/dotaznik.html">
+    <meta property="og:title" content="Vstupní dotazník | StElli Ragdoll">
+    <meta property="og:description" content="Máte zájem o koťátko Ragdoll? Vyplňte náš vstupní dotazník.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="concept.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://www.stelliragdoll.cz/index.html" },
+                    { "@type": "ListItem", "position": 2, "name": "Informace ke koupi", "item": "https://www.stelliragdoll.cz/informace-ke-koupi.html" },
+                    { "@type": "ListItem", "position": 3, "name": "Vstupní dotazník", "item": "https://www.stelliragdoll.cz/dotaznik.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="concept concept2 dark-band">
+    <a href="#main" class="skip-link">Přeskočit na obsah</a>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <button type="button" class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="nase-prace.html">Naše práce</a></li>
+                    <li><a href="kotatka.html">Koťátka</a></li>
+                    <li><a href="informace-ke-koupi.html">Informace</a></li>
+                    <li><a href="tym.html">Tým</a></li>
+                    <li><a href="kontakty.html" class="nav-cta">Kontakty</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="hero-blob b1"></div>
+            <div class="hero-blob b2"></div>
+            <h1>Vstupní dotazník</h1>
+            <p>Máte zájem o koťátko Ragdoll ze StElli? Vyplňte prosím tento dotazník.</p>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p style="max-width:640px; margin:0 auto;">Neexistují zde správné a špatné odpovědi. Dotazník nám pomáhá lépe poznat vás, vaše očekávání a prostředí, do kterého by naše koťátko mělo odejít. Naším cílem není najít „dokonalého majitele", ale najít pro každé koťátko co nejlepší domov.</p>
+                </div>
+
+                <form class="contact-form reveal-scale" data-subject="Vstupní dotazník – zájem o koťátko StElli Ragdoll">
+                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <p class="form-section-title">Kontaktní údaje</p>
+                    <div class="form-group">
+                        <label for="jmeno">Jméno a příjmení *</label>
+                        <input type="text" id="jmeno" name="Jméno a příjmení" required>
+                        <span class="form-error">Vyplňte prosím své jméno.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Telefonní číslo *</label>
+                        <input type="tel" id="telefon" name="Telefon" required>
+                        <span class="form-error">Vyplňte prosím telefonní číslo.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="E-mail" required>
+                        <span class="form-error">Zadejte platný e-mail.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="komunikace">Preferovaný způsob komunikace *</label>
+                        <select id="komunikace" name="Preferovaný způsob komunikace" required>
+                            <option value="">Vyberte…</option>
+                            <option>Telefonní hovor</option>
+                            <option>SMS</option>
+                            <option>E-mail</option>
+                            <option>Sociální sítě / messenger</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+
+                    <p class="form-section-title">Domácnost</p>
+                    <div class="form-group">
+                        <label for="bydliste">Kde bydlíte? *</label>
+                        <select id="bydliste" name="Bydlení" required>
+                            <option value="">Vyberte…</option>
+                            <option>Byt</option>
+                            <option>Rodinný dům</option>
+                            <option>Jiné</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="pocet-lidi">Kolik lidí bude s koťátkem žít v domácnosti? *</label>
+                        <input type="number" id="pocet-lidi" name="Počet lidí v domácnosti" min="1" required>
+                        <span class="form-error">Vyplňte prosím počet lidí.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="vek-deti">Věk dětí v domácnosti (pokud jsou)</label>
+                        <input type="text" id="vek-deti" name="Věk dětí" placeholder="např. 5 a 9 let">
+                    </div>
+                    <div class="form-group">
+                        <label for="pecovatel">Kdo bude hlavním pečovatelem o kočku? *</label>
+                        <select id="pecovatel" name="Hlavní pečovatel" required>
+                            <option value="">Vyberte…</option>
+                            <option>Dospělý</option>
+                            <option>Děti</option>
+                            <option>Celá rodina</option>
+                            <option>Jiná osoba</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="sama-doma">Jak dlouho bude kočka běžně sama doma během pracovního dne? *</label>
+                        <select id="sama-doma" name="Čas o samotě přes den" required>
+                            <option value="">Vyberte…</option>
+                            <option>Nikdy, vždy je někdo doma</option>
+                            <option>Méně než 4 hodiny</option>
+                            <option>4–8 hodin</option>
+                            <option>Více než 8 hodin</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="jine-zvire">Máte doma další zvíře? *</label>
+                        <select id="jine-zvire" name="Další zvíře v domácnosti" required>
+                            <option value="">Vyberte…</option>
+                            <option>Ne</option>
+                            <option>Ano, kočku</option>
+                            <option>Ano, psa</option>
+                            <option>Ano, jiné zvíře</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+
+                    <p class="form-section-title">Zkušenosti s kočkami</p>
+                    <div class="form-group">
+                        <label for="mel-kocku">Měli jste již někdy kočku? *</label>
+                        <select id="mel-kocku" name="Zkušenost s kočkou" required>
+                            <option value="">Vyberte…</option>
+                            <option>Ano</option>
+                            <option>Ne</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="zkusenost">Pokud ano, jaká byla vaše zkušenost?</label>
+                        <textarea id="zkusenost" name="Popis zkušenosti" rows="3"></textarea>
+                    </div>
+
+                    <p class="form-section-title">Péče o kočku</p>
+                    <div class="form-group">
+                        <label for="pece-srst">Jste připraveni na pravidelnou péči o srst, drápky, zuby a celkovou hygienu kočky? *</label>
+                        <select id="pece-srst" name="Připravenost na péči" required>
+                            <option value="">Vyberte…</option>
+                            <option>Ano</option>
+                            <option>Ne</option>
+                            <option>Potřebuji poradit</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="zachod">Jak byste řešili situaci, kdyby kočka začala používat toaletu mimo kočičí záchod? *</label>
+                        <textarea id="zachod" name="Řešení problémů se záchodem" rows="3" required></textarea>
+                        <span class="form-error">Napište prosím pár slov.</span>
+                    </div>
+
+                    <p class="form-section-title">Veterinární péče</p>
+                    <div class="form-group">
+                        <label for="vet-hradit">Jste připraveni hradit běžnou i případnou nečekanou veterinární péči? *</label>
+                        <select id="vet-hradit" name="Připravenost hradit veterinární péči" required>
+                            <option value="">Vyberte…</option>
+                            <option>Ano</option>
+                            <option>Ne</option>
+                            <option>Nejsem si jistý/á</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="vet-naklady">Máte představu, jaké veterinární náklady může kočka během života představovat? *</label>
+                        <select id="vet-naklady" name="Přehled o veterinárních nákladech" required>
+                            <option value="">Vyberte…</option>
+                            <option>Ano, mám přehled</option>
+                            <option>Ne, ráda bych se dozvěděl/a víc</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="pojisteni">Plánujete kočce zdravotní pojištění? *</label>
+                        <select id="pojisteni" name="Zdravotní pojištění kočky" required>
+                            <option value="">Vyberte…</option>
+                            <option>Ano</option>
+                            <option>Ne</option>
+                            <option>Ještě nevím</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+
+                    <p class="form-section-title">Přání ke koťátku</p>
+                    <div class="form-group">
+                        <label for="pohlavi">Preferované pohlaví koťátka *</label>
+                        <select id="pohlavi" name="Preferované pohlaví" required>
+                            <option value="">Vyberte…</option>
+                            <option>Kocourek</option>
+                            <option>Kočička</option>
+                            <option>Nezáleží</option>
+                        </select>
+                        <span class="form-error">Vyberte prosím jednu z možností.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="zbarveni">Preferované zbarvení / vzhled</label>
+                        <input type="text" id="zbarveni" name="Preferované zbarvení" placeholder="např. blue bicolor, seal mitted… nebo nezáleží">
+                    </div>
+                    <div class="form-group">
+                        <label for="pozadavky">Máte nějaké další požadavky nebo představy, které by pro vás byly při výběru koťátka důležité?</label>
+                        <textarea id="pozadavky" name="Další požadavky" rows="3"></textarea>
+                    </div>
+
+                    <p class="form-section-title">Vaše dotazy</p>
+                    <div class="form-group">
+                        <label for="dotazy">Chtěli byste se na něco zeptat?</label>
+                        <textarea id="dotazy" name="Dotazy" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary-form">Odeslat dotazník</button>
+                    <p class="form-consent">Odesláním souhlasíte se zpracováním osobních údajů za účelem vyřízení vaší poptávky.</p>
+                </form>
+                <div class="form-success">
+                    <h3>Děkujeme za vyplnění dotazníku!</h3>
+                    <p>Brzy se vám ozveme zpět.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
+                <p>Malobratřice, Středočeský kraj</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="images/misc/icon-instagram.webp" type="image/webp"><img src="images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
+                    <a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener" aria-label="Facebook"><picture><source srcset="images/misc/icon-facebook.webp" type="image/webp"><img src="images/misc/icon-facebook.png" width="240" height="211" alt="" class="social-icon-img"></picture></a>
+                </div>
+            </div>
+            <div>
+                <h3>Navigace</h3>
+                <p><a href="kotatka.html">Koťátka</a></p>
+                <p><a href="informace-ke-koupi.html">Informace ke koupi</a></p>
+                <p><a href="tym.html">Tým</a></p>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
+                <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
+                <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 StElli Ragdoll. Všechna práva vyhrazena.</p>
+            <p class="footer-note">Pro automatický výběr jazyka používáme anonymní zjištění země podle IP adresy.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
