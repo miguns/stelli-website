@@ -614,6 +614,14 @@ body.concept .cta-banner {
 body.concept .cta-banner h2 { color: var(--s-ink); }
 body.concept .cta-banner p { color: var(--s-body); }
 
+/* When the CTA banner opens the page right under the hero, its background
+   matches the section wrapping it (both var(--s-tint)) -- the section's own
+   padding was just stacking with the banner's, reading as a huge empty gap
+   of the same flat colour rather than a deliberate pause. */
+body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
+    padding: 2.25rem 0 2.75rem;
+}
+
 body.concept .timeline-step .step-num {
     background: var(--s-brand);
     box-shadow: 0 10px 22px rgba(127, 99, 64, 0.22);
