@@ -632,6 +632,24 @@ body.concept .work-photo-bg img {
     width: 100%;
     height: auto;
 }
+/* At wide viewports the portrait is taller than the section and the
+   section's own overflow clip cuts it off before the image's own fade gets
+   a chance to apply, leaving a hard edge in the fur. Blend that clip line
+   into the page cream instead of trying to chase it with the image's own
+   alpha, since the clip lands at a different point in the image at every
+   width. */
+body.concept .work-photo-section::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 220px;
+    background: linear-gradient(to bottom, transparent, var(--s-cream));
+    pointer-events: none;
+    z-index: 0;
+}
 @media (max-width: 720px) {
     /* The section's own overflow clip was cutting the ear off right at the
        hero seam. There's plenty of headroom before the image's bottom edge
