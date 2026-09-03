@@ -510,7 +510,7 @@ body.concept .stl-quote blockquote {
    Homepage — closing CTA
    ========================================================================== */
 
-.stl-cta { position: relative; text-align: center; padding: 6rem 0 7rem; background: var(--s-white); }
+.stl-cta { position: relative; text-align: center; padding: 6rem 0 7rem; background: var(--s-tint); }
 .stl-cta .stl-h2 { margin-bottom: 0.6rem; }
 .stl-cta p { margin: 0 0 2rem; }
 
@@ -860,7 +860,10 @@ body.concept footer::before {
     width: 128%;
     height: 110px;
     transform: translateX(-50%);
-    background: var(--s-white);
+    /* Matches the tint the sections above the footer end on (bg-soft,
+       the reasons/ohlas gradients, the homepage CTA), so the curve blends
+       straight in instead of showing a bright white seam before it. */
+    background: var(--s-tint);
     border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
 body.concept footer > * { position: relative; z-index: 1; }
