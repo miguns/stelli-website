@@ -622,6 +622,19 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     padding: 2.25rem 0 2.75rem;
 }
 
+/* Koťátka: the current-litter section above sits on the deeper --s-tint, and
+   this compact "past litters" section sits on the plain --s-cream page
+   background -- fade between the two instead of a hard color line at the
+   seam, same treatment as the reasons/ohlas seam on Naše práce. */
+body.concept .litters-history {
+    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+}
+/* ...and the closing "want a kitten?" banner fades back from cream into tint
+   the same way, so the page ends on the same gentle seam it started on. */
+body.concept .litters-cta {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
 body.concept .timeline-step .step-num {
     background: var(--s-brand);
     box-shadow: 0 10px 22px rgba(127, 99, 64, 0.22);

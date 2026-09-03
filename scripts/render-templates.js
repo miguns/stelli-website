@@ -87,32 +87,85 @@ function newsHTML(news, lang) {
     };
 }
 
-function littersHTML(data, lang, prefix) {
-    const badgeClass = { available: 'available', reserved: 'reserved', home: 'home', upcoming: '' };
+const LITTER_HOME_TEXT = { cs: 'V nových domovech', en: 'In new homes', de: 'In neuen Zuhausen', pl: 'W nowych domach' };
+
+function litterCardHTML(litter, lang, prefix) {
+    const badgeClass = { available: 'available', reserved: 'reserved' };
     const badgeText = {
         available: { cs: 'Dostupné', en: 'Available', de: 'Verfügbar', pl: 'Dostępne' },
-        reserved: { cs: 'Vše v rezervaci', en: 'All reserved', de: 'Alle reserviert', pl: 'Wszystkie zarezerwowane' },
-        home: { cs: 'V nových domovech', en: 'In new homes', de: 'In neuen Zuhausen', pl: 'W nowych domach' }
+        reserved: { cs: 'Vše v rezervaci', en: 'All reserved', de: 'Alle reserviert', pl: 'Wszystkie zarezerwowane' }
     };
-    let html = '';
-    let bg = false;
-    data.litters.forEach(litter => {
-        const isUpcoming = litter.status === 'upcoming';
-        bg = !bg;
-        if (isUpcoming) {
-            html += '<section class="section"><div class="container"><div class="cta-banner reveal-scale">' +
-                '<h2>' + pick(litter, 'name', lang) + '</h2><p>' + pick(litter, 'desc', lang) + '</p>' +
-                '</div></div></section>';
-            return;
-        }
-        html += '<section class="section' + (bg ? ' bg-soft' : '') + '"><div class="container">' +
-            '<div class="section-header reveal">' +
-            (badgeText[litter.status] ? '<span class="status-badge ' + badgeClass[litter.status] + '" style="position:static; display:inline-flex;">' + badgeText[litter.status][lang] + '</span>' : '') +
-            '<h2 style="margin-top:1rem;">' + pick(litter, 'name', lang) + '</h2>' +
-            '<p>' + pick(litter, 'desc', lang) + '</p></div>' +
-            photoCarouselHTML(litter.photos, litter.id, pick(litter, 'name', lang), prefix, lang) +
+    if (litter.status === 'upcoming') {
+        return '<section class="section bg-soft"><div class="container"><div class="cta-banner reveal-scale">' +
+            '<h2>' + pick(litter, 'name', lang) + '</h2><p>' + pick(litter, 'desc', lang) + '</p>' +
+            '</div></div></section>';
+    }
+    return '<section class="section bg-soft"><div class="container">' +
+        '<div class="section-header reveal">' +
+        (badgeText[litter.status] ? '<span class="status-badge ' + badgeClass[litter.status] + '" style="position:static; display:inline-flex;">' + badgeText[litter.status][lang] + '</span>' : '') +
+        '<h2 style="margin-top:1rem;">' + pick(litter, 'name', lang) + '</h2>' +
+        '<p>' + pick(litter, 'desc', lang) + '</p></div>' +
+        photoCarouselHTML(litter.photos, litter.id, pick(litter, 'name', lang), prefix, lang) +
+        '</div></section>';
+}
+
+// Past litters get a compact row instead of a full section -- just the name,
+// the "already in a new home" badge, and room for a single photo (the
+// litter's first uploaded photo once there is one, an icon placeholder
+// until then) so closed litters need no further upkeep.
+function litterHistoryItemHTML(litter, i, lang, prefix) {
+    const name = pick(litter, 'name', lang);
+    const photos = litter.photos || [];
+    let photoHtml = '<span class="litter-history-placeholder" aria-hidden="true">🐾</span>';
+    if (photos.length) {
+        const item = photos[0];
+        const src = typeof item === 'string' ? item : item.photo;
+        const grid = escapeHtml(prefix + gridSrcOf(src));
+        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        photoHtml = '<picture><source srcset="' + webp + '" type="image/webp">' +
+            '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture>';
+    }
+    return '<li class="litter-history-item reveal-scale" style="--i:' + (i % 6) + '">' +
+        '<div class="litter-history-photo">' + photoHtml + '</div>' +
+        '<div class="litter-history-body"><strong>' + name + '</strong>' +
+        '<span class="status-badge home" style="position:static; display:inline-flex;">' + LITTER_HOME_TEXT[lang] + '</span></div>' +
+        '</li>';
+}
+
+function littersHTML(data, lang, prefix) {
+    const current = data.litters.filter(l => l.status !== 'home');
+    const past = data.litters.filter(l => l.status === 'home');
+
+    let html = current.map(l => litterCardHTML(l, lang, prefix)).join('');
+
+    if (!current.length) {
+        const emptyHeading = { cs: 'Aktuálně nemáme volný vrh', en: 'No litter available right now', de: 'Aktuell kein Wurf verfügbar', pl: 'Obecnie brak dostępnego miotu' };
+        const emptyText = {
+            cs: 'Právě nemáme žádný dostupný vrh. Napište nám přes dotazník a ozveme se, jakmile budou koťátka k dispozici.',
+            en: "We don't currently have an available litter. Reach out through the questionnaire and we'll get in touch as soon as kittens are available.",
+            de: 'Wir haben derzeit keinen verfügbaren Wurf. Schreiben Sie uns über den Fragebogen, wir melden uns, sobald Kätzchen verfügbar sind.',
+            pl: 'Obecnie nie mamy dostępnego miotu. Napisz do nas przez formularz zgłoszeniowy, odezwiemy się, gdy tylko kocięta będą dostępne.'
+        };
+        html += '<section class="section bg-soft"><div class="container"><div class="cta-banner reveal-scale">' +
+            '<h2>' + emptyHeading[lang] + '</h2><p>' + emptyText[lang] + '</p></div></div></section>';
+    }
+
+    if (past.length) {
+        const label = { cs: 'Historie', en: 'History', de: 'Historie', pl: 'Historia' };
+        const heading = { cs: 'Proběhlé vrhy', en: 'Past litters', de: 'Vergangene Würfe', pl: 'Poprzednie mioty' };
+        const sub = {
+            cs: 'Všechna koťátka z těchto vrhů už jsou šťastně doma.',
+            en: 'All kittens from these litters have already found their new homes.',
+            de: 'Alle Kätzchen aus diesen Würfen sind bereits in ihrem neuen Zuhause.',
+            pl: 'Wszystkie kocięta z tych miotów już trafiły do nowych domów.'
+        };
+        html += '<section class="section litters-history"><div class="container">' +
+            '<div class="section-header reveal"><span class="section-label">' + label[lang] + '</span>' +
+            '<h2>' + heading[lang] + '</h2><p>' + sub[lang] + '</p></div>' +
+            '<ul class="litter-history stagger">' + past.map((l, i) => litterHistoryItemHTML(l, i, lang, prefix)).join('') + '</ul>' +
             '</div></section>';
-    });
+    }
+
     return html;
 }
 

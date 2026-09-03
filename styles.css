@@ -604,6 +604,46 @@ header {
 .status-badge.reserved { background: rgba(215, 160, 90, 0.92); color: white; }
 .status-badge.home { background: rgba(155, 140, 180, 0.9); color: white; }
 
+/* Compact "past litters" row -- a name, a badge, and room for one photo
+   (an icon placeholder until a photo is added later). */
+.litter-history {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.litter-history-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 1.5rem 0.6rem 0.6rem;
+    box-shadow: var(--shadow-soft);
+}
+.litter-history-photo {
+    flex-shrink: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-warm);
+}
+.litter-history-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.litter-history-placeholder { font-size: 1.3rem; opacity: 0.6; }
+.litter-history-body { display: flex; flex-direction: column; gap: 0.35rem; }
+.litter-history-body strong { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--plum-dark); }
+.litter-history .status-badge { position: static; }
+@media (max-width: 480px) {
+    .litter-history-item { padding: 0.5rem 1.2rem 0.5rem 0.5rem; }
+}
+
 /* Stats / trust badges */
 .stats-strip {
     display: grid;
