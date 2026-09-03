@@ -694,9 +694,10 @@ initPawTrail();
 
     const ARIA_LABEL = { cs: 'Chci koťátko', en: 'I want a kitten', de: 'Ich möchte ein Kätzchen', pl: 'Chcę kocię' };
     const LABEL = { cs: 'Chci kotě', en: 'A kitten', de: 'Kätzchen', pl: 'Chcę kocię' };
+    const HREF = { cs: 'informace-ke-koupi.html', en: 'kontakty.html#formular', de: 'kontakty.html#formular', pl: 'kontakty.html#formular' };
 
     const a = document.createElement('a');
-    a.href = 'kontakty.html#formular';
+    a.href = HREF[lang];
     a.className = 'c-float-cta is-visible';
     a.id = 'floatCta';
     a.setAttribute('aria-label', ARIA_LABEL[lang]);
