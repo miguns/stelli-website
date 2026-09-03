@@ -432,6 +432,16 @@ header {
 }
 .page-hero h1 { color: var(--plum-dark); font-size: clamp(2rem, 4vw, 3rem); animation: fadeInUp 0.8s var(--ease-out) both; }
 .page-hero p { color: var(--ink-light); max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem; animation: fadeInUp 0.8s var(--ease-out) 0.15s both; }
+/* Inline paw accent -- an SVG using currentColor instead of the emoji glyph,
+   so it always matches the surrounding text color exactly rather than
+   whatever tone the platform's emoji font happens to render. */
+.paw-icon-inline {
+    display: inline-block;
+    width: 0.85em;
+    height: 0.85em;
+    vertical-align: -0.08em;
+    margin-left: 0.2em;
+}
 .page-hero .hero-blob { opacity: 0.5; }
 
 /* Buttons */
