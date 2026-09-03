@@ -716,7 +716,7 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
 @media (max-width: 720px) {
     body.concept .reasons-photo-bg {
         width: 108vw;
-        top: -30px;
+        top: 15px;
         opacity: 0.58;
     }
     body.concept .reasons-section .section-header { margin-top: 55px; }
@@ -731,7 +731,13 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
    backdrop already matches the page background almost exactly, so no
    colour regrade was needed, only a feathered alpha edge on all four
    sides. */
-body.concept .ohlas-section { overflow: hidden; }
+/* The reasons-section above ends solid on the deeper --s-tint, and this
+   section sits on the plain (lighter) --s-cream page background -- fade
+   between the two instead of a hard color line at the seam. */
+body.concept .ohlas-section {
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+}
 body.concept .ohlas-photo-bg {
     display: block;
     position: absolute;
