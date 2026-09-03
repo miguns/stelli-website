@@ -701,7 +701,7 @@ body.concept .reasons-photo-bg {
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.62;
+    opacity: 0.42;
 }
 body.concept .reasons-photo-bg img {
     display: block;
