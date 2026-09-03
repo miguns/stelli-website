@@ -635,7 +635,7 @@ body.concept .work-photo-bg img {
 @media (max-width: 720px) {
     body.concept .work-photo-bg {
         width: 108vw;
-        top: -120px;
+        top: -170px;
         right: -60px;
         opacity: 0.28;
     }
