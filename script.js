@@ -686,6 +686,9 @@ initPawTrail();
     if (document.getElementById('floatCta')) return;
     const path = (location.pathname.split('/').pop() || 'index.html');
     if (path === '' || path === 'index.html') return;
+    // The button itself is the "want a kitten" CTA -- redundant (and in the
+    // way) once someone is already on the questionnaire it points to.
+    if (path === 'dotaznik.html') return;
 
     const isSub = /\/(en|de|pl)\//.test(location.pathname);
     const langMatch = location.pathname.match(/\/(en|de|pl)\//);
