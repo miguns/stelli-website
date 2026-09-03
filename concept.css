@@ -620,12 +620,12 @@ body.concept .work-photo-bg {
     display: block;
     position: absolute;
     top: -220px;
-    right: 0;
+    right: -90px;
     width: clamp(620px, 66vw, 1300px);
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.42;
 }
 body.concept .work-photo-bg img {
     display: block;
@@ -636,6 +636,7 @@ body.concept .work-photo-bg img {
     body.concept .work-photo-bg {
         width: 92vw;
         top: -70px;
+        right: -24px;
         opacity: 0.28;
     }
 }
