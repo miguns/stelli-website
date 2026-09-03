@@ -754,9 +754,16 @@ body.concept .ohlas-section .section-header,
 body.concept .ohlas-section .prose { position: relative; z-index: 1; }
 @media (max-width: 720px) {
     /* On a single narrow column there's no "beside the text" to move the
-       face into, so instead it sits well above where the heading starts,
-       kept faint enough that it reads as texture rather than a face. */
-    body.concept .ohlas-photo-bg { width: 68vw; left: 16vw; top: -170px; opacity: 0.16; }
+       face into, so instead it sits above where the heading starts, kept
+       faint enough that it reads as texture rather than a face. The
+       desktop layout clips this section (overflow:hidden, so a wide
+       bled-left photo doesn't force horizontal scroll) -- switch back to
+       visible here so the photo can bleed up past the section's own top
+       edge same as reasons-photo-bg does. Since ohlas-section paints
+       after (on top of) reasons-section, that bled portion still shows on
+       top of it rather than being covered by it. */
+    body.concept .ohlas-section { overflow: visible; }
+    body.concept .ohlas-photo-bg { width: 56vw; left: 22vw; top: -70px; opacity: 0.38; }
 }
 
 body.concept .accordion-item {
