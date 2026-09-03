@@ -719,9 +719,9 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
         top: -25px;
         opacity: 0.58;
     }
-    /* Pushed well below the faces so the kittens step out further before
-       the heading starts, showing them down toward their paws. */
-    body.concept .reasons-section .section-header { margin-top: 125px; }
+    /* Aligned to sit right over the kittens' chests/paws, matching the
+       reference crop, instead of dropping past the fur into blank space. */
+    body.concept .reasons-section .section-header { margin-top: 70px; }
 }
 
 /* Kitten-with-toy photo as a soft accent behind "Ohlas nového domova" --
