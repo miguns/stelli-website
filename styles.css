@@ -646,7 +646,7 @@ header {
     background: var(--gradient-warm);
 }
 .litter-history-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.litter-history-placeholder { display: flex; opacity: 0.7; }
+.litter-history-placeholder { font-size: 1.3rem; opacity: 0.6; }
 .litter-history-body { display: flex; flex-direction: column; gap: 0.35rem; }
 .litter-history-body strong { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--plum-dark); }
 .litter-history .status-badge { position: static; }
@@ -899,12 +899,8 @@ header {
     border-radius: 50%;
     background: var(--gradient-warm);
     display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
     box-shadow: var(--shadow-soft);
-}
-.path-note-icon svg, .litter-history-placeholder svg {
-    width: 1.3rem;
-    height: 1.3rem;
-    color: #f4ead6;
 }
 .path-note-text h2 { font-size: 1.3rem; margin-bottom: 0.6rem; }
 .path-note-text p { color: var(--ink-light); margin: 0; }
