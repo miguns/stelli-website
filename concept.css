@@ -716,10 +716,12 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
 @media (max-width: 720px) {
     body.concept .reasons-photo-bg {
         width: 108vw;
-        top: 15px;
+        top: -25px;
         opacity: 0.58;
     }
-    body.concept .reasons-section .section-header { margin-top: 55px; }
+    /* Pushed well below the faces so the kittens step out further before
+       the heading starts, showing them down toward their paws. */
+    body.concept .reasons-section .section-header { margin-top: 125px; }
 }
 
 /* Kitten-with-toy photo as a soft accent behind "Ohlas nového domova" --
