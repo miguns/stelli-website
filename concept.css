@@ -763,7 +763,7 @@ body.concept .ohlas-section .prose { position: relative; z-index: 1; }
        after (on top of) reasons-section, that bled portion still shows on
        top of it rather than being covered by it. */
     body.concept .ohlas-section { overflow: visible; }
-    body.concept .ohlas-photo-bg { width: 56vw; left: 22vw; top: -70px; opacity: 0.38; }
+    body.concept .ohlas-photo-bg { width: 67.2vw; left: 16.4vw; top: -128px; opacity: 0.38; }
 }
 
 body.concept .accordion-item {
