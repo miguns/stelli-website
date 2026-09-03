@@ -685,12 +685,16 @@ body.concept .reasons-photo-bg img {
 }
 body.concept .reasons-section .section-header,
 body.concept .reasons-section .grid { position: relative; z-index: 1; }
+/* Give the kittens room to be seen before the heading starts, instead of
+   the text sitting right over their faces. */
+body.concept .reasons-section .section-header { margin-top: 130px; }
 @media (max-width: 720px) {
     body.concept .reasons-photo-bg {
         width: 108vw;
         top: -40px;
         opacity: 0.55;
     }
+    body.concept .reasons-section .section-header { margin-top: 70px; }
 }
 
 body.concept .accordion-item {
