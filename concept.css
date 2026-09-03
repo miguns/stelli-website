@@ -676,7 +676,7 @@ body.concept .reasons-photo-bg {
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.6;
+    opacity: 0.88;
 }
 body.concept .reasons-photo-bg img {
     display: block;
@@ -692,7 +692,7 @@ body.concept .reasons-section .section-header { margin-top: 130px; }
     body.concept .reasons-photo-bg {
         width: 108vw;
         top: -40px;
-        opacity: 0.55;
+        opacity: 0.8;
     }
     body.concept .reasons-section .section-header { margin-top: 70px; }
 }
