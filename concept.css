@@ -649,12 +649,17 @@ body.concept .cta-kitten-bg {
     display: block;
     position: absolute;
     top: 42px;
-    left: 6.2vw;
-    width: clamp(220px, 24vw, 380px);
+    /* Anchored to the CTA text column's own left edge (which centers at a
+       fixed 1140px past that breakpoint) rather than to the viewport, so
+       the gap to the heading stays constant instead of growing on wide
+       screens the way a plain vw offset did. */
+    --kitten-w: clamp(220px, 24vw, 380px);
+    left: calc(max(0px, (100% - 1140px) / 2) + 307px - var(--kitten-w));
+    width: var(--kitten-w);
     height: auto;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.55;
+    opacity: 0.48;
 }
 body.concept .cta-kitten-bg img { display: block; width: 100%; height: auto; }
 body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) .cta-banner {
