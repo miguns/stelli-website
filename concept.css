@@ -635,6 +635,22 @@ body.concept .litters-cta {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
 
+/* Informace ke koupi: same alternating tint/cream sections as elsewhere on
+   the site, so give every seam between them the same top-edge fade used on
+   Naše práce and Koťátka instead of a hard color line. */
+body.concept .benefits-section {
+    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+}
+body.concept .section.bg-soft.process-section {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+body.concept .faq-section {
+    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+}
+body.concept .section.bg-soft.contact-section {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
 body.concept .timeline-step .step-num {
     background: var(--s-brand);
     box-shadow: 0 10px 22px rgba(127, 99, 64, 0.22);
