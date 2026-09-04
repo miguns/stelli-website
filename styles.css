@@ -476,6 +476,7 @@ header {
 
 .section { padding: 6rem 0; position: relative; }
 .section.bg-soft { background: var(--gradient-soft); }
+.section.bg-invert { background: linear-gradient(180deg, var(--cream-deep) 0%, var(--cream) 100%); }
 .section.bg-plum {
     background: var(--gradient-primary);
     color: rgba(255,255,255,0.92);
