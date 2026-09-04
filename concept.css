@@ -624,6 +624,16 @@ body.concept .cta-banner p { color: var(--s-body); }
 body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
     padding: 2.25rem 0 2.75rem;
 }
+/* That same section now always fades in from the hero's light cream, so a
+   solid-tint banner box sitting on top of the fade read as a hard-edged
+   card popping out of it near the top and vanishing near the bottom -- a
+   patchy, "colorful" look. Drop the banner's own fill here and let the
+   heading, copy and button sit straight on the section's own background,
+   like the rest of the page's opening content. */
+body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) > .container > .cta-banner {
+    background: none;
+    border-radius: 0;
+}
 
 /* When the first section under the hero band is tinted (bg-soft), fade it in
    from the band's own light cream instead of a hard color line, so every
