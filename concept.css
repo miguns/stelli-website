@@ -627,14 +627,14 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
 /* That same section now always fades in from the hero's light cream, so a
    solid-tint banner box sitting on top of the fade read as a hard-edged
    card popping out of it near the top and vanishing near the bottom -- a
-   patchy, "colorful" look. Keep it a proper tile, but a step deeper than
-   the page cream -- the same --s-cream-bar tone already used for the nav
-   bar's "structural chrome" -- instead of either matching the section
-   (invisible) or pure white (too stark this close under the black hero). */
+   patchy, "colorful" look. Drop the tile fill here and let the text sit
+   straight on the fading section background; a photo is planned for this
+   spot instead of a card. */
 body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) > .container > .cta-banner {
-    background: var(--s-cream-bar);
-    border: 1px solid var(--s-line);
-    box-shadow: var(--s-shadow);
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 /* When the first section under the hero band is tinted (bg-soft), fade it in
