@@ -739,7 +739,7 @@ body.concept .section.bg-soft.process-section {
 body.concept .process-kitten-bg {
     display: block;
     position: absolute;
-    top: 73px;
+    top: 23px;
     right: 40px;
     width: clamp(476px, 47.58vw, 714px);
     height: auto;
