@@ -546,8 +546,11 @@ body.concept .page-hero::after {
 @media (max-width: 860px) {
     body.concept .page-hero::after { height: 56px; width: 190%; }
 }
-body.concept .page-hero:has(+ .section.bg-soft),
-body.concept .page-hero:has(+ * > .section.bg-soft:first-child) { --band-into: var(--s-tint); }
+/* Every page hero band fades into the light page cream (matching Naše
+   práce), even on pages whose first section under it is tinted -- that
+   section gets its own cream-to-tint fade at its top instead (see
+   ".page-hero + .section.bg-soft" below), so no page starts on the darker
+   tint straight out of the band. */
 body.concept .page-hero > * { position: relative; z-index: 1; }
 body.concept .page-hero .hero-blob { display: none; }
 body.concept .page-hero h1 {
@@ -622,6 +625,14 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     padding: 2.25rem 0 2.75rem;
 }
 
+/* When the first section under the hero band is tinted (bg-soft), fade it in
+   from the band's own light cream instead of a hard color line, so every
+   page still visually starts on the same light beige as Naše práce. */
+body.concept .page-hero + .section.bg-soft,
+body.concept .page-hero + * > .section.bg-soft:first-child {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
 /* Koťátka: the current-litter section above sits on the deeper --s-tint, and
    this compact "past litters" section sits on the plain --s-cream page
    background -- fade between the two instead of a hard color line at the
@@ -649,6 +660,54 @@ body.concept .faq-section {
 }
 body.concept .section.bg-soft.contact-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
+/* Fotogalerie: same alternating cream/tint sections as elsewhere -- fade the
+   seam, and it's the last section before the footer, so it also needs to
+   land on tint to match the footer's curve. */
+body.concept .section.bg-soft.gallery-cta {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
+/* O nás: three hard seams between the alternating sections, same top-edge
+   fade treatment as the rest of the site. onas-cta-section is also last
+   before the footer, so it lands on tint like gallery-cta above. */
+body.concept .section.bg-soft.values-section {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+body.concept .daily-life-section {
+    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+}
+body.concept .section.bg-soft.onas-cta-section {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
+/* Tým: fade into the closing (last-before-footer) tinted section. */
+body.concept .section.bg-soft.studs-section {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
+/* Dotazník (CZ only) and Kontakty (CZ) are each a single plain section that
+   runs the whole page, ending on the page cream with nothing fading it into
+   the footer's tint curve below -- fade the last 220px back to tint so the
+   page ends flush with the curve, same principle as ohlas-section above. */
+body.concept .questionnaire-section,
+body.concept .contact-info-section {
+    background: linear-gradient(to top, var(--s-tint) 0, var(--s-cream) 220px, var(--s-cream) 100%);
+}
+
+/* Kontakty (EN/DE/PL) adds a separate contact-form section (#formular) after
+   the info/map section -- fade its top from cream into tint instead of a
+   hard line; it already ends flush with the footer's tint curve. */
+body.concept #formular {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
+/* 404 (EN/DE/PL): single plain section, same page-end fade as Dotazník /
+   Kontakty above (the CZ 404 is bg-soft already and lands on tint via the
+   page-hero fade rule, so it doesn't need this). */
+body.concept .notfound-section {
+    background: linear-gradient(to top, var(--s-tint) 0, var(--s-cream) 220px, var(--s-cream) 100%);
 }
 
 body.concept .timeline-step .step-num {
@@ -773,9 +832,16 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
 /* The reasons-section above ends solid on the deeper --s-tint, and this
    section sits on the plain (lighter) --s-cream page background -- fade
    between the two instead of a hard color line at the seam. */
+/* ...and it's the last section before the footer, which starts on tint --
+   fade the last 220px back to tint too, so the page ends flush with the
+   footer's curve instead of a hard line at the very bottom. */
 body.concept .ohlas-section {
     overflow: hidden;
-    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+    background: linear-gradient(to bottom,
+        var(--s-tint) 0,
+        var(--s-cream) 200px,
+        var(--s-cream) calc(100% - 220px),
+        var(--s-tint) 100%);
 }
 body.concept .ohlas-photo-bg {
     display: block;
