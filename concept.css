@@ -636,6 +636,44 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     box-shadow: none;
     border-radius: 0;
 }
+/* Kitten photo as a soft accent to the left of the CTA text, mirrored to
+   face into it and feathered on all sides (same treatment as the Nase
+   prace background photos) so its own near-cream backdrop melts into the
+   section instead of showing a hard box. Kept behind the text, at reduced
+   opacity, so it reads as texture rather than competing with the copy. */
+body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
+    position: relative;
+    overflow: hidden;
+}
+body.concept .cta-kitten-bg {
+    display: block;
+    position: absolute;
+    top: -18px;
+    left: 3vw;
+    width: clamp(220px, 24vw, 380px);
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+}
+body.concept .cta-kitten-bg img { display: block; width: 100%; height: auto; }
+body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) .cta-banner {
+    position: relative;
+    z-index: 1;
+}
+/* Give the kitten's head room to sit in the row above the heading instead
+   of the heading starting right where the head would be. */
+body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) .cta-banner h2 {
+    margin-top: 64px;
+}
+@media (max-width: 720px) {
+    /* No room beside the text at this width -- drop the photo and the
+       space reserved for it above the heading. */
+    body.concept .cta-kitten-bg { display: none; }
+    body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) .cta-banner h2 {
+        margin-top: 0;
+    }
+}
 
 /* When the first section under the hero band is tinted (bg-soft), fade it in
    from the band's own light cream instead of a hard color line, so every
