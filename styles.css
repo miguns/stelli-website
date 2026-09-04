@@ -476,10 +476,6 @@ header {
 
 .section { padding: 6rem 0; position: relative; }
 .section.bg-soft { background: var(--gradient-soft); }
-/* Subtle top/bottom edge fades between alternating section bands (used on informace-ke-koupi.html) */
-.section-fade-deep { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 60px, var(--cream-deep) calc(100% - 60px), var(--cream) 100%); }
-.section-fade-deep-end { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 60px, var(--cream-deep) 100%); }
-.section-fade-light { background: linear-gradient(180deg, var(--cream-deep) 0%, var(--cream) 60px, var(--cream) calc(100% - 60px), var(--cream-deep) 100%); }
 .section.bg-plum {
     background: var(--gradient-primary);
     color: rgba(255,255,255,0.92);
