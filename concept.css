@@ -739,9 +739,9 @@ body.concept .section.bg-soft.process-section {
 body.concept .process-kitten-bg {
     display: block;
     position: absolute;
-    top: 87px;
+    top: 73px;
     right: 40px;
-    width: clamp(433px, 43.25vw, 649px);
+    width: clamp(476px, 47.58vw, 714px);
     height: auto;
     pointer-events: none;
     z-index: 0;
@@ -756,7 +756,7 @@ body.concept .process-section .timeline { position: relative; z-index: 1; }
         right: auto;
         left: 50%;
         transform: translateX(-50%);
-        width: clamp(294px, 74.1vw, 402px);
+        width: clamp(323px, 81.5vw, 442px);
         opacity: 0.4;
     }
 }
