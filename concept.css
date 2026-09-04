@@ -667,19 +667,27 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     margin-top: 64px;
 }
 @media (max-width: 720px) {
+    /* The section's own top padding plus the fixed offsets below were
+       stacking into a large empty gap between the hero's curved edge and
+       the photo. Pull the whole block up close under the curve instead. */
+    body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
+        padding-top: 0.5rem;
+    }
     /* No room beside the text at this width -- center it above the heading
        instead, low enough that its paws dip into the heading's row, same
        soft/behind-text treatment as the desktop version (kept in flow via
-       absolute positioning, not stacked full-strength like a plain photo). */
+       absolute positioning, not stacked full-strength like a plain photo).
+       Slightly lower opacity than desktop so it melts further into the
+       cream background at this smaller, closer-cropped size. */
     body.concept .cta-kitten-bg {
-        top: 100px;
+        top: 8px;
         left: 50%;
         width: clamp(150px, 46vw, 210px);
         transform: translateX(-50%);
-        opacity: 0.55;
+        opacity: 0.45;
     }
     body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) .cta-banner h2 {
-        margin-top: 150px;
+        margin-top: 118px;
     }
 }
 
