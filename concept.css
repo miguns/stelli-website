@@ -667,9 +667,15 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     margin-top: 64px;
 }
 @media (max-width: 720px) {
-    /* No room beside the text at this width -- drop the photo and the
-       space reserved for it above the heading. */
-    body.concept .cta-kitten-bg { display: none; }
+    /* No room beside the text at this width -- drop it out of the text's
+       flow and stack it centered above the heading instead, full opacity
+       so it reads as a proper photo rather than background texture. */
+    body.concept .cta-kitten-bg {
+        position: static;
+        width: clamp(140px, 42vw, 200px);
+        margin: 0 auto 4px;
+        opacity: 1;
+    }
     body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) .cta-banner h2 {
         margin-top: 0;
     }
