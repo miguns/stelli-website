@@ -885,6 +885,12 @@ body.concept .status-badge { border-radius: var(--s-pill); }
 
 body.concept footer {
     position: relative;
+    /* The base theme's margin-top: 5rem (styles.css) was never cancelled
+       here, so a strip of the plain body cream showed between the last
+       section's own colour and this curve's tint top -- flatten it so the
+       curve continues directly off whatever colour the section above ends
+       on. */
+    margin-top: 0;
     background: var(--s-cover);
     padding-top: 9.5rem;
     overflow: hidden;
