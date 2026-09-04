@@ -737,10 +737,10 @@ body.concept .section.bg-soft.process-section {
 body.concept .process-kitten-bg {
     display: block;
     position: absolute;
-    top: 0;
+    top: -85px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: clamp(350px, 35vw, 525px);
+    transform: translateX(-50%);
+    width: clamp(333px, 33.25vw, 499px);
     height: auto;
     pointer-events: none;
     z-index: 0;
@@ -750,7 +750,8 @@ body.concept .process-kitten-bg img { display: block; width: 100%; height: auto;
 body.concept .process-section .section-header { position: relative; z-index: 1; }
 @media (max-width: 720px) {
     body.concept .process-kitten-bg {
-        width: clamp(238px, 60vw, 325px);
+        top: -85px;
+        width: clamp(226px, 57vw, 309px);
         opacity: 0.4;
     }
 }
