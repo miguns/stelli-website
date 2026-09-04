@@ -726,6 +726,39 @@ body.concept .benefits-section {
 body.concept .section.bg-soft.process-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
+/* Playful kitten photo crowning "Cesta k vašemu koťátku", same soft/feathered
+   treatment as the reasons-photo-bg accent on Naše práce -- kept behind the
+   text at reduced opacity so its paws can dip right into the heading. */
+body.concept .section.bg-soft.process-section {
+    position: relative;
+    overflow: visible;
+}
+body.concept .process-kitten-bg {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(280px, 28vw, 420px);
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.42;
+}
+body.concept .process-kitten-bg img { display: block; width: 100%; height: auto; }
+body.concept .process-section .section-header { position: relative; z-index: 1; }
+/* Give the kitten room to be seen before the heading starts, so its paws
+   land in the "Cesta k vašemu koťátku" row instead of the text starting
+   right under its chin. */
+body.concept .process-section .section-header h2 { margin-top: 175px; }
+@media (max-width: 720px) {
+    body.concept .process-kitten-bg {
+        top: 50px;
+        width: clamp(190px, 48vw, 260px);
+        opacity: 0.4;
+    }
+    body.concept .process-section .section-header h2 { margin-top: 85px; }
+}
 body.concept .faq-section {
     background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
 }
