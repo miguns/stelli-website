@@ -726,10 +726,12 @@ body.concept .benefits-section {
 body.concept .section.bg-soft.process-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
-/* Playful kitten photo tucked into the whitespace seam between "Co dostanete"
-   and "Cesta k vašemu koťátku", same soft/feathered treatment as the
-   reasons-photo-bg accent on Naše práce. Sits in the gap only -- the heading
-   keeps its normal position. */
+/* Playful kitten photo, seated on the right side of the page next to the
+   timeline -- head starting level with step 1 ("Kontakt a seznámení"), same
+   soft/feathered treatment as the reasons-photo-bg accent on Naše práce.
+   Most of it sits behind the timeline text column (low opacity, z-index 0
+   under .timeline's z-index 1); only the right-hand edge peeks past the
+   container into the page margin. */
 body.concept .section.bg-soft.process-section {
     position: relative;
     overflow: visible;
@@ -737,21 +739,24 @@ body.concept .section.bg-soft.process-section {
 body.concept .process-kitten-bg {
     display: block;
     position: absolute;
-    top: -85px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(333px, 33.25vw, 499px);
+    top: 87px;
+    right: 40px;
+    width: clamp(433px, 43.25vw, 649px);
     height: auto;
     pointer-events: none;
     z-index: 0;
     opacity: 0.42;
 }
 body.concept .process-kitten-bg img { display: block; width: 100%; height: auto; }
-body.concept .process-section .section-header { position: relative; z-index: 1; }
+body.concept .process-section .section-header,
+body.concept .process-section .timeline { position: relative; z-index: 1; }
 @media (max-width: 720px) {
     body.concept .process-kitten-bg {
         top: -85px;
-        width: clamp(226px, 57vw, 309px);
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: clamp(294px, 74.1vw, 402px);
         opacity: 0.4;
     }
 }
