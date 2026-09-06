@@ -291,7 +291,12 @@ body.concept .stl-curve--cream { background: var(--s-cream); }
 body.concept .stl-curve--dark { background: var(--s-dark); }
 
 @media (max-width: 860px) {
-    body.concept .stl-curve { height: 56px; width: 190%; }
+    /* Width stays the same 128% as desktop -- that ratio (not the height)
+       is what determines how gently the curve tapers toward the viewport
+       edges, so keeping it matches the soft desktop sweep instead of the
+       flatter, more dome-like shape the old 190% produced at narrow
+       widths. Only the height shrinks, to suit the smaller viewport. */
+    body.concept .stl-curve { height: 56px; width: 128%; }
 }
 
 /* ==========================================================================
@@ -544,7 +549,10 @@ body.concept .page-hero::after {
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 @media (max-width: 860px) {
-    body.concept .page-hero::after { height: 56px; width: 190%; }
+    /* Same 128% width as desktop -- see the .stl-curve note above for why
+       that ratio (not the height) is what keeps the taper gentle instead
+       of dome-like at narrow viewports. */
+    body.concept .page-hero::after { height: 56px; width: 128%; }
 }
 /* Every page hero band fades into the light page cream (matching Naše
    práce), even on pages whose first section under it is tinted -- that
@@ -1118,7 +1126,8 @@ body.concept .social-icon-img { filter: brightness(0) invert(1); }
 
 @media (max-width: 860px) {
     body.concept footer { padding-top: 5.5rem; }
-    body.concept footer::before { height: 56px; width: 190%; }
+    /* Same 128% width as desktop -- see the .stl-curve note for why. */
+    body.concept footer::before { height: 56px; width: 128%; }
 }
 
 /* ==========================================================================
