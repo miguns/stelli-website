@@ -622,7 +622,7 @@ body.concept .cta-banner p { color: var(--s-body); }
    padding was just stacking with the banner's, reading as a huge empty gap
    of the same flat colour rather than a deliberate pause. */
 body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
-    padding: 2.25rem 0 2.75rem;
+    padding: 2.25rem 0 16rem;
 }
 /* That same section now always fades in from the hero's light cream, so a
    solid-tint banner box sitting on top of the fade read as a hard-edged
@@ -648,7 +648,7 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
 body.concept .cta-kitten-bg {
     display: block;
     position: absolute;
-    top: 42px;
+    top: 251px;
     /* Anchored to the CTA text column's own left edge (which centers at a
        fixed 1140px past that breakpoint) rather than to the viewport, so
        the gap to the heading stays constant instead of growing on wide
@@ -677,6 +677,7 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
        the photo. Pull the whole block up close under the curve instead. */
     body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
         padding-top: 0.5rem;
+        padding-bottom: 2.75rem;
     }
     /* No room beside the text at this width -- center it above the heading
        instead, low enough that its paws dip into the heading's row, same
