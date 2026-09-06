@@ -624,6 +624,19 @@ body.concept .cta-banner p { color: var(--s-body); }
 body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
     padding: 2.25rem 0 16rem;
 }
+/* The extra bottom padding above only exists so the kitten (now sitting
+   low, under the paragraph) doesn't hard-clip against this section's
+   overflow:hidden edge -- but that padding is empty space everywhere to
+   the right of the photo, since the CTA text column ends at the button.
+   Pull the next section up into that space (its own opaque background
+   still paints over the very last sliver of the kitten, which is already
+   almost fully faded out there) so the page doesn't read as having a
+   big dead gap before "Co dostanete". */
+body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) + .benefits-section {
+    margin-top: -144px;
+    position: relative;
+    z-index: 1;
+}
 /* That same section now always fades in from the hero's light cream, so a
    solid-tint banner box sitting on top of the fade read as a hard-edged
    card popping out of it near the top and vanishing near the bottom -- a
@@ -678,6 +691,12 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) {
         padding-top: 0.5rem;
         padding-bottom: 2.75rem;
+    }
+    /* The negative pull-up above is sized for the desktop layout, where the
+       kitten (and the dead space beside it) is much taller -- on the single
+       mobile column it would drag "Co dostanete" up over the button. */
+    body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) + .benefits-section {
+        margin-top: 0;
     }
     /* No room beside the text at this width -- center it above the heading
        instead, low enough that its paws dip into the heading's row, same
