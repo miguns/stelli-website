@@ -745,14 +745,22 @@ body.concept .litters-cta {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
 
-/* Informace ke koupi: same alternating tint/cream sections as elsewhere on
-   the site, so give every seam between them the same top-edge fade used on
-   Naše práce and Koťátka instead of a hard color line. */
-body.concept .benefits-section {
-    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+/* Informace ke koupi: alternating light/dark sections (cream, tint, cream,
+   tint), same top-edge fade at every seam as Naše práce and Koťátka instead
+   of a hard color line.
+   The CTA banner right under the hero stays on the page's plain light
+   cream -- the hero curve above it already fades to that same cream by
+   default, so no extra fade is needed here; the generic bg-soft-under-hero
+   rule above (used by Kotátka/404, which want it deeper) is overridden just
+   for this page's CTA via its own class so those other pages are untouched. */
+body.concept .page-hero + .section.bg-soft.koupi-cta-section {
+    background: var(--s-cream);
 }
 body.concept .section.bg-soft.process-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+body.concept .benefits-section {
+    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
 }
 /* Playful kitten photo, seated on the right side of the page next to the
    timeline -- head starting level with step 1 ("Kontakt a seznámení"), same
@@ -788,8 +796,12 @@ body.concept .process-section .timeline { position: relative; z-index: 1; }
         opacity: 0.4;
     }
 }
-body.concept .faq-section {
-    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
+/* Last section before the footer, whose curve wants tint -- fade in from the
+   lighter benefits-section above and hold tint through the bottom so it
+   lands flush with the footer instead of the hard cream/tint line the old
+   (pre-order-swap) gradient left here. */
+body.concept .section.bg-soft.faq-section {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
 body.concept .section.bg-soft.contact-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
