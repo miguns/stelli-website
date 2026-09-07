@@ -639,8 +639,9 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
    Pull the next section up into that space (its own opaque background
    still paints over the very last sliver of the kitten, which is already
    almost fully faded out there) so the page doesn't read as having a
-   big dead gap before "Co dostanete". */
-body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) + .benefits-section {
+   big dead gap before "Cesta k vašemu koťátku" (the section right after
+   the CTA now that process-section and benefits-section were swapped). */
+body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) + .process-section {
     margin-top: -144px;
     position: relative;
     z-index: 1;
@@ -702,8 +703,8 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     }
     /* The negative pull-up above is sized for the desktop layout, where the
        kitten (and the dead space beside it) is much taller -- on the single
-       mobile column it would drag "Co dostanete" up over the button. */
-    body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) + .benefits-section {
+       mobile column it would drag "Cesta k vašemu koťátku" up over the button. */
+    body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) + .process-section {
         margin-top: 0;
     }
     /* No room beside the text at this width -- center it above the heading
@@ -747,11 +748,15 @@ body.concept .litters-cta {
 
 /* Informace ke koupi: same alternating tint/cream sections as elsewhere on
    the site, so give every seam between them the same top-edge fade used on
-   Naše práce and Koťátka instead of a hard color line. */
-body.concept .benefits-section {
+   Naše práce and Koťátka instead of a hard color line. Order on this page is
+   CTA (tint) -> process-section (plain) -> benefits-section (tint) ->
+   faq-section (tint, flush with the footer curve below), so process-section
+   fades in from tint and benefits-section fades in from cream -- the reverse
+   of their original roles from before the two sections were reordered. */
+body.concept .process-section {
     background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
 }
-body.concept .section.bg-soft.process-section {
+body.concept .section.bg-soft.benefits-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
 /* Playful kitten photo, seated on the right side of the page next to the
@@ -760,7 +765,7 @@ body.concept .section.bg-soft.process-section {
    Most of it sits behind the timeline text column (low opacity, z-index 0
    under .timeline's z-index 1); only the right-hand edge peeks past the
    container into the page margin. */
-body.concept .section.bg-soft.process-section {
+body.concept .process-section {
     position: relative;
     overflow: visible;
 }
@@ -788,12 +793,10 @@ body.concept .process-section .timeline { position: relative; z-index: 1; }
         opacity: 0.4;
     }
 }
-body.concept .faq-section {
-    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 200px, var(--s-cream) 100%);
-}
-body.concept .section.bg-soft.contact-section {
-    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
-}
+/* faq-section is the last section on the page (the contact form section
+   below it was removed) and now carries bg-soft as a flat tint fill -- it
+   already starts on tint (matching benefits-section above) and needs to end
+   on tint to meet the footer's curve, so no fade is needed here at all. */
 
 /* Fotogalerie: same alternating cream/tint sections as elsewhere -- fade the
    seam, and it's the last section before the footer, so it also needs to
