@@ -82,8 +82,13 @@ function run() {
             return injectMarker(html, 'teamStuds', result.studs);
         });
 
-        renderFile(base.concat('nase-prace.html'), html =>
-            injectMarker(html, 'testimonialsGrid', testimonialsHTML(testimonials, code, prefix)));
+        renderFile(base.concat('nase-prace.html'), html => {
+            // The "Ohlas nového domova" section was removed from this page;
+            // only inject when the marker is still present so the pipeline
+            // keeps working regardless.
+            if (!html.includes('<!--PRERENDER:testimonialsGrid:START-->')) return html;
+            return injectMarker(html, 'testimonialsGrid', testimonialsHTML(testimonials, code, prefix));
+        });
 
         console.log('Prerendered ' + code);
     });

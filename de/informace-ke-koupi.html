@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -71,7 +71,7 @@
                         "name": "Wie hoch ist die Anzahlung und was deckt sie ab?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Die Höhe der Anzahlung und den Gesamtpreis des Kätzchens besprechen wir individuell je nach Wurf und Farbe — schreiben Sie uns über das Kontaktformular."
+                            "text": "Vor einem Besuch und einer vorläufigen Auswahl des Kätzchens ist eine nicht rückerstattbare Anzahlung von 1.000 CZK fällig, die später auf den Preis des Kätzchens angerechnet wird. Wenn Sie anhand eines Fotos bereits ein bestimmtes Kätzchen ausgewählt haben und sichergehen möchten, dass es für Sie reserviert bleibt, vereinbaren wir individuell eine höhere Reservierungsanzahlung — sollten Sie es sich anders überlegen, übertragen wir die gezahlte Anzahlung problemlos auf ein anderes freies Kätzchen. Die restliche Kaufpreiszahlung erfolgt bei der Übergabe des Kätzchens. Den Gesamtpreis des Kätzchens besprechen wir individuell je nach Wurf und Farbe — schreiben Sie uns über das Kontaktformular."
                         }
                     },
                     {
@@ -104,23 +104,21 @@
     }
     </script>
 </head>
-<body class="concept">
+<body class="concept concept2 dark-band">
     <a href="#main" class="skip-link">Zum Inhalt springen</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Startseite</a></li>
-                    <li><a href="o-nas.html">Über uns</a></li>
                     <li><a href="nase-prace.html">Unsere Arbeit</a></li>
                     <li><a href="kotatka.html">Kätzchen</a></li>
                     <li><a href="informace-ke-koupi.html">Kauf</a></li>
                     <li><a href="tym.html">Team</a></li>
-                    <li><a href="fotogalerie.html">Galerie</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Kontakt</a></li>
+                    <li><a href="kontakty.html">Kontakt</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link" href="../informace-ke-koupi.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="../en/informace-ke-koupi.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link active" href="../de/informace-ke-koupi.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link" href="../pl/informace-ke-koupi.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -131,30 +129,23 @@
         <section class="page-hero">
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
-            <h1>Kaufinformationen</h1>
-            <p>Alles, was Sie wissen müssen, bevor Sie ein Ragdoll-Kätzchen nach Hause holen.</p>
+            <h1>Der Weg zu einem Kätzchen</h1>
+            <p>Vom ersten Kontakt bis zu dem Moment, in dem Sie Ihren Ragdoll nach Hause holen.</p>
         </section>
 
-        <section class="section">
+        <section class="section bg-soft koupi-cta-section">
+            <picture class="cta-kitten-bg"><source srcset="../images/misc/cta-kitten-bg.webp" type="image/webp"><img src="../images/misc/cta-kitten-bg.png" width="820" height="1080" alt="" aria-hidden="true"></picture>
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:1/1; max-width:640px; margin:0 auto 3rem;" data-lightbox tabindex="0" role="button" data-gallery="koupi" data-src="../images/misc/koupi-header.jpg">
-                    <picture><source srcset="../images/misc/koupi-header.webp" type="image/webp"><img src="../images/misc/koupi-header.jpg" alt="Ragdoll-Kätzchen im neuen Zuhause mit Familie" loading="lazy"></picture>
+                <div class="cta-banner reveal-scale">
+                    <h2>Interesse an einem Kätzchen?</h2>
+                    <p>Schreiben Sie uns bitte so bald wie möglich, am besten direkt über unseren Eingangsfragebogen – so erfahren wir schnell, wonach Sie suchen, und melden uns bald bei Ihnen. Außerhalb unserer eigenen Website inserieren wir freie Kätzchen ausschließlich auf <a href="https://www.ifauna.cz" target="_blank" rel="noopener">iFauna.cz</a>.</p>
+                    <a href="../dotaznik.html" class="btn btn-solid">Fragebogen ausfüllen</a>
                 </div>
-                <div class="section-header reveal">
-                    <span class="section-label">Was Sie bekommen</span>
-                    <h2>Was Ihr Kätzchen bekommt</h2>
-                </div>
-                <ul class="checklist stagger" style="max-width:640px; margin-left:auto; margin-right:auto;">
-                    <li class="reveal" style="--i:0"><span class="check-icon">✓</span> Kätzchen als Haustiere sind 2× geimpft</li>
-                    <li class="reveal" style="--i:1"><span class="check-icon">✓</span> Entwurmt</li>
-                    <li class="reveal" style="--i:2"><span class="check-icon">✓</span> Mikrochip und Pass</li>
-                    <li class="reveal" style="--i:3"><span class="check-icon">✓</span> Kastriert</li>
-                    <li class="reveal" style="--i:4"><span class="check-icon">✓</span> Registriert mit Stammbaum</li>
-                </ul>
             </div>
         </section>
 
-        <section class="section bg-soft">
+        <section class="section bg-soft process-section">
+            <picture class="process-kitten-bg"><source srcset="../images/misc/process-kitten-bg.webp" type="image/webp"><img src="../images/misc/process-kitten-bg.png" width="1160" height="1265" alt="" aria-hidden="true"></picture>
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-label">Wie es abläuft</span>
@@ -165,35 +156,65 @@
                         <div class="step-num">1</div>
                         <div class="step-content">
                             <h3>Kontakt und Kennenlernen</h3>
-                            <p>Sie schreiben uns über das Formular oder per E-Mail, wir besprechen Ihre Wünsche und die Verfügbarkeit der Kätzchen.</p>
+                            <p>Sie schreiben uns über das Formular, wir besprechen Ihre Wünsche und die Verfügbarkeit der Kätzchen.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:1">
                         <div class="step-num">2</div>
                         <div class="step-content">
                             <h3>Reservierung</h3>
-                            <p>Sie reservieren das gewählte Kätzchen mit einer Anzahlung. Wir vereinbaren auch einen Besuchstermin.</p>
+                            <p>Ihr ernsthaftes Interesse an einem Kätzchen aus dem Wurf bestätigen wir mit einer nicht rückerstattbaren Bearbeitungsgebühr von 1.000 CZK für die Reservierung eines Platzes im jeweiligen Wurf. Mit ihrer Zahlung haben Sie die Gewissheit, dass Ihnen aus diesem Wurf ein Kätzchen zugeteilt wird. Nach Zahlungseingang vereinbaren wir mit Ihnen einen persönlichen Besuch und das weitere Vorgehen.</p>
+                            <p>Nach dem Besuch und der Auswahl eines konkreten Kätzchens wird die bereits gezahlte Bearbeitungsgebühr bei bestätigter Reservierung in voller Höhe auf die Anzahlung des Kaufpreises angerechnet. Anschließend schließen wir gemeinsam einen Reservierungsvertrag ab.</p>
+                            <p>Möchten Sie ein konkretes Kätzchen bereits vor dem persönlichen Besuch reservieren, ist das nach vorheriger Absprache ebenfalls möglich. In diesem Fall entfällt die Bearbeitungsgebühr von 1.000 CZK, stattdessen gilt die im Reservierungsvertrag festgelegte Standardanzahlung für das jeweilige Kätzchen.</p>
+                            <p>Die Bedingungen der Bearbeitungsgebühr und der Reservierung eines Wurfplatzes sind in einem gesonderten Vertrag festgehalten, den wir Ihnen vor der Zahlung gerne zur Ansicht zusenden. Bei der Reservierung eines konkreten Kätzchens erhalten Sie den Reservierungsvertrag vor der Anzahlung, damit alle Bedingungen von Anfang an klar und transparent geregelt sind.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:2">
                         <div class="step-num">3</div>
                         <div class="step-content">
-                            <h3>Starterpaket für den Weg</h3>
-                            <p>Jedes Kätzchen bekommt das gewohnte Futter und ein paar Lieblingsspielzeuge.</p>
+                            <h3>Warten auf das neue Zuhause</h3>
+                            <p>Während der Wartezeit halten wir Sie auf dem Laufenden, wie es Ihrem Kätzchen geht. Sie erhalten Fotos, Videos sowie Informationen von tierärztlichen Untersuchungen und gegebenenfalls zum Verlauf der Kastration und der anschließenden Genesung.</p>
+                            <p>Vor der Ankunft Ihres Kätzchens bekommen Sie außerdem eine Checkliste zur Vorbereitung Ihres Zuhauses sowie Tipps, wie Sie Ihrem Kätzchen die ersten Tage im neuen Zuhause möglichst leicht machen.</p>
+                            <p>Und falls Ihnen das Warten lang vorkommt, schreiben Sie uns einfach — wir schicken gerne weitere Fotos oder ein Video. 🐾</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:3">
                         <div class="step-num">4</div>
                         <div class="step-content">
-                            <h3>Umzug ins neue Zuhause</h3>
-                            <p>Die Kätzchen ziehen mit 14 Wochen aus — voll sozialisiert und bereit für das neue Zuhause.</p>
+                            <h3>Abreise ins neue Zuhause</h3>
+                            <p>Ihr Kätzchen verlässt uns im Alter von 14–16 Wochen, sobald es bereit für das selbstständige Leben ist, tierärztlich ordnungsgemäß untersucht wurde und für die ersten Tage ausgestattet ist. Vor der Abreise besprechen wir gemeinsam alle wichtigen Informationen und vereinbaren die Übergabe.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:4">
+                        <div class="step-num">5</div>
+                        <div class="step-content">
+                            <h3>Und damit endet unsere Fürsorge nicht.</h3>
+                            <p>Auch nach der Abreise stehen wir Ihnen für Fragen, Ratschläge und den Austausch von Erfahrungen aus dem neuen Zuhause zur Verfügung. Wir freuen uns außerdem sehr über Fotos und Neuigkeiten, wie es unserem ehemaligen Schützling geht.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section benefits-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Was Sie bekommen</span>
+                    <h2>Was Ihr Kätzchen bekommt</h2>
+                </div>
+                <ul class="checklist stagger" style="max-width:640px; margin-left:auto; margin-right:auto;">
+                    <li class="reveal" style="--i:0"><span class="check-icon">✓</span> Kätzchen als Haustiere sind 2× geimpft</li>
+                    <li class="reveal" style="--i:1"><span class="check-icon">✓</span> Entwurmt</li>
+                    <li class="reveal" style="--i:2"><span class="check-icon">✓</span> Mikrochip und Pass</li>
+                    <li class="reveal" style="--i:3"><span class="check-icon">✓</span> Kastriert</li>
+                    <li class="reveal" style="--i:4"><span class="check-icon">✓</span> Registriert mit Stammbaum</li>
+                    <li class="reveal" style="--i:5"><span class="check-icon">✓</span> Kaufvertrag</li>
+                    <li class="reveal" style="--i:6"><span class="check-icon">✓</span> Starterpaket — gewohntes Futter, Lieblingsspielzeuge und ein Kratzkarton Ekomazlíček</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section bg-soft faq-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-label">Häufige Fragen</span>
@@ -206,7 +227,7 @@
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-trigger">Wie hoch ist die Anzahlung und was deckt sie ab?<span class="plus">+</span></button>
-                        <div class="accordion-panel"><div class="accordion-panel-inner">Die Höhe der Anzahlung und den Gesamtpreis des Kätzchens besprechen wir individuell je nach Wurf und Farbe — schreiben Sie uns über das Kontaktformular.</div></div>
+                        <div class="accordion-panel"><div class="accordion-panel-inner">Vor einem Besuch und einer vorläufigen Auswahl des Kätzchens ist eine nicht rückerstattbare Anzahlung von 1.000 CZK fällig, die später auf den Preis des Kätzchens angerechnet wird. Wenn Sie anhand eines Fotos bereits ein bestimmtes Kätzchen ausgewählt haben und sichergehen möchten, dass es für Sie reserviert bleibt, vereinbaren wir individuell eine höhere Reservierungsanzahlung — sollten Sie es sich anders überlegen, übertragen wir die gezahlte Anzahlung problemlos auf ein anderes freies Kätzchen. Die restliche Kaufpreiszahlung erfolgt bei der Übergabe des Kätzchens. Den Gesamtpreis des Kätzchens besprechen wir individuell je nach Wurf und Farbe — schreiben Sie uns über das Kontaktformular.</div></div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-trigger">Kann ich das Kätzchen vor der Abholung persönlich sehen?<span class="plus">+</span></button>
@@ -223,45 +244,12 @@
                 </div>
             </div>
         </section>
-
-        <section class="section bg-soft">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Interesse?</span>
-                    <h2>Schreiben Sie uns</h2>
-                </div>
-                <form class="contact-form reveal-scale">
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="form-error">Bitte geben Sie Ihren Namen ein.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-Mail</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="form-error">Bitte geben Sie eine gültige E-Mail ein.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Nachricht</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <span class="form-error">Bitte schreiben Sie uns ein paar Worte.</span>
-                    </div>
-                    <button type="submit" class="btn-primary-form">Senden</button>
-                                    <p class="form-consent">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer personenbezogenen Daten zur Beantwortung Ihrer Nachricht zu.</p>
-                </form>
-                <div class="form-success">
-                    <h3>Danke für Ihre Nachricht!</h3>
-                    <p>Wir melden uns bald bei Ihnen.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll Logo" class="footer-logo-img"></picture>
+                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll Logo" class="footer-logo-img"></picture>
                 <p>Malobratřice, Mittelböhmen, Tschechien</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="../images/misc/icon-instagram.webp" type="image/webp"><img src="../images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -270,11 +258,9 @@
             </div>
             <div>
                 <h3>Navigation</h3>
-                <p><a href="o-nas.html">Über uns</a></p>
                 <p><a href="kotatka.html">Kätzchen</a></p>
                 <p><a href="informace-ke-koupi.html">Kaufinformationen</a></p>
                 <p><a href="tym.html">Team</a></p>
-                <p><a href="fotogalerie.html">Galerie</a></p>
             </div>
             <div>
                 <h3>Kontakt</h3>

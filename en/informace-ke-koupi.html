@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -71,7 +71,7 @@
                         "name": "How much is the deposit and what does it cover?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "We discuss the deposit amount and the total price of the kitten individually according to the litter and colour — write to us via the contact form."
+                            "text": "Before a visit and preliminary kitten selection, a non-refundable deposit of 1,000 CZK is due, which is later credited towards the kitten's price. If you've already chosen a specific kitten from a photo and want to be sure it's held for you, we'll arrange a higher reservation deposit individually — should you change your mind, the paid deposit is easily transferred to another available kitten. The remaining balance of the purchase price is paid when you pick up the kitten. We discuss the total price of the kitten individually according to the litter and colour — write to us via the contact form."
                         }
                     },
                     {
@@ -104,23 +104,21 @@
     }
     </script>
 </head>
-<body class="concept">
+<body class="concept concept2 dark-band">
     <a href="#main" class="skip-link">Skip to content</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="o-nas.html">About us</a></li>
                     <li><a href="nase-prace.html">Our work</a></li>
                     <li><a href="kotatka.html">Kittens</a></li>
                     <li><a href="informace-ke-koupi.html">Buying</a></li>
                     <li><a href="tym.html">Team</a></li>
-                    <li><a href="fotogalerie.html">Gallery</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Contact</a></li>
+                    <li><a href="kontakty.html">Contact</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link" href="../informace-ke-koupi.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link active" href="../en/informace-ke-koupi.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="../de/informace-ke-koupi.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link" href="../pl/informace-ke-koupi.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -131,15 +129,75 @@
         <section class="page-hero">
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
-            <h1>Buying information</h1>
-            <p>Everything you need to know before bringing home a Ragdoll kitten.</p>
+            <h1>The path to a kitten</h1>
+            <p>From the very first contact to the moment you bring your ragdoll home.</p>
         </section>
 
-        <section class="section">
+        <section class="section bg-soft koupi-cta-section">
+            <picture class="cta-kitten-bg"><source srcset="../images/misc/cta-kitten-bg.webp" type="image/webp"><img src="../images/misc/cta-kitten-bg.png" width="820" height="1080" alt="" aria-hidden="true"></picture>
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:1/1; max-width:640px; margin:0 auto 3rem;" data-lightbox tabindex="0" role="button" data-gallery="koupi" data-src="../images/misc/koupi-header.jpg">
-                    <picture><source srcset="../images/misc/koupi-header.webp" type="image/webp"><img src="../images/misc/koupi-header.jpg" alt="Ragdoll kitten in a new home with a family" loading="lazy"></picture>
+                <div class="cta-banner reveal-scale">
+                    <h2>Interested in a kitten?</h2>
+                    <p>Please write to us as soon as possible, ideally straight through our intake questionnaire – it helps us quickly understand what you're looking for, and we'll get back to you soon. Outside our own website, we only advertise available kittens on <a href="https://www.ifauna.cz" target="_blank" rel="noopener">iFauna.cz</a>.</p>
+                    <a href="../dotaznik.html" class="btn btn-solid">Fill in the questionnaire</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="section bg-soft process-section">
+            <picture class="process-kitten-bg"><source srcset="../images/misc/process-kitten-bg.webp" type="image/webp"><img src="../images/misc/process-kitten-bg.png" width="1160" height="1265" alt="" aria-hidden="true"></picture>
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">How it works</span>
+                    <h2>The path to your kitten</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-step reveal-left">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h3>Contact and getting to know each other</h3>
+                            <p>You write to us via the form, and we discuss your wishes and kitten availability.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:1">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h3>Reservation</h3>
+                            <p>We confirm serious interest in a kitten from the litter with a non-refundable administrative fee of 1,000 CZK for reserving a place in that specific litter. Once it's paid, you're guaranteed that one kitten from that litter will be assigned to you. After payment we'll arrange a personal visit and the next steps with you.</p>
+                            <p>After the visit and choosing a specific kitten, once the reservation is confirmed, the administrative fee already paid is credited in full towards the deposit on the purchase price. We then sign a reservation agreement together.</p>
+                            <p>If you'd like to reserve a specific kitten before a personal visit, that's also possible by prior arrangement. In that case the 1,000 CZK administrative fee isn't charged — instead the standard deposit for that specific kitten applies, under the reservation agreement.</p>
+                            <p>The terms of the administrative fee and reserving a place in the litter are set out in a separate agreement, which we're happy to send you for review before payment. When reserving a specific kitten, we'll send you the reservation agreement before the deposit is paid, so that all the terms are clear and transparent from the start.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:2">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h3>Waiting for the new home</h3>
+                            <p>While you wait, we'll keep you updated on how your kitten is doing. You'll get photos, videos and information from veterinary check-ups, as well as details about the neutering procedure and its recovery, if applicable.</p>
+                            <p>Before your kitten arrives, we'll also send you a checklist for preparing your household and tips on making the first days in its new home as easy as possible.</p>
+                            <p>And if the wait feels long, just write to us — we're happy to send more photos or a video. 🐾</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:3">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h3>Leaving for the new home</h3>
+                            <p>Your kitten leaves us at 14–16 weeks of age, once it's ready for independent life, properly checked by a vet and equipped for its first days. Before departure, we'll go through all the important information together and arrange the handover.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:4">
+                        <div class="step-num">5</div>
+                        <div class="step-content">
+                            <h3>And our care doesn't end there.</h3>
+                            <p>Even after your kitten leaves, we remain available for any questions, advice and shared experiences from its new home. We're also always delighted to receive photos and updates on how our former kitten is doing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section benefits-section">
+            <div class="container">
                 <div class="section-header reveal">
                     <span class="section-label">What you get</span>
                     <h2>What your kitten comes with</h2>
@@ -150,50 +208,13 @@
                     <li class="reveal" style="--i:2"><span class="check-icon">✓</span> Microchip and passport</li>
                     <li class="reveal" style="--i:3"><span class="check-icon">✓</span> Neutered</li>
                     <li class="reveal" style="--i:4"><span class="check-icon">✓</span> Registered with pedigree</li>
+                    <li class="reveal" style="--i:5"><span class="check-icon">✓</span> Purchase agreement</li>
+                    <li class="reveal" style="--i:6"><span class="check-icon">✓</span> Take-home kit — familiar food, favourite toys and an Ekomazlíček cardboard scratcher</li>
                 </ul>
             </div>
         </section>
 
-        <section class="section bg-soft">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">How it works</span>
-                    <h2>The path to your kitten</h2>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-step reveal-left">
-                        <div class="step-num">1</div>
-                        <div class="step-content">
-                            <h3>Contact and getting to know</h3>
-                            <p>You write to us via the form or e-mail, and we discuss your wishes and kitten availability.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-step reveal-left" style="--i:1">
-                        <div class="step-num">2</div>
-                        <div class="step-content">
-                            <h3>Reservation</h3>
-                            <p>You reserve the chosen kitten with a deposit. We also arrange a visit date.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-step reveal-left" style="--i:2">
-                        <div class="step-num">3</div>
-                        <div class="step-content">
-                            <h3>A starter pack for the journey</h3>
-                            <p>Every kitten gets the food it is used to and a few favourite toys.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-step reveal-left" style="--i:3">
-                        <div class="step-num">4</div>
-                        <div class="step-content">
-                            <h3>Leaving for the new home</h3>
-                            <p>Kittens leave at 14 weeks of age — fully socialized and ready for their new home.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
+        <section class="section bg-soft faq-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-label">FAQ</span>
@@ -206,7 +227,7 @@
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-trigger">How much is the deposit and what does it cover?<span class="plus">+</span></button>
-                        <div class="accordion-panel"><div class="accordion-panel-inner">We discuss the deposit amount and the total price of the kitten individually according to the litter and colour — write to us via the contact form.</div></div>
+                        <div class="accordion-panel"><div class="accordion-panel-inner">Before a visit and preliminary kitten selection, a non-refundable deposit of 1,000 CZK is due, which is later credited towards the kitten's price. If you've already chosen a specific kitten from a photo and want to be sure it's held for you, we'll arrange a higher reservation deposit individually — should you change your mind, the paid deposit is easily transferred to another available kitten. The remaining balance of the purchase price is paid when you pick up the kitten. We discuss the total price of the kitten individually according to the litter and colour — write to us via the contact form.</div></div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-trigger">Can I see the kitten in person before collection?<span class="plus">+</span></button>
@@ -223,45 +244,12 @@
                 </div>
             </div>
         </section>
-
-        <section class="section bg-soft">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Interested?</span>
-                    <h2>Write to us</h2>
-                </div>
-                <form class="contact-form reveal-scale">
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="form-error">Please enter your name.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="form-error">Please enter a valid e-mail.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <span class="form-error">Please write us a few words.</span>
-                    </div>
-                    <button type="submit" class="btn-primary-form">Send</button>
-                                    <p class="form-consent">By submitting, you consent to the processing of your personal data for the purpose of responding to your message.</p>
-                </form>
-                <div class="form-success">
-                    <h3>Thank you for your message!</h3>
-                    <p>We will get back to you soon.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
+                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
                 <p>Malobratřice, Central Bohemia, Czech Republic</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="../images/misc/icon-instagram.webp" type="image/webp"><img src="../images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -270,11 +258,9 @@
             </div>
             <div>
                 <h3>Navigation</h3>
-                <p><a href="o-nas.html">About us</a></p>
                 <p><a href="kotatka.html">Kittens</a></p>
                 <p><a href="informace-ke-koupi.html">Buying info</a></p>
                 <p><a href="tym.html">Team</a></p>
-                <p><a href="fotogalerie.html">Gallery</a></p>
             </div>
             <div>
                 <h3>Contact</h3>

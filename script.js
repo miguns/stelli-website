@@ -313,6 +313,36 @@ if (lightbox) {
 }
 
 // ==========================================================================
+// Litter photo carousels (kotatka.html) — one photo at a time per litter,
+// with prev/next buttons. Slides stay part of the shared lightbox group
+// (data-gallery), so clicking one still opens the full-size viewer.
+// ==========================================================================
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.litter-carousel-track');
+    const slides = Array.prototype.slice.call(carousel.querySelectorAll('.litter-carousel-slide'));
+    const counter = carousel.querySelector('.litter-carousel-counter');
+    const prevBtn = carousel.querySelector('.litter-carousel-prev');
+    const nextBtn = carousel.querySelector('.litter-carousel-next');
+    if (!track || slides.length < 2) return;
+    let index = 0;
+
+    function update() {
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        if (counter) counter.textContent = (index + 1) + ' / ' + slides.length;
+        slides.forEach((slide, i) => { slide.tabIndex = i === index ? 0 : -1; });
+    }
+
+    function goTo(i) {
+        index = (i + slides.length) % slides.length;
+        update();
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(index - 1));
+    nextBtn?.addEventListener('click', () => goTo(index + 1));
+    update();
+});
+
+// ==========================================================================
 // Contact form validation + real submission via Web3Forms
 // ==========================================================================
 // Access key from https://web3forms.com — messages are delivered to the
@@ -369,7 +399,7 @@ document.querySelectorAll('.contact-form').forEach(form => {
         try {
             const formData = new FormData(form);
             formData.append('access_key', WEB3FORMS_ACCESS_KEY);
-            formData.append('subject', 'Nová zpráva z webu StElli Ragdoll');
+            formData.append('subject', form.dataset.subject || 'Nová zpráva z webu StElli Ragdoll');
             formData.append('from_name', 'StElli Ragdoll web');
 
             const response = await fetch('https://api.web3forms.com/submit', {
@@ -656,6 +686,9 @@ initPawTrail();
     if (document.getElementById('floatCta')) return;
     const path = (location.pathname.split('/').pop() || 'index.html');
     if (path === '' || path === 'index.html') return;
+    // The button itself is the "want a kitten" CTA -- redundant (and in the
+    // way) once someone is already on the questionnaire it points to.
+    if (path === 'dotaznik.html') return;
 
     const isSub = /\/(en|de|pl)\//.test(location.pathname);
     const langMatch = location.pathname.match(/\/(en|de|pl)\//);
@@ -664,9 +697,10 @@ initPawTrail();
 
     const ARIA_LABEL = { cs: 'Chci koťátko', en: 'I want a kitten', de: 'Ich möchte ein Kätzchen', pl: 'Chcę kocię' };
     const LABEL = { cs: 'Chci kotě', en: 'A kitten', de: 'Kätzchen', pl: 'Chcę kocię' };
+    const HREF = { cs: 'informace-ke-koupi.html', en: 'informace-ke-koupi.html', de: 'informace-ke-koupi.html', pl: 'informace-ke-koupi.html' };
 
     const a = document.createElement('a');
-    a.href = 'kontakty.html#formular';
+    a.href = HREF[lang];
     a.className = 'c-float-cta is-visible';
     a.id = 'floatCta';
     a.setAttribute('aria-label', ARIA_LABEL[lang]);
@@ -717,3 +751,32 @@ document.querySelectorAll('a[href]').forEach(link => {
         setTimeout(() => { window.location.href = href; }, 320);
     });
 });
+
+// ==========================================================================
+// Header over the dark band at the top of a page
+// ==========================================================================
+// The bar starts transparent so the black runs to the very top edge, and
+// turns cream once the page scrolls past the band — the nav never floats on
+// a background it cannot be read against. The homepage band is the cover
+// photograph, every other page's is flat black; both behave the same.
+(function initDarkHeader() {
+    if (!document.body.classList.contains('concept2')) return;
+    const header = document.querySelector('header');
+    const band = document.querySelector('.stl-hero--cover');
+    if (!header || !band) return;
+
+    let ticking = false;
+    function update() {
+        ticking = false;
+        const past = window.scrollY > band.offsetHeight - header.offsetHeight - 8;
+        header.classList.toggle('is-scrolled', past);
+    }
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+})();

@@ -21,7 +21,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -63,17 +63,15 @@
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Úvod</a></li>
-                    <li><a href="o-nas.html">O nás</a></li>
                     <li><a href="nase-prace.html">Naše práce</a></li>
                     <li><a href="kotatka.html">Koťátka</a></li>
-                    <li><a href="informace-ke-koupi.html">Ke koupi</a></li>
+                    <li><a href="informace-ke-koupi.html">Informace</a></li>
                     <li><a href="tym.html">Tým</a></li>
-                    <li><a href="fotogalerie.html">Fotogalerie</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Kontakty</a></li>
+                    <li><a href="kontakty.html">Kontakty</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link active" href="index.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="en/index.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="de/index.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link" href="pl/index.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -81,100 +79,109 @@
     </header>
 
     <main id="main">
+        <!-- HERO: full-bleed photo, headline over a soft scrim -->
+        <section class="stl-hero stl-hero--cover">
+            <div class="stl-hero-media">
+                <picture>
+                    <source srcset="images/featured/hero-photo.webp" type="image/webp">
+                    <img src="images/featured/hero-photo.jpg" alt="Koťátko Ragdoll s modrýma očima" loading="eager" fetchpriority="high">
+                </picture>
+            </div>
+            <div class="stl-hero-scrim"></div>
+            <div class="stl-hero-inner">
+                <p class="stl-hero-kicker">Zdraví · Genetika · Socializace</p>
+                <h1>Ragdoll s rodokmenem</h1>
+                <p class="stl-hero-lead">Malá rodinná stanice registrovaná ve&nbsp;FIFe. Koťata odcházejí nejdříve ve&nbsp;14&nbsp;týdnech — očkovaná, čipovaná a na mazlíčka i kastrovaná.</p>
+                <div class="stl-hero-actions">
+                    <a href="kotatka.html" class="stl-btn stl-btn--light">Aktuální koťátka</a>
+                </div>
+            </div>
+            <div class="stl-curve stl-curve--bottom stl-curve--white"></div>
+        </section>
 
-        <!-- HERO: two-up print, not a marketing banner -->
-        <section class="c2-hero">
-            <div class="c2-hero-left">
-                <div class="c2-hero-text">
-                    <h1>Ragdoll koťátka<br>chovaná <em>s láskou</em>.</h1>
-                    <p class="c2-lede">Jemná povaha, modré oči, důkladná socializace. Vyrůstají u nás doma — mezi lidmi a dětmi.</p>
-                    <div class="c-hero-actions">
-                        <a href="#kotatka" class="c-btn c-btn-line">Aktuální koťátka</a>
+        <!-- KDO JSME -->
+        <section class="stl-section">
+            <div class="stl-wrap">
+                <div class="stl-split">
+                    <div class="stl-split-media reveal-left">
+                        <figure class="stl-photo stl-photo--tall">
+                            <picture>
+                                <source srcset="images/onas/03.webp" type="image/webp">
+                                <img src="images/onas/03.jpg" alt="Děti si hrají s kočkou Ragdoll na zahradě" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="reveal-right">
+                        <p class="stl-eyebrow">Chovatelská stanice StElli</p>
+                        <h2 class="stl-h2">Kdo jsme?</h2>
+                        <p>Jsme malá rodinná chovatelská stanice ragdollů StElli. Nejsme velkochov a ani jím být nechceme. Všechny naše kočky jsou plnohodnotnými členy naší rodiny a podle toho k nim také přistupujeme.</p>
+                        <p>Žijí s námi společně v celém domě a jsou součástí našeho každodenního života. Máme tak možnost každou z nich dobře poznat, věnovat jí dostatek času a sledovat její zdraví, povahu i vývoj.</p>
+                        <p>Stejnou péči věnujeme i našim koťátkům. Vyrůstají v domácím prostředí, kde od narození poznávají běžný chod domácnosti, různé zvuky, lidi i každodenní kontakt. Díky tomu získávají přirozenou socializaci a dobrý základ pro život ve své nové rodině.</p>
+                        <p>Při výběru rodičů a plánování vrhů klademe důraz na zdraví, povahu a typické znaky plemene. Zdravotní vyšetření, genetické testy a veterinární péče jsou pro nás samozřejmou součástí zodpovědného chovu.</p>
+                        <p class="stl-lede"><strong>Chov pro nás není o množství. Je o čase, péči a zodpovědnosti, kterou můžeme věnovat každé jednotlivé kočce a každému koťátku.</strong></p>
+                        <a href="nase-prace.html" class="stl-btn stl-btn--solid">Naše práce</a>
                     </div>
                 </div>
             </div>
-            <div class="c2-hero-photo">
-                <figure class="c-print c-print--tilt-l">
-                    <picture>
-                        <source srcset="images/featured/hero-kitten.webp" type="image/webp">
-                        <img src="images/featured/hero-kitten.jpg" alt="Koťátko Ragdoll se zářivě modrýma očima" loading="eager" fetchpriority="high">
-                    </picture>
-                </figure>
+        </section>
+
+        <!-- AKTUÁLNÍ VRHY -->
+        <section class="stl-section stl-section--cream">
+            <div class="stl-wrap">
+                <div class="stl-split">
+                    <div class="reveal-left">
+                        <p class="stl-eyebrow">Naše vrhy</p>
+                        <h2 class="stl-h2">Aktuální vrhy</h2>
+                        <p class="stl-lede">Nenechte své nové koťátko čekat a prohlédněte si naše aktuální i minulé vrhy včetně dostupnosti.</p>
+                        <a href="kotatka.html" class="stl-btn stl-btn--solid">Prohlédnout vrhy</a>
+                    </div>
+                    <div class="stl-stack reveal-right">
+                        <figure class="stl-photo stl-photo--wide">
+                            <picture>
+                                <source srcset="images/kittens/vrh-a/08.webp" type="image/webp">
+                                <img src="images/kittens/vrh-a/08.jpg" alt="Koťátko Ragdoll z vrhu A" loading="lazy">
+                            </picture>
+                        </figure>
+                        <figure class="stl-photo stl-photo--wide">
+                            <picture>
+                                <source srcset="images/kittens/vrh-b/15.webp" type="image/webp">
+                                <img src="images/kittens/vrh-b/15.jpg" alt="Koťátko Ragdoll z vrhu B" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- AKTUÁLNÍ KOŤÁTKA -->
-        <section id="kotatka" class="c2-section">
-            <p class="c2-eyebrow c2-eyebrow--center">Naše vrhy</p>
-            <h2 class="c2-h2">Nahlédněte k nám domů</h2>
-            <div class="c2-litter-row">
-                <figure class="c-print c-print--tilt-r c-print--sm">
-                    <picture>
-                        <source srcset="images/kittens/vrh-a/08-thumb.webp" type="image/webp">
-                        <img src="images/kittens/vrh-a/08-thumb.jpg" alt="Koťátko z vrhu A" loading="lazy">
-                    </picture>
-                    <figcaption>Vrh A</figcaption>
-                </figure>
-                <figure class="c-print c-print--tilt-l c-print--sm">
-                    <picture>
-                        <source srcset="images/kittens/vrh-b/15-thumb.webp" type="image/webp">
-                        <img src="images/kittens/vrh-b/15-thumb.jpg" alt="Koťátko z vrhu B" loading="lazy">
-                    </picture>
-                    <figcaption>Vrh B</figcaption>
-                </figure>
+        <!-- BLOG -->
+        <section class="stl-section">
+            <div class="stl-wrap">
+                <div class="stl-split">
+                    <div class="stl-split-media reveal-left">
+                        <figure class="stl-photo stl-photo--tall">
+                            <picture>
+                                <source srcset="images/featured/face-baileys.webp" type="image/webp">
+                                <img src="images/featured/face-baileys.jpg" alt="Kočka Ragdoll se zářivě modrýma očima" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="reveal-right">
+                        <p class="stl-eyebrow">Blog</p>
+                        <h2 class="stl-h2">Poznejte Ragdoll</h2>
+                        <p>Ragdoll patří mezi větší domácí kočičí plemena. Na první pohled zaujme svou polodlouhou srstí, výraznýma modrýma očima a typickým zbarvením. Jeho skutečné kouzlo se ale ukrývá především v povaze.</p>
+                        <a href="poznejte-ragdoll.html" class="stl-btn stl-btn--solid">Celý článek</a>
+                    </div>
+                </div>
             </div>
-            <a href="kotatka.html" class="c-btn c-btn-line c2-center-btn">Aktuální dostupnost koťátek</a>
         </section>
 
-        <!-- ZÁVĚREČNÉ CTA: overlapping fan of prints — hover (or tap) pulls one to the front -->
-        <section class="c2-final">
-            <div class="c2-fan" id="ctaFan">
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="images/featured/face-baileys.webp" type="image/webp">
-                        <img src="images/featured/face-baileys.jpg" alt="Kočka Ragdoll se zářivě modrýma očima — Baileys" loading="lazy">
-                    </picture>
-                    <figcaption>Baileys</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="images/featured/face-sweetie.webp" type="image/webp">
-                        <img src="images/featured/face-sweetie.jpg" alt="Kočka Ragdoll — Sweetie" loading="lazy">
-                    </picture>
-                    <figcaption>Sweetie</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="images/featured/hero-kitten.webp" type="image/webp">
-                        <img src="images/featured/hero-kitten.jpg" alt="Koťátko Ragdoll" loading="lazy">
-                    </picture>
-                    <figcaption>Koťátko z vrhu A</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="images/featured/kitten-basket.webp" type="image/webp">
-                        <img src="images/featured/kitten-basket.jpg" alt="Koťátko Ragdoll v košíku" loading="lazy">
-                    </picture>
-                    <figcaption>Koťátko z vrhu B</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="images/team/ariell.webp" type="image/webp">
-                        <img src="images/team/ariell.jpg" alt="Kočka Ragdoll — Ariell StElli" loading="lazy">
-                    </picture>
-                    <figcaption>Ariell</figcaption>
-                </figure>
-                <figure class="c-print fan-item" tabindex="0">
-                    <picture>
-                        <source srcset="images/team/unique.webp" type="image/webp">
-                        <img src="images/team/unique.jpg" alt="Kocour Ragdoll — Unique Liderland PL" loading="lazy">
-                    </picture>
-                    <figcaption>Unique</figcaption>
-                </figure>
+        <!-- ZÁVĚREČNÉ CTA -->
+        <section class="stl-cta">
+            <div class="stl-wrap reveal">
+                <h2 class="stl-h2">Potřebujete poradit?</h2>
+                <p>Neváhejte nás kontaktovat, rádi vám pomůžeme.</p>
+                <a href="kontakty.html" class="stl-btn stl-btn--solid">Kontakt</a>
             </div>
-            <p class="c2-stack-hint">Přejeďte prstem, nebo najeďte myší</p>
-            <h2 class="c2-h2">Najděte si svého Ragdolla.</h2>
-            <a href="kontakty.html" class="c-btn c-btn-primary">Chci koťátko</a>
         </section>
 
     </main>
@@ -182,7 +189,7 @@
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="287" height="176" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
+                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
                 <p>Malobratřice, Středočeský kraj</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="images/misc/icon-instagram.webp" type="image/webp"><img src="images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -191,11 +198,9 @@
             </div>
             <div>
                 <h3>Navigace</h3>
-                <p><a href="o-nas.html">O nás</a></p>
                 <p><a href="kotatka.html">Koťátka</a></p>
                 <p><a href="informace-ke-koupi.html">Informace ke koupi</a></p>
                 <p><a href="tym.html">Tým</a></p>
-                <p><a href="fotogalerie.html">Fotogalerie</a></p>
             </div>
             <div>
                 <h3>Kontakt</h3>
@@ -209,78 +214,11 @@
             <p class="footer-note">Pro automatický výběr jazyka používáme anonymní zjištění země podle IP adresy.</p>
         </div>
     </footer>
-    <a href="kontakty.html#formular" class="c-float-cta" id="floatCta" aria-label="Chci koťátko">
+    <a href="informace-ke-koupi.html" class="c-float-cta is-visible" id="floatCta" aria-label="Chci koťátko">
         <span class="c-float-cta-icon"><picture><source srcset="images/logo-icon-cat-bold.webp" type="image/webp"><img class="c-float-cta-cat" src="images/logo-icon-cat-bold.png" alt="" aria-hidden="true"></picture><picture><source srcset="images/logo-icon-cat-bold-light.webp" type="image/webp"><img class="c-float-cta-cat c-float-cta-cat-light" src="images/logo-icon-cat-bold-light.png" alt="" aria-hidden="true"></picture></span>
         <span class="c-float-cta-label" aria-hidden="true">Chci kotě</span>
     </a>
 
-    
-    <script>
-        // Desktop (hover-capable): the overlapping fan reveals on hover/focus via CSS alone.
-        // Mobile (no hover): a swipe carousel — whichever photo is centered becomes "active".
-        (function initFan() {
-            var fan = document.getElementById('ctaFan');
-            if (!fan) return;
-            var items = Array.prototype.slice.call(fan.querySelectorAll('.fan-item'));
-            var mq = window.matchMedia('(max-width: 640px)');
-            var observer = null;
-
-            function bindCarousel() {
-                if (observer) return;
-                observer = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        entry.target.classList.toggle('is-active', entry.intersectionRatio > 0.6);
-                    });
-                }, { root: fan, threshold: [0, 0.6, 1] });
-                items.forEach(function (item) { observer.observe(item); });
-            }
-
-            function unbindCarousel() {
-                if (!observer) return;
-                observer.disconnect();
-                observer = null;
-                items.forEach(function (item) { item.classList.remove('is-active'); });
-            }
-
-            if (mq.matches) bindCarousel();
-            mq.addEventListener('change', function (e) {
-                if (e.matches) bindCarousel(); else unbindCarousel();
-            });
-        })();
-
-        // Floating "Chci kotě" — always visible, including over the hero
-        (function initFloatCta() {
-            var btn = document.getElementById('floatCta');
-            var footer = document.querySelector('footer');
-            if (!btn) return;
-            btn.classList.add('is-visible');
-            if (!footer) return;
-
-            // As the fixed button scrolls over the footer, fade its color from
-            // blue to cream gradually over a distance, instead of snapping at contact.
-            var fadeDistance = 160;
-            var ticking = false;
-
-            function updateFooterProgress() {
-                ticking = false;
-                var btnRect = btn.getBoundingClientRect();
-                var footerRect = footer.getBoundingClientRect();
-                var distance = footerRect.top - btnRect.top;
-                var progress = 1 - Math.min(Math.max(distance / fadeDistance, 0), 1);
-                btn.style.setProperty('--footer-progress', progress.toFixed(3));
-            }
-
-            function onScroll() {
-                if (ticking) return;
-                ticking = true;
-                requestAnimationFrame(updateFooterProgress);
-            }
-
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', onScroll);
-            updateFooterProgress();
-        })();
-    </script>
     <script src="script.js"></script>
 </body>
 </html>

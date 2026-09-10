@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -59,23 +59,21 @@
     }
     </script>
 </head>
-<body class="concept">
+<body class="concept concept2 dark-band">
     <a href="#main" class="skip-link">Přeskočit na obsah</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Úvod</a></li>
-                    <li><a href="o-nas.html">O nás</a></li>
                     <li><a href="nase-prace.html">Naše práce</a></li>
                     <li><a href="kotatka.html">Koťátka</a></li>
-                    <li><a href="informace-ke-koupi.html">Ke koupi</a></li>
+                    <li><a href="informace-ke-koupi.html">Informace</a></li>
                     <li><a href="tym.html">Tým</a></li>
-                    <li><a href="fotogalerie.html">Fotogalerie</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Kontakty</a></li>
+                    <li><a href="kontakty.html">Kontakty</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link active" href="nase-prace.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="en/nase-prace.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="de/nase-prace.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link" href="pl/nase-prace.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -87,93 +85,101 @@
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
             <h1>Naše práce</h1>
-            <p>Vzdělání, zdravotní testy a socializace — tři pilíře, na kterých stavíme celý chov.</p>
+            <p>Vzdělání, zdravotní testy, typová koťata a socializace.</p>
         </section>
 
-        <section class="section">
+        <section class="section work-photo-section">
+            <picture class="work-photo-bg"><source srcset="images/misc/kocka-portret-bg.webp" type="image/webp"><img src="images/misc/kocka-portret-bg.png" width="950" height="1267" alt="" aria-hidden="true"></picture>
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:21/9; max-width:900px; margin:0 auto 3rem;" data-lightbox tabindex="0" role="button" data-gallery="prace" data-src="images/misc/prace-header.jpg">
-                    <picture><source srcset="images/misc/prace-header.webp" type="image/webp"><img src="images/misc/prace-header.jpg" alt="Socializace koťátek StElli" loading="lazy"></picture>
-                </div>
                 <div class="timeline">
                     <div class="timeline-step reveal-left">
                         <div class="step-num">01</div>
-                        <div class="step-content" style="display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap;">
-                            <div>
-                                <h3>Vzdělání</h3>
-                                <p>V roce 2025 jsem absolvovala kurz genetiky koček v Campus Felinarium — sedmitýdenní program zaměřený na genetiku, zdraví a odpovědný chov.</p>
-                            </div>
-                            <picture><source srcset="images/misc/genetics-badge.webp" type="image/webp"><img src="images/misc/genetics-badge.png" width="492" height="480" alt="Certifikát Campus Felinarium" style="width:100px; height:auto; flex-shrink:0;" loading="lazy"></picture>
+                        <div class="step-content">
+                            <h3>Vzdělání</h3>
+                            <p>V roce 2025 jsem absolvovala kurz genetiky koček v Campus Felinarium — sedmitýdenní program zaměřený na genetiku, zdraví a odpovědný chov.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:1">
                         <div class="step-num">02</div>
                         <div class="step-content">
                             <h3>Zdravotní testy</h3>
-                            <p>Všichni naši chovní jedinci jsou testováni na HCM, PKD, FeLV a FIV. Všechny výsledky jsou negativní.</p>
+                            <p>Všichni naši chovní jedinci jsou geneticky testováni na HCM a PKD, HCM navíc kontrolujeme srdečním sonem. Testujeme i na FeLV a FIV.</p>
+                            <p>Bohužel se HCM může objevit později i přes negativní výsledek genetického testu. I genetický test na PKD zjišťuje jen jednu rozšířenou mutaci a nevylučuje jiná onemocnění ledvin — je třeba na to myslet.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:2">
                         <div class="step-num">03</div>
                         <div class="step-content">
                             <h3>Socializace</h3>
-                            <p>Koťátka vyrůstají v našem domácím prostředí s dětmi, jsou zvyklá na ruce a veškerý domácí provoz.</p>
+                            <p>Koťátka vyrůstají v našem domácím prostředí s dětmi, jsou zvyklá na běžný chod domácnosti.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:3">
+                        <div class="step-num">04</div>
+                        <div class="step-content">
+                            <h3>Chovný standard</h3>
+                            <p>Snažíme se držet standardu plemene Ragdoll. Cílem jsou krásná typová koťátka, především vhodná k dalšímu chovu, a právě proto je výběr chovných jedinců naprosto klíčový.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-soft">
+        <section class="section bg-soft reasons-section">
+            <picture class="reasons-photo-bg"><source srcset="images/misc/kotata-trio-bg.webp" type="image/webp"><img src="images/misc/kotata-trio-bg.png" width="970" height="700" alt="" aria-hidden="true"></picture>
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Proč na tom záleží</span>
-                    <h2>Zdravé rodiče, vyrovnaná koťátka</h2>
-                    <p>Investice do genetiky a socializace se promítá do každého koťátka, které od nás odchází do nového domova.</p>
+                    <h2>Proč na tom záleží</h2>
+                    <p>Investice do genetiky a času stráveného nad výběrem vhodného chovného kocoura nebo kočky se promítá do každého koťátka, které od nás odchází do nového domova.</p>
                 </div>
-                <div class="grid grid-3 stagger">
+                <div class="grid grid-2 stagger">
                     <div class="card reveal-scale" style="--i:0">
                         <h3>HCM & PKD testy</h3>
-                        <p>Prevence srdečních a ledvinných onemocnění u obou rodičů před každým vrhem.</p>
+                        <p>Genetické testy na HCM a PKD absolvuje každá naše kočička před prvním vrhem, HCM pak pravidelně kontrolujeme srdečním sonem. Bohužel ani kočka s průkazem původu nemusí zůstat zdravá po celý život — ale děláme maximum pro to, aby tomu tak bylo.</p>
                     </div>
                     <div class="card reveal-scale" style="--i:1">
                         <h3>FeLV & FIV testy</h3>
-                        <p>Vyloučení virových onemocnění pro bezpečí celého chovu i nových majitelů.</p>
+                        <p>FeLV (kočičí leukémie) a FIV (kočičí imunodeficience) jsou závažná a nevyléčitelná virová onemocnění přenosná mezi kočkami. Testujeme na ně, aby byl v bezpečí celý chov i noví majitelé.</p>
                     </div>
                     <div class="card reveal-scale" style="--i:2">
                         <h3>Socializace s dětmi</h3>
-                        <p>Koťátka běžně potkávají děti, zvuky domácnosti i návštěvy — nic je nepřekvapí.</p>
+                        <p>Koťátka u nás vyrůstají uprostřed běžného ruchu domácnosti — jsou zvyklá na všechny zvuky domácnosti, i na děti kolem sebe. Díky tomu také poznáme, které koťátko je citlivější a které naopak neohrožené.</p>
+                        <p>V novém prostředí se ale každé koťátko může chovat jinak — i když vyrůstalo v rodině s dětmi, neznamená to, že hned přijme nový domov za svůj. Stále jde o malá koťátka bez maminky a sourozenců v neznámém prostředí, a proto je tak důležité dodržet pokyny pro správnou adaptaci.</p>
+                    </div>
+                    <div class="card reveal-scale" style="--i:3">
+                        <h3>Chovný standard</h3>
+                        <p>Naším cílem není odchovávat co nejvíce koťátek, ale budovat kvalitní chov s dlouhodobou vizí. Chovné jedince vybíráme podle typu, zdraví, genetických předpokladů a povahy a spolupracujeme s prověřenými chovatelskými stanicemi.</p>
+                        <p>O zařazení koťátka do chovu rozhodujeme až s odstupem času. Ragdollové dospívají pomalu a jejich vzhled i povaha se během dospívání stále vyvíjejí.</p>
+                        <p>Každému koťátku proto dáváme čas ukázat svůj skutečný potenciál.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-soft">
+        <section class="section ohlas-section">
+            <picture class="ohlas-photo-bg"><source srcset="images/misc/kotatko-hracka-bg.webp" type="image/webp"><img src="images/misc/kotatko-hracka-bg.png" width="950" height="1267" alt="" aria-hidden="true"></picture>
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-label">Ohlas nového domova</span>
-                    <h2>Naše koťátka v nových rodinách</h2>
-                    <p>Fotky a vzkazy, které nám posílají noví majitelé — pěkný důkaz, že naše práce na socializaci a zdraví má smysl i dlouho po odchodu koťátka domů.</p>
+                    <h2>Po odchodu koťátka to nekončí</h2>
                 </div>
-                <div class="grid grid-3 stagger" id="testimonialsGrid"><!--PRERENDER:testimonialsGrid:START--><div class="cat-card reveal-scale" style="--i:0"><div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="testimonials" data-src="images/gallery/02.jpg"><picture><source srcset="images/gallery/02-thumb.webp" type="image/webp"><img src="images/gallery/02-thumb.jpg" alt="Tuto fotku nám poslala nová majitelka jednoho z našich koťátek — pěkný důkaz, že naše práce na socializaci a zdraví má smysl i dlouho po odchodu koťátka domů." loading="lazy"></picture></div><div class="card-body"><p>Tuto fotku nám poslala nová majitelka jednoho z našich koťátek — pěkný důkaz, že naše práce na socializaci a zdraví má smysl i dlouho po odchodu koťátka domů.</p></div></div><!--PRERENDER:testimonialsGrid:END--></div>
+                <div class="prose reveal" style="max-width:700px; margin:0 auto; text-align:center;">
+                    <p>Když si koťátko odvezete domů, naše starost o něj tím nekončí. Pokud si nebudete vědět rady s adaptací, napište nám — rádi poradíme, jak novému členovi rodiny co nejvíc usnadnit začátky v neznámém prostředí.</p>
+                    <p>Stejně tak jsme tu pro vás i v případě zdravotních obtíží. Pokud by se u koťátka objevil závažnější nebo neobvyklý zdravotní problém, budeme rádi, když nám o něm dáte vědět. Každá taková informace je pro nás důležitá. Může nám pomoci lépe sledovat zdravotní stav našich koťátek a případně odhalit problém, který by mohl souviset s dědičností. Pokud by se něco takového potvrdilo, můžeme tomu přizpůsobit naše další chovatelská rozhodnutí a dané spojení již neopakovat.</p>
+                    <p>Zpětná vazba od nových majitelů je pro nás proto velmi cenná. Pomáhá nám zodpovědně plánovat budoucnost našeho chovu.</p>
+                </div>
+                <div class="reveal" style="text-align:center; margin-top:2rem;">
+                    <a href="informace-ke-koupi.html" class="btn btn-solid">Cesta k vašemu koťátku</a>
+                </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="cta-banner reveal-scale">
-                    <h2>Chcete poznat naše chovné kočky?</h2>
-                    <p>Podívejte se na profily našich dam a pánů.</p>
-                    <a href="tym.html" class="btn btn-solid">Náš tým koček</a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="287" height="176" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
+                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
                 <p>Malobratřice, Středočeský kraj</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="images/misc/icon-instagram.webp" type="image/webp"><img src="images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -182,11 +188,9 @@
             </div>
             <div>
                 <h3>Navigace</h3>
-                <p><a href="o-nas.html">O nás</a></p>
                 <p><a href="kotatka.html">Koťátka</a></p>
                 <p><a href="informace-ke-koupi.html">Informace ke koupi</a></p>
                 <p><a href="tym.html">Tým</a></p>
-                <p><a href="fotogalerie.html">Fotogalerie</a></p>
             </div>
             <div>
                 <h3>Kontakt</h3>

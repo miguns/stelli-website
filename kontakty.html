@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -61,23 +61,21 @@
     }
     </script>
 </head>
-<body class="concept">
+<body class="concept concept2 dark-band">
     <a href="#main" class="skip-link">Přeskočit na obsah</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Úvod</a></li>
-                    <li><a href="o-nas.html">O nás</a></li>
                     <li><a href="nase-prace.html">Naše práce</a></li>
                     <li><a href="kotatka.html">Koťátka</a></li>
-                    <li><a href="informace-ke-koupi.html">Ke koupi</a></li>
+                    <li><a href="informace-ke-koupi.html">Informace</a></li>
                     <li><a href="tym.html">Tým</a></li>
-                    <li><a href="fotogalerie.html">Fotogalerie</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Kontakty</a></li>
+                    <li><a href="kontakty.html">Kontakty</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link active" href="kontakty.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="en/kontakty.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="de/kontakty.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link" href="pl/kontakty.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -89,11 +87,20 @@
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
             <h1>Kontakty</h1>
-            <p>Máte otázku nebo zájem o koťátko? Ozvěte se — jsme tu pro vás.</p>
+            <p>Máte otázku nebo zájem o koťátko? Ozvěte se — dřív nebo později se ohlásíme <span class="paw-icon-inline" aria-hidden="true">🐾</span></p>
         </section>
 
-        <section class="section">
+        <section class="section contact-info-section">
             <div class="container">
+                <div class="path-note reveal-scale">
+                    <span class="path-note-icon" aria-hidden="true">🐾</span>
+                    <div class="path-note-text">
+                        <h2>Zájem o koťátko? Začněte dotazníkem</h2>
+                        <p>Nejrychlejší a nejjistější cesta, jak se s vámi domluvit, vede přes vstupní dotazník na stránce <a href="informace-ke-koupi.html">Informace ke koupi</a> — tyto zprávy čteme přednostně a ozveme se vám co nejdřív. E-mail nebo zprávu na sociálních sítích bohužel nedokážeme zaručit, že stihneme přečíst a zodpovědět — chodí nám jich opravdu hodně.</p>
+                        <a href="informace-ke-koupi.html" class="path-note-link">Informace ke koupi a dotazník →</a>
+                    </div>
+                </div>
+
                 <div class="contact-info stagger">
                     <div class="info-block reveal-scale" style="--i:0">
                         <h3>Adresa</h3>
@@ -119,45 +126,12 @@
                 </div>
             </div>
         </section>
-
-        <section class="section bg-soft" id="formular">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Napište nám</span>
-                    <h2>Ozveme se do 24 hodin</h2>
-                </div>
-                <form class="contact-form reveal-scale">
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <div class="form-group">
-                        <label for="name">Jméno</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="form-error">Vyplňte prosím své jméno.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="form-error">Zadejte platný e-mail.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Zpráva</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <span class="form-error">Napište nám prosím pár slov.</span>
-                    </div>
-                    <button type="submit" class="btn-primary-form">Odeslat</button>
-                                    <p class="form-consent">Odesláním souhlasíte se zpracováním osobních údajů za účelem vyřízení vaší zprávy.</p>
-                </form>
-                <div class="form-success">
-                    <h3>Děkujeme za zprávu!</h3>
-                    <p>Brzy se vám ozveme zpět.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="287" height="176" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
+                <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" width="583" height="317" alt="StElli Ragdoll logo" class="footer-logo-img"></picture>
                 <p>Malobratřice, Středočeský kraj</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="images/misc/icon-instagram.webp" type="image/webp"><img src="images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -166,11 +140,9 @@
             </div>
             <div>
                 <h3>Navigace</h3>
-                <p><a href="o-nas.html">O nás</a></p>
                 <p><a href="kotatka.html">Koťátka</a></p>
                 <p><a href="informace-ke-koupi.html">Informace ke koupi</a></p>
                 <p><a href="tym.html">Tým</a></p>
-                <p><a href="fotogalerie.html">Fotogalerie</a></p>
             </div>
             <div>
                 <h3>Kontakt</h3>

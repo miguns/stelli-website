@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -61,23 +61,21 @@
     }
     </script>
 </head>
-<body class="concept">
+<body class="concept concept2 dark-band">
     <a href="#main" class="skip-link">Przejdź do treści</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Start</a></li>
-                    <li><a href="o-nas.html">O nas</a></li>
                     <li><a href="nase-prace.html">Nasza praca</a></li>
                     <li><a href="kotatka.html">Kocięta</a></li>
                     <li><a href="informace-ke-koupi.html">Zakup</a></li>
                     <li><a href="tym.html">Zespół</a></li>
-                    <li><a href="fotogalerie.html">Galeria</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Kontakt</a></li>
+                    <li><a href="kontakty.html">Kontakt</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link" href="../kontakty.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="../en/kontakty.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="../de/kontakty.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link active" href="../pl/kontakty.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -89,11 +87,20 @@
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
             <h1>Kontakt</h1>
-            <p>Masz pytanie lub jesteś zainteresowany kocięciem? Odezwij się — jesteśmy dla Ciebie.</p>
+            <p>Masz pytanie lub jesteś zainteresowany kocięciem? Odezwij się — prędzej czy później się odezwiemy <span class="paw-icon-inline" aria-hidden="true">🐾</span></p>
         </section>
 
-        <section class="section">
+        <section class="section contact-info-section">
             <div class="container">
+                <div class="path-note reveal-scale">
+                    <span class="path-note-icon" aria-hidden="true">🐾</span>
+                    <div class="path-note-text">
+                        <h2>Zainteresowani kociakiem? Zacznij od formularza</h2>
+                        <p>Najszybszą i najpewniejszą drogą kontaktu z nami jest formularz zgłoszeniowy na stronie <a href="informace-ke-koupi.html">Informacje o zakupie</a> — te wiadomości czytamy w pierwszej kolejności i odzywamy się jak najszybciej. Niestety nie możemy zagwarantować, że zdążymy przeczytać i odpowiedzieć na e-mail czy wiadomość w mediach społecznościowych — dostajemy ich naprawdę dużo.</p>
+                        <a href="informace-ke-koupi.html" class="path-note-link">Informacje o zakupie i formularz →</a>
+                    </div>
+                </div>
+
                 <div class="contact-info stagger">
                     <div class="info-block reveal-scale" style="--i:0">
                         <h3>Adres</h3>
@@ -119,45 +126,12 @@
                 </div>
             </div>
         </section>
-
-        <section class="section bg-soft" id="formular">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">Napisz do nas</span>
-                    <h2>Odpowiadamy w ciągu 24 godzin</h2>
-                </div>
-                <form class="contact-form reveal-scale">
-                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <div class="form-group">
-                        <label for="name">Imię</label>
-                        <input type="text" id="name" name="name" required>
-                        <span class="form-error">Proszę podać imię.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="form-error">Proszę podać poprawny e-mail.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Wiadomość</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <span class="form-error">Proszę napisać kilka słów.</span>
-                    </div>
-                    <button type="submit" class="btn-primary-form">Wyślij</button>
-                                    <p class="form-consent">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu odpowiedzi na wiadomość.</p>
-                </form>
-                <div class="form-success">
-                    <h3>Dziękujemy za wiadomość!</h3>
-                    <p>Wkrótce się odezwiemy.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="Logo StElli Ragdoll" class="footer-logo-img"></picture>
+                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="Logo StElli Ragdoll" class="footer-logo-img"></picture>
                 <p>Malobratřice, kraj środkowoczeski, Czechy</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="../images/misc/icon-instagram.webp" type="image/webp"><img src="../images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -166,11 +140,9 @@
             </div>
             <div>
                 <h3>Nawigacja</h3>
-                <p><a href="o-nas.html">O nas</a></p>
                 <p><a href="kotatka.html">Kocięta</a></p>
                 <p><a href="informace-ke-koupi.html">Informacje o zakupie</a></p>
                 <p><a href="tym.html">Zespół</a></p>
-                <p><a href="fotogalerie.html">Galeria</a></p>
             </div>
             <div>
                 <h3>Kontakt</h3>

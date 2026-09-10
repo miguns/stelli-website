@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -59,23 +59,21 @@
     }
     </script>
 </head>
-<body class="concept">
+<body class="concept concept2 dark-band">
     <a href="#main" class="skip-link">Zum Inhalt springen</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Startseite</a></li>
-                    <li><a href="o-nas.html">Über uns</a></li>
                     <li><a href="nase-prace.html">Unsere Arbeit</a></li>
                     <li><a href="kotatka.html">Kätzchen</a></li>
                     <li><a href="informace-ke-koupi.html">Kauf</a></li>
                     <li><a href="tym.html">Team</a></li>
-                    <li><a href="fotogalerie.html">Galerie</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Kontakt</a></li>
+                    <li><a href="kontakty.html">Kontakt</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link" href="../nase-prace.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="../en/nase-prace.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link active" href="../de/nase-prace.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link" href="../pl/nase-prace.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -87,93 +85,101 @@
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
             <h1>Unsere Arbeit</h1>
-            <p>Bildung, Gesundheitstests und Sozialisierung — die drei Säulen, auf denen unsere gesamte Zucht steht.</p>
+            <p>Bildung, Gesundheitstests, typvolle Kätzchen und Sozialisierung.</p>
         </section>
 
-        <section class="section">
+        <section class="section work-photo-section">
+            <picture class="work-photo-bg"><source srcset="../images/misc/kocka-portret-bg.webp" type="image/webp"><img src="../images/misc/kocka-portret-bg.png" width="950" height="1267" alt="" aria-hidden="true"></picture>
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:21/9; max-width:900px; margin:0 auto 3rem;" data-lightbox tabindex="0" role="button" data-gallery="prace" data-src="../images/misc/prace-header.jpg">
-                    <picture><source srcset="../images/misc/prace-header.webp" type="image/webp"><img src="../images/misc/prace-header.jpg" alt="Sozialisierung der StElli-Kätzchen" loading="lazy"></picture>
-                </div>
                 <div class="timeline">
                     <div class="timeline-step reveal-left">
                         <div class="step-num">01</div>
-                        <div class="step-content" style="display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap;">
-                            <div>
-                                <h3>Bildung</h3>
-                                <p>2025 habe ich einen Kurs für Katzengenetik am Campus Felinarium absolviert — ein siebenwöchiges Programm zu Genetik, Gesundheit und verantwortungsvoller Zucht.</p>
-                            </div>
-                            <picture><source srcset="../images/misc/genetics-badge.webp" type="image/webp"><img src="../images/misc/genetics-badge.png" width="492" height="480" alt="Campus Felinarium Zertifikat" style="width:100px; height:auto; flex-shrink:0;" loading="lazy"></picture>
+                        <div class="step-content">
+                            <h3>Bildung</h3>
+                            <p>2025 habe ich einen Kurs für Katzengenetik am Campus Felinarium absolviert — ein siebenwöchiges Programm zu Genetik, Gesundheit und verantwortungsvoller Zucht.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:1">
                         <div class="step-num">02</div>
                         <div class="step-content">
                             <h3>Gesundheitstests</h3>
-                            <p>Alle unsere Zuchtkatzen sind auf HCM, PKD, FeLV und FIV getestet. Alle Ergebnisse sind negativ.</p>
+                            <p>Alle unsere Zuchtkatzen werden genetisch auf HCM und PKD getestet, HCM kontrollieren wir zusätzlich per Herzultraschall. Wir testen auch auf FeLV und FIV.</p>
+                            <p>Leider kann HCM trotz negativem Gentest später trotzdem auftreten. Auch der Gentest auf PKD prüft nur auf eine verbreitete Mutation und schließt andere Nierenerkrankungen nicht aus — das sollte man bedenken.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:2">
                         <div class="step-num">03</div>
                         <div class="step-content">
                             <h3>Sozialisierung</h3>
-                            <p>Die Kätzchen wachsen in unserem Zuhause mit Kindern auf, sind an Hände und den gesamten Haushaltsalltag gewöhnt.</p>
+                            <p>Die Kätzchen wachsen in unserem Zuhause mit Kindern auf und sind an den gewöhnlichen Haushaltsalltag gewöhnt.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:3">
+                        <div class="step-num">04</div>
+                        <div class="step-content">
+                            <h3>Zuchtstandard</h3>
+                            <p>Wir halten uns an den Rassestandard der Ragdoll. Ziel sind schöne, typvolle Kätzchen, die vor allem für die weitere Zucht geeignet sind — deshalb ist die Auswahl unserer Zuchttiere so entscheidend.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-soft">
+        <section class="section bg-soft reasons-section">
+            <picture class="reasons-photo-bg"><source srcset="../images/misc/kotata-trio-bg.webp" type="image/webp"><img src="../images/misc/kotata-trio-bg.png" width="970" height="700" alt="" aria-hidden="true"></picture>
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Warum das wichtig ist</span>
-                    <h2>Gesunde Eltern, ausgeglichene Kätzchen</h2>
-                    <p>Die Investition in Genetik und Sozialisierung zeigt sich in jedem Kätzchen, das uns in ein neues Zuhause verlässt.</p>
+                    <h2>Warum das wichtig ist</h2>
+                    <p>Die Investition in Genetik und die Zeit, die wir in die Auswahl des richtigen Zuchttiers stecken, spiegelt sich in jedem Kätzchen wider, das uns in ein neues Zuhause verlässt.</p>
                 </div>
-                <div class="grid grid-3 stagger">
+                <div class="grid grid-2 stagger">
                     <div class="card reveal-scale" style="--i:0">
-                        <h3>HCM & PKD testy</h3>
-                        <p>Vorbeugung von Herz- und Nierenerkrankungen bei beiden Eltern vor jedem Wurf.</p>
+                        <h3>HCM- & PKD-Tests</h3>
+                        <p>Gentests auf HCM und PKD macht jede unserer Kätzinnen vor ihrem ersten Wurf, HCM kontrollieren wir zusätzlich regelmäßig per Herzultraschall. Leider ist eine Katze mit Stammbaum keine Garantie für lebenslange Gesundheit — aber wir tun unser Möglichstes dafür.</p>
                     </div>
                     <div class="card reveal-scale" style="--i:1">
-                        <h3>FeLV & FIV testy</h3>
-                        <p>Ausschluss von Viruserkrankungen zur Sicherheit der gesamten Zucht und der neuen Besitzer.</p>
+                        <h3>FeLV- & FIV-Tests</h3>
+                        <p>FeLV (Katzenleukose) und FIV (Katzen-Immunschwäche) sind schwere, unheilbare Viruserkrankungen, die zwischen Katzen übertragen werden. Wir testen darauf, um die gesamte Zucht und neue Besitzer zu schützen.</p>
                     </div>
                     <div class="card reveal-scale" style="--i:2">
                         <h3>Sozialisierung mit Kindern</h3>
-                        <p>Die Kätzchen begegnen regelmäßig Kindern, Haushaltsgeräuschen und Besuch — nichts überrascht sie.</p>
+                        <p>Unsere Kätzchen wachsen mitten im ganz normalen Alltagstrubel auf — sie sind an alle Geräusche des Haushalts sowie an Kinder um sie herum gewöhnt. So erkennen wir auch, welches Kätzchen sensibler und welches mutig und furchtlos ist.</p>
+                        <p>Trotzdem kann sich jedes Kätzchen in einer neuen Umgebung anders verhalten — dass es mit Kindern aufgewachsen ist, heißt nicht, dass es ein neues Zuhause sofort annimmt. Es sind immer noch kleine Kätzchen ohne Mutter und Geschwister in einer fremden Umgebung — deshalb ist es so wichtig, unsere Hinweise für eine gute Eingewöhnung zu befolgen.</p>
+                    </div>
+                    <div class="card reveal-scale" style="--i:3">
+                        <h3>Zuchtstandard</h3>
+                        <p>Unser Ziel ist es nicht, möglichst viele Kätzchen aufzuziehen, sondern eine hochwertige Zucht mit langfristiger Vision aufzubauen. Wir wählen unsere Zuchttiere nach Typ, Gesundheit, genetischer Veranlagung und Wesen aus und arbeiten mit bewährten, vertrauenswürdigen Zuchtstationen zusammen.</p>
+                        <p>Über die Aufnahme eines Kätzchens in die Zucht entscheiden wir erst mit zeitlichem Abstand. Ragdolls entwickeln sich langsam, und sowohl ihr Aussehen als auch ihr Wesen verändern sich während des Heranwachsens noch.</p>
+                        <p>Deshalb geben wir jedem Kätzchen die Zeit, sein wahres Potenzial zu zeigen.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-soft">
+        <section class="section ohlas-section">
+            <picture class="ohlas-photo-bg"><source srcset="../images/misc/kotatko-hracka-bg.webp" type="image/webp"><img src="../images/misc/kotatko-hracka-bg.png" width="950" height="1267" alt="" aria-hidden="true"></picture>
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-label">Rückmeldung aus dem neuen Zuhause</span>
-                    <h2>Unsere Kätzchen in ihren neuen Familien</h2>
-                    <p>Fotos und Nachrichten, die uns neue Besitzer schicken — ein schöner Beweis, dass sich unsere Arbeit an Sozialisierung und Gesundheit auch lange nach dem Auszug des Kätzchens auszahlt.</p>
+                    <h2>Nach dem Auszug endet unsere Fürsorge nicht</h2>
                 </div>
-                <div class="grid grid-3 stagger" id="testimonialsGrid"><!--PRERENDER:testimonialsGrid:START--><div class="cat-card reveal-scale" style="--i:0"><div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="testimonials" data-src="../images/gallery/02.jpg"><picture><source srcset="../images/gallery/02-thumb.webp" type="image/webp"><img src="../images/gallery/02-thumb.jpg" alt="Dieses Foto hat uns die neue Besitzerin eines unserer Kätzchen geschickt — ein schöner Beweis, dass sich unsere Arbeit an Sozialisierung und Gesundheit auch lange nach dem Auszug des Kätzchens auszahlt." loading="lazy"></picture></div><div class="card-body"><p>Dieses Foto hat uns die neue Besitzerin eines unserer Kätzchen geschickt — ein schöner Beweis, dass sich unsere Arbeit an Sozialisierung und Gesundheit auch lange nach dem Auszug des Kätzchens auszahlt.</p></div></div><!--PRERENDER:testimonialsGrid:END--></div>
+                <div class="prose reveal" style="max-width:700px; margin:0 auto; text-align:center;">
+                    <p>Wenn Sie Ihr Kätzchen nach Hause holen, endet unsere Sorge um es damit nicht. Falls Sie bei der Eingewöhnung unsicher sind, schreiben Sie uns — wir beraten Sie gerne, wie Sie dem neuen Familienmitglied den Start in der unbekannten Umgebung so leicht wie möglich machen können.</p>
+                    <p>Ebenso sind wir für Sie da, falls gesundheitliche Probleme auftreten. Sollte bei Ihrem Kätzchen ein ernsteres oder ungewöhnliches Gesundheitsproblem auftreten, freuen wir uns, wenn Sie uns das mitteilen. Jede solche Information ist für uns wichtig. Sie hilft uns, den Gesundheitszustand unserer Kätzchen besser zu verfolgen und gegebenenfalls ein Problem zu erkennen, das mit der Vererbung zusammenhängen könnte. Sollte sich so etwas bestätigen, können wir unsere weiteren Zuchtentscheidungen entsprechend anpassen und diese Verpaarung nicht wiederholen.</p>
+                    <p>Rückmeldungen von neuen Besitzern sind für uns daher sehr wertvoll. Sie helfen uns, die Zukunft unserer Zucht verantwortungsvoll zu planen.</p>
+                </div>
+                <div class="reveal" style="text-align:center; margin-top:2rem;">
+                    <a href="informace-ke-koupi.html" class="btn btn-solid">Der Weg zu Ihrem Kätzchen</a>
+                </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="cta-banner reveal-scale">
-                    <h2>Möchten Sie unsere Zuchtkatzen kennenlernen?</h2>
-                    <p>Werfen Sie einen Blick auf die Profile unserer Damen und Kater.</p>
-                    <a href="tym.html" class="btn btn-solid">Unser Katzenteam</a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll Logo" class="footer-logo-img"></picture>
+                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll Logo" class="footer-logo-img"></picture>
                 <p>Malobratřice, Mittelböhmen, Tschechien</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="../images/misc/icon-instagram.webp" type="image/webp"><img src="../images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -182,11 +188,9 @@
             </div>
             <div>
                 <h3>Navigation</h3>
-                <p><a href="o-nas.html">Über uns</a></p>
                 <p><a href="kotatka.html">Kätzchen</a></p>
                 <p><a href="informace-ke-koupi.html">Kaufinformationen</a></p>
                 <p><a href="tym.html">Team</a></p>
-                <p><a href="fotogalerie.html">Galerie</a></p>
             </div>
             <div>
                 <h3>Kontakt</h3>

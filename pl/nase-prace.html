@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
@@ -59,23 +59,21 @@
     }
     </script>
 </head>
-<body class="concept">
+<body class="concept concept2 dark-band">
     <a href="#main" class="skip-link">Przejdź do treści</a>
     <div class="nav-backdrop" id="navBackdrop"></div>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
                 <button type="button" class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Start</a></li>
-                    <li><a href="o-nas.html">O nas</a></li>
                     <li><a href="nase-prace.html">Nasza praca</a></li>
                     <li><a href="kotatka.html">Kocięta</a></li>
                     <li><a href="informace-ke-koupi.html">Zakup</a></li>
                     <li><a href="tym.html">Zespół</a></li>
-                    <li><a href="fotogalerie.html">Galeria</a></li>
-                    <li><a href="kontakty.html" class="nav-cta">Kontakt</a></li>
+                    <li><a href="kontakty.html">Kontakt</a></li>
                     <li class="lang-item"><span class="lang-links"><a class="lang-link" href="../nase-prace.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="../en/nase-prace.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="../de/nase-prace.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link active" href="../pl/nase-prace.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
                 </ul>
             </div>
@@ -87,93 +85,101 @@
             <div class="hero-blob b1"></div>
             <div class="hero-blob b2"></div>
             <h1>Nasza praca</h1>
-            <p>Edukacja, testy zdrowotne i socjalizacja — trzy filary, na których opieramy całą hodowlę.</p>
+            <p>Edukacja, testy zdrowotne, typowe kocięta i socjalizacja.</p>
         </section>
 
-        <section class="section">
+        <section class="section work-photo-section">
+            <picture class="work-photo-bg"><source srcset="../images/misc/kocka-portret-bg.webp" type="image/webp"><img src="../images/misc/kocka-portret-bg.png" width="950" height="1267" alt="" aria-hidden="true"></picture>
             <div class="container">
-                <div class="photo-thumb reveal-scale" style="aspect-ratio:21/9; max-width:900px; margin:0 auto 3rem;" data-lightbox tabindex="0" role="button" data-gallery="prace" data-src="../images/misc/prace-header.jpg">
-                    <picture><source srcset="../images/misc/prace-header.webp" type="image/webp"><img src="../images/misc/prace-header.jpg" alt="Socjalizacja kociąt StElli" loading="lazy"></picture>
-                </div>
                 <div class="timeline">
                     <div class="timeline-step reveal-left">
                         <div class="step-num">01</div>
-                        <div class="step-content" style="display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap;">
-                            <div>
-                                <h3>Edukacja</h3>
-                                <p>W 2025 roku ukończyłam kurs genetyki kotów w Campus Felinarium — siedmiotygodniowy program poświęcony genetyce, zdrowiu i odpowiedzialnej hodowli.</p>
-                            </div>
-                            <picture><source srcset="../images/misc/genetics-badge.webp" type="image/webp"><img src="../images/misc/genetics-badge.png" width="492" height="480" alt="Certyfikat Campus Felinarium" style="width:100px; height:auto; flex-shrink:0;" loading="lazy"></picture>
+                        <div class="step-content">
+                            <h3>Edukacja</h3>
+                            <p>W 2025 roku ukończyłam kurs genetyki kotów w Campus Felinarium — siedmiotygodniowy program poświęcony genetyce, zdrowiu i odpowiedzialnej hodowli.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:1">
                         <div class="step-num">02</div>
                         <div class="step-content">
                             <h3>Testy zdrowotne</h3>
-                            <p>Wszystkie nasze koty hodowlane są testowane na HCM, PKD, FeLV i FIV. Wszystkie wyniki są negatywne.</p>
+                            <p>Wszystkie nasze koty hodowlane są genetycznie testowane na HCM i PKD, HCM dodatkowo kontrolujemy badaniem echokardiograficznym (USG serca). Testujemy też na FeLV i FIV.</p>
+                            <p>Niestety HCM może pojawić się później mimo negatywnego wyniku testu genetycznego. Również test genetyczny na PKD sprawdza tylko jedną, rozpowszechnioną mutację i nie wyklucza innych chorób nerek — warto o tym pamiętać.</p>
                         </div>
                     </div>
                     <div class="timeline-step reveal-left" style="--i:2">
                         <div class="step-num">03</div>
                         <div class="step-content">
                             <h3>Socjalizacja</h3>
-                            <p>Kocięta dorastają w naszym domu z dziećmi, są przyzwyczajone do rąk i całego domowego zgiełku.</p>
+                            <p>Kocięta dorastają w naszym domu z dziećmi, są przyzwyczajone do codziennego rytmu domowego.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step reveal-left" style="--i:3">
+                        <div class="step-num">04</div>
+                        <div class="step-content">
+                            <h3>Standard rasy</h3>
+                            <p>Staramy się trzymać standardu rasy Ragdoll. Celem są piękne, typowe kocięta, przede wszystkim odpowiednie do dalszej hodowli, dlatego dobór kotów hodowlanych jest tak kluczowy.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-soft">
+        <section class="section bg-soft reasons-section">
+            <picture class="reasons-photo-bg"><source srcset="../images/misc/kotata-trio-bg.webp" type="image/webp"><img src="../images/misc/kotata-trio-bg.png" width="970" height="700" alt="" aria-hidden="true"></picture>
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Dlaczego to ważne</span>
-                    <h2>Zdrowi rodzice, zrównoważone kocięta</h2>
-                    <p>Inwestycja w genetykę i socjalizację widoczna jest w każdym kocięciu, które odchodzi od nas do nowego domu.</p>
+                    <h2>Dlaczego to ważne</h2>
+                    <p>Inwestycja w genetykę i czas poświęcony na wybór odpowiedniego kota hodowlanego przekłada się na każde kocię, które odchodzi od nas do nowego domu.</p>
                 </div>
-                <div class="grid grid-3 stagger">
+                <div class="grid grid-2 stagger">
                     <div class="card reveal-scale" style="--i:0">
-                        <h3>HCM & PKD testy</h3>
-                        <p>Profilaktyka chorób serca i nerek u obojga rodziców przed każdym miotem.</p>
+                        <h3>Testy HCM i PKD</h3>
+                        <p>Testy genetyczne na HCM i PKD wykonujemy u każdej kotki przed pierwszym miotem, a HCM dodatkowo regularnie kontrolujemy badaniem echokardiograficznym serca. Niestety kot z rodowodem nie gwarantuje zdrowia przez całe życie — ale robimy wszystko, aby tak było.</p>
                     </div>
                     <div class="card reveal-scale" style="--i:1">
-                        <h3>FeLV & FIV testy</h3>
-                        <p>Wykluczenie chorób wirusowych dla bezpieczeństwa całej hodowli i nowych właścicieli.</p>
+                        <h3>Testy FeLV i FIV</h3>
+                        <p>FeLV (białaczka kotów) i FIV (koci wirus niedoboru odporności) to poważne, nieuleczalne choroby wirusowe przenoszone między kotami. Testujemy na nie, aby zapewnić bezpieczeństwo całej hodowli i nowym właścicielom.</p>
                     </div>
                     <div class="card reveal-scale" style="--i:2">
                         <h3>Socjalizacja z dziećmi</h3>
-                        <p>Kocięta na co dzień spotykają dzieci, domowe dźwięki i gości — nic ich nie zaskoczy.</p>
+                        <p>Nasze kocięta dorastają w gąszczu codziennego, domowego zgiełku — są przyzwyczajone do wszystkich domowych dźwięków oraz do dzieci wokół siebie. Dzięki temu widzimy też, które kocię jest bardziej wrażliwe, a które odważne i nieustraszone.</p>
+                        <p>Mimo to każde kocię może zachowywać się inaczej w nowym otoczeniu — to, że dorastało w rodzinie z dziećmi, nie oznacza, że od razu zaakceptuje nowy dom. To wciąż małe kocięta bez mamy i rodzeństwa, w obcym otoczeniu — dlatego tak ważne jest przestrzeganie naszych wskazówek dotyczących właściwej adaptacji.</p>
+                    </div>
+                    <div class="card reveal-scale" style="--i:3">
+                        <h3>Standard rasy</h3>
+                        <p>Naszym celem nie jest wyhodowanie jak największej liczby kociąt, lecz budowanie wysokiej jakości hodowli z długoterminową wizją. Koty hodowlane dobieramy pod względem typu, zdrowia, predyspozycji genetycznych i charakteru oraz współpracujemy ze sprawdzonymi hodowlami.</p>
+                        <p>O włączeniu kociaka do hodowli decydujemy dopiero z pewnym opóźnieniem. Ragdolle dojrzewają powoli, a ich wygląd i charakter wciąż się kształtują w trakcie dorastania.</p>
+                        <p>Dlatego każdemu kociakowi dajemy czas, aby pokazał swój prawdziwy potencjał.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-soft">
+        <section class="section ohlas-section">
+            <picture class="ohlas-photo-bg"><source srcset="../images/misc/kotatko-hracka-bg.webp" type="image/webp"><img src="../images/misc/kotatko-hracka-bg.png" width="950" height="1267" alt="" aria-hidden="true"></picture>
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Wieści z nowego domu</span>
-                    <h2>Nasze kocięta w nowych rodzinach</h2>
-                    <p>Zdjęcia i wiadomości, które przysyłają nam nowi właściciele — miły dowód na to, że nasza praca nad socjalizacją i zdrowiem ma sens jeszcze długo po odejściu kotka do nowego domu.</p>
+                    <span class="section-label">Opinie z nowych domów</span>
+                    <h2>Po odejściu kociaka nasza opieka się nie kończy</h2>
                 </div>
-                <div class="grid grid-3 stagger" id="testimonialsGrid"><!--PRERENDER:testimonialsGrid:START--><div class="cat-card reveal-scale" style="--i:0"><div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="testimonials" data-src="../images/gallery/02.jpg"><picture><source srcset="../images/gallery/02-thumb.webp" type="image/webp"><img src="../images/gallery/02-thumb.jpg" alt="To zdjęcie przesłała nam nowa właścicielka jednego z naszych kociąt — miły dowód na to, że nasza praca nad socjalizacją i zdrowiem ma sens jeszcze długo po odejściu kotka do nowego domu." loading="lazy"></picture></div><div class="card-body"><p>To zdjęcie przesłała nam nowa właścicielka jednego z naszych kociąt — miły dowód na to, że nasza praca nad socjalizacją i zdrowiem ma sens jeszcze długo po odejściu kotka do nowego domu.</p></div></div><!--PRERENDER:testimonialsGrid:END--></div>
+                <div class="prose reveal" style="max-width:700px; margin:0 auto; text-align:center;">
+                    <p>Kiedy zabierzesz kociaka do domu, nasza troska o niego się nie kończy. Jeśli nie będziesz wiedzieć, jak poradzić sobie z adaptacją, napisz do nas — chętnie doradzimy, jak maksymalnie ułatwić nowemu członkowi rodziny pierwsze chwile w nieznanym otoczeniu.</p>
+                    <p>Jesteśmy tu dla Ciebie również w przypadku problemów zdrowotnych. Jeśli u kociaka pojawi się poważniejszy lub nietypowy problem zdrowotny, będziemy wdzięczni za taką informację. Każda taka wiadomość jest dla nas ważna — pomaga nam lepiej monitorować stan zdrowia naszych kociąt i ewentualnie wykryć problem, który mógłby być związany z dziedzicznością. Gdyby coś takiego się potwierdziło, możemy odpowiednio dostosować nasze przyszłe decyzje hodowlane i nie powtarzać danego skojarzenia.</p>
+                    <p>Dlatego opinie od nowych właścicieli są dla nas bardzo cenne. Pomagają nam odpowiedzialnie planować przyszłość naszej hodowli.</p>
+                </div>
+                <div class="reveal" style="text-align:center; margin-top:2rem;">
+                    <a href="informace-ke-koupi.html" class="btn btn-solid">Droga do Twojego kocięcia</a>
+                </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="cta-banner reveal-scale">
-                    <h2>Chcesz poznać nasze koty hodowlane?</h2>
-                    <p>Zobacz profile naszych dam i panów.</p>
-                    <a href="tym.html" class="btn btn-solid">Nasz zespół kotów</a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div>
-                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="287" height="176" alt="Logo StElli Ragdoll" class="footer-logo-img"></picture>
+                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="Logo StElli Ragdoll" class="footer-logo-img"></picture>
                 <p>Malobratřice, kraj środkowoczeski, Czechy</p>
                 <div class="footer-social">
                     <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="../images/misc/icon-instagram.webp" type="image/webp"><img src="../images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
@@ -182,11 +188,9 @@
             </div>
             <div>
                 <h3>Nawigacja</h3>
-                <p><a href="o-nas.html">O nas</a></p>
                 <p><a href="kotatka.html">Kocięta</a></p>
                 <p><a href="informace-ke-koupi.html">Informacje o zakupie</a></p>
                 <p><a href="tym.html">Zespół</a></p>
-                <p><a href="fotogalerie.html">Galeria</a></p>
             </div>
             <div>
                 <h3>Kontakt</h3>

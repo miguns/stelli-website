@@ -212,18 +212,6 @@ header {
 .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
 .nav-menu a.active { color: var(--plum); font-weight: 600; }
 
-.nav-menu a.nav-cta {
-    background: var(--gradient-primary);
-    color: var(--white) !important;
-    padding: 0.65rem 1.4rem;
-    border-radius: 50px;
-    font-weight: 600 !important;
-    box-shadow: 0 8px 20px rgba(196, 78, 131, 0.25);
-    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out) !important;
-}
-.nav-cta::after { display: none; }
-.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(196, 78, 131, 0.35); color: var(--white); }
-
 /* Language switcher */
 .lang-item { display: flex; align-items: center; }
 .lang-links { display: inline-flex; gap: 0.15rem; align-items: center; }
@@ -432,6 +420,15 @@ header {
 }
 .page-hero h1 { color: var(--plum-dark); font-size: clamp(2rem, 4vw, 3rem); animation: fadeInUp 0.8s var(--ease-out) both; }
 .page-hero p { color: var(--ink-light); max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem; animation: fadeInUp 0.8s var(--ease-out) 0.15s both; }
+/* Inline paw accent -- the platform's own paw emoji, tinted to a warm cream
+   via a filter chain (emoji glyphs ignore color/currentColor, so this is the
+   only way to recolor them without dropping to a hand-drawn icon). */
+.paw-icon-inline {
+    font-size: 1.2em;
+    vertical-align: -0.18em;
+    margin-left: 0.2em;
+    filter: grayscale(1) brightness(0) invert(88%) sepia(18%) saturate(700%) hue-rotate(1deg) brightness(96%) contrast(92%);
+}
 .page-hero .hero-blob { opacity: 0.5; }
 
 /* Buttons */
@@ -550,6 +547,7 @@ header {
 
 .card h3 { color: var(--plum); margin-bottom: 0.6rem; font-size: 1.25rem; }
 .card p { color: var(--ink-light); margin: 0; }
+.card p:not(:last-child) { margin-bottom: 0.6rem; }
 
 /* Photo placeholder (used until real photos are added) */
 .photo-placeholder {
@@ -603,6 +601,46 @@ header {
 .status-badge.reserved { background: rgba(215, 160, 90, 0.92); color: white; }
 .status-badge.home { background: rgba(155, 140, 180, 0.9); color: white; }
 
+/* Compact "past litters" row -- a name, a badge, and room for one photo
+   (an icon placeholder until a photo is added later). */
+.litter-history {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.litter-history-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 1.5rem 0.6rem 0.6rem;
+    box-shadow: var(--shadow-soft);
+}
+.litter-history-photo {
+    flex-shrink: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-warm);
+}
+.litter-history-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.litter-history-placeholder { font-size: 1.3rem; opacity: 0.6; }
+.litter-history-body { display: flex; flex-direction: column; gap: 0.35rem; }
+.litter-history-body strong { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; color: var(--plum-dark); }
+.litter-history .status-badge { position: static; }
+@media (max-width: 480px) {
+    .litter-history-item { padding: 0.5rem 1.2rem 0.5rem 0.5rem; }
+}
+
 /* Stats / trust badges */
 .stats-strip {
     display: grid;
@@ -618,7 +656,7 @@ header {
 .section.bg-plum .stat-item span { color: rgba(255,255,255,0.8); }
 
 /* Timeline (process steps) */
-.timeline { position: relative; margin: 3rem 0; }
+.timeline { position: relative; z-index: 1; margin: 3rem 0; }
 .timeline-step {
     display: grid;
     grid-template-columns: 60px 1fr;
@@ -649,6 +687,7 @@ header {
 }
 .timeline-step .step-content h3 { color: var(--plum-dark); margin-bottom: 0.3rem; font-size: 1.2rem; }
 .timeline-step .step-content p { margin: 0; color: var(--ink-light); }
+.timeline-step .step-content p:not(:last-child) { margin-bottom: 0.6rem; }
 
 /* Accordion (FAQ) */
 .accordion { margin: 2rem 0; }
@@ -729,6 +768,19 @@ header {
 }
 .contact-form.wide { max-width: 100%; }
 
+/* Section dividers for long multi-part forms (e.g. the intake questionnaire) */
+.form-section-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 2.2rem 0 1rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+.form-section-title:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
 /* Honeypot spam trap — hidden from users, only bots fill it in */
 .hp-field { display: none !important; }
 
@@ -774,6 +826,13 @@ header {
 }
 .form-group.has-error .form-error { display: block; }
 
+.form-hint {
+    display: block;
+    color: var(--ink-soft, #6b6560);
+    font-size: 0.82rem;
+    margin-top: 0.4rem;
+}
+
 .btn-primary-form {
     background: var(--gradient-primary);
     color: var(--white);
@@ -812,6 +871,32 @@ header {
 }
 
 /* Info blocks (contact page) */
+.path-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--cream-deep);
+    border-radius: var(--radius-md);
+    padding: 1.9rem 2.2rem;
+    margin: 0 0 2.8rem;
+}
+.path-note-icon {
+    flex-shrink: 0;
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: var(--gradient-warm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: var(--shadow-soft);
+}
+.path-note-text h2 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+.path-note-text p { color: var(--ink-light); margin: 0; }
+.path-note-link { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--plum); text-decoration: none; }
+.path-note-link:hover { text-decoration: underline; }
+@media (max-width: 560px) {
+    .path-note { flex-direction: column; padding: 1.6rem 1.6rem; }
+}
+
 .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0 3rem; }
 .info-block {
     background: var(--white);
@@ -1181,6 +1266,57 @@ a.partner-card { display: block; text-decoration: none; }
 }
 .photo-thumb:hover::after { opacity: 1; }
 
+/* Litter photo carousel (kotatka.html) — one photo at a time per litter,
+   with prev/next controls, instead of the full thumbnail grid. */
+.litter-carousel { max-width: 380px; margin: 2rem auto 0; }
+.litter-carousel-frame { position: relative; }
+.litter-carousel-track {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    background: var(--cream-deep);
+    transition: transform 0.45s var(--ease-out);
+}
+.litter-carousel-slide { flex: 0 0 100%; width: 100%; height: 100%; cursor: zoom-in; }
+.litter-carousel-slide picture,
+.litter-carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.litter-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    color: var(--ink);
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+    transition: background 0.3s, transform 0.3s;
+}
+.litter-carousel-nav:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+.litter-carousel-prev { left: 0.7rem; }
+.litter-carousel-next { right: 0.7rem; }
+.litter-carousel-counter {
+    position: absolute;
+    bottom: 0.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(33,26,20,0.55);
+    color: #fff;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+}
+
 /* Team cat photo (portrait, taller) */
 .cat-card .photo-thumb { aspect-ratio: 4 / 5; cursor: zoom-in; }
 
@@ -1218,6 +1354,8 @@ a.partner-card { display: block; text-decoration: none; }
     .lightbox-prev { left: 0.5rem; }
     .lightbox-next { right: 0.5rem; }
     .photo-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.6rem; }
+    .litter-carousel { max-width: 280px; }
+    .litter-carousel-nav { width: 34px; height: 34px; font-size: 1rem; }
 }
 
 /* ==========================================================================
@@ -1257,8 +1395,6 @@ body.home-inkwash header {
     box-shadow: 0 8px 30px rgba(91, 106, 148, 0.12);
     border-bottom-color: rgba(91, 106, 148, 0.1);
 }
-body.home-inkwash .nav-cta { box-shadow: 0 8px 20px rgba(91, 106, 148, 0.25); }
-body.home-inkwash .nav-cta:hover { box-shadow: 0 12px 28px rgba(91, 106, 148, 0.35); }
 body.home-inkwash .btn-primary,
 body.home-inkwash .btn-solid,
 body.home-inkwash .btn-primary-form { box-shadow: 0 12px 30px rgba(91, 106, 148, 0.28); }
