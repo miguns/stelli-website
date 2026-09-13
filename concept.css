@@ -375,6 +375,7 @@ body.concept .stl-hero h1 {
 
 .stl-section { position: relative; padding: 6rem 0; background: var(--s-white); }
 .stl-section--cream { background: var(--s-cream); }
+.stl-section--tint { background: var(--s-tint); }
 .stl-section--tight { padding: 4.5rem 0; }
 
 .stl-split {
