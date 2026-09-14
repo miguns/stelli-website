@@ -378,6 +378,19 @@ body.concept .stl-hero h1 {
 .stl-section--tint { background: var(--s-tint); }
 .stl-section--tight { padding: 4.5rem 0; }
 
+/* Homepage: alternating cream/tint sections fade into each other at the seam
+   instead of meeting on a hard color line, same top-edge-fade treatment as
+   Naše práce / Koťátka / Informace ke koupi. */
+.stl-section--cream + .stl-section--tint {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+.stl-section--tint + .stl-section--cream {
+    background: linear-gradient(to bottom, var(--s-tint) 0, var(--s-cream) 220px, var(--s-cream) 100%);
+}
+.stl-section--cream + .stl-cta {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
 .stl-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
