@@ -720,21 +720,26 @@ body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-c
     body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) + .benefits-section {
         margin-top: 0;
     }
-    /* No room beside the text at this width -- center it above the heading
-       instead, low enough that its paws dip into the heading's row, same
-       soft/behind-text treatment as the desktop version (kept in flow via
-       absolute positioning, not stacked full-strength like a plain photo).
-       Lower opacity than desktop so it melts further into the cream
-       background at this smaller, closer-cropped size. */
+    /* No room beside the text at this width -- center it above the heading,
+       sized smaller and sat a little higher than before so its body clears
+       the heading's row instead of the paws dipping into it. The photo's own
+       background isn't transparent (it's a flat cream matching the page),
+       so its lower half used to just melt straight into the heading text
+       with nothing but low opacity separating fur from letters, reading as
+       a hazy smudge behind the words. A bottom mask fades the shoulders/body
+       out well before the text starts, so only the head reads as a soft
+       accent and the heading sits on clean, flat background. */
     body.concept .cta-kitten-bg {
-        top: 8px;
+        top: -6px;
         left: 50%;
-        width: clamp(150px, 46vw, 210px);
+        width: clamp(128px, 38vw, 176px);
         transform: translateX(-50%);
-        opacity: 0.38;
+        opacity: 0.4;
+        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 46%, transparent 78%);
+        mask-image: linear-gradient(to bottom, #000 0%, #000 46%, transparent 78%);
     }
     body.concept .page-hero + .section.bg-soft:has(> .container > .cta-banner:only-child) .cta-banner h2 {
-        margin-top: 58px;
+        margin-top: 44px;
     }
 }
 
