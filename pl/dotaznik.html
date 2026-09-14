@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz wstępny | StElli Ragdoll</title>
+    <meta name="description" content="Formularz wstępny dla osób zainteresowanych kocięciem Ragdoll z hodowli StElli Ragdoll — pomoże nam lepiej poznać Was i środowisko, do którego trafiłoby kocię.">
+    <link rel="canonical" href="https://www.stelliragdoll.cz/pl/dotaznik.html">
+    <meta property="og:title" content="Formularz wstępny | StElli Ragdoll">
+    <meta property="og:description" content="Zainteresowany/a kocięciem Ragdoll? Wypełnij nasz formularz wstępny.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../concept.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="apple-touch-icon" href="../images/favicon-180.png">
+    <link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/dotaznik.html">
+    <link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/dotaznik.html">
+    <link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/dotaznik.html">
+    <link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/dotaznik.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/dotaznik.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Úvod", "item": "https://www.stelliragdoll.cz/pl/index.html" },
+                    { "@type": "ListItem", "position": 2, "name": "Informace ke koupi", "item": "https://www.stelliragdoll.cz/pl/informace-ke-koupi.html" },
+                    { "@type": "ListItem", "position": 3, "name": "Vstupní dotazník", "item": "https://www.stelliragdoll.cz/pl/dotaznik.html" }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="concept concept2 dark-band">
+    <a href="#main" class="skip-link">Przejdź do treści</a>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="StElli Ragdoll" class="logo-img"></picture></a>
+                <button type="button" class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="nase-prace.html">Nasza praca</a></li>
+                    <li><a href="kotatka.html">Kocięta</a></li>
+                    <li><a href="informace-ke-koupi.html">Zakup</a></li>
+                    <li><a href="tym.html">Zespół</a></li>
+                    <li><a href="kontakty.html">Kontakt</a></li>
+                    <li class="lang-item"><span class="lang-links"><a class="lang-link" href="../dotaznik.html" hreflang="cs" title="Čeština" aria-label="Čeština">CZ</a><a class="lang-link" href="../en/dotaznik.html" hreflang="en" title="English" aria-label="English">EN</a><a class="lang-link" href="../de/dotaznik.html" hreflang="de" title="Deutsch" aria-label="Deutsch">DE</a><a class="lang-link active" href="../pl/dotaznik.html" hreflang="pl" title="Polski" aria-label="Polski">PL</a></span></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="hero-blob b1"></div>
+            <div class="hero-blob b2"></div>
+            <h1>Formularz wstępny</h1>
+            <p>Zainteresowany/a kocięciem Ragdoll od StElli? Prosimy o wypełnienie tego formularza.</p>
+        </section>
+
+        <section class="section questionnaire-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p style="max-width:640px; margin:0 auto;">Nie ma tu dobrych i złych odpowiedzi. Formularz pomaga nam lepiej poznać Was, Wasze oczekiwania i środowisko, do którego trafiłoby nasze kocię. Naszym celem nie jest znalezienie „idealnego właściciela", lecz jak najlepszego domu dla każdego kociaka.</p>
+                </div>
+
+                <form class="contact-form reveal-scale" data-subject="Formularz wstępny – zainteresowanie kocięciem StElli Ragdoll">
+                    <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <p class="form-section-title">Dane kontaktowe</p>
+                    <div class="form-group">
+                        <label for="jmeno">Imię i nazwisko *</label>
+                        <input type="text" id="jmeno" name="Imię i nazwisko" required>
+                        <span class="form-error">Proszę podać swoje imię i nazwisko.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Numer telefonu *</label>
+                        <input type="tel" id="telefon" name="Telefon" required>
+                        <span class="form-error">Proszę podać numer telefonu.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="E-mail" required>
+                        <span class="form-error">Proszę podać prawidłowy adres e-mail.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="komunikace">Preferowany sposób kontaktu *</label>
+                        <select id="komunikace" name="Preferowany sposób kontaktu" required>
+                            <option value="">Wybierz…</option>
+                            <option>Rozmowa telefoniczna</option>
+                            <option>SMS</option>
+                            <option>E-mail</option>
+                            <option>Media społecznościowe</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="socialni-sit">Konto w mediach społecznościowych (jeśli preferujesz kontakt przez media społecznościowe)</label>
+                        <input type="text" id="socialni-sit" name="Konto w mediach społecznościowych">
+                        <span class="form-hint">Proszę podać też nazwę serwisu i nick (np. Instagram: @twojanazwa) i nie zapomnij nas obserwować na <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagramie</a> lub <a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebooku</a>, aby nie przegapić odpowiedzi.</span>
+                    </div>
+
+                    <p class="form-section-title">Gospodarstwo domowe</p>
+                    <div class="form-group">
+                        <label for="bydliste">Gdzie mieszkasz? *</label>
+                        <select id="bydliste" name="Mieszkanie" required>
+                            <option value="">Wybierz…</option>
+                            <option>Mieszkanie</option>
+                            <option>Dom jednorodzinny</option>
+                            <option>Inne</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="pocet-lidi">Ile osób będzie mieszkać z kociakiem w gospodarstwie domowym? *</label>
+                        <input type="number" id="pocet-lidi" name="Liczba osób w gospodarstwie domowym" min="1" required>
+                        <span class="form-error">Proszę podać liczbę osób.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="vek-deti">Wiek dzieci w domu (jeśli są)</label>
+                        <input type="text" id="vek-deti" name="Wiek dzieci" placeholder="np. 5 i 9 lat">
+                    </div>
+                    <div class="form-group">
+                        <label for="pecovatel">Kto będzie głównym opiekunem kota? *</label>
+                        <select id="pecovatel" name="Główny opiekun" required>
+                            <option value="">Wybierz…</option>
+                            <option>Osoba dorosła</option>
+                            <option>Dzieci</option>
+                            <option>Cała rodzina</option>
+                            <option>Inna osoba</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="sama-doma">Jak długo kot będzie zwykle sam w domu w dni robocze? *</label>
+                        <select id="sama-doma" name="Czas sam w domu w ciągu dnia" required>
+                            <option value="">Wybierz…</option>
+                            <option>Nigdy, zawsze ktoś jest w domu</option>
+                            <option>Mniej niż 4 godziny</option>
+                            <option>4–8 godzin</option>
+                            <option>Więcej niż 8 godzin</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="sama-doma-info">Dodatkowe informacje o czasie spędzanym samotnie (opcjonalnie)</label>
+                        <input type="text" id="sama-doma-info" name="Dodatkowe informacje o czasie samotnym" placeholder="np. w ciągu dnia ktoś wraca na obiad, zmieniamy się z partnerem…">
+                    </div>
+                    <div class="form-group">
+                        <label for="jine-zvire">Masz w domu inne zwierzę?</label>
+                        <input type="text" id="jine-zvire" name="Inne zwierzę w domu" placeholder="np. kot, pies… lub nie">
+                    </div>
+
+                    <p class="form-section-title">Doświadczenie z kotami</p>
+                    <div class="form-group">
+                        <label for="mel-kocku">Czy miałeś/aś już kiedyś kota? *</label>
+                        <select id="mel-kocku" name="Doświadczenie z kotem" required>
+                            <option value="">Wybierz…</option>
+                            <option>Tak</option>
+                            <option>Nie</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="zkusenost">Jeśli tak, jakie było Twoje doświadczenie?</label>
+                        <textarea id="zkusenost" name="Opis doświadczenia" rows="3"></textarea>
+                    </div>
+
+                    <p class="form-section-title">Pielęgnacja kota</p>
+                    <div class="form-group">
+                        <label for="pece-srst">Czy jesteś przygotowany/a na regularną pielęgnację sierści, pazurów, zębów i ogólną higienę kota? *</label>
+                        <select id="pece-srst" name="Gotowość do pielęgnacji" required>
+                            <option value="">Wybierz…</option>
+                            <option>Tak</option>
+                            <option>Nie</option>
+                            <option>Potrzebuję porady</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="zachod">Jak zareagowałbyś/zareagowałabyś, gdyby kot zaczął załatwiać się poza kuwetą? *</label>
+                        <textarea id="zachod" name="Rozwiązanie problemu z kuwetą" rows="3" required></textarea>
+                        <span class="form-error">Proszę napisać kilka słów.</span>
+                    </div>
+
+                    <p class="form-section-title">Opieka weterynaryjna</p>
+                    <div class="form-group">
+                        <label for="vet-hradit">Czy jesteś przygotowany/a pokrywać bieżącą oraz ewentualną nieoczekiwaną opiekę weterynaryjną? *</label>
+                        <select id="vet-hradit" name="Gotowość do pokrycia kosztów weterynaryjnych" required>
+                            <option value="">Wybierz…</option>
+                            <option>Tak</option>
+                            <option>Nie</option>
+                            <option>Nie jestem pewien/pewna</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="vet-naklady">Czy masz pojęcie, jakie koszty weterynaryjne może generować kot w ciągu życia? *</label>
+                        <select id="vet-naklady" name="Wiedza o kosztach weterynaryjnych" required>
+                            <option value="">Wybierz…</option>
+                            <option>Tak, mam pojęcie</option>
+                            <option>Nie, chętnie dowiem się więcej</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="pojisteni">Rozważasz wykupienie ubezpieczenia zdrowotnego dla kota? *</label>
+                        <select id="pojisteni" name="Ubezpieczenie zdrowotne kota" required>
+                            <option value="">Wybierz…</option>
+                            <option>Tak</option>
+                            <option>Nie</option>
+                            <option>Jeszcze nie wiem</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+
+                    <p class="form-section-title">Oczekiwania wobec kociaka</p>
+                    <div class="form-group">
+                        <label for="pohlavi">Preferowana płeć kociaka *</label>
+                        <select id="pohlavi" name="Preferowana płeć" required>
+                            <option value="">Wybierz…</option>
+                            <option>Kocurek</option>
+                            <option>Kotka</option>
+                            <option>Bez znaczenia</option>
+                        </select>
+                        <span class="form-error">Proszę wybrać jedną z opcji.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="zbarveni">Preferowane umaszczenie / wygląd</label>
+                        <input type="text" id="zbarveni" name="Preferowane umaszczenie" placeholder="np. blue bicolor, seal mitted… lub bez znaczenia">
+                    </div>
+                    <div class="form-group">
+                        <label for="pozadavky">Czy masz jakieś inne wymagania lub wyobrażenia, które byłyby dla Ciebie ważne przy wyborze kociaka?</label>
+                        <textarea id="pozadavky" name="Inne wymagania" rows="3"></textarea>
+                    </div>
+
+                    <p class="form-section-title">Twoje pytania</p>
+                    <div class="form-group">
+                        <label for="dotazy">Chciałbyś/chciałabyś o coś zapytać?</label>
+                        <textarea id="dotazy" name="Pytania" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary-form">Wyślij formularz</button>
+                    <p class="form-consent">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu obsługi Twojego zapytania.</p>
+                </form>
+                <div class="form-success">
+                    <h3>Dziękujemy za wypełnienie formularza!</h3>
+                    <p>Wkrótce się z Tobą skontaktujemy.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <picture><source srcset="../images/logo.webp" type="image/webp"><img src="../images/logo.png" width="583" height="317" alt="Logo StElli Ragdoll" class="footer-logo-img"></picture>
+                <p>Malobratřice, kraj środkowoczeski, Czechy</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener" aria-label="Instagram"><picture><source srcset="../images/misc/icon-instagram.webp" type="image/webp"><img src="../images/misc/icon-instagram.png" width="238" height="240" alt="" class="social-icon-img"></picture></a>
+                    <a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener" aria-label="Facebook"><picture><source srcset="../images/misc/icon-facebook.webp" type="image/webp"><img src="../images/misc/icon-facebook.png" width="240" height="211" alt="" class="social-icon-img"></picture></a>
+                </div>
+            </div>
+            <div>
+                <h3>Nawigacja</h3>
+                <p><a href="kotatka.html">Kocięta</a></p>
+                <p><a href="informace-ke-koupi.html">Informacje o zakupie</a></p>
+                <p><a href="tym.html">Zespół</a></p>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <p><a href="mailto:stellicattery@gmail.com">stellicattery@gmail.com</a></p>
+                <p><a href="https://instagram.com/stelliragdoll" target="_blank" rel="noopener">Instagram</a></p>
+                <p><a href="https://facebook.com/share/1EPS2RcJm5" target="_blank" rel="noopener">Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 StElli Ragdoll. Wszelkie prawa zastrzeżone.</p>
+            <p class="footer-note">Używamy anonimowego wykrywania kraju na podstawie adresu IP, aby automatycznie zaproponować odpowiedni język.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

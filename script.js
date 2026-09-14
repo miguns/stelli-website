@@ -397,15 +397,23 @@ document.querySelectorAll('.contact-form').forEach(form => {
         }
 
         try {
-            const formData = new FormData(form);
-            formData.append('access_key', WEB3FORMS_ACCESS_KEY);
-            formData.append('subject', form.dataset.subject || 'Nová zpráva z webu StElli Ragdoll');
-            formData.append('from_name', 'StElli Ragdoll web');
+            // Sent as JSON rather than multipart/form-data: our field names
+            // and answers contain Czech/German/Polish diacritics, and some
+            // multipart parsers on the receiving end decode the
+            // Content-Disposition "name" header as Latin-1, garbling those
+            // characters in the delivered e-mail. JSON has no such ambiguity.
+            const payload = Object.fromEntries(new FormData(form).entries());
+            payload.access_key = WEB3FORMS_ACCESS_KEY;
+            payload.subject = form.dataset.subject || 'Nová zpráva z webu StElli Ragdoll';
+            payload.from_name = 'StElli Ragdoll web';
 
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
             });
             const data = await response.json();
 
