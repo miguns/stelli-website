@@ -24,13 +24,17 @@
          automatically at larger sizes and softens back down at card-title
          size. The hero title keeps its original Montserrat (matching the
          logo wordmark) -- an italic-Fraunces version of it was tried and
-         didn't land. Kept scoped to #main (not the footer) and to this one
-         page until approved. -->
+         didn't land. Fraunces reads noticeably heavier than Cormorant at
+         the same numeric weight, so it's pinned down to 400 (regular)
+         here rather than inheriting the site's usual 600 for headings.
+         Kept scoped to #main (not the footer) and to this one page until
+         approved. -->
     <style>
         body.concept #main h2,
         body.concept #main h3 {
             font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
             font-optical-sizing: auto;
+            font-weight: 400;
         }
     </style>
     <link rel="apple-touch-icon" href="images/favicon-180.png">
