@@ -847,6 +847,13 @@ body.concept .section.bg-soft.studs-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
 
+/* Naše práce: partners-section is now the closing (last-before-footer)
+   section, sitting on the plain --s-cream ohlas-section above -- same
+   cream-to-tint fade as studs-section above. */
+body.concept .section.bg-soft.partners-section {
+    background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
+}
+
 /* Dotazník (CZ only) and Kontakty (CZ) are each a single plain section that
    runs the whole page, ending on the page cream with nothing fading it into
    the footer's tint curve below -- fade the last 220px back to tint so the
@@ -995,17 +1002,15 @@ body.concept .reasons-section .section-header { margin-top: 95px; }
    sides. */
 /* The reasons-section above ends solid on the deeper --s-tint, and this
    section sits on the plain (lighter) --s-cream page background -- fade
-   between the two instead of a hard color line at the seam. */
-/* ...and it's the last section before the footer, which starts on tint --
-   fade the last 220px back to tint too, so the page ends flush with the
-   footer's curve instead of a hard line at the very bottom. */
+   between the two instead of a hard color line at the seam. The
+   partners-section below now closes the page, so this one no longer
+   needs to fade back to tint at its own bottom edge. */
 body.concept .ohlas-section {
     overflow: hidden;
     background: linear-gradient(to bottom,
         var(--s-tint) 0,
         var(--s-cream) 200px,
-        var(--s-cream) calc(100% - 220px),
-        var(--s-tint) 100%);
+        var(--s-cream) 100%);
 }
 body.concept .ohlas-photo-bg {
     display: block;
