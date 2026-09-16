@@ -853,7 +853,13 @@ body.concept .section.bg-soft.studs-section {
 body.concept .section.bg-soft.partners-section {
     background: linear-gradient(to bottom, var(--s-cream) 0, var(--s-tint) 220px, var(--s-tint) 100%);
 }
-body.concept .partner-card { display: flex; flex-direction: column; }
+body.concept .partner-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
 body.concept .partner-banner-link {
     display: block;
     margin: -2rem -1.8rem 1.2rem;
