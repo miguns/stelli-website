@@ -861,24 +861,6 @@ body.concept .partner-banner-link {
     overflow: hidden;
 }
 body.concept .partner-banner-img { display: block; width: 100%; height: auto; }
-/* Partners without a supplied logo banner (e.g. Vysmátá kočka) get a
-   plain text banner in the site's own palette instead, kept the same
-   height/position as the photo banners above. */
-body.concept .partner-banner-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 90px;
-    background: linear-gradient(120deg, var(--s-brand), var(--s-accent));
-    text-decoration: none;
-}
-body.concept .partner-banner-text span {
-    font-family: var(--s-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--s-white);
-    letter-spacing: 0.01em;
-}
 body.concept .promo-code {
     display: inline-block;
     padding: 0.05em 0.5em;
