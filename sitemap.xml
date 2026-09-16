@@ -217,6 +217,42 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://www.stelliragdoll.cz/rana-kastrace-kotatek.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/de/rana-kastrace-kotatek.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.stelliragdoll.cz/pl/rana-kastrace-kotatek.html</loc>
+        <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.stelliragdoll.cz/de/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://www.stelliragdoll.cz/pl/rana-kastrace-kotatek.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.stelliragdoll.cz/en/rana-kastrace-kotatek.html"/>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://www.stelliragdoll.cz/kontakty.html</loc>
         <xhtml:link rel="alternate" hreflang="cs" href="https://www.stelliragdoll.cz/kontakty.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.stelliragdoll.cz/en/kontakty.html"/>
