@@ -583,6 +583,28 @@ header {
 .cat-card h3 { color: var(--plum-dark); margin-bottom: 0.3rem; }
 .cat-card p { color: var(--ink-light); margin: 0; font-size: 0.95rem; }
 
+/* Kitten slots come by the litter -- eight or more cards at the default
+   .grid width turn the koťátka page into a very long scroll, and on a phone
+   auto-fit drops to a single column, so one kitten fills the whole screen
+   and a litter takes half a minute to swipe past. Fixed column counts
+   instead of auto-fit: the count only ever goes up with the viewport, so
+   the cards stay in the same size range everywhere rather than ballooning
+   whenever the available width happens to be just under two tracks. */
+.kitten-slots { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+.kitten-slots .cat-card .card-body { padding: 0.7rem 0.8rem 0.85rem; }
+.kitten-slots .cat-card h3 { font-size: 0.95rem; }
+.kitten-slots .cat-card p { font-size: 0.78rem; }
+.kitten-slots .kitten-slot-icon { font-size: 1.8rem; }
+@media (min-width: 560px) {
+    .kitten-slots { grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+    .kitten-slots .cat-card .card-body { padding: 0.85rem 1rem 1rem; }
+    .kitten-slots .cat-card h3 { font-size: 1.05rem; }
+    .kitten-slots .cat-card p { font-size: 0.85rem; }
+    .kitten-slots .kitten-slot-icon { font-size: 2.2rem; }
+}
+@media (min-width: 820px)  { .kitten-slots { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1040px) { .kitten-slots { grid-template-columns: repeat(5, 1fr); } }
+
 /* Named kitten slot with no photo yet -- shimmering placeholder instead of
    the zoomable thumbnail, swapped for the real photo once uploaded. */
 .photo-thumb--empty {
