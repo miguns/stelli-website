@@ -1079,17 +1079,29 @@ body.concept .ohlas-section .prose { position: relative; z-index: 1; }
     /* Below ~900px the centered container has no side margin left to bleed
        into and the prose sits too close to its own edge for a beside-text
        photo to fit without crossing into it (the container has no
-       "beside the text" gap to move the face into) -- so instead it sits
-       above where the heading starts, kept faint enough that it reads as
-       texture rather than a face. The desktop layout clips this section
+       "beside the text" gap to move the face into) -- so instead the kitten
+       sits behind the heading itself, head rising above it, faint enough
+       that the heading still reads cleanly. The desktop layout clips this section
        (overflow:hidden, so a wide bled-left photo doesn't force horizontal
        scroll) -- switch back to visible here so the photo can bleed up
        past the section's own top edge same as reasons-photo-bg does.
        Since ohlas-section paints after (on top of) reasons-section, that
        bled portion still shows on top of it rather than being covered. */
     body.concept .ohlas-section { overflow: visible; }
-    body.concept .ohlas-photo-bg { width: clamp(110px, 30vw, 130px); left: 16.4vw; top: 40px; opacity: 0.4; }
-}
+    body.concept .ohlas-photo-bg {
+        --ohlas-w: clamp(180px, 52vw, 260px);
+        width: var(--ohlas-w);
+        /* The kitten's ear tips sit 23.7% of the photo's own width down from
+           its top edge, so offsetting by that keeps the head crowning the
+           heading at every width instead of drifting as the photo scales. */
+        top: calc(6px - var(--ohlas-w) * 0.237);
+        left: calc(50% - var(--ohlas-w) * 0.62);
+        opacity: 0.34;
+        /* The lower third of the photo is the grey play mat -- fade it out
+           before it reaches the prose so only the kitten shows through. */
+        -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 82%);
+        mask-image: linear-gradient(to bottom, #000 50%, transparent 82%);
+    }
 
 body.concept .accordion-item {
     background: var(--s-white);
