@@ -1109,6 +1109,7 @@ body.concept .ohlas-section .prose { position: relative; z-index: 1; }
         -webkit-mask-image: linear-gradient(to bottom, transparent 2%, #000 18%, #000 46%, transparent 78%);
         mask-image: linear-gradient(to bottom, transparent 2%, #000 18%, #000 46%, transparent 78%);
     }
+}
 
 body.concept .accordion-item {
     background: var(--s-white);
