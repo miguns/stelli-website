@@ -395,6 +395,16 @@ body.concept .stl-hero h1 {
 }
 .stl-split--reverse .stl-split-media { order: 2; }
 
+/* The current-litters row is carried by its two photographs, not by the short
+   paragraph beside them. Split evenly, each tile came out around 270px across
+   -- wide enough to prove a kitten is there, not wide enough to look at one.
+   The picture side takes the larger share here and the text keeps a
+   comfortable measure at the width that is left. */
+.stl-split--media-wide {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 3.2rem;
+}
+
 .stl-photo {
     margin: 0;
     border-radius: 20px;
@@ -405,9 +415,14 @@ body.concept .stl-hero h1 {
 .stl-photo--tall { aspect-ratio: 4 / 5; }
 .stl-photo--wide { aspect-ratio: 4 / 3; }
 
-/* Two staggered photos, as on the reference "current litters" row */
-.stl-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: start; }
-.stl-stack .stl-photo:nth-child(2) { margin-top: 3.2rem; }
+/* Two staggered photos, as on the reference "current litters" row. They are
+   set upright rather than landscape: the photographs themselves are shot 3:4,
+   so a landscape tile was throwing away the top and bottom of every one of
+   them and keeping only a band across the middle. Upright crops almost
+   nothing and gives each tile roughly twice the area on the page. */
+.stl-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; align-items: start; }
+.stl-stack .stl-photo { aspect-ratio: 4 / 5; }
+.stl-stack .stl-photo:nth-child(2) { margin-top: 4rem; }
 
 /* A photo that is itself the button to its litter. The whole tile is the hit
    target -- it lifts and the photograph pushes in slightly under the pointer,
