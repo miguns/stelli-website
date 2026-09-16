@@ -7,11 +7,21 @@
       "name_de": "Wurf E",
       "name_pl": "Miot E",
       "status": "available",
-      "desc_cs": "Fotky připravujeme",
-      "desc_en": "We’re putting the photos together",
-      "desc_de": "Wir bereiten die Fotos vor",
-      "desc_pl": "Przygotowujemy zdjęcia",
-      "photos": []
+      "desc_cs": "Matka Ariell StElli, otec Unique Liderland *PL. Datum narození: 28. 8. 2026.",
+      "desc_en": "Mother Ariell StElli, father Unique Liderland *PL. Date of birth: 28 Aug 2026.",
+      "desc_de": "Mutter Ariell StElli, Vater Unique Liderland *PL. Geburtsdatum: 28.08.2026.",
+      "desc_pl": "Matka Ariell StElli, ojciec Unique Liderland *PL. Data urodzenia: 28.08.2026.",
+      "photos": [],
+      "kittens": [
+        { "name": "Eevee" },
+        { "name": "Eclipse" },
+        { "name": "Elevar" },
+        { "name": "Eddie" },
+        { "name": "Ellaria" },
+        { "name": "Espeon" },
+        { "name": "Everest" },
+        { "name": "Ellie" }
+      ]
     },
     {
       "id": "vrh-d",

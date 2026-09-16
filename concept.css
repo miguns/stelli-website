@@ -1154,6 +1154,8 @@ body.concept .cat-card {
 }
 body.concept .cat-card:hover { transform: translateY(-4px); box-shadow: var(--s-shadow); border-color: var(--s-accent-light); }
 body.concept .cat-card h3 { color: var(--s-ink); }
+body.concept .photo-thumb--empty { background: linear-gradient(135deg, var(--s-tint) 0%, var(--s-accent-light) 100%); }
+body.concept .kitten-slot-icon { color: var(--s-brand); }
 
 body.concept .news-box {
     background: var(--s-tint);

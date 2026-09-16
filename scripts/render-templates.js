@@ -88,6 +88,37 @@ function newsHTML(news, lang) {
 }
 
 const LITTER_HOME_TEXT = { cs: 'V nových domovech', en: 'In new homes', de: 'In neuen Zuhausen', pl: 'W nowych domach' };
+const KITTEN_WATCHING_TEXT = { cs: 'Ve sledování', en: 'Being monitored', de: 'Wird beobachtet', pl: 'W obserwacji' };
+
+// One card per named kitten in the litter, photo optional -- shown as a
+// shimmering placeholder (see .photo-thumb--empty) until a real photo is
+// uploaded, so the slot exists on the page from day one.
+function kittenSlotHTML(kitten, i, lang, prefix, galleryId) {
+    const name = escapeHtml(kitten.name);
+    const note = escapeHtml(kitten['note_' + lang] || kitten.note_cs || KITTEN_WATCHING_TEXT[lang]);
+    let photoHtml = '<span class="kitten-slot-icon" aria-hidden="true">🐾</span>';
+    let thumbClass = 'photo-thumb photo-thumb--empty';
+    let thumbAttrs = '';
+    if (kitten.photo) {
+        const full = escapeHtml(prefix + kitten.photo);
+        const grid = escapeHtml(prefix + gridSrcOf(kitten.photo));
+        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        photoHtml = '<picture><source srcset="' + webp + '" type="image/webp">' +
+            '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture>';
+        thumbClass = 'photo-thumb';
+        thumbAttrs = ' data-lightbox tabindex="0" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '"';
+    }
+    return '<div class="cat-card reveal-scale" style="--i:' + (i % 6) + '">' +
+        '<div class="' + thumbClass + '"' + thumbAttrs + '>' + photoHtml + '</div>' +
+        '<div class="card-body"><h3>' + name + '</h3><p>' + note + '</p></div></div>';
+}
+
+function kittensGridHTML(kittens, lang, prefix, galleryId) {
+    if (!kittens || !kittens.length) return '';
+    return '<div class="grid stagger kitten-slots">' +
+        kittens.map((k, i) => kittenSlotHTML(k, i, lang, prefix, galleryId)).join('') +
+        '</div>';
+}
 
 function litterCardHTML(litter, lang, prefix) {
     const badgeClass = { available: 'available', reserved: 'reserved' };
@@ -105,6 +136,7 @@ function litterCardHTML(litter, lang, prefix) {
         (badgeText[litter.status] ? '<span class="status-badge ' + badgeClass[litter.status] + '" style="position:static; display:inline-flex;">' + badgeText[litter.status][lang] + '</span>' : '') +
         '<h2 style="margin-top:1rem;">' + pick(litter, 'name', lang) + '</h2>' +
         '<p>' + pick(litter, 'desc', lang) + '</p></div>' +
+        kittensGridHTML(litter.kittens, lang, prefix, litter.id) +
         photoCarouselHTML(litter.photos, litter.id, pick(litter, 'name', lang), prefix, lang) +
         '</div></section>';
 }
