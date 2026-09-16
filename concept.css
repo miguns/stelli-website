@@ -1054,8 +1054,18 @@ body.concept .ohlas-photo-bg {
     display: block;
     position: absolute;
     top: -20px;
-    --ohlas-photo-w: clamp(340px, 36vw, 580px);
-    left: calc(150px - var(--ohlas-photo-w));
+    /* Gutter = empty space between the true page edge and the (centered,
+       max-width) container's own edge -- 0 once the container fills the
+       viewport. Textstart = how far the centered prose sits from the
+       container's edge, which itself shrinks on narrower containers. The
+       photo bleeds all the way into the gutter (so it hugs the real page
+       edge and stays fully visible) and its width self-limits so its
+       right edge always lands a bit before the text starts, at any
+       viewport width. */
+    --ohlas-gutter: max(0px, calc((100vw - 1140px) / 2));
+    --ohlas-textstart: clamp(40px, calc(24px + (100vw - 748px) / 2), 220px);
+    --ohlas-photo-w: min(640px, calc(var(--ohlas-gutter) + var(--ohlas-textstart) - 20px));
+    left: calc(-1 * var(--ohlas-gutter));
     width: var(--ohlas-photo-w);
     height: auto;
     pointer-events: none;
@@ -1065,16 +1075,18 @@ body.concept .ohlas-photo-bg {
 body.concept .ohlas-photo-bg img { display: block; width: 100%; height: auto; }
 body.concept .ohlas-section .section-header,
 body.concept .ohlas-section .prose { position: relative; z-index: 1; }
-@media (max-width: 720px) {
-    /* On a single narrow column there's no "beside the text" to move the
-       face into, so instead it sits above where the heading starts, kept
-       faint enough that it reads as texture rather than a face. The
-       desktop layout clips this section (overflow:hidden, so a wide
-       bled-left photo doesn't force horizontal scroll) -- switch back to
-       visible here so the photo can bleed up past the section's own top
-       edge same as reasons-photo-bg does. Since ohlas-section paints
-       after (on top of) reasons-section, that bled portion still shows on
-       top of it rather than being covered by it. */
+@media (max-width: 900px) {
+    /* Below ~900px the centered container has no side margin left to bleed
+       into and the prose sits too close to its own edge for a beside-text
+       photo to fit without crossing into it (the container has no
+       "beside the text" gap to move the face into) -- so instead it sits
+       above where the heading starts, kept faint enough that it reads as
+       texture rather than a face. The desktop layout clips this section
+       (overflow:hidden, so a wide bled-left photo doesn't force horizontal
+       scroll) -- switch back to visible here so the photo can bleed up
+       past the section's own top edge same as reasons-photo-bg does.
+       Since ohlas-section paints after (on top of) reasons-section, that
+       bled portion still shows on top of it rather than being covered. */
     body.concept .ohlas-section { overflow: visible; }
     body.concept .ohlas-photo-bg { width: 67.2vw; left: 16.4vw; top: -128px; opacity: 0.38; }
 }
