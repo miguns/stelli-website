@@ -89,12 +89,15 @@ function newsHTML(news, lang) {
 
 const LITTER_HOME_TEXT = { cs: 'V nových domovech', en: 'In new homes', de: 'In neuen Zuhausen', pl: 'W nowych domach' };
 const KITTEN_WATCHING_TEXT = { cs: 'Ve sledování', en: 'Being monitored', de: 'Wird beobachtet', pl: 'W obserwacji' };
+const KITTEN_UNNAMED_TEXT = { cs: 'Koťátko', en: 'Kitten', de: 'Kätzchen', pl: 'Kotek' };
 
-// One card per named kitten in the litter, photo optional -- shown as a
+// One card per kitten in the litter, photo optional -- shown as a
 // shimmering placeholder (see .photo-thumb--empty) until a real photo is
-// uploaded, so the slot exists on the page from day one.
+// uploaded, so the slot exists on the page from day one. A kitten without
+// a "name" yet (litter too young to be named) falls back to a numbered
+// generic label instead.
 function kittenSlotHTML(kitten, i, lang, prefix, galleryId) {
-    const name = escapeHtml(kitten.name);
+    const name = escapeHtml(kitten.name || (KITTEN_UNNAMED_TEXT[lang] + ' ' + (i + 1)));
     const note = escapeHtml(kitten['note_' + lang] || kitten.note_cs || KITTEN_WATCHING_TEXT[lang]);
     let photoHtml = '<span class="kitten-slot-icon" aria-hidden="true">🐾</span>';
     let thumbClass = 'photo-thumb photo-thumb--empty';
