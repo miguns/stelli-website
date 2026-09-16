@@ -865,6 +865,7 @@ body.concept .partner-banner-link {
     margin: -2rem -1.8rem 1.2rem;
     border-radius: 18px 18px 0 0;
     overflow: hidden;
+    border-bottom: 1px solid var(--s-line);
 }
 body.concept .partner-banner-img { display: block; width: 100%; height: auto; }
 body.concept .promo-code {
