@@ -15,10 +15,10 @@
       "kittens": [
         { "name": "Eevee" },
         { "name": "Eclipse" },
-        { "name": "Elevar" },
-        { "name": "Eddie" },
-        { "name": "Ellaria" },
-        { "name": "Espeon" },
+        { "name": "Elevar", "photo": "images/kittens/vrh-e/elevar.jpg" },
+        { "name": "Eddie", "photo": "images/kittens/vrh-e/eddie.jpg" },
+        { "name": "Ellaria", "photo": "images/kittens/vrh-e/ellaria.jpg" },
+        { "name": "Espeon", "photo": "images/kittens/vrh-e/espeon.jpg" },
         { "name": "Everest" },
         { "name": "Ellie" }
       ]
