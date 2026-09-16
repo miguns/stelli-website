@@ -1089,12 +1089,12 @@ body.concept .ohlas-section .prose { position: relative; z-index: 1; }
        bled portion still shows on top of it rather than being covered. */
     body.concept .ohlas-section { overflow: visible; }
     body.concept .ohlas-photo-bg {
-        --ohlas-w: clamp(180px, 52vw, 260px);
+        --ohlas-w: clamp(220px, 64vw, 320px);
         width: var(--ohlas-w);
         /* The kitten's ear tips sit 23.7% of the photo's own width down from
            its top edge, so offsetting by that keeps the head crowning the
            heading at every width instead of drifting as the photo scales. */
-        top: calc(6px - var(--ohlas-w) * 0.237);
+        top: calc(-22px - var(--ohlas-w) * 0.237);
         left: calc(50% - var(--ohlas-w) * 0.62);
         opacity: 0.34;
         /* The lower third of the photo is the grey play mat -- fade it out
