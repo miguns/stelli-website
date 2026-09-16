@@ -760,6 +760,31 @@ document.querySelectorAll('a[href]').forEach(link => {
     });
 });
 
+// The fade-out animation ends on opacity 0 and holds there (animation-fill-mode
+// forwards), which is fine while the browser is on its way to the next page --
+// but a page left in that state is exactly what the back/forward cache keeps.
+// Mobile browsers restore the old page's live DOM instead of reloading it, so
+// tapping Back landed on a page still wearing .is-leaving: fully transparent,
+// i.e. a blank white screen. Clearing the class on every pageshow puts the page
+// back to normal whether it was restored from that cache (persisted) or parsed
+// fresh, and costs nothing in the fresh case where the class isn't there.
+window.addEventListener('pageshow', () => {
+    document.body.classList.remove('is-leaving');
+});
+
+// Same idea for a navigation that never happens: a tap the browser ignores (an
+// unreachable target, a cancelled download, an OS sheet opening over the page)
+// would otherwise leave the page faded out with no way back. If we are still
+// here well after the transition should have taken us elsewhere, show the page
+// again rather than sit on a blank one.
+document.addEventListener('click', () => {
+    setTimeout(() => {
+        if (document.body.classList.contains('is-leaving')) {
+            document.body.classList.remove('is-leaving');
+        }
+    }, 2500);
+}, true);
+
 // ==========================================================================
 // Header over the dark band at the top of a page
 // ==========================================================================
