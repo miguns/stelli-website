@@ -409,6 +409,63 @@ body.concept .stl-hero h1 {
 .stl-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: start; }
 .stl-stack .stl-photo:nth-child(2) { margin-top: 3.2rem; }
 
+/* A photo that is itself the button to its litter. The whole tile is the hit
+   target -- it lifts and the photograph pushes in slightly under the pointer,
+   which is what tells a visitor it can be clicked at all, since there is no
+   button chrome on it. */
+a.stl-photo {
+    display: block;
+    position: relative;
+    /* So the corner caption below can be sized against the photo's own width
+       rather than the viewport's: these tiles stay roughly 260-340px wide at
+       every breakpoint, but which breakpoint produces which width is not
+       something a vw formula can follow. */
+    container-type: inline-size;
+    text-decoration: none;
+    color: var(--s-white);
+    transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out);
+}
+a.stl-photo img { transition: transform 0.7s var(--ease-out); }
+a.stl-photo:hover { transform: translateY(-5px); box-shadow: 0 22px 44px rgba(59, 52, 42, 0.2); }
+a.stl-photo:hover img { transform: scale(1.045); }
+a.stl-photo:focus-visible { outline: 3px solid var(--s-brand); outline-offset: 4px; }
+
+/* The caption sits in a corner the cats' faces are not in, so the name of the
+   litter never lands across a muzzle. Photographs give no guarantee of a dark
+   patch to write on, though -- one of these is a white blanket -- so a soft
+   wedge of shade is drawn into that one corner only, deep enough to carry
+   white type and shallow enough to leave the rest of the picture alone. */
+a.stl-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: opacity 0.45s var(--ease-out);
+}
+.stl-photo--tag-br::after { background: linear-gradient(to top left, rgba(20, 15, 8, 0.62), rgba(20, 15, 8, 0.18) 38%, rgba(20, 15, 8, 0) 62%); }
+
+.stl-photo-tag {
+    position: absolute;
+    z-index: 1;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 9.5cqw, 2.1rem);
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--s-white);
+    text-shadow: 0 2px 16px rgba(20, 15, 8, 0.6), 0 1px 3px rgba(20, 15, 8, 0.5);
+    pointer-events: none;
+}
+.stl-photo-tag--br { bottom: 0.95rem; right: 1.1rem; }
+
+@media (hover: none) {
+    /* Nothing hovers on a touch screen, so the lift never happens there and
+       the tile would read as a plain photo. The shade stays put instead. */
+    a.stl-photo:hover { transform: none; box-shadow: var(--s-shadow); }
+}
+
 @media (max-width: 900px) {
     .stl-section { padding: 4rem 0; }
     .stl-split { grid-template-columns: 1fr; gap: 2.2rem; }

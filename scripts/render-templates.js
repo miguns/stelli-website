@@ -129,12 +129,17 @@ function litterCardHTML(litter, lang, prefix) {
         available: { cs: 'Dostupné', en: 'Available', de: 'Verfügbar', pl: 'Dostępne' },
         reserved: { cs: 'Vše v rezervaci', en: 'All reserved', de: 'Alle reserviert', pl: 'Wszystkie zarezerwowane' }
     };
+    // The litter's own id doubles as the section anchor, so pages elsewhere can
+    // link straight to one litter (the homepage's photo buttons do) instead of
+    // dropping the visitor at the top of a page holding several of them. The
+    // fixed header is already accounted for by html { scroll-padding-top }.
+    const anchor = ' id="' + escapeHtml(litter.id) + '"';
     if (litter.status === 'upcoming') {
-        return '<section class="section bg-soft"><div class="container"><div class="cta-banner reveal-scale">' +
+        return '<section class="section bg-soft"' + anchor + '><div class="container"><div class="cta-banner reveal-scale">' +
             '<h2>' + pick(litter, 'name', lang) + '</h2><p>' + pick(litter, 'desc', lang) + '</p>' +
             '</div></div></section>';
     }
-    return '<section class="section bg-soft"><div class="container">' +
+    return '<section class="section bg-soft"' + anchor + '><div class="container">' +
         '<div class="section-header reveal">' +
         (badgeText[litter.status] ? '<span class="status-badge ' + badgeClass[litter.status] + '" style="position:static; display:inline-flex;">' + badgeText[litter.status][lang] + '</span>' : '') +
         '<h2 style="margin-top:1rem;">' + pick(litter, 'name', lang) + '</h2>' +
