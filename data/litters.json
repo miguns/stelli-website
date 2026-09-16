@@ -33,7 +33,7 @@
       "desc_pl": "Matka Ariell StElli, ojciec Unique Liderland *PL. Data urodzenia: 28.08.2026.",
       "photos": [],
       "kittens": [
-        { "name": "Eevee" },
+        { "name": "Eevee", "photo": "images/kittens/vrh-e/eevee.jpg" },
         { "name": "Eclipse" },
         { "name": "Elevar", "photo": "images/kittens/vrh-e/elevar.jpg" },
         { "name": "Eddie", "photo": "images/kittens/vrh-e/eddie.jpg" },
