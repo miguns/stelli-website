@@ -1045,12 +1045,18 @@ body.concept .ohlas-section {
         var(--s-cream) 200px,
         var(--s-cream) 100%);
 }
+/* The photo sits beside the text within the centered container (not the
+   full-width section), so on wide viewports it moves together with the
+   centered content instead of staying pinned to the browser window's
+   edge while the text block centers independently. */
+body.concept .ohlas-section .container { position: relative; }
 body.concept .ohlas-photo-bg {
     display: block;
     position: absolute;
     top: -20px;
-    left: 40px;
-    width: clamp(340px, 36vw, 580px);
+    --ohlas-photo-w: clamp(340px, 36vw, 580px);
+    left: calc(150px - var(--ohlas-photo-w));
+    width: var(--ohlas-photo-w);
     height: auto;
     pointer-events: none;
     z-index: 0;
