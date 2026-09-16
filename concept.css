@@ -431,20 +431,10 @@ a.stl-photo:hover img { transform: scale(1.045); }
 a.stl-photo:focus-visible { outline: 3px solid var(--s-brand); outline-offset: 4px; }
 
 /* The caption sits in a corner the cats' faces are not in, so the name of the
-   litter never lands across a muzzle. Black type needs a pale ground and the
-   photographs do not promise one -- the corner of the vrh E picture runs from
-   white fur down to a dark fold of blanket -- so a soft wedge of light is
-   washed into that one corner only, enough to carry the type and shallow
-   enough to leave the rest of the picture alone. */
-a.stl-photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    transition: opacity 0.45s var(--ease-out);
-}
-.stl-photo--tag-br::after { background: linear-gradient(to top left, rgba(255, 252, 247, 0.74), rgba(255, 252, 247, 0.3) 38%, rgba(255, 252, 247, 0) 62%); }
-
+   litter never lands across a muzzle. Nothing is laid over the photograph to
+   carry it -- the picture stays exactly as it was taken -- so the only thing
+   holding the black type apart from the fur behind it is a shadow tight
+   enough to hug the letters. */
 .stl-photo-tag {
     position: absolute;
     z-index: 1;
@@ -456,9 +446,7 @@ a.stl-photo::after {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #17130e;
-    /* A halo of the same light the wedge is made of, so the letters hold their
-       edge where the photograph darkens underneath them. */
-    text-shadow: 0 1px 2px rgba(255, 252, 247, 0.9), 0 0 16px rgba(255, 252, 247, 0.75);
+    text-shadow: 0 1px 2px rgba(255, 252, 247, 0.55);
     pointer-events: none;
 }
 .stl-photo-tag--br { bottom: 0.95rem; right: 1.1rem; }
