@@ -878,6 +878,14 @@ body.concept .promo-code {
     color: var(--s-brand);
 }
 body.concept .partners-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+body.concept .partner-name-link {
+    color: var(--s-brand);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    font-style: normal;
+}
+body.concept .partner-name-link:hover { text-decoration-style: solid; }
 
 /* Dotazník (CZ only) and Kontakty (CZ) are each a single plain section that
    runs the whole page, ending on the page cream with nothing fading it into
