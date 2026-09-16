@@ -1078,29 +1078,36 @@ body.concept .ohlas-section .prose { position: relative; z-index: 1; }
 @media (max-width: 900px) {
     /* Below ~900px the centered container has no side margin left to bleed
        into and the prose sits too close to its own edge for a beside-text
-       photo to fit without crossing into it (the container has no
-       "beside the text" gap to move the face into) -- so instead the kitten
-       sits behind the heading itself, head rising above it, faint enough
-       that the heading still reads cleanly. The desktop layout clips this section
-       (overflow:hidden, so a wide bled-left photo doesn't force horizontal
-       scroll) -- switch back to visible here so the photo can bleed up
-       past the section's own top edge same as reasons-photo-bg does.
-       Since ohlas-section paints after (on top of) reasons-section, that
-       bled portion still shows on top of it rather than being covered. */
+       photo to fit without crossing into it -- anywhere inside the container
+       the kitten ends up sitting on the words. So instead it moves entirely
+       out of the text and into the empty band between the cards above and
+       this section's heading, where it reads as an ornament on the seam.
+       The desktop layout clips this section (overflow:hidden, so a wide
+       bled-left photo doesn't force horizontal scroll) -- switch back to
+       visible here so the photo can bleed up past the section's own top
+       edge, same as reasons-photo-bg does. Since ohlas-section paints after
+       (on top of) reasons-section, that bled portion still shows on top of
+       it rather than being covered. */
     body.concept .ohlas-section { overflow: visible; }
     body.concept .ohlas-photo-bg {
-        --ohlas-w: clamp(220px, 64vw, 320px);
+        --ohlas-w: clamp(230px, 68vw, 290px);
         width: var(--ohlas-w);
-        /* The kitten's ear tips sit 23.7% of the photo's own width down from
-           its top edge, so offsetting by that keeps the head crowning the
-           heading at every width instead of drifting as the photo scales. */
-        top: calc(-22px - var(--ohlas-w) * 0.237);
-        left: calc(50% - var(--ohlas-w) * 0.62);
-        opacity: 0.34;
-        /* The lower third of the photo is the grey play mat -- fade it out
-           before it reaches the prose so only the kitten shows through. */
-        -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 82%);
-        mask-image: linear-gradient(to bottom, #000 50%, transparent 82%);
+        /* The photo is 1.334x as tall as it is wide and the mask below takes
+           it to fully transparent at 78% of that height, i.e. 1.04x its own
+           width down from its top edge. Pinning that point just above the
+           container's top edge lands the whole visible kitten inside the gap
+           at any width, instead of drifting into the prose as the photo
+           scales. (Its ear tips sit at 23.7% of the width, so the head still
+           clears the cards above by ~20-60px across the range.) */
+        top: calc(20px - var(--ohlas-w) * 1.04);
+        left: calc(50% - var(--ohlas-w) / 2);
+        opacity: 0.4;
+        /* The bottom third of the photo is the grey play mat and the top
+           sixth is empty backdrop -- fade both out so only the kitten itself
+           shows in the gap, with no photo edge against the cards or the
+           heading. */
+        -webkit-mask-image: linear-gradient(to bottom, transparent 2%, #000 18%, #000 46%, transparent 78%);
+        mask-image: linear-gradient(to bottom, transparent 2%, #000 18%, #000 46%, transparent 78%);
     }
 
 body.concept .accordion-item {
