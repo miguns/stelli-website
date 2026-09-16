@@ -1088,7 +1088,15 @@ body.concept .ohlas-section .prose { position: relative; z-index: 1; }
        Since ohlas-section paints after (on top of) reasons-section, that
        bled portion still shows on top of it rather than being covered. */
     body.concept .ohlas-section { overflow: visible; }
-    body.concept .ohlas-photo-bg { width: 67.2vw; left: 16.4vw; top: -128px; opacity: 0.38; }
+    body.concept .ohlas-photo-bg { width: clamp(68px, 20vw, 95px); left: 16.4vw; top: clamp(95px, 28vw, 135px); opacity: 0.38; }
+}
+@media (min-width: 620px) and (max-width: 900px) {
+    /* In this in-between band the heading has already unwrapped onto one
+       line (so the gap the phone tuning above relies on no longer lines
+       up) but the container still isn't wide enough for the desktop
+       beside-text treatment -- rather than let the photo land on top of
+       the paragraph, skip the decorative photo here entirely. */
+    body.concept .ohlas-photo-bg { display: none; }
 }
 
 body.concept .accordion-item {
