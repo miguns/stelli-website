@@ -558,7 +558,7 @@ body.concept .stl-quote blockquote {
    Homepage — news / litter cards
    ========================================================================== */
 
-.stl-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.2rem; }
+.stl-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; }
 .stl-card { display: flex; flex-direction: column; text-align: left; }
 .stl-card-photo {
     border-radius: 18px;
@@ -582,47 +582,6 @@ body.concept .stl-quote blockquote {
 
 @media (max-width: 900px) {
     .stl-cards { grid-template-columns: 1fr; gap: 2.6rem; }
-}
-
-/* A third blog post does not need a full photo card of its own -- two is a
-   clean grid, three breaks it. It gets a compact link instead: a small round
-   icon standing in for the photo, so it still reads as "more to read" without
-   competing with the two feature cards above it. */
-.stl-blog-more { margin-top: 2.2rem; }
-.stl-blog-more-link {
-    display: flex;
-    align-items: center;
-    gap: 1.1rem;
-    padding: 1.1rem 1.4rem;
-    background: var(--s-white);
-    border-radius: 16px;
-    box-shadow: var(--s-shadow);
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.stl-blog-more-link:hover, .stl-blog-more-link:focus-visible { transform: translateY(-2px); box-shadow: var(--s-shadow-lg); }
-.stl-blog-more-icon {
-    flex: none;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--s-tint);
-    display: grid;
-    place-items: center;
-    color: var(--s-brand);
-}
-.stl-blog-more-icon svg { width: 26px; height: 26px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.stl-blog-more-text { flex: 1; display: flex; flex-direction: column; gap: 0.15rem; }
-.stl-blog-more-text strong { font-size: 1rem; color: var(--s-ink); }
-.stl-blog-more-text span { font-size: 0.87rem; color: var(--s-body); }
-.stl-blog-more-arrow { flex: none; width: 20px; height: 20px; stroke: var(--s-brand); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.25s ease; }
-.stl-blog-more-link:hover .stl-blog-more-arrow, .stl-blog-more-link:focus-visible .stl-blog-more-arrow { transform: translateX(4px); }
-
-@media (max-width: 600px) {
-    .stl-blog-more-link { padding: 1rem 1.1rem; gap: 0.9rem; }
-    .stl-blog-more-icon { width: 44px; height: 44px; }
-    .stl-blog-more-icon svg { width: 22px; height: 22px; }
 }
 
 /* ==========================================================================
