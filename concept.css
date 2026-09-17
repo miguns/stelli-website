@@ -584,6 +584,54 @@ body.concept .stl-quote blockquote {
     .stl-cards { grid-template-columns: 1fr; gap: 2.6rem; }
 }
 
+/* Blog cards on phones — a compact tappable row instead of a full card,
+   so three articles don't cost three screens of scrolling. */
+@media (max-width: 640px) {
+    .stl-cards--blog { gap: 0; }
+    .stl-cards--blog .stl-card {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.9rem 0;
+        border-bottom: 1px solid var(--s-line);
+    }
+    .stl-cards--blog .stl-card:first-child { border-top: 1px solid var(--s-line); }
+    .stl-cards--blog .stl-card-photo {
+        width: 60px;
+        height: 60px;
+        flex: 0 0 60px;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 0;
+        border-radius: 14px;
+        box-shadow: none;
+    }
+    .stl-cards--blog .stl-card-meta,
+    .stl-cards--blog .stl-card p { display: none; }
+    .stl-cards--blog .stl-card h3 { font-size: 1rem; margin: 0; padding-right: 1.6rem; line-height: 1.35; }
+    .stl-cards--blog .stl-card .stl-btn {
+        position: static;
+        align-self: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        font-size: 0;
+        color: transparent;
+    }
+    .stl-cards--blog .stl-card .stl-btn::before { content: ""; position: absolute; inset: 0; }
+    .stl-cards--blog .stl-card .stl-btn::after {
+        content: "\203A";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--s-brand);
+    }
+}
+
 /* ==========================================================================
    Homepage — closing CTA
    ========================================================================== */
