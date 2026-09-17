@@ -34,13 +34,30 @@ function gridSrcOf(src) {
     return fs.existsSync(path.join(ROOT, thumb)) ? thumb : src;
 }
 
+// Images are served with a long Cache-Control (see vercel.json), and a
+// replaced photo keeps its original filename -- so without a cache-buster
+// a visitor whose browser already cached the old URL keeps seeing the old
+// bytes until the 30-day cache expires, even though the file on disk (and
+// the lightbox full-size version, fetched lazily on first click) is
+// already new. Appending the file's own mtime as a query string gives
+// every edit a fresh URL, so caches only ever hold the current photo.
+function withVer(relPath) {
+    try {
+        const mtime = fs.statSync(path.join(ROOT, relPath)).mtimeMs;
+        return relPath + '?v=' + Math.floor(mtime / 1000).toString(36);
+    } catch {
+        return relPath;
+    }
+}
+
 function photoGridHTML(photos, galleryId, altPrefix, prefix) {
     return photos.map((item, i) => {
         const src = typeof item === 'string' ? item : item.photo;
         const customAlt = typeof item === 'string' ? '' : (item.alt || '');
-        const full = escapeHtml(prefix + src);
-        const grid = escapeHtml(prefix + gridSrcOf(src));
-        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        const gridPath = gridSrcOf(src);
+        const full = escapeHtml(prefix + withVer(src));
+        const grid = escapeHtml(prefix + withVer(gridPath));
+        const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
         const alt = customAlt ? escapeHtml(customAlt) : escapeHtml(altPrefix) + ' ' + (i + 1);
         return '<div class="photo-thumb reveal-scale" style="--i:' + (i % 6) + '" data-lightbox tabindex="0" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
             '<picture><source srcset="' + webp + '" type="image/webp">' +
@@ -57,9 +74,10 @@ function photoCarouselHTML(photos, galleryId, altPrefix, prefix, lang) {
     const slides = photos.map((item, i) => {
         const src = typeof item === 'string' ? item : item.photo;
         const customAlt = typeof item === 'string' ? '' : (item.alt || '');
-        const full = escapeHtml(prefix + src);
-        const grid = escapeHtml(prefix + gridSrcOf(src));
-        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        const gridPath = gridSrcOf(src);
+        const full = escapeHtml(prefix + withVer(src));
+        const grid = escapeHtml(prefix + withVer(gridPath));
+        const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
         const alt = customAlt ? escapeHtml(customAlt) : escapeHtml(altPrefix) + ' ' + (i + 1);
         return '<div class="litter-carousel-slide" data-lightbox tabindex="' + (i === 0 ? '0' : '-1') + '" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
             '<picture><source srcset="' + webp + '" type="image/webp">' +
@@ -103,9 +121,10 @@ function kittenSlotHTML(kitten, i, lang, prefix, galleryId) {
     let thumbClass = 'photo-thumb photo-thumb--empty';
     let thumbAttrs = '';
     if (kitten.photo) {
-        const full = escapeHtml(prefix + kitten.photo);
-        const grid = escapeHtml(prefix + gridSrcOf(kitten.photo));
-        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        const gridPath = gridSrcOf(kitten.photo);
+        const full = escapeHtml(prefix + withVer(kitten.photo));
+        const grid = escapeHtml(prefix + withVer(gridPath));
+        const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
         photoHtml = '<picture><source srcset="' + webp + '" type="image/webp">' +
             '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture>';
         thumbClass = 'photo-thumb';
@@ -160,8 +179,9 @@ function litterHistoryItemHTML(litter, i, lang, prefix) {
     if (photos.length) {
         const item = photos[0];
         const src = typeof item === 'string' ? item : item.photo;
-        const grid = escapeHtml(prefix + gridSrcOf(src));
-        const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+        const gridPath = gridSrcOf(src);
+        const grid = escapeHtml(prefix + withVer(gridPath));
+        const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
         photoHtml = '<picture><source srcset="' + webp + '" type="image/webp">' +
             '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture>';
     }
@@ -218,9 +238,10 @@ function onasLifeHTML(data, prefix) {
 }
 
 function teamCardHTML(cat, i, prefix) {
-    const full = escapeHtml(prefix + cat.photo);
-    const grid = escapeHtml(prefix + gridSrcOf(cat.photo));
-    const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+    const gridPath = gridSrcOf(cat.photo);
+    const full = escapeHtml(prefix + withVer(cat.photo));
+    const grid = escapeHtml(prefix + withVer(gridPath));
+    const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
     const name = escapeHtml(cat.name);
     return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
         '<div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="tym" data-src="' + full + '">' +
@@ -237,9 +258,10 @@ function teamHTML(data, prefix) {
 }
 
 function testimonialCardHTML(item, i, lang, prefix) {
-    const full = escapeHtml(prefix + item.photo);
-    const grid = escapeHtml(prefix + gridSrcOf(item.photo));
-    const webp = grid.replace(/\.(jpg|png)$/, '.webp');
+    const gridPath = gridSrcOf(item.photo);
+    const full = escapeHtml(prefix + withVer(item.photo));
+    const grid = escapeHtml(prefix + withVer(gridPath));
+    const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
     const caption = pick(item, 'caption', lang);
     return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
         '<div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="testimonials" data-src="' + full + '">' +
