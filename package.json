@@ -1,0 +1,20 @@
+{
+  "name": "stelli-website",
+  "version": "1.0.0",
+  "description": "StElli Ragdoll Cattery Website",
+  "private": true,
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'No build step required for static site'",
+    "lint": "echo 'No linter configured'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "keywords": [
+    "ragdoll",
+    "cattery",
+    "website"
+  ],
+  "author": "StElli Ragdoll"
+}
