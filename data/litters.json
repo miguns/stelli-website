@@ -34,7 +34,7 @@
       "photos": [],
       "kittens": [
         { "name": "Eevee", "photo": "images/kittens/vrh-e/eevee.jpg" },
-        { "name": "Eclipse" },
+        { "name": "Eclipse", "photo": "images/kittens/vrh-e/eclipse.jpg" },
         { "name": "Elevar", "photo": "images/kittens/vrh-e/elevar.jpg" },
         { "name": "Eddie", "photo": "images/kittens/vrh-e/eddie.jpg" },
         { "name": "Ellaria", "photo": "images/kittens/vrh-e/ellaria.jpg" },
