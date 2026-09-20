@@ -27,7 +27,9 @@
     {
       "name": "Kevin Azure Eyes *PL",
       "desc": "Blue lynx bicolor RAG a 03 21",
-      "photo": "images/team/kevin.jpg"
+      "photo": "images/team/kevin.jpg",
+      "birth": "2025-05-01",
+      "pedigree_url": "https://www.pawpeds.com/db/?a=p&id=1824032&g=4&p=rag&o=elastic"
     }
   ]
 }
