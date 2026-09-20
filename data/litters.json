@@ -39,8 +39,8 @@
         { "name": "Eddie", "photo": "images/kittens/vrh-e/eddie.jpg" },
         { "name": "Ellaria", "photo": "images/kittens/vrh-e/ellaria.jpg" },
         { "name": "Espeon", "photo": "images/kittens/vrh-e/espeon.jpg" },
-        { "name": "Everest" },
-        { "name": "Ellie" }
+        { "name": "Everest", "photo": "images/kittens/vrh-e/everest.jpg" },
+        { "name": "Ellie", "photo": "images/kittens/vrh-e/ellie.jpg" }
       ]
     },
     {
