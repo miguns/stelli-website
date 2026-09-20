@@ -252,8 +252,15 @@
                         <textarea id="dotazy" name="Fragen" rows="3"></textarea>
                     </div>
 
+                    <div class="form-group form-group-checkbox">
+                        <label class="checkbox-label" for="souhlas-gdpr">
+                            <input type="checkbox" id="souhlas-gdpr" name="Einwilligung zur Verarbeitung personenbezogener Daten" value="Ja, ich stimme zu" required>
+                            <span>Ich stimme der Verarbeitung meiner personenbezogenen Daten zur Bearbeitung meiner Anfrage gemäß der <a href="zasady-ochrany-osobnich-udaju.html" target="_blank" rel="noopener">Datenschutzerklärung</a> zu. *</span>
+                        </label>
+                        <span class="form-error">Für das Absenden des Fragebogens müssen Sie der Verarbeitung Ihrer personenbezogenen Daten zustimmen.</span>
+                    </div>
+
                     <button type="submit" class="btn-primary-form">Fragebogen absenden</button>
-                    <p class="form-consent">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer personenbezogenen Daten zur Bearbeitung Ihrer Anfrage zu.</p>
                 </form>
                 <div class="form-success">
                     <h3>Vielen Dank für das Ausfüllen des Fragebogens!</h3>
@@ -290,7 +297,7 @@
             <p>&copy; 2026 StElli Ragdoll. Alle Rechte vorbehalten.</p>
             <p>Petra Vávrová</p>
             <!-- TODO: az bude ICO zalozene, doplnit "IČO: XXXXXXXX" na konec radku vyse -->
-            <p class="footer-note">Wir verwenden eine anonyme IP-basierte Ländererkennung, um automatisch die passende Sprache vorzuschlagen.</p>
+            <p class="footer-note">Wir verwenden eine anonyme IP-basierte Ländererkennung, um automatisch die passende Sprache vorzuschlagen. <a href="zasady-ochrany-osobnich-udaju.html">Datenschutzerklärung</a></p>
         </div>
     </footer>
     <script src="../script.js"></script>

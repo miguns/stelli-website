@@ -252,8 +252,15 @@
                         <textarea id="dotazy" name="Pytania" rows="3"></textarea>
                     </div>
 
+                    <div class="form-group form-group-checkbox">
+                        <label class="checkbox-label" for="souhlas-gdpr">
+                            <input type="checkbox" id="souhlas-gdpr" name="Zgoda na przetwarzanie danych osobowych" value="Tak, zgadzam się" required>
+                            <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi mojego zapytania, zgodnie z <a href="zasady-ochrany-osobnich-udaju.html" target="_blank" rel="noopener">Polityką prywatności</a>. *</span>
+                        </label>
+                        <span class="form-error">Aby wysłać formularz, musisz wyrazić zgodę na przetwarzanie danych osobowych.</span>
+                    </div>
+
                     <button type="submit" class="btn-primary-form">Wyślij formularz</button>
-                    <p class="form-consent">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych osobowych w celu obsługi Twojego zapytania.</p>
                 </form>
                 <div class="form-success">
                     <h3>Dziękujemy za wypełnienie formularza!</h3>
@@ -290,7 +297,7 @@
             <p>&copy; 2026 StElli Ragdoll. Wszelkie prawa zastrzeżone.</p>
             <p>Petra Vávrová</p>
             <!-- TODO: az bude ICO zalozene, doplnit "IČO: XXXXXXXX" na konec radku vyse -->
-            <p class="footer-note">Używamy anonimowego wykrywania kraju na podstawie adresu IP, aby automatycznie zaproponować odpowiedni język.</p>
+            <p class="footer-note">Używamy anonimowego wykrywania kraju na podstawie adresu IP, aby automatycznie zaproponować odpowiedni język. <a href="zasady-ochrany-osobnich-udaju.html">Polityka prywatności</a></p>
         </div>
     </footer>
     <script src="../script.js"></script>

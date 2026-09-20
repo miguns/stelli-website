@@ -357,9 +357,11 @@ document.querySelectorAll('.contact-form').forEach(form => {
 
         this.querySelectorAll('[required]').forEach(field => {
             const group = field.closest('.form-group');
-            const errorValid = field.type === 'email'
-                ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())
-                : field.value.trim().length > 0;
+            const errorValid = field.type === 'checkbox'
+                ? field.checked
+                : field.type === 'email'
+                    ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())
+                    : field.value.trim().length > 0;
 
             group?.classList.toggle('has-error', !errorValid);
             if (!errorValid) valid = false;
