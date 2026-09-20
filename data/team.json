@@ -20,7 +20,9 @@
     {
       "name": "Unique Liderland PL",
       "desc": "Seal point RAG n",
-      "photo": "images/team/unique.jpg"
+      "photo": "images/team/unique.jpg",
+      "birth": "2024-10-02",
+      "pedigree_url": "https://www.pawpeds.com/db/?a=p&id=1824029&g=4&p=rag&o=elastic"
     },
     {
       "name": "Kevin Azure Eyes *PL",

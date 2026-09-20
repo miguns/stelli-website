@@ -582,6 +582,8 @@ header {
 .cat-card .card-body { padding: 1.5rem 1.6rem 1.7rem; }
 .cat-card h3 { color: var(--plum-dark); margin-bottom: 0.3rem; }
 .cat-card p { color: var(--ink-light); margin: 0; font-size: 0.95rem; }
+.cat-card .cat-meta { margin-top: 0.4rem; font-size: 0.82rem; }
+.cat-card .cat-meta a { color: var(--plum); font-weight: 600; }
 
 /* Kitten slots come by the litter -- eight or more cards at the default
    .grid width turn the koťátka page into a very long scroll, and on a phone

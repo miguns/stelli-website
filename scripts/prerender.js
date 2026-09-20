@@ -77,7 +77,7 @@ function run() {
             injectMarker(html, 'onasGrid', onasLifeHTML(onasLife, prefix)));
 
         renderFile(base.concat('tym.html'), html => {
-            const result = teamHTML(team, prefix);
+            const result = teamHTML(team, prefix, code);
             html = injectMarker(html, 'teamQueens', result.queens);
             return injectMarker(html, 'teamStuds', result.studs);
         });

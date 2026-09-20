@@ -237,23 +237,44 @@ function onasLifeHTML(data, prefix) {
     return photoGridHTML(data.photos, 'onas-life', 'StElli', prefix);
 }
 
-function teamCardHTML(cat, i, prefix) {
+const BIRTH_LABEL = { cs: 'Datum narození:', en: 'Date of birth:', de: 'Geburtsdatum:', pl: 'Data urodzenia:' };
+const PEDIGREE_LABEL = { cs: 'Rodokmen', en: 'Pedigree', de: 'Stammbaum', pl: 'Rodowód' };
+const EN_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// Matches the "Datum narození: D. M. RRRR." style already used in the
+// litters' hand-written desc_* text, so a stud/queen's birth date reads the
+// same way as a litter's.
+function formatBirth(iso, lang) {
+    const [y, m, d] = iso.split('-').map(Number);
+    if (lang === 'en') return d + ' ' + EN_MONTHS[m - 1] + ' ' + y;
+    if (lang === 'cs') return d + '. ' + m + '. ' + y;
+    const pad = n => String(n).padStart(2, '0');
+    return pad(d) + '.' + pad(m) + '.' + y;
+}
+
+function teamCardHTML(cat, i, prefix, lang) {
     const gridPath = gridSrcOf(cat.photo);
     const full = escapeHtml(prefix + withVer(cat.photo));
     const grid = escapeHtml(prefix + withVer(gridPath));
     const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
     const name = escapeHtml(cat.name);
+    const birth = cat.birth
+        ? '<p class="cat-meta">' + escapeHtml(BIRTH_LABEL[lang] || BIRTH_LABEL.cs) + ' ' + formatBirth(cat.birth, lang) + '</p>'
+        : '';
+    const pedigree = cat.pedigree_url
+        ? '<p class="cat-meta"><a href="' + escapeHtml(cat.pedigree_url) + '" target="_blank" rel="noopener">' + escapeHtml(PEDIGREE_LABEL[lang] || PEDIGREE_LABEL.cs) + '</a></p>'
+        : '';
     return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
         '<div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="tym" data-src="' + full + '">' +
         '<picture><source srcset="' + webp + '" type="image/webp">' +
         '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture></div>' +
-        '<div class="card-body"><h3>' + name + '</h3><p>' + escapeHtml(cat.desc) + '</p></div></div>';
+        '<div class="card-body"><h3>' + name + '</h3><p>' + escapeHtml(cat.desc) + '</p>' + birth + pedigree + '</div></div>';
 }
 
-function teamHTML(data, prefix) {
+function teamHTML(data, prefix, lang) {
     return {
-        queens: data.queens.map((c, i) => teamCardHTML(c, i, prefix)).join(''),
-        studs: data.studs.map((c, i) => teamCardHTML(c, i, prefix)).join('')
+        queens: data.queens.map((c, i) => teamCardHTML(c, i, prefix, lang)).join(''),
+        studs: data.studs.map((c, i) => teamCardHTML(c, i, prefix, lang)).join('')
     };
 }
 
