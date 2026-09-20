@@ -3,7 +3,9 @@
     {
       "name": "Ariell StElli",
       "desc": "Blue Mitted Rag a 04",
-      "photo": "images/team/ariell.jpg"
+      "photo": "images/team/ariell.jpg",
+      "birth": "2025-05-03",
+      "pedigree_url": "https://www.pawpeds.com/db/?a=p&id=1824036&g=4&p=rag&o=elastic"
     },
     {
       "name": "Baileys StElli",
