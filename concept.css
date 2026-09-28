@@ -1482,7 +1482,7 @@ body.concept .section.bg-plum .stat-item span { color: var(--s-body); }
     /* matched to the photograph's own ground, which the photo fades out into
        so its frame never shows as an edge */
     background: var(--s-cover);
-    min-height: min(86vh, 840px);
+    min-height: min(74vh, 700px);
 }
 
 /* The photograph runs at its own proportions, pinned right and held clear of
@@ -1659,7 +1659,7 @@ body.concept2 .stl-hero--cover .stl-hero-inner { padding-top: 10.5rem; }
 @media (min-width: 701px) {
     body.concept2 .stl-hero--cover { display: flex; align-items: center; }
     body.concept2 .stl-hero--cover .stl-hero-inner {
-        padding-top: 7rem;      /* the fixed header floats over this much */
+        padding-top: 5.5rem;    /* the fixed header floats over this much */
         padding-bottom: 7rem;   /* and the bottom curve covers this much */
     }
 }
