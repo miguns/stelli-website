@@ -50,10 +50,10 @@ function withVer(relPath) {
     }
 }
 
-function photoGridHTML(photos, galleryId, altPrefix, prefix) {
+function photoGridHTML(photos, galleryId, altPrefix, prefix, lang) {
     return photos.map((item, i) => {
         const src = typeof item === 'string' ? item : item.photo;
-        const customAlt = typeof item === 'string' ? '' : (item.alt || '');
+        const customAlt = typeof item === 'string' ? '' : ((lang && item['alt_' + lang]) || item.alt || '');
         const gridPath = gridSrcOf(src);
         const full = escapeHtml(prefix + withVer(src));
         const grid = escapeHtml(prefix + withVer(gridPath));
@@ -229,8 +229,8 @@ function littersHTML(data, lang, prefix) {
     return html;
 }
 
-function galleryHTML(data, prefix) {
-    return photoGridHTML(data.photos, 'gallery', 'StElli Ragdoll', prefix);
+function galleryHTML(data, prefix, lang) {
+    return photoGridHTML(data.photos, 'gallery', 'StElli Ragdoll', prefix, lang);
 }
 
 function onasLifeHTML(data, prefix) {

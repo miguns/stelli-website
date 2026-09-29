@@ -350,10 +350,20 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
 // real key to activate delivery.
 const WEB3FORMS_ACCESS_KEY = '275794e8-10a5-4489-b56a-64955e22f020';
 
+const FORM_TEXT = {
+    cs: { sending: 'Odesílám...', fail: 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nám napište přímo na stellicattery@gmail.com.', thanks: 'Děkujeme za vaši zprávu! Brzy se vám ozveme.' },
+    en: { sending: 'Sending...', fail: 'We could not send your message. Please try again or write to us directly at stellicattery@gmail.com.', thanks: 'Thank you for your message! We will get back to you soon.' },
+    de: { sending: 'Wird gesendet...', fail: 'Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an stellicattery@gmail.com.', thanks: 'Vielen Dank für Ihre Nachricht! Wir melden uns bald bei Ihnen.' },
+    pl: { sending: 'Wysyłanie...', fail: 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz do nas bezpośrednio na stellicattery@gmail.com.', thanks: 'Dziękujemy za wiadomość! Wkrótce się odezwiemy.' }
+};
+const FORM_LANG = FORM_TEXT[(document.documentElement.lang || 'cs').slice(0, 2)] || FORM_TEXT.cs;
+
 document.querySelectorAll('.contact-form').forEach(form => {
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
         let valid = true;
+        let firstInvalid = null;
+        this.querySelector('.form-submit-error')?.remove();
 
         this.querySelectorAll('[required]').forEach(field => {
             const group = field.closest('.form-group');
@@ -364,15 +374,22 @@ document.querySelectorAll('.contact-form').forEach(form => {
                     : field.value.trim().length > 0;
 
             group?.classList.toggle('has-error', !errorValid);
-            if (!errorValid) valid = false;
+            field.setAttribute('aria-invalid', errorValid ? 'false' : 'true');
+            if (!errorValid) {
+                valid = false;
+                if (!firstInvalid) firstInvalid = field;
+            }
         });
 
-        if (!valid) return;
+        if (!valid) {
+            firstInvalid?.focus();
+            return;
+        }
 
         const button = this.querySelector('button[type="submit"]');
         const originalText = button.textContent;
         button.disabled = true;
-        button.textContent = 'Odesílám...';
+        button.textContent = FORM_LANG.sending;
 
         function showSuccess() {
             const success = form.parentElement.querySelector('.form-success') || form.nextElementSibling;
@@ -380,7 +397,7 @@ document.querySelectorAll('.contact-form').forEach(form => {
             if (success && success.classList.contains('form-success')) {
                 success.classList.add('show');
             } else {
-                alert('Děkujeme za vaši zprávu! Brzy se vám ozveme.');
+                alert(FORM_LANG.thanks);
             }
             form.reset();
         }
@@ -388,7 +405,11 @@ document.querySelectorAll('.contact-form').forEach(form => {
         function showError() {
             button.disabled = false;
             button.textContent = originalText;
-            alert('Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nám napište přímo na stellicattery@gmail.com.');
+            const msg = document.createElement('p');
+            msg.className = 'form-submit-error';
+            msg.setAttribute('role', 'alert');
+            msg.textContent = FORM_LANG.fail;
+            button.insertAdjacentElement('beforebegin', msg);
         }
 
         // If the access key hasn't been configured yet, fall back to the
@@ -430,7 +451,10 @@ document.querySelectorAll('.contact-form').forEach(form => {
     });
 
     form.querySelectorAll('input, textarea').forEach(field => {
-        field.addEventListener('input', () => field.closest('.form-group')?.classList.remove('has-error'));
+        field.addEventListener('input', () => {
+            field.closest('.form-group')?.classList.remove('has-error');
+            field.setAttribute('aria-invalid', 'false');
+        });
     });
 });
 

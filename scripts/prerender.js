@@ -71,7 +71,7 @@ function run() {
             injectMarker(html, 'littersContainer', littersHTML(litters, code, prefix)));
 
         renderFile(base.concat('fotogalerie.html'), html =>
-            injectMarker(html, 'galleryGrid', galleryHTML(gallery, prefix)));
+            injectMarker(html, 'galleryGrid', galleryHTML(gallery, prefix, code)));
 
         renderFile(base.concat('o-nas.html'), html =>
             injectMarker(html, 'onasGrid', onasLifeHTML(onasLife, prefix)));
