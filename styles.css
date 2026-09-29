@@ -888,6 +888,15 @@ header {
 .btn-primary-form:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(196, 78, 131, 0.4); }
 .btn-primary-form:disabled { opacity: 0.7; cursor: default; transform: none; }
 
+.form-submit-error {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: #fbeaea;
+    border: 1px solid #d97878;
+    color: #9c2f2f;
+    font-size: 0.95rem;
+}
 .form-success {
     display: none;
     text-align: center;

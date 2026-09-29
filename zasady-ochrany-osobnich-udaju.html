@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="concept.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
     <link rel="apple-touch-icon" href="images/favicon-180.png">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="manifest" href="/site.webmanifest">
 
     <script type="application/ld+json">
     {
@@ -96,11 +98,12 @@
 
                     <h3>Jaké údaje zpracováváme a proč</h3>
                     <p><strong>Vstupní dotazník a komunikace s vámi</strong><br>Když nám napíšete přes vstupní dotazník, e-mail nebo sociální sítě, zpracováváme údaje, které nám sami poskytnete — typicky jméno a příjmení, telefonní číslo, e-mail, informace o vaší domácnosti a zkušenostech s chovem koček a vaše preference ohledně koťátka. Tyto údaje používáme výhradně k tomu, abychom vás mohli kontaktovat, zodpovědět vaše dotazy a posoudit, jaké koťátko by se do vaší domácnosti hodilo. Právním základem je váš souhlas a jednání směřující k případnému uzavření smlouvy.</p>
-                    <p><strong>Automatický výběr jazyka</strong><br>Při první návštěvě webu orientačně zjišťujeme zemi podle vaší IP adresy, abychom vám mohli zobrazit web ve vhodné jazykové verzi. Vaše IP adresa se přitom u nás neukládá — zjištěná země se uloží pouze lokálně ve vašem prohlížeči, abychom se vás při další návštěvě nemuseli ptát znovu.</p>
-                    <p><strong>Soubory cookie</strong><br>Web nepoužívá žádné marketingové ani analytické cookies. Jediný údaj, který se ukládá ve vašem prohlížeči, je zvolená jazyková verze webu (viz výše) — nejde o sledovací technologii a údaj neopouští váš prohlížeč.</p>
+                    <p><strong>Automatický výběr jazyka</strong><br>Při první návštěvě webu orientačně zjišťujeme zemi podle vaší IP adresy, abychom vám mohli zobrazit web ve vhodné jazykové verzi. K tomu využíváme službu <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>, které váš prohlížeč jednorázově odešle IP adresu a která vrátí pouze kód země. Vaše IP adresa se přitom u nás neukládá — zjištěná země se uloží pouze lokálně ve vašem prohlížeči, abychom se vás při další návštěvě nemuseli ptát znovu.</p>
+                    <p><strong>Měření návštěvnosti</strong><br>Používáme službu Vercel Web Analytics, která měří návštěvnost bez cookies a bez sledování jednotlivých návštěvníků napříč weby. Ukládají se pouze anonymní statistiky (navštívená stránka, typ zařízení, prohlížeč a přibližná země). Právním základem je náš oprávněný zájem na zlepšování webu.</p>
+                    <p><strong>Soubory cookie</strong><br>Web nepoužívá žádné marketingové ani analytické cookies, kromě vložené mapy Google na stránce Kontakty (viz níže). Jediný údaj, který se ukládá ve vašem prohlížeči, je zvolená jazyková verze webu (viz výše) — nejde o sledovací technologii a údaj neopouští váš prohlížeč.</p>
 
                     <h3>Komu údaje předáváme</h3>
-                    <p>Zprávy z formulářů na webu nám doručuje služba <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a>, která je přeposílá na náš e-mail — funguje tedy jako zpracovatel vašich údajů. Web dále načítá písma z Google Fonts, takže se váš prohlížeč při načtení stránky spojí se servery Google. Žádné jiné osobní údaje s třetími stranami nesdílíme a v žádném případě je neprodáváme ani nevyužíváme k cílené reklamě.</p>
+                    <p>Zprávy z formulářů na webu nám doručuje služba <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a>, která je přeposílá na náš e-mail — funguje tedy jako zpracovatel vašich údajů. Web dále načítá písma z Google Fonts, takže se váš prohlížeč při načtení stránky spojí se servery Google. Stránka Kontakty obsahuje vloženou mapu Google Maps; při jejím zobrazení se váš prohlížeč rovněž spojí se servery Google, které mohou zpracovat vaši IP adresu a nastavit vlastní cookies podle <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">zásad ochrany soukromí Google</a>. Žádné jiné osobní údaje s třetími stranami nesdílíme a v žádném případě je neprodáváme ani nevyužíváme k cílené reklamě.</p>
 
                     <h3>Jak dlouho údaje uchováváme</h3>
                     <p>Údaje z dotazníku a naší komunikace uchováváme po dobu vyřizování vaší poptávky a přiměřenou dobu poté, obvykle ne déle než 2 roky od posledního kontaktu. Pokud mezi námi dojde k uzavření smlouvy (rezervace nebo koupě koťátka), uchováváme související údaje po dobu vyžadovanou právními předpisy, například účetními a daňovými.</p>
@@ -158,5 +161,6 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

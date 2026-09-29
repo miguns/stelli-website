@@ -113,6 +113,9 @@ collections:
             fields:
               - { label: "Fotka", name: "photo", widget: "image" }
               - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false }
+              - { label: "Popis fotky – EN (nepovinné)", name: "alt_en", widget: "string", required: false }
+              - { label: "Popis fotky – DE (nepovinné)", name: "alt_de", widget: "string", required: false }
+              - { label: "Popis fotky – PL (nepovinné)", name: "alt_pl", widget: "string", required: false }
 
   - name: "onas-life"
     label: "O nás — fotky ze života"

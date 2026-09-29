@@ -2,115 +2,199 @@
   "photos": [
     {
       "photo": "images/gallery/01.jpg",
-      "alt": ""
+      "alt": "Ragdoll kočka odpočívající v polokoulovém pelíšku na škrabadle",
+      "alt_en": "Ragdoll cat resting in a bubble bed on a cat tree",
+      "alt_de": "Ragdoll-Katze ruht in einem Halbkugelbett am Kratzbaum",
+      "alt_pl": "Kot ragdoll odpoczywa w półkulistym legowisku na drapaku"
     },
     {
       "photo": "images/gallery/02.jpg",
-      "alt": ""
+      "alt": "Portrét modrooké ragdoll kočky",
+      "alt_en": "Portrait of a blue-eyed Ragdoll cat",
+      "alt_de": "Porträt einer blauäugigen Ragdoll-Katze",
+      "alt_pl": "Portret niebieskookiego kota ragdoll"
     },
     {
       "photo": "images/gallery/03.jpg",
-      "alt": ""
+      "alt": "Ragdoll kočka spí vedle koťátek",
+      "alt_en": "Ragdoll mother cat sleeping next to her kittens",
+      "alt_de": "Ragdoll-Katze schläft neben ihren Kätzchen",
+      "alt_pl": "Kotka ragdoll śpi obok kociąt"
     },
     {
       "photo": "images/gallery/04.jpg",
-      "alt": ""
+      "alt": "Dvě malé děti si venku na trávě hrají s bílým koťátkem",
+      "alt_en": "Two small children playing with a white kitten on the grass",
+      "alt_de": "Zwei kleine Kinder spielen im Gras mit einem weißen Kätzchen",
+      "alt_pl": "Dwoje małych dzieci bawi się na trawie z białym kociakiem"
     },
     {
       "photo": "images/gallery/05.jpg",
-      "alt": ""
+      "alt": "Malé dítě hladí kočku v proutěném pelíšku",
+      "alt_en": "Small child petting a cat in a wicker basket",
+      "alt_de": "Kleines Kind streichelt eine Katze im Korbbett",
+      "alt_pl": "Małe dziecko głaszcze kota w wiklinowym koszu"
     },
     {
       "photo": "images/gallery/06.jpg",
-      "alt": ""
+      "alt": "Batole objímá bílé ragdoll koťátko",
+      "alt_en": "Toddler hugging a white Ragdoll kitten",
+      "alt_de": "Kleinkind umarmt ein weißes Ragdoll-Kätzchen",
+      "alt_pl": "Maluch przytula białego kociaka ragdoll"
     },
     {
       "photo": "images/gallery/07.jpg",
-      "alt": ""
+      "alt": "Holčička v šatičkách si hraje s koťátkem na provázek",
+      "alt_en": "Girl in a dress playing with a kitten on a string",
+      "alt_de": "Mädchen im Kleid spielt mit einem Kätzchen an der Schnur",
+      "alt_pl": "Dziewczynka w sukience bawi się z kociakiem na sznurku"
     },
     {
       "photo": "images/gallery/08.jpg",
-      "alt": ""
+      "alt": "Dítě hladí bílé koťátko",
+      "alt_en": "Child petting a white kitten",
+      "alt_de": "Kind streichelt ein weißes Kätzchen",
+      "alt_pl": "Dziecko głaszcze białego kociaka"
     },
     {
       "photo": "images/gallery/09.jpg",
-      "alt": ""
+      "alt": "Děti a bílé koťátko u misky",
+      "alt_en": "Children and a white kitten next to a bowl",
+      "alt_de": "Kinder und ein weißes Kätzchen neben einem Napf",
+      "alt_pl": "Dzieci i biały kociak przy misce"
     },
     {
       "photo": "images/gallery/10.jpg",
-      "alt": ""
+      "alt": "Batole hladí ležící ragdoll koťátko",
+      "alt_en": "Toddler petting a lying Ragdoll kitten",
+      "alt_de": "Kleinkind streichelt ein liegendes Ragdoll-Kätzchen",
+      "alt_pl": "Maluch głaszcze leżącego kociaka ragdoll"
     },
     {
       "photo": "images/gallery/11.jpg",
-      "alt": ""
+      "alt": "Holčička se mazlí s bílým koťátkem",
+      "alt_en": "Girl cuddling a white kitten",
+      "alt_de": "Mädchen kuschelt mit einem weißen Kätzchen",
+      "alt_pl": "Dziewczynka tuli się do białego kociaka"
     },
     {
       "photo": "images/gallery/12.jpg",
-      "alt": ""
+      "alt": "Dítě hladí bílé koťátko na pohovce",
+      "alt_en": "Child petting a white kitten on the sofa",
+      "alt_de": "Kind streichelt ein weißes Kätzchen auf dem Sofa",
+      "alt_pl": "Dziecko głaszcze białego kociaka na kanapie"
     },
     {
       "photo": "images/gallery/13.jpg",
-      "alt": ""
+      "alt": "Ragdoll koťátko leží vedle modré hračky",
+      "alt_en": "Ragdoll kitten lying next to a blue toy",
+      "alt_de": "Ragdoll-Kätzchen liegt neben einem blauen Spielzeug",
+      "alt_pl": "Kociak ragdoll leży obok niebieskiej zabawki"
     },
     {
       "photo": "images/gallery/14.jpg",
-      "alt": ""
+      "alt": "Ragdoll koťátko na chlupatém pelíšku",
+      "alt_en": "Ragdoll kitten on a fluffy bed",
+      "alt_de": "Ragdoll-Kätzchen auf einem flauschigen Bett",
+      "alt_pl": "Kociak ragdoll na puszystym legowisku"
     },
     {
       "photo": "images/gallery/15.jpg",
-      "alt": ""
+      "alt": "Dvě malá koťátka schoulená v dlaních",
+      "alt_en": "Two tiny kittens curled up in hands",
+      "alt_de": "Zwei winzige Kätzchen in den Händen zusammengekuschelt",
+      "alt_pl": "Dwa maleńkie kociaki zwinięte w dłoniach"
     },
     {
       "photo": "images/gallery/16.jpg",
-      "alt": ""
+      "alt": "Holčička drží malé koťátko",
+      "alt_en": "Girl holding a tiny kitten",
+      "alt_de": "Mädchen hält ein winziges Kätzchen",
+      "alt_pl": "Dziewczynka trzyma maleńkiego kociaka"
     },
     {
       "photo": "images/gallery/17.jpg",
-      "alt": ""
+      "alt": "Holčička drží bílé koťátko",
+      "alt_en": "Girl holding a white kitten",
+      "alt_de": "Mädchen hält ein weißes Kätzchen",
+      "alt_pl": "Dziewczynka trzyma białego kociaka"
     },
     {
       "photo": "images/gallery/18.jpg",
-      "alt": ""
+      "alt": "Bílé ragdoll koťátko sedí u okna",
+      "alt_en": "White Ragdoll kitten sitting by the window",
+      "alt_de": "Weißes Ragdoll-Kätzchen sitzt am Fenster",
+      "alt_pl": "Biały kociak ragdoll siedzi przy oknie"
     },
     {
       "photo": "images/gallery/19.jpg",
-      "alt": ""
+      "alt": "Dvě ragdoll koťátka u škrabadla",
+      "alt_en": "Two Ragdoll kittens by a scratching post",
+      "alt_de": "Zwei Ragdoll-Kätzchen am Kratzbaum",
+      "alt_pl": "Dwa kociaki ragdoll przy drapaku"
     },
     {
       "photo": "images/gallery/20.jpg",
-      "alt": ""
+      "alt": "Malé koťátko si hraje v misce na podlaze",
+      "alt_en": "Small kitten playing in a bowl on the floor",
+      "alt_de": "Kleines Kätzchen spielt in einer Schale auf dem Boden",
+      "alt_pl": "Mały kociak bawi się w misce na podłodze"
     },
     {
       "photo": "images/gallery/21.jpg",
-      "alt": ""
+      "alt": "Ragdoll koťátko sedí na pelíšku",
+      "alt_en": "Ragdoll kitten sitting on a bed",
+      "alt_de": "Ragdoll-Kätzchen sitzt auf einem Bett",
+      "alt_pl": "Kociak ragdoll siedzi na legowisku"
     },
     {
       "photo": "images/gallery/22.jpg",
-      "alt": ""
+      "alt": "Koťátko ragdoll sedí na kočičím stromě",
+      "alt_en": "Ragdoll kitten sitting on a cat tree",
+      "alt_de": "Ragdoll-Kätzchen sitzt auf einem Kratzbaum",
+      "alt_pl": "Kociak ragdoll siedzi na drapaku"
     },
     {
       "photo": "images/gallery/23.jpg",
-      "alt": ""
+      "alt": "Holčička drží ragdoll koťátko v náručí",
+      "alt_en": "Girl carrying a Ragdoll kitten",
+      "alt_de": "Mädchen trägt ein Ragdoll-Kätzchen auf dem Arm",
+      "alt_pl": "Dziewczynka trzyma kociaka ragdoll na rękach"
     },
     {
       "photo": "images/gallery/24.jpg",
-      "alt": ""
+      "alt": "Dítě se mazlí s ragdoll koťátkem",
+      "alt_en": "Child cuddling a Ragdoll kitten",
+      "alt_de": "Kind kuschelt mit einem Ragdoll-Kätzchen",
+      "alt_pl": "Dziecko tuli kociaka ragdoll"
     },
     {
       "photo": "images/gallery/25.jpg",
-      "alt": ""
+      "alt": "Holčička s koťátkem v náručí",
+      "alt_en": "Girl with a kitten in her arms",
+      "alt_de": "Mädchen mit einem Kätzchen im Arm",
+      "alt_pl": "Dziewczynka z kociakiem na rękach"
     },
     {
       "photo": "images/gallery/26.jpg",
-      "alt": ""
+      "alt": "Holčička drží koťátko a usmívá se",
+      "alt_en": "Smiling girl holding a kitten",
+      "alt_de": "Lächelndes Mädchen hält ein Kätzchen",
+      "alt_pl": "Uśmiechnięta dziewczynka trzyma kociaka"
     },
     {
       "photo": "images/gallery/27.jpg",
-      "alt": ""
+      "alt": "Ragdoll kočka leží na podlaze a dívá se vzhůru",
+      "alt_en": "Ragdoll cat lying on the floor looking up",
+      "alt_de": "Ragdoll-Katze liegt auf dem Boden und schaut nach oben",
+      "alt_pl": "Kot ragdoll leży na podłodze i patrzy w górę"
     },
     {
       "photo": "images/gallery/28.jpg",
-      "alt": "Ariel, Ragdoll, kitten, kittens, fluffy"
+      "alt": "Ragdoll kočka Ariel odpočívá na škrabadle",
+      "alt_en": "Ragdoll cat Ariel resting on a cat tree",
+      "alt_de": "Ragdoll-Katze Ariel ruht auf einem Kratzbaum",
+      "alt_pl": "Kotka ragdoll Ariel odpoczywa na drapaku"
     }
   ]
 }
