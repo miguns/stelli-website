@@ -43,7 +43,47 @@
       "continue": true
     },
     {
+      "src": "^/sluzby/?$",
+      "status": 301,
+      "headers": {
+        "Location": "/nase-prace"
+      }
+    },
+    {
+      "src": "^/(en|de|pl)$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1/"
+      }
+    },
+    {
+      "src": "^/((?:en|de|pl)/)?index(?:\\.html)?$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1"
+      }
+    },
+    {
+      "src": "^/((?:(?:en|de|pl)/)?[a-z0-9-]+)\\.html$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1"
+      }
+    },
+    {
+      "src": "^/(?!admin/|(?:en|de|pl)/$)(.+)/$",
+      "status": 301,
+      "headers": {
+        "Location": "/$1"
+      }
+    },
+    {
       "handle": "filesystem"
+    },
+    {
+      "src": "^/((?:(?:en|de|pl)/)?[a-z0-9-]+)$",
+      "dest": "/$1.html",
+      "check": true
     },
     {
       "src": "/en/(.*)",
