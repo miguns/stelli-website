@@ -13,8 +13,9 @@
         const path = location.pathname;
         const m = path.match(/\/(en|de|pl)\//);
         const code = m ? m[1] : 'cs';
-        let file = path.substring(path.lastIndexOf('/') + 1);
-        if (!file) file = 'index.html';
+        // Clean URLs: '' for a language home, 'kotatka' for a page
+        const file = path.substring(path.lastIndexOf('/') + 1)
+            .replace(/\.html$/, '').replace(/^index$/, '');
         return { code, file };
     }
 
@@ -23,7 +24,7 @@
         const target = LANGS.find(l => l.code === code);
         if (!target) return null;
         const up = cur.code === 'cs' ? '' : '../';
-        return up + target.dir + cur.file;
+        return (up + target.dir + cur.file) || './';
     }
 
     const ls = {
@@ -131,10 +132,11 @@ document.querySelectorAll('.nav-menu a').forEach(link => link.addEventListener('
 // ==========================================================================
 // Highlight active nav link
 // ==========================================================================
-const currentPage = location.pathname.split('/').pop() || 'index.html';
+const pageSlug = (p) => p.split('#')[0].split('/').pop().replace(/\.html$/, '').replace(/^(index|\.)$/, '');
+const currentPage = pageSlug(location.pathname);
 document.querySelectorAll('.nav-menu a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage) link.classList.add('active');
+    if (href && pageSlug(href) === currentPage) link.classList.add('active');
 });
 
 // ==========================================================================
@@ -718,12 +720,12 @@ initPawTrail();
 (function initFloatCat() {
     if (!document.body.classList.contains('concept')) return;
     if (document.getElementById('floatCta')) return;
-    const path = (location.pathname.split('/').pop() || 'index.html');
-    if (path === '' || path === 'index.html') return;
+    const path = pageSlug(location.pathname);
+    if (path === '') return;
     // The button itself is the "want a kitten" CTA -- redundant (and in the
     // way) once someone is already on the page it points to, or on the
     // questionnaire that page leads to.
-    if (path === 'dotaznik.html' || path === 'informace-ke-koupi.html') return;
+    if (path === 'dotaznik' || path === 'informace-ke-koupi') return;
 
     const isSub = /\/(en|de|pl)\//.test(location.pathname);
     const langMatch = location.pathname.match(/\/(en|de|pl)\//);
@@ -732,7 +734,7 @@ initPawTrail();
 
     const ARIA_LABEL = { cs: 'Chci koťátko', en: 'I want a kitten', de: 'Ich möchte ein Kätzchen', pl: 'Chcę kocię' };
     const LABEL = { cs: 'Chci kotě', en: 'A kitten', de: 'Kätzchen', pl: 'Chcę kocię' };
-    const HREF = { cs: 'informace-ke-koupi.html', en: 'informace-ke-koupi.html', de: 'informace-ke-koupi.html', pl: 'informace-ke-koupi.html' };
+    const HREF = { cs: 'informace-ke-koupi', en: 'informace-ke-koupi', de: 'informace-ke-koupi', pl: 'informace-ke-koupi' };
 
     const a = document.createElement('a');
     a.href = HREF[lang];

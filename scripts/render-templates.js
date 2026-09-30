@@ -100,8 +100,8 @@ function newsHTML(news, lang) {
     return {
         hidden: false,
         html: '<div><h3>' + pick(news, 'title', lang) + '</h3>' +
-            '<p>' + pick(news, 'text', lang) + ' <a href="kotatka.html">' + pick(news, 'cta', lang) + ' →</a></p></div>' +
-            '<a href="kotatka.html" class="btn btn-solid">' + pick(news, 'cta', lang) + '</a>'
+            '<p>' + pick(news, 'text', lang) + ' <a href="kotatka">' + pick(news, 'cta', lang) + ' →</a></p></div>' +
+            '<a href="kotatka" class="btn btn-solid">' + pick(news, 'cta', lang) + '</a>'
     };
 }
 
