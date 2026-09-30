@@ -136,7 +136,10 @@ const pageSlug = (p) => p.split('#')[0].split('/').pop().replace(/\.html$/, '').
 const currentPage = pageSlug(location.pathname);
 document.querySelectorAll('.nav-menu a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href && pageSlug(href) === currentPage) link.classList.add('active');
+    // Compare the whole href (not just its last segment) so the language
+    // switcher's 'en/kotatka' doesn't light up on the Czech 'kotatka'.
+    const page = (href || '').split('#')[0].replace(/\.html$/, '').replace(/(^|\/)index$/, '$1').replace(/^\.\/$/, '');
+    if (href && page === currentPage) link.classList.add('active');
 });
 
 // ==========================================================================
