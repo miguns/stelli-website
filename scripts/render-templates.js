@@ -73,7 +73,7 @@ function photoCarouselHTML(photos, galleryId, altPrefix, prefix, lang) {
     };
     const slides = photos.map((item, i) => {
         const src = typeof item === 'string' ? item : item.photo;
-        const customAlt = typeof item === 'string' ? '' : (item.alt || '');
+        const customAlt = typeof item === 'string' ? '' : ((lang && item['alt_' + lang]) || item.alt || '');
         const gridPath = gridSrcOf(src);
         const full = escapeHtml(prefix + withVer(src));
         const grid = escapeHtml(prefix + withVer(gridPath));

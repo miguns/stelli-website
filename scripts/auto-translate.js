@@ -4,6 +4,8 @@
 //
 // Convention: any key ending in "_cs" is treated as the Czech source of
 // truth. Its "_en" / "_de" / "_pl" siblings are translated in if missing.
+// Photo descriptions are the exception: their Czech text lives in a plain
+// "alt" key (alt_en / alt_de / alt_pl are filled in from it).
 //
 // Requires env var DEEPL_API_KEY. Run via `node scripts/auto-translate.js`.
 
@@ -22,7 +24,14 @@ const TARGETS = [
 ];
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
-const FILES = ['news.json', 'litters.json', 'testimonials.json'];
+const FILES = ['news.json', 'litters.json', 'testimonials.json', 'gallery.json', 'onas-life.json'];
+
+// Czech source key -> base name of its translated siblings, or null.
+function sourceBase(key) {
+    if (key.endsWith('_cs')) return key.slice(0, -3);
+    if (key === 'alt') return 'alt';
+    return null;
+}
 
 let apiCalls = 0;
 
@@ -53,8 +62,8 @@ async function walk(node, stats) {
 
     for (const key of Object.keys(node)) {
         const value = node[key];
-        if (key.endsWith('_cs') && typeof value === 'string' && value.trim()) {
-            const base = key.slice(0, -3);
+        const base = sourceBase(key);
+        if (base && typeof value === 'string' && value.trim()) {
             for (const { suffix, deepl } of TARGETS) {
                 const targetKey = base + '_' + suffix;
                 const existing = node[targetKey];

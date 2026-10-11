@@ -69,7 +69,10 @@ collections:
                 thumbnail: "photo"
                 fields:
                   - { label: "Fotka", name: "photo", widget: "image" }
-                  - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false }
+                  - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false, hint: "Stačí česky — EN/DE/PL se po uložení doplní automaticky, pokud jsou prázdné." }
+                  - { label: "Popis fotky – EN (nepovinné)", name: "alt_en", widget: "string", required: false }
+                  - { label: "Popis fotky – DE (nepovinné)", name: "alt_de", widget: "string", required: false }
+                  - { label: "Popis fotky – PL (nepovinné)", name: "alt_pl", widget: "string", required: false }
 
   - name: "team"
     label: "Náš tým koček"
@@ -111,7 +114,7 @@ collections:
             thumbnail: "photo"
             fields:
               - { label: "Fotka", name: "photo", widget: "image" }
-              - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false }
+              - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false, hint: "Stačí česky — EN/DE/PL se po uložení doplní automaticky, pokud jsou prázdné." }
               - { label: "Popis fotky – EN (nepovinné)", name: "alt_en", widget: "string", required: false }
               - { label: "Popis fotky – DE (nepovinné)", name: "alt_de", widget: "string", required: false }
               - { label: "Popis fotky – PL (nepovinné)", name: "alt_pl", widget: "string", required: false }
@@ -130,7 +133,7 @@ collections:
             thumbnail: "photo"
             fields:
               - { label: "Fotka", name: "photo", widget: "image" }
-              - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false }
+              - { label: "Popis fotky (pro vyhledávače, nepovinné)", name: "alt", widget: "string", required: false, hint: "Stačí česky — EN/DE/PL se po uložení doplní automaticky, pokud jsou prázdné." }
               - { label: "Popis fotky – EN (nepovinné)", name: "alt_en", widget: "string", required: false }
               - { label: "Popis fotky – DE (nepovinné)", name: "alt_de", widget: "string", required: false }
               - { label: "Popis fotky – PL (nepovinné)", name: "alt_pl", widget: "string", required: false }
