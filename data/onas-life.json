@@ -2,27 +2,45 @@
   "photos": [
     {
       "photo": "images/onas/01.jpg",
-      "alt": ""
+      "alt": "Holčička v růžovém venčí bílou ragdoll kočku na vodítku na zahradě",
+      "alt_en": "Little girl in pink walking a white Ragdoll cat on a leash in the garden",
+      "alt_de": "Mädchen in Rosa führt eine weiße Ragdoll-Katze an der Leine im Garten",
+      "alt_pl": "Dziewczynka w różowym ubranku wyprowadza białego kota ragdoll na smyczy w ogrodzie"
     },
     {
       "photo": "images/onas/02.jpg",
-      "alt": ""
+      "alt": "Holčička sedí v trávě s bílou ragdoll kočkou na vodítku",
+      "alt_en": "Little girl sitting in the grass with a white Ragdoll cat on a leash",
+      "alt_de": "Mädchen sitzt im Gras mit einer weißen Ragdoll-Katze an der Leine",
+      "alt_pl": "Dziewczynka siedzi na trawie z białym kotem ragdoll na smyczy"
     },
     {
       "photo": "images/onas/03.jpg",
-      "alt": ""
+      "alt": "Dvě děti hladí ragdoll kočku na zahradě",
+      "alt_en": "Two children stroking a Ragdoll cat in the garden",
+      "alt_de": "Zwei Kinder streicheln eine Ragdoll-Katze im Garten",
+      "alt_pl": "Dwoje dzieci głaszcze kota ragdoll w ogrodzie"
     },
     {
       "photo": "images/onas/04.jpg",
-      "alt": ""
+      "alt": "Dítě hladí ragdoll kočku v proutěném kočárku pro panenky",
+      "alt_en": "Child stroking a Ragdoll cat in a wicker doll's pram",
+      "alt_de": "Kind streichelt eine Ragdoll-Katze in einem Puppenwagen aus Korb",
+      "alt_pl": "Dziecko głaszcze kota ragdoll w wiklinowym wózku dla lalek"
     },
     {
       "photo": "images/onas/05.jpg",
-      "alt": ""
+      "alt": "Ragdoll kočka se nechá vozit dětmi v kočárku",
+      "alt_en": "Ragdoll cat calmly riding in a doll's pram pushed by children",
+      "alt_de": "Ragdoll-Katze lässt sich von Kindern im Puppenwagen schieben",
+      "alt_pl": "Kot ragdoll spokojnie daje się wozić dzieciom w wózku"
     },
     {
       "photo": "images/onas/06.jpg",
-      "alt": ""
+      "alt": "Chovatelka StElli se mazlí s ragdoll kočkou",
+      "alt_en": "StElli breeder cuddling a Ragdoll cat",
+      "alt_de": "StElli-Züchterin kuschelt mit einer Ragdoll-Katze",
+      "alt_pl": "Hodowczyni StElli przytula kota ragdoll"
     }
   ]
 }

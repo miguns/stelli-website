@@ -109,12 +109,23 @@ const LITTER_HOME_TEXT = { cs: 'V nových domovech', en: 'In new homes', de: 'In
 const KITTEN_WATCHING_TEXT = { cs: 'Ve sledování', en: 'Being monitored', de: 'Wird beobachtet', pl: 'W obserwacji' };
 const KITTEN_UNNAMED_TEXT = { cs: 'Koťátko', en: 'Kitten', de: 'Kätzchen', pl: 'Kotek' };
 
+// Descriptive alt texts for search engines (Google Images) and screen
+// readers -- a bare kitten name or "Vrh A 1" says nothing about the photo.
+const KITTEN_ALT = {
+    cs: (name, litter) => 'Koťátko Ragdoll ' + name + ' – ' + litter + ', CHS StElli',
+    en: (name, litter) => 'Ragdoll kitten ' + name + ' – ' + litter + ', StElli cattery',
+    de: (name, litter) => 'Ragdoll-Kätzchen ' + name + ' – ' + litter + ', Zucht StElli',
+    pl: (name, litter) => 'Kocię Ragdoll ' + name + ' – ' + litter + ', hodowla StElli'
+};
+const LITTER_PHOTO_ALT = { cs: 'Koťátka Ragdoll – ', en: 'Ragdoll kittens – ', de: 'Ragdoll-Kätzchen – ', pl: 'Kocięta Ragdoll – ' };
+const PHOTO_WORD = { cs: 'foto', en: 'photo', de: 'Foto', pl: 'zdjęcie' };
+
 // One card per kitten in the litter, photo optional -- shown as a
 // shimmering placeholder (see .photo-thumb--empty) until a real photo is
 // uploaded, so the slot exists on the page from day one. A kitten without
 // a "name" yet (litter too young to be named) falls back to a numbered
 // generic label instead.
-function kittenSlotHTML(kitten, i, lang, prefix, galleryId) {
+function kittenSlotHTML(kitten, i, lang, prefix, galleryId, litterName) {
     const name = escapeHtml(kitten.name || (KITTEN_UNNAMED_TEXT[lang] + ' ' + (i + 1)));
     const note = escapeHtml(kitten['note_' + lang] || kitten.note_cs || KITTEN_WATCHING_TEXT[lang]);
     let photoHtml = '<span class="kitten-slot-icon" aria-hidden="true">🐾</span>';
@@ -126,7 +137,7 @@ function kittenSlotHTML(kitten, i, lang, prefix, galleryId) {
         const grid = escapeHtml(prefix + withVer(gridPath));
         const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
         photoHtml = '<picture><source srcset="' + webp + '" type="image/webp">' +
-            '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture>';
+            '<img src="' + grid + '" alt="' + KITTEN_ALT[lang](name, litterName) + '" loading="lazy"></picture>';
         thumbClass = 'photo-thumb';
         thumbAttrs = ' data-lightbox tabindex="0" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '"';
     }
@@ -135,10 +146,10 @@ function kittenSlotHTML(kitten, i, lang, prefix, galleryId) {
         '<div class="card-body"><h3>' + name + '</h3><p>' + note + '</p></div></div>';
 }
 
-function kittensGridHTML(kittens, lang, prefix, galleryId) {
+function kittensGridHTML(kittens, lang, prefix, galleryId, litterName) {
     if (!kittens || !kittens.length) return '';
     return '<div class="grid stagger kitten-slots">' +
-        kittens.map((k, i) => kittenSlotHTML(k, i, lang, prefix, galleryId)).join('') +
+        kittens.map((k, i) => kittenSlotHTML(k, i, lang, prefix, galleryId, litterName)).join('') +
         '</div>';
 }
 
@@ -163,8 +174,8 @@ function litterCardHTML(litter, lang, prefix) {
         (badgeText[litter.status] ? '<span class="status-badge ' + badgeClass[litter.status] + '" style="position:static; display:inline-flex;">' + badgeText[litter.status][lang] + '</span>' : '') +
         '<h2 style="margin-top:1rem;">' + pick(litter, 'name', lang) + '</h2>' +
         '<p>' + pick(litter, 'desc', lang) + '</p></div>' +
-        kittensGridHTML(litter.kittens, lang, prefix, litter.id) +
-        photoCarouselHTML(litter.photos, litter.id, pick(litter, 'name', lang), prefix, lang) +
+        kittensGridHTML(litter.kittens, lang, prefix, litter.id, pick(litter, 'name', lang)) +
+        photoCarouselHTML(litter.photos, litter.id, LITTER_PHOTO_ALT[lang] + pick(litter, 'name', lang) + ', ' + PHOTO_WORD[lang], prefix, lang) +
         '</div></section>';
 }
 
@@ -183,7 +194,7 @@ function litterHistoryItemHTML(litter, i, lang, prefix) {
         const grid = escapeHtml(prefix + withVer(gridPath));
         const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
         photoHtml = '<picture><source srcset="' + webp + '" type="image/webp">' +
-            '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture>';
+            '<img src="' + grid + '" alt="' + LITTER_PHOTO_ALT[lang] + name + '" loading="lazy"></picture>';
     }
     return '<li class="litter-history-item reveal-scale" style="--i:' + (i % 6) + '">' +
         '<div class="litter-history-photo">' + photoHtml + '</div>' +
@@ -233,8 +244,8 @@ function galleryHTML(data, prefix, lang) {
     return photoGridHTML(data.photos, 'gallery', 'StElli Ragdoll', prefix, lang);
 }
 
-function onasLifeHTML(data, prefix) {
-    return photoGridHTML(data.photos, 'onas-life', 'StElli', prefix);
+function onasLifeHTML(data, prefix, lang) {
+    return photoGridHTML(data.photos, 'onas-life', 'StElli', prefix, lang);
 }
 
 const BIRTH_LABEL = { cs: 'Datum narození:', en: 'Date of birth:', de: 'Geburtsdatum:', pl: 'Data urodzenia:' };
@@ -252,7 +263,12 @@ function formatBirth(iso, lang) {
     return pad(d) + '.' + pad(m) + '.' + y;
 }
 
-function teamCardHTML(cat, i, prefix, lang) {
+const TEAM_KIND = {
+    queen: { cs: 'kočka Ragdoll', en: 'Ragdoll queen', de: 'Ragdoll-Katze', pl: 'kotka Ragdoll' },
+    stud: { cs: 'kocour Ragdoll', en: 'Ragdoll stud', de: 'Ragdoll-Kater', pl: 'kocur Ragdoll' }
+};
+
+function teamCardHTML(cat, i, prefix, lang, kind) {
     const gridPath = gridSrcOf(cat.photo);
     const full = escapeHtml(prefix + withVer(cat.photo));
     const grid = escapeHtml(prefix + withVer(gridPath));
@@ -267,14 +283,14 @@ function teamCardHTML(cat, i, prefix, lang) {
     return '<div class="cat-card reveal-scale" style="--i:' + i + '">' +
         '<div class="photo-thumb" data-lightbox tabindex="0" role="button" data-gallery="tym" data-src="' + full + '">' +
         '<picture><source srcset="' + webp + '" type="image/webp">' +
-        '<img src="' + grid + '" alt="' + name + '" loading="lazy"></picture></div>' +
+        '<img src="' + grid + '" alt="' + name + ' – ' + TEAM_KIND[kind][lang] + ', ' + escapeHtml(cat.desc) + '" loading="lazy"></picture></div>' +
         '<div class="card-body"><h3>' + name + '</h3><p>' + escapeHtml(cat.desc) + '</p>' + birth + pedigree + '</div></div>';
 }
 
 function teamHTML(data, prefix, lang) {
     return {
-        queens: data.queens.map((c, i) => teamCardHTML(c, i, prefix, lang)).join(''),
-        studs: data.studs.map((c, i) => teamCardHTML(c, i, prefix, lang)).join('')
+        queens: data.queens.map((c, i) => teamCardHTML(c, i, prefix, lang, 'queen')).join(''),
+        studs: data.studs.map((c, i) => teamCardHTML(c, i, prefix, lang, 'stud')).join('')
     };
 }
 

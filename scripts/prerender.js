@@ -74,7 +74,7 @@ function run() {
             injectMarker(html, 'galleryGrid', galleryHTML(gallery, prefix, code)));
 
         renderFile(base.concat('o-nas.html'), html =>
-            injectMarker(html, 'onasGrid', onasLifeHTML(onasLife, prefix)));
+            injectMarker(html, 'onasGrid', onasLifeHTML(onasLife, prefix, code)));
 
         renderFile(base.concat('tym.html'), html => {
             const result = teamHTML(team, prefix, code);
