@@ -11,6 +11,14 @@ function readCookie(req, name) {
     return null;
 }
 
+// Origins allowed to receive the GitHub token. Without this check any site
+// that opened /api/auth in a popup could ask for (and steal) the token.
+const ALLOWED_ORIGINS = [
+    'https://www.stelliragdoll.cz',
+    'https://stelliragdoll.cz',
+    'https://stelli-website.vercel.app'
+];
+
 module.exports = async (req, res) => {
     const clientId = process.env.OAUTH_CLIENT_ID;
     const clientSecret = process.env.OAUTH_CLIENT_SECRET;
@@ -19,6 +27,7 @@ module.exports = async (req, res) => {
 
     // Clear the state cookie on every response path so it can't be replayed.
     res.setHeader('Set-Cookie', 'oauth_state=; Max-Age=0; Path=/api; HttpOnly; Secure; SameSite=Lax');
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
 
     if (!clientId || !clientSecret) {
         res.status(500).send('Missing OAUTH_CLIENT_ID / OAUTH_CLIENT_SECRET environment variables.');
@@ -42,19 +51,27 @@ module.exports = async (req, res) => {
         });
         const data = await tokenRes.json();
 
-        if (data.error) {
-            res.status(400).send('GitHub OAuth error: ' + (data.error_description || data.error));
+        if (data.error || !data.access_token) {
+            console.error('GitHub OAuth error:', data.error_description || data.error);
+            res.status(400).send('Přihlášení se nezdařilo. Zkuste to prosím znovu.');
             return;
         }
+
+        const host = req.headers['x-forwarded-host'] || req.headers.host;
+        const proto = req.headers['x-forwarded-proto'] || 'https';
+        const allowed = ALLOWED_ORIGINS.concat(proto + '://' + host);
 
         // Build the postMessage string safely: JSON.stringify handles all
         // escaping, so the value is always a valid JS string literal below.
         const message = 'authorization:github:success:' + JSON.stringify({ token: data.access_token, provider: 'github' });
         const messageLiteral = JSON.stringify(message);
+        const allowedLiteral = JSON.stringify(allowed);
 
         const html = '<!DOCTYPE html><html><body><script>'
             + '(function () {'
+            + '  var allowed = ' + allowedLiteral + ';'
             + '  function receiveMessage(e) {'
+            + '    if (e.source !== window.opener || allowed.indexOf(e.origin) === -1) return;'
             + '    window.opener.postMessage(' + messageLiteral + ', e.origin);'
             + '    window.removeEventListener("message", receiveMessage, false);'
             + '  }'
@@ -63,9 +80,10 @@ module.exports = async (req, res) => {
             + '})();'
             + '</script></body></html>';
 
-        res.setHeader('Content-Type', 'text/html');
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
         res.status(200).send(html);
     } catch (err) {
-        res.status(500).send('Authentication error: ' + err.message);
+        console.error('OAuth callback failed:', err);
+        res.status(500).send('Přihlášení se nezdařilo. Zkuste to prosím znovu.');
     }
 };
