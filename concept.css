@@ -1279,6 +1279,22 @@ body.concept .info-block:hover { transform: translateY(-4px); box-shadow: var(--
 body.concept .info-block h3 { color: var(--s-brand); }
 body.concept .info-block a { color: var(--s-brand); }
 body.concept .map-container { box-shadow: var(--s-shadow); border: none; border-radius: 22px; }
+/* Google Maps loads only after a click, so Google can't set cookies before
+   the visitor chooses to see the map. */
+.map-consent {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: var(--s-tint);
+}
+.map-consent p { margin: 0; color: var(--s-body); max-width: 420px; }
+.map-consent a { color: var(--s-brand); font-weight: 600; font-size: 0.95rem; }
+@media (max-width: 640px) { .map-consent { min-height: 300px; } }
 
 body.concept .photo-thumb { border-radius: 16px; box-shadow: none; border: none; }
 body.concept .photo-thumb:hover { box-shadow: var(--s-shadow); }
