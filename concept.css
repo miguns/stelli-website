@@ -1280,21 +1280,55 @@ body.concept .info-block h3 { color: var(--s-brand); }
 body.concept .info-block a { color: var(--s-brand); }
 body.concept .map-container { box-shadow: var(--s-shadow); border: none; border-radius: 22px; }
 /* Google Maps loads only after a click, so Google can't set cookies before
-   the visitor chooses to see the map. */
+   the visitor chooses to see the map. Until then a self-hosted static map
+   (OpenStreetMap) shows where we are. */
 .map-consent {
-    min-height: 400px;
+    position: relative;
+    min-height: 420px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    gap: 1rem;
-    padding: 2rem 1.5rem;
-    text-align: center;
+    padding: 1.5rem;
     background: var(--s-tint);
 }
-.map-consent p { margin: 0; color: var(--s-body); max-width: 420px; }
-.map-consent a { color: var(--s-brand); font-weight: 600; font-size: 0.95rem; }
-@media (max-width: 640px) { .map-consent { min-height: 300px; } }
+.map-consent picture,
+.map-consent img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.map-consent-card {
+    position: relative;
+    max-width: 560px;
+    padding: 1.1rem 1.4rem 1rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--s-shadow);
+    text-align: center;
+}
+.map-consent-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+.map-consent-card p { margin: 0.7rem 0 0; font-size: 0.85rem; line-height: 1.45; color: var(--s-body); }
+.map-consent-credit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.15rem 0.5rem;
+    border-bottom-left-radius: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    font-size: 0.72rem;
+    text-decoration: none;
+}
+/* Phones: the card would cover the pin, so stack it under the map. */
+@media (max-width: 640px) {
+    .map-consent { display: block; min-height: 0; padding: 0; }
+    .map-consent picture { position: relative; display: block; height: 230px; }
+    .map-consent img { position: static; }
+    .map-consent-card { max-width: none; border-radius: 0; box-shadow: none; padding: 1rem; background: var(--s-white); }
+    .map-consent-actions .stl-btn { width: 100%; }
+}
 
 body.concept .photo-thumb { border-radius: 16px; box-shadow: none; border: none; }
 body.concept .photo-thumb:hover { box-shadow: var(--s-shadow); }
