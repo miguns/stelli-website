@@ -633,6 +633,14 @@ body.concept .stl-quote blockquote {
     }
 }
 
+/* "Read also" at the end of a blog article — only two cards, so keep them
+   narrower and give both photos the same shape (the homepage's portrait
+   card would otherwise tower over its neighbour). */
+.stl-related .stl-cards { max-width: 860px; margin: 0 auto; }
+@media (min-width: 641px) {
+    .stl-related .stl-card-photo--portrait { aspect-ratio: 4 / 3; }
+}
+
 /* ==========================================================================
    Homepage — closing CTA
    ========================================================================== */
