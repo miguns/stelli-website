@@ -44,6 +44,11 @@
     // Only auto-route from the Czech root; language folders are sticky
     const info = currentInfo();
     if (info.code !== 'cs') return;
+    // Search-engine crawlers mostly come from US IPs, so routing them would
+    // make every Czech page look like a redirect to /en/. Let them index
+    // each language version as it is.
+    if (navigator.webdriver ||
+        /(bot|crawler|spider|slurp)\b|google-inspectiontool|lighthouse|headlesschrome/i.test(navigator.userAgent)) return;
     if (ss.get('stelli_autorouted')) return;
     ss.set('stelli_autorouted', '1');
 
