@@ -469,6 +469,20 @@ document.querySelectorAll('.contact-form').forEach(form => {
 });
 
 // ==========================================================================
+// Contact map — load the Google Maps iframe only after the visitor asks for it
+// ==========================================================================
+document.querySelectorAll('.map-consent').forEach(box => {
+    box.querySelector('.map-consent-btn')?.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = box.dataset.mapSrc;
+        iframe.title = box.dataset.mapTitle || '';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        box.replaceWith(iframe);
+    });
+});
+
+// ==========================================================================
 // Cat mascot system — breathing/blinking SVG cats, cursor-tracking eyes,
 // petting hearts, paw cursor trail, and a random peek-and-pounce easter egg
 // ==========================================================================
