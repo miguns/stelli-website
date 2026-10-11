@@ -44,7 +44,7 @@ Body, které se týkají jen Next.js (`next/image`, `next/font`, `"use client"`,
 | 1.13 | Preview deploymenty neindexovatelné | ✅ | Preview větve vrací `302` na Vercel SSO + `x-robots-tag: noindex` | ⚠️ Produkční alias `stelli-website.vercel.app` je veřejný a indexovatelný. Po přepnutí domény nastavit ve Vercelu přesměrování vercel.app → www.stelliragdoll.cz. **S** |
 | 1.14 | Rozbité odkazy | ✅ | Kontrola všech `href`/`src`/`srcset` v 56 HTML: žádný rozbitý interní odkaz (`/_vercel/insights/script.js` poskytuje Vercel, `200`). Externí odkazy: 200, PubMed 203, `pawpeds.com` a `web3forms.com` vrací 403 kvůli ochraně proti botům | ➖ PawPeds odkazy ověřit ručně v prohlížeči |
 | 1.15 | Interní prolinkování | ⚠️ | Články se odkazují jen navzájem (sekce „Přečtěte si také“). Z textu článků nevede odkaz na Koťátka/Dotazník/Kontakt a stránky webu (Koťátka, Info ke koupi, O nás…) neodkazují na články | Doplnit kontextové odkazy (např. Info ke koupi → Raná kastrace, Koťátka → Proč se rodí bílá) a CTA na konci článku. **S** |
-| 1.16 | **Automatické přesměrování podle IP** | ❌ **kritické** | `script.js:46-78`: na **každé české stránce** se při první návštěvě zavolá `ipapi.co` a mimo CZ se přes `location.replace` přesměruje na `/en/…` (DE/AT → `/de/`, PL → `/pl/`). Lighthouse z US IP: `https://stelli-website.vercel.app/` → **`/en/`**, `/kotatka` → `/en/kotatka`, `/rana-kastrace-kotatek` → `/en/…` (audit `redirects`, ztráta 1,9–2,6 s). Googlebot prochází převážně z USA a JS spouští, takže může české stránky vidět jako přesměrované na anglické → riziko, že česká verze (hlavní trh) se špatně indexuje. Google automatické přesměrování podle IP výslovně nedoporučuje | Nepřesměrovávat, místo toho zobrazit nenápadnou lištu „Switch to English?“. Minimálně: přesměrovávat jen z úvodní stránky `/` a nikdy roboty. **S–M** |
+| 1.16 | Automatické přesměrování podle IP | ✅ (záměr, opraveno pro roboty) | Přesměrování podle země je **záměr majitelky**: návštěvník z DE/AT/LI → `/de/`, z PL → `/pl/`, odjinud mimo CZ → `/en/` (`script.js:46-83`). Původní nález: roboti vyhledávačů (Googlebot prochází převážně z USA) byli přesměrováni taky. Lighthouse z US IP skončil na `/en/` místo `/`, takže hrozilo, že česká verze bude vypadat jako přesměrovaná na anglickou. **Opraveno**: roboti (`bot`, `crawler`, `spider`, `slurp`, Google Inspection Tool, Lighthouse, headless prohlížeče) se nepřesměrovávají. Ověřeno v Chromiu: Googlebot, bingbot, SeznamBot → zůstanou na `/kotatka`; běžný Chrome s DE → `/de/kotatka` | — |
 
 ## 2. SEO – migrace z Webnode
 
@@ -80,7 +80,7 @@ Body, které se týkají jen Next.js (`next/image`, `next/font`, `"use client"`,
 
 ## 5. Výkon
 
-Lighthouse 12, mobil, produkce (měřeno přes proxy prostředí a z US IP, takže se kvůli bodu 1.16 skutečně měřila `/en/` verze a časy jsou spíš horší než u reálného českého návštěvníka):
+Lighthouse 12, mobil, produkce (měřeno přes proxy prostředí a z US IP, takže se kvůli přesměrování podle země skutečně měřila `/en/` verze a časy jsou spíš horší než u reálného českého návštěvníka; měřeno před opravou 1.16):
 
 | Stránka | Perf | A11y | Best Pr. | SEO | LCP | CLS | TBT |
 |---|---|---|---|---|---|---|---|
@@ -156,7 +156,7 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 | 9.2 | Analytika | ✅ | Jen Vercel Web Analytics (cookieless), není potřeba cookie lišta | — |
 | 9.3 | **Google Maps bez souhlasu** | ❌ **kritické** | `kontakty.html:129`: iframe `google.com/maps/embed` se načte automaticky (jen `loading="lazy"`). Google při tom nastavuje cookies (NID…) a dostává IP, a to bez souhlasu. Zásady to sice zmiňují, ale ePrivacy pravidla vyžadují souhlas předem | Nahradit statickým obrázkem mapy s tlačítkem „Zobrazit mapu“ (načte iframe až po kliknutí), nebo jen odkazem „Otevřít v Mapách“. ➖ Navíc embed URL vypadá jako ručně složená (`!2d15.0!3d50.5`, `4v1700000000000`), ověřit, že ukazuje správné místo. **S** |
 | 9.4 | Google Fonts z CDN | ⚠️ | viz 5.4; IP návštěvníka jde Googlu při každé stránce. Zásady to uvádějí, ale v EU je to známý předmět stížností (rozsudek LG München 2022) | Self-host fontu vyřeší GDPR i výkon. **S–M** |
-| 9.5 | ipapi.co | ⚠️ | IP se posílá třetí straně při první návštěvě; zásady to popisují. Navíc to způsobuje SEO problém 1.16 | Při opravě 1.16 ipapi úplně odstranit (stačí `navigator.language`). **S** |
+| 9.5 | ipapi.co | ⚠️ | IP se posílá třetí straně při první návštěvě; zásady to popisují (`zasady-ochrany-osobnich-udaju.html:101`). Jde o záměrnou funkci (výběr jazyka podle země) | Ponechat; volitelně zvážit `navigator.language` místo IP, které nic neposílá ven. — |
 | 9.6 | Obsah zásad | ⚠️ | Správce ✅, účel ✅, doba uchování ✅ (do 2 let), práva ✅ + ÚOOÚ ✅, příjemci: Web3Forms ✅, Google Fonts/Maps ✅, ipapi ✅, Vercel Analytics ✅. **Chybí**: Vercel jako hosting (zpracovatel logů/IP), Gmail/Google jako poskytovatel e-mailu, kde zprávy končí, **předání mimo EU** (Web3Forms, Vercel, Google jsou z USA, takže je potřeba zmínit EU-US Data Privacy Framework nebo SCC), u formuláře je jako právní základ jen „souhlas“, přesnější je čl. 6 odst. 1 písm. b) (jednání o smlouvě) | Doplnit odstavec o hostingu, e-mailu a předání do USA. **S** |
 
 ## 10. Kvalita kódu a provoz
@@ -196,7 +196,7 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 ## Priority
 
 ### Kritické
-1. **1.16 Automatické přesměrování podle IP**: české stránky se pro návštěvníky a roboty mimo ČR přepínají na /en/. Ohrožuje indexaci české verze. (S–M)
+1. ~~**1.16 Automatické přesměrování podle IP**~~: ✅ vyřešeno. Přesměrování je záměr, roboti vyhledávačů se od teď nepřesměrovávají.
 2. **9.3 Google Maps bez souhlasu**: cookies třetí strany před souhlasem. (S)
 3. **2.5 Checklist přepnutí domény**: `base_url` v CMS, přesměrování vercel.app, **MX záznam na Webnode** (riziko ztráty pošty na doméně), SPF/DMARC. (S)
 4. **7.11 2FA na všech účtech** (GitHub, Vercel, WEDOS, Gmail, Web3Forms, DeepL) + zámek domény. (ručně)
@@ -228,7 +228,7 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 
 | Pořadí | Oprava | Dopad | Náročnost |
 |---|---|---|---|
-| 1 | Zrušit IP přesměrování (nahradit lištou s nabídkou jazyka, odstranit ipapi.co) – 1.16, 9.5 | SEO české verze + GDPR + −2 s načtení | S–M |
+| 1 | ✅ **Hotovo**: přesměrování podle země vynechává roboty vyhledávačů – 1.16 | SEO české verze | S |
 | 2 | Google Maps načíst až po kliknutí – 9.3 | GDPR | S |
 | 3 | Připravit a odškrtat checklist přepnutí domény – 2.3, 2.5, 1.13 | Bez ztráty SEO a pošty při migraci | S |
 | 4 | 2FA + zámek domény (vy) – 7.11 | Bezpečnost celého webu | S (ručně) |
@@ -239,4 +239,4 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 | 9 | Zkrátit dlouhé descriptions + og:url + OG obrázky článků – 1.3, 1.9 | CTR ve výsledcích a sdílení | S |
 | 10 | Aktualizovat Sveltia CMS + Dependabot pro Actions – 7.3, 7.4 | Bezpečnost CMS (drží GitHub token) | S–M |
 
-*Žádný kód nebyl změněn; čekám na schválení, které opravy provést.*
+*Provedeno: 1.16 (roboti vynecháni z přesměrování). Ostatní body čekají na schválení.*
