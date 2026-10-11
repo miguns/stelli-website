@@ -154,7 +154,7 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 |---|---|---|---|---|
 | 9.1 | Seznam úložišť a trackerů | ✅ | `localStorage.stelli_lang` (zvolený jazyk, `script.js:41`), `sessionStorage.stelli_autorouted` (`script.js:48`), cookie `oauth_state` jen v adminu (`api/auth.js:20`). Třetí strany: ipapi.co (IP → země), Google Fonts, Google Maps (iframe), Web3Forms, Vercel Web Analytics (bez cookies) | — |
 | 9.2 | Analytika | ✅ | Jen Vercel Web Analytics (cookieless), není potřeba cookie lišta | — |
-| 9.3 | **Google Maps bez souhlasu** | ❌ **kritické** | `kontakty.html:129`: iframe `google.com/maps/embed` se načte automaticky (jen `loading="lazy"`). Google při tom nastavuje cookies (NID…) a dostává IP, a to bez souhlasu. Zásady to sice zmiňují, ale ePrivacy pravidla vyžadují souhlas předem | Nahradit statickým obrázkem mapy s tlačítkem „Zobrazit mapu“ (načte iframe až po kliknutí), nebo jen odkazem „Otevřít v Mapách“. ➖ Navíc embed URL vypadá jako ručně složená (`!2d15.0!3d50.5`, `4v1700000000000`), ověřit, že ukazuje správné místo. **S** |
+| 9.3 | Google Maps bez souhlasu | ✅ (opraveno) | Původně: `kontakty.html:129` iframe `google.com/maps/embed` se načítal automaticky, takže Google mohl nastavit cookies bez souhlasu. **Opraveno (PR #19)**: místo mapy je panel s informací, tlačítkem „Zobrazit mapu“ a odkazem do Map Google; iframe se vloží až po kliknutí (`script.js`, sekce „Contact map“), ve všech 4 jazycích, a zásady ochrany údajů jsou upravené. Ověřeno: před kliknutím 0 požadavků na Google | ➖ Embed URL vypadá ručně složená (`!2d15.0!3d50.5`), ověřit, že po kliknutí ukazuje správné místo |
 | 9.4 | Google Fonts z CDN | ⚠️ | viz 5.4; IP návštěvníka jde Googlu při každé stránce. Zásady to uvádějí, ale v EU je to známý předmět stížností (rozsudek LG München 2022) | Self-host fontu vyřeší GDPR i výkon. **S–M** |
 | 9.5 | ipapi.co | ⚠️ | IP se posílá třetí straně při první návštěvě; zásady to popisují (`zasady-ochrany-osobnich-udaju.html:101`). Jde o záměrnou funkci (výběr jazyka podle země) | Ponechat; volitelně zvážit `navigator.language` místo IP, které nic neposílá ven. — |
 | 9.6 | Obsah zásad | ⚠️ | Správce ✅, účel ✅, doba uchování ✅ (do 2 let), práva ✅ + ÚOOÚ ✅, příjemci: Web3Forms ✅, Google Fonts/Maps ✅, ipapi ✅, Vercel Analytics ✅. **Chybí**: Vercel jako hosting (zpracovatel logů/IP), Gmail/Google jako poskytovatel e-mailu, kde zprávy končí, **předání mimo EU** (Web3Forms, Vercel, Google jsou z USA, takže je potřeba zmínit EU-US Data Privacy Framework nebo SCC), u formuláře je jako právní základ jen „souhlas“, přesnější je čl. 6 odst. 1 písm. b) (jednání o smlouvě) | Doplnit odstavec o hostingu, e-mailu a předání do USA. **S** |
@@ -197,7 +197,7 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 
 ### Kritické
 1. ~~**1.16 Automatické přesměrování podle IP**~~: ✅ vyřešeno. Přesměrování je záměr, roboti vyhledávačů se od teď nepřesměrovávají.
-2. **9.3 Google Maps bez souhlasu**: cookies třetí strany před souhlasem. (S)
+2. ~~**9.3 Google Maps bez souhlasu**~~: ✅ vyřešeno, mapa se načte až po kliknutí.
 3. **2.5 Checklist přepnutí domény**: `base_url` v CMS, přesměrování vercel.app, **MX záznam na Webnode** (riziko ztráty pošty na doméně), SPF/DMARC. (S)
 4. **7.11 2FA na všech účtech** (GitHub, Vercel, WEDOS, Gmail, Web3Forms, DeepL) + zámek domény. (ručně)
 
@@ -229,7 +229,7 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 | Pořadí | Oprava | Dopad | Náročnost |
 |---|---|---|---|
 | 1 | ✅ **Hotovo**: přesměrování podle země vynechává roboty vyhledávačů – 1.16 | SEO české verze | S |
-| 2 | Google Maps načíst až po kliknutí – 9.3 | GDPR | S |
+| 2 | ✅ **Hotovo**: Google Maps načíst až po kliknutí – 9.3 | GDPR | S |
 | 3 | Připravit a odškrtat checklist přepnutí domény – 2.3, 2.5, 1.13 | Bez ztráty SEO a pošty při migraci | S |
 | 4 | 2FA + zámek domény (vy) – 7.11 | Bezpečnost celého webu | S (ručně) |
 | 5 | Self-host fontu – 5.4, 9.4 | GDPR + rychlost | S–M |
@@ -239,4 +239,4 @@ INP Lighthouse v laboratoři neměří (TBT 10–20 ms naznačuje, že problém 
 | 9 | Zkrátit dlouhé descriptions + og:url + OG obrázky článků – 1.3, 1.9 | CTR ve výsledcích a sdílení | S |
 | 10 | Aktualizovat Sveltia CMS + Dependabot pro Actions – 7.3, 7.4 | Bezpečnost CMS (drží GitHub token) | S–M |
 
-*Provedeno: 1.16 (roboti vynecháni z přesměrování). Ostatní body čekají na schválení.*
+*Provedeno: 1.16 (roboti vynecháni z přesměrování), 9.3 (mapa až po kliknutí). Ostatní body čekají na schválení.*
