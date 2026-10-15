@@ -37,7 +37,8 @@
         { "photo": "images/kittens/vrh-e/group-3.jpg", "alt": "" },
         { "photo": "images/kittens/vrh-e/group-4.jpg", "alt": "" },
         { "photo": "images/kittens/vrh-e/group-5.jpg", "alt": "" },
-        { "photo": "images/kittens/vrh-e/group-6.jpg", "alt": "" }
+        { "photo": "images/kittens/vrh-e/group-6.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-e/group-7.jpg", "alt": "" }
       ],
       "kittens": [
         { "name": "Eevee", "photo": "images/kittens/vrh-e/eevee.jpg" },
