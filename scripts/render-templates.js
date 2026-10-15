@@ -79,9 +79,14 @@ function photoCarouselHTML(photos, galleryId, altPrefix, prefix, lang) {
         const grid = escapeHtml(prefix + withVer(gridPath));
         const webp = escapeHtml(prefix + withVer(gridPath.replace(/\.(jpg|png)$/, '.webp')));
         const alt = customAlt ? escapeHtml(customAlt) : escapeHtml(altPrefix) + ' ' + (i + 1);
+        // No loading="lazy" here: slides sit off to the side of a clipped,
+        // fixed-position track and are brought into view with a CSS
+        // transform rather than real scrolling, so the browser's native
+        // lazy-load heuristic never counts them as "near the viewport" --
+        // every slide past the first silently never loads.
         return '<div class="litter-carousel-slide" data-lightbox tabindex="' + (i === 0 ? '0' : '-1') + '" role="button" data-gallery="' + escapeHtml(galleryId) + '" data-src="' + full + '">' +
             '<picture><source srcset="' + webp + '" type="image/webp">' +
-            '<img src="' + grid + '" alt="' + alt + '" loading="lazy"></picture></div>';
+            '<img src="' + grid + '" alt="' + alt + '"></picture></div>';
     }).join('');
     const nav = photos.length > 1
         ? '<button type="button" class="litter-carousel-nav litter-carousel-prev" aria-label="' + navLabel.prev[lang] + '">&lsaquo;</button>' +

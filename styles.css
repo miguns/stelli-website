@@ -1335,14 +1335,22 @@ a.partner-card { display: block; text-decoration: none; }
 /* Litter photo carousel (kotatka.html) — one photo at a time per litter,
    with prev/next controls, instead of the full thumbnail grid. */
 .litter-carousel { max-width: 380px; margin: 2rem auto 0; }
-.litter-carousel-frame { position: relative; }
-.litter-carousel-track {
-    display: flex;
+/* overflow:hidden has to live here, on the frame that never moves -- putting
+   it on the track instead would carry the clip box along with the slide
+   transform below, so after the first "next" click the whole clipped
+   viewport slides off screen with it and every slide looks blank. */
+.litter-carousel-frame {
+    position: relative;
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-sm);
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     background: var(--cream-deep);
+}
+.litter-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
     transition: transform 0.45s var(--ease-out);
 }
 .litter-carousel-slide { flex: 0 0 100%; width: 100%; height: 100%; cursor: zoom-in; }
