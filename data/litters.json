@@ -31,7 +31,14 @@
       "desc_en": "Mother Ariell StElli, father Unique Liderland *PL. Date of birth: 28 Aug 2026.",
       "desc_de": "Mutter Ariell StElli, Vater Unique Liderland *PL. Geburtsdatum: 28.08.2026.",
       "desc_pl": "Matka Ariell StElli, ojciec Unique Liderland *PL. Data urodzenia: 28.08.2026.",
-      "photos": [],
+      "photos": [
+        { "photo": "images/kittens/vrh-e/group-1.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-e/group-2.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-e/group-3.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-e/group-4.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-e/group-5.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-e/group-6.jpg", "alt": "" }
+      ],
       "kittens": [
         { "name": "Eevee", "photo": "images/kittens/vrh-e/eevee.jpg" },
         { "name": "Eclipse", "photo": "images/kittens/vrh-e/eclipse.jpg" },
