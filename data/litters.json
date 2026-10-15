@@ -11,7 +11,11 @@
       "desc_en": "Mother Baileys StElli, father Kevin Azure Eyes. Date of birth: 10 Sep 2026.",
       "desc_de": "Mutter Baileys StElli, Vater Kevin Azure Eyes. Geburtsdatum: 10.09.2026.",
       "desc_pl": "Matka Baileys StElli, ojciec Kevin Azure Eyes. Data urodzenia: 10.09.2026.",
-      "photos": [],
+      "photos": [
+        { "photo": "images/kittens/vrh-f/group-1.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-f/group-2.jpg", "alt": "" },
+        { "photo": "images/kittens/vrh-f/group-3.jpg", "alt": "" }
+      ],
       "kittens": [
         {},
         {},
